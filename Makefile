@@ -29,7 +29,10 @@ buildall:
         )
 	
 clone:
-	for am in $(ADMIXES); do echo $$am; (cd ..; git clone $(REPOROOT)/$$am); done 
+	for am in $(ADMIXES); do echo $$am; (cd $(ADMIXROOT); git clone $(REPOROOT)/$$am); done 
+
+status:
+	for am in $(ADMIXES); do echo $$am; (cd $(ADMIXROOT)/$$am; git status); done 
 
 
 clean:
