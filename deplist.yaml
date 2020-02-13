@@ -1,3 +1,8 @@
+yaml2rpm:
+  requires:
+
+  provides:
+
 biotools-admix:
   requires:
     - boost/1.66.0/gcc.8.3.0
@@ -114,7 +119,7 @@ mathlibs-admix:
     - OpenBLAS/0.3.6
 perl-admix:
   requires:
-    - perl/5.30.0
+
   provides:
     - perl/5.30.0
 python-admix:
@@ -128,9 +133,9 @@ R-admix:
   requires:
     - java/1.8.0
     - OpenBLAS/0.3.6
-    - R/3.6.1
+    - R/3.6.2
   provides:
-    - R/3.6.1
+    - R/3.6.2
 systools-admix:
   requires:
     - go
@@ -140,12 +145,13 @@ systools-admix:
     - singularity/3.4.1
 tensorflow-admix:
   requires:
+    - hdf5/1.10.5/gcc.4.8.5
     - python/3.8.0
   provides:
     - tensorflow/2.0.0
 parallel-admix:
   requires:
-
+    - foundation
   provides:
     - computecpp/1.2.0
     - OpenCL/2.2

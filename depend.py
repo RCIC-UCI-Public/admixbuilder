@@ -99,7 +99,9 @@ resolved = []
 
 # Resolve 
 master.resolve(resolved)
+master.printDotHeader()
 for admix in resolved:
     # print("%s" % admix.name)
     if admix.name != "ROOT":
-       admix.printNode()
+       admix.printDotNotation()
+master.printDotTrailer()
