@@ -1,5 +1,6 @@
 yaml2rpm
 buildtools-admix
+systools-admix
 gcc-admix
 fileformats-admix
 python-admix
@@ -12,7 +13,6 @@ tensorflow-admix
 foundation-admix
 biotools-admix
 conda-admix
-systools-admix
 chemistry-admix
 pytorch-admix
 parallel-admix
