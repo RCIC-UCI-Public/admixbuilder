@@ -49,6 +49,8 @@ rpmcopy:
 		cd $(ADMIXROOT)/$$am; find RPMS -name '*rpm' > $$am.rpms; /bin/cp $$(cat $$am.rpms) $(CRSPDIR)/$$am) done 
 
 
+download:
+	for am in $(ADMIXES); do echo $$am; make -C $(ADMIXROOT)/$$am download; done
 
 clean:
 	- /bin/rm deplist.yaml
