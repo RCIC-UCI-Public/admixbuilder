@@ -37,13 +37,13 @@ buildall:
 	  done                                               \
         )
 	
-clone:
+clone: force
 	for am in $(ADMIXES); do echo $$am; (cd $(ADMIXROOT); git clone $(REPOROOT)/$$am); done 
 
-status push pull:
+status push pull: force
 	for am in $(ADMIXES); do echo $$am; (cd $(ADMIXROOT)/$$am; git $@); done 
 
-rpmcopy:
+rpmcopy: force
 	for am in $(ADMIXES); do echo $$am; ( 					\
 		if [ ! -d $(CRSPDIR)/$$am ]; then mkdir $(CRSPDIR)/$$am; fi ; \
 		cd $(ADMIXROOT)/$$am; find RPMS -name '*rpm' > $$am.rpms; /bin/cp $$(cat $$am.rpms) $(CRSPDIR)/$$am) done 
