@@ -5,6 +5,7 @@ ADMIXES = yaml2rpm biotools-admix buildlibs-admix buildtools-admix chemistry-adm
 ADMIXES += cuda-admix fileformats-admix foundation-admix gcc-admix
 ADMIXES += mathlibs-admix perl-admix python-admix R-admix systools-admix tensorflow-admix
 ADMIXES += parallel-admix pytorch-admix
+ADMIXES += bioconda-admix nfsapps-admix
 
 ADMIXROOT = ..
 ANSIBLEDIR = playbooks
