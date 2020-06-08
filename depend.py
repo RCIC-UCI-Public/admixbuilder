@@ -42,6 +42,7 @@ class Node(object):
         print("}")
 
     def printDotNotation(self):
+        print("## %s\n" % self.name)
         reqlist="<TR><TD> requires:\n  <BR/>"
         provlist="<TR><TD> provides:\n  <BR/>"
         # print ("xxx %s xxx" % self.name)

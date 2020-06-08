@@ -5,7 +5,7 @@ ADMIXES = yaml2rpm biotools-admix buildlibs-admix buildtools-admix chemistry-adm
 ADMIXES += cuda-admix fileformats-admix foundation-admix gcc-admix
 ADMIXES += mathlibs-admix perl-admix python-admix R-admix systools-admix tensorflow-admix
 ADMIXES += parallel-admix pytorch-admix
-ADMIXES += bioconda-admix nfsapps-admix
+ADMIXES += bioconda-admix nfsapps-admix julia-admix
 
 ADMIXROOT = ..
 ANSIBLEDIR = playbooks
@@ -16,9 +16,13 @@ BUILDORDER = $(shell cat buildorder)
 
 .PHONY: force
 
-deplist.yaml: force
+deplist.yaml: 
 	- /bin/rm $@
+	echo "### Scanning admixes for module-requires-provides ###"
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am module-requires-provides >> $@; done 
+
+dot: deplist.yaml
+	./depend.py 
 
 ansible: $(ANSIBLEDIR) force
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am ansible > $(ANSIBLEDIR)/$$am.yml; done 
@@ -51,7 +55,7 @@ rpmcopy: force
 
 
 download:
-	for am in $(ADMIXES); do echo $$am; make -C $(ADMIXROOT)/$$am download; done
+	for am in $(ADMIXES); do echo $$am; make -C $(ADMIXROOT)/$$am download; sleep 300;  done
 
 clean:
 	- /bin/rm deplist.yaml
