@@ -84,3 +84,14 @@ flye          https://github.com/fenderglass/Flye
 minimap2      https://github.com/lh3/minimap2
 MUMmer        https://github.com/mummer4/mummer
 
+===== valdevit_lab
+Simulia Abaqus (already installed on the old HPC)
+Calphad
+LAMMPS Molecular Dynamic Simulator
+VASPVienna Ab Initio Simulation Package. 
+Fluent
+Comsol Multiphysics
+Open Foam
+
+REQUIRED
+ABAQUS, LAMMPS, VASP and CALPHAD
