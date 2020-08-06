@@ -18,6 +18,8 @@ arcasHLA                https://github.com/RabadanLab/arcasHLA
 cellranger 3.0.0 & 3.1.0 https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/tutorial_in
                 DESIRED
 +bowtie                  have 1.2.3
+=======
+scHLAcount (https://github.com/10XGenomics) - have "1.1.1"
 gcc/7.3                 NO
 +boost/1.65.1            have 1.66/1.71
 +hdf5/1.10.0             have 1.10.5

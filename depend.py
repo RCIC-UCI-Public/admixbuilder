@@ -4,13 +4,15 @@ import re
 import sys
 import subprocess
 import yaml
+from datetime import date
 
 class Node(object):
-    def __init__(self,name,admixes):
+    def __init__(self,name,admixes,created):
         self.name = name
         self.edges = []
         self.requires = []
         self.provides = []
+        self.created = created;
         if name in admixes.keys(): 
            self.requires = admixes[name]['requires']
            self.provides = admixes[name]['provides']
@@ -38,7 +40,13 @@ class Node(object):
         print("digraph G {")
         print('  size = "11,17";')
 
+    def printTitle(self):
+        title = "Software Modules and Dependencies (%s).\n Re-usable packages created with yaml2rpm \n (https://github.com/RCIC-UCI-Public/yaml2rpm)" % self.created
+        print('  labelloc="t";\n  fontsize="24.0";')
+        print('  label="%s";' % title)
+
     def printDotTrailer(self):
+        self.printTitle()
         print("}")
 
     def printDotNotation(self):
@@ -62,7 +70,13 @@ class Node(object):
 # Create Graph nodes for every module
 f=open("deplist.yaml")
 admixes = yaml.load(f)
-nodes = [ Node(name,admixes) for name in admixes.keys()]
+try:
+   created = admixes['created']
+   del admixes['created']
+except:
+   created = str(date.today())
+
+nodes = [ Node(name,admixes,created) for name in admixes.keys()]
 
 providers = [] 
 for am in admixes.keys():
@@ -74,7 +88,7 @@ for am in admixes.keys():
 provlist = { x[0]:x[1] for x in providers }
 
 # make a  master Node to and add all edges to it to make sure that the dependency graph is connected
-master = Node('ROOT',admixes)
+master = Node('ROOT',admixes,created)
 for node in nodes:
     master.addEdge(node)
     reqs = admixes[node.name]['requires']

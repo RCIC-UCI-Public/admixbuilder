@@ -1,11 +1,12 @@
 ## This Makefile is a high-level builder of all Admixes
 REPOROOT = git@github.com:RCIC-UCI-Public
-CRSPDIR = /mnt/crsp/share/RPMS.CURRENT
+CRSPDIR = /mnt/crsp/RPMS.CURRENT
 ADMIXES = yaml2rpm biotools-admix buildlibs-admix buildtools-admix chemistry-admix conda-admix
 ADMIXES += cuda-admix fileformats-admix foundation-admix gcc-admix
 ADMIXES += mathlibs-admix perl-admix python-admix R-admix systools-admix tensorflow-admix
 ADMIXES += parallel-admix pytorch-admix
-ADMIXES += bioconda-admix nfsapps-admix julia-admix
+ADMIXES += bioconda-admix nfsapps-admix julia-admix simulations-admix
+ADMIXES += rust-admix genomics-admix 
 
 ADMIXROOT = ..
 ANSIBLEDIR = playbooks
@@ -20,6 +21,7 @@ deplist.yaml:
 	- /bin/rm $@
 	echo "### Scanning admixes for module-requires-provides ###"
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am module-requires-provides >> $@; done 
+	echo "created: $$(date +%F)" >> $@
 
 dot: deplist.yaml
 	./depend.py 
@@ -51,7 +53,7 @@ status push pull: force
 rpmcopy: force
 	for am in $(ADMIXES); do echo $$am; ( 					\
 		if [ ! -d $(CRSPDIR)/$$am ]; then mkdir $(CRSPDIR)/$$am; fi ; \
-		cd $(ADMIXROOT)/$$am; find RPMS -name '*rpm' > $$am.rpms; /bin/cp $$(cat $$am.rpms) $(CRSPDIR)/$$am) done 
+		cd $(ADMIXROOT)/$$am; find RPMS -name '*rpm' > $$am.rpms; /bin/cp --preserve=timestamps $$(cat $$am.rpms) $(CRSPDIR)/$$am) done 
 
 
 download:
