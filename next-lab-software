@@ -49,7 +49,7 @@ PRATT 2.1
 XPP     6.0               http://www.math.pitt.edu/~bard/xpp/xpp.html
 
 ===== shupengz_lab
-                REQUIRED (for building WRF,CMAQ)
+
 +openmpi-1.8.3/intel-12.0.5  have openmpi-4.0.3/intel/2020u1 
 +hdf5           1.8.13       have hdf5/1.10.5/
 +zlib            1.2.8       have system 1.2.7
@@ -89,3 +89,17 @@ DESMOND              https://www.deshawresearch.com/resources_desmond.html
 +RAxML        8.0.0  have 8.2.12 https://cme.h-its.org/exelixis/web/software/raxml/index.html
 +Prodigal       2.6  have 2.6.3  https://github.com/hyattpd/Prodigal/releases/tag/v2.6.3
 Roary       3.11.2  https://sanger-pathogens.github.io/Roary
+
+===== valdevit_lab
+               REQUIRED
+ABAQUS, LAMMPS, VASP and CALPHAD
+               DESIRED
+Simulia Abaqus (already installed on the old HPC)
+Calphad
+LAMMPS Molecular Dynamic Simulator
+VASPVienna Ab Initio Simulation Package. 
+Fluent
+Comsol Multiphysics
+Open Foam
+
+
