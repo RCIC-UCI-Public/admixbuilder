@@ -350,11 +350,24 @@ rust-admix:
 genomics-admix:
   requires:
 
+     - foundation
      - gcc/8.4.0
+     - llvm/9.0.1
      - mkl/2019.5.281
+     - python/3.8.0
      - rustc/1.45.0
+     - True
   provides:
      - genomics-admix
+     - canu/2.0
+     - flye/2.7.1
+     - loompy/3.0.6
+     - mummer/4.0.0
+     - numba/0.50.1
      - plink/2.00a2.3
+     - prodigal/2.6.3
+     - raxml/8.2.12
+     - rMATS/4.0.2
      - scHLAcount/0.1.1
-created: 2020-08-06
+     - velocyto/0.17.17
+created: 2020-08-07
