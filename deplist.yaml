@@ -355,7 +355,6 @@ genomics-admix:
      - mkl/2019.5.281
      - python/3.8.0
      - rustc/1.45.0
-     - True
   provides:
      - genomics-admix
      - canu/2.0
