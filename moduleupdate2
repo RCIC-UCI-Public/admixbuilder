@@ -1,0 +1,183 @@
+admixbuilder
+* master
+bioconda-admix
+  master
+* newmodule
+  ruamel
+biotools-admix
+* master
+  ruamel
+buildlibs-admix
+* master
+  ruamel
+buildtools-admix
+* master
+  ruamel
+chemistry-admix
+* master
+  ruamel
+conda-admix
+* master
+cuda-admix
+* master
+  ruamel
+development-RPMS
+* master
+fileformats-admix
+* master
+  ruamel
+foundation-admix
+* master
+  ruamel
+gcc-admix
+  master
+* newmodule
+  ruamel
+genomics-admix
+* master
+  ruamel
+hpc3-ansible-prod
+* master
+  staging
+  yum-staging
+hpc3-ansible-prod-old
+* master
+  staging
+  yum-staging
+hpc-jupyter-containers
+* master
+julia-admix
+* master
+  ruamel
+mathlibs-admix
+* master
+  ruamel
+nfsapps-admix
+* master
+  ruamel
+parallel-admix
+* master
+  ruamel
+perl-admix (Nadya)
+* master
+  ruamel
+python-admix
+* master
+  ruamel
+pytorch-admix
+* master
+  ruamel
+R-admix
+  master
+* newmodule
+  ruamel
+rust-admix
+* master
+simulations-admix
+* master
+  ruamel
+slurm-admix
+* master
+systools-admix
+* master
+  ruamel
+tensorflow-admix
+* master
+  ruamel
+yaml2rpm
+  master
+* newmodule
+  ruamel
+admixbuilder
+* master
+bioconda-admix
+  master
+* newmodule
+  ruamel
+(newmodule)
+biotools-admix
+* master
+  ruamel
+(master)
+buildlibs-admix
+* master
+  ruamel
+(master)
+buildtools-admix
+* master
+  ruamel
+chemistry-admix
+* master
+  ruamel
+conda-admix
+* master
+cuda-admix
+* master
+  ruamel
+development-RPMS
+* master
+fileformats-admix
+* master
+  ruamel
+foundation-admix
+* master
+  ruamel
+gcc-admix
+  master
+* newmodule
+  ruamel
+genomics-admix
+* master
+  ruamel
+hpc3-ansible-prod
+* master
+  staging
+  yum-staging
+hpc3-ansible-prod-old
+* master
+  staging
+  yum-staging
+hpc-jupyter-containers
+* master
+julia-admix
+* master
+  ruamel
+mathlibs-admix
+* master
+  ruamel
+nfsapps-admix
+* master
+  ruamel
+parallel-admix
+* master
+  ruamel
+perl-admix
+* master
+  ruamel
+python-admix
+* master
+  ruamel
+pytorch-admix
+* master
+  ruamel
+R-admix
+  master
+* newmodule
+  ruamel
+rust-admix
+* master
+simulations-admix
+* master
+  ruamel
+slurm-admix
+* master
+systools-admix
+* master
+  ruamel
+tensorflow-admix
+* master
+  ruamel
+yaml2rpm
+  master
+* newmodule
+  ruamel
