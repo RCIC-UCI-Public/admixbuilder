@@ -88,7 +88,7 @@ Fluent
 Comsol Multiphysics
 OpenFoam
 
-===== thompson_lab
+===== thompson_lab + Sandmeyerlab (GHTF) see #4114/4115
                 REQUIRED
 +GATK                 have 2.4 and 4.1.6.0
 +Salmon               have 1.2.1
@@ -109,10 +109,10 @@ OpenFoam
 +Perl                 have 5.30.0
 +rMATs                have 4.0.2
 +Homer  NO NO NO NO   NOOOOOOOOOOOOOO!
-Bismark
-Hisat2
-StringTie
-IGV
+Bismark   https://www.bioinformatics.babraham.ac.uk/projects/bismark/
+Hisat2    https://ccb.jhu.edu/software/hisat2/manual.shtml#obtaining-hisat2
+StringTie https://ccb.jhu.edu/software/stringtie/#install
+IGV       https://software.broadinstitute.org/software/igv/download
 
 ===== shupengz_lab
                 REQUIRED
