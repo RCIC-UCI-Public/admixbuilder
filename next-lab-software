@@ -109,10 +109,10 @@ OpenFoam
 +Perl                 have 5.30.0
 +rMATs                have 4.0.2
 +Homer  NO NO NO NO   NOOOOOOOOOOOOOO!
-Bismark   https://www.bioinformatics.babraham.ac.uk/projects/bismark/
-Hisat2    https://ccb.jhu.edu/software/hisat2/manual.shtml#obtaining-hisat2
+bismark   https://www.bioinformatics.babraham.ac.uk/projects/bismark/
+hisat2    https://ccb.jhu.edu/software/hisat2/manual.shtml#obtaining-hisat2
 StringTie https://ccb.jhu.edu/software/stringtie/#install
-IGV       https://software.broadinstitute.org/software/igv/download
+igv       https://software.broadinstitute.org/software/igv/download
 
 ===== shupengz_lab
                 REQUIRED
@@ -146,9 +146,9 @@ gdrive
 +netcdf-fortran  4.4.4       have netcdf-fortran 4.5.2
 +ioapi             3.2       have
 +Python          3.8.5       have 3.8.0
-NCL              6.6.2 https://www.ncl.ucar.edu/Download/
 +R               3.6.3       have 3.6.2
 +MySQL           5.7.30      have system (mariadb) 5.5.64
+NCL              6.6.2 https://www.ncl.ucar.edu/Download/
                 DESIREDD
 PseudoNetCDF 3.1.0 https://pypi.org/project/PseudoNetCDF/
 Openpyxl     3.0.5 https://openpyxl.readthedocs.io/en/stable/
@@ -157,3 +157,9 @@ PyNGL & PyNIO      http://www.pyngl.ucar.edu/
 +PyTorch     1.6.0 have 1.5.1 
 AMET           1.4 https://www.epa.gov/cmaq/atmospheric-model-evaluation-tool
 WRF            4.0 https://www2.mmm.ucar.edu/wrf/users/downloads.html
+
+===== jranders_lab DONE #4138
+                REQUIRED
++gdal  3.1.0            have https://gdal.org/download.html#current-releases
++geos  3.8.1            have https://trac.osgeo.org/geos/
++R    3.6.2/4.0.2       have
