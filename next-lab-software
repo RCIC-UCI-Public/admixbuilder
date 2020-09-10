@@ -36,7 +36,7 @@ gfortran 6.3.x     NO   (the latest version that is matlab mex compatible on lin
 
 ===== cglabe_lab
                 REQUIRED
-Prinseq
+Prinseq   NO, can run 2 perl files out of user area
                 DESIRED
 PRATT 2.1
 
@@ -109,8 +109,8 @@ OpenFoam
 +Perl                 have 5.30.0
 +rMATs                have 4.0.2
 +Homer  NO NO NO NO   NOOOOOOOOOOOOOO!
-bismark   https://www.bioinformatics.babraham.ac.uk/projects/bismark/
-hisat2    https://ccb.jhu.edu/software/hisat2/manual.shtml#obtaining-hisat2
++bismark              have 0.22.3 https://www.bioinformatics.babraham.ac.uk/projects/bismark/
++hisat2               have 2.2.1 https://ccb.jhu.edu/software/hisat2/manual.shtml#obtaining-hisat2
 StringTie https://ccb.jhu.edu/software/stringtie/#install
 igv       https://software.broadinstitute.org/software/igv/download
 
@@ -148,7 +148,7 @@ gdrive
 +Python          3.8.5       have 3.8.0
 +R               3.6.3       have 3.6.2
 +MySQL           5.7.30      have system (mariadb) 5.5.64
-NCL              6.6.2 https://www.ncl.ucar.edu/Download/
++NCL              6.6.2      have https://www.ncl.ucar.edu/Download/
                 DESIREDD
 PseudoNetCDF 3.1.0 https://pypi.org/project/PseudoNetCDF/
 Openpyxl     3.0.5 https://openpyxl.readthedocs.io/en/stable/
