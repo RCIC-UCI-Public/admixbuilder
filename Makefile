@@ -7,6 +7,7 @@ ADMIXES += mathlibs-admix perl-admix python-admix R-admix systools-admix tensorf
 ADMIXES += parallel-admix pytorch-admix
 ADMIXES += bioconda-admix nfsapps-admix julia-admix simulations-admix
 ADMIXES += rust-admix genomics-admix 
+ADMIXES += imaging-admix 
 
 ADMIXROOT = ..
 ANSIBLEDIR = playbooks
@@ -64,3 +65,8 @@ clean:
 diag:
 	echo $(ADMIXES)
 
+# Wildcard action to do something in all admix directories.
+# example make "git checkout -b <branchname>"
+
+%:
+	for am in $(ADMIXES); do echo $$am; (cd $(ADMIXROOT)/$$am; $@); done 

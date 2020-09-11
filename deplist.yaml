@@ -65,6 +65,7 @@ biotools-admix:
      - rsem/1.3.3
      - salmon/1.2.1
      - samtools/1.10
+     - smoldyn/2.61
      - SPAdes/3.14.0
      - sra-tools/2.10.4
      - star/2.7.3a
@@ -79,7 +80,6 @@ biotools-admix:
      - vg/1.23.0
 buildlibs-admix:
   requires:
-
      - foundation
      - gcc/8.4.0
      - intel/2020u1
@@ -91,6 +91,7 @@ buildlibs-admix:
      - boost/1.71.0/gcc.8.4.0
      - clang/10.0.0
      - fftw/3.3.8
+     - geos/3.8.1
      - llvm/10.0.0
      - llvm/9.0.1
      - mpich/3.3.2/gcc.8.4.0
@@ -179,8 +180,9 @@ fileformats-admix:
      - netcdf-c/4.7.0/gcc.4.8.5
      - netcdf-c/4.7.0/gcc.8.4.0
      - netcdf-c/4.7.0/intel.2020u1
-     - openmpi/1.10.7
-     - openmpi/4.0.3
+     - openmpi/1.10.7/gcc.4.8.5
+     - openmpi/4.0.3/gcc.8.4.0
+     - openmpi/4.0.3/intel.2020u1
   provides:
      - fileformats-admix
      - hdf5/1.10.5/gcc.4.8.5
@@ -201,7 +203,8 @@ fileformats-admix:
 foundation-admix:
   requires:
 
-
+     - foundation
+     - go
   provides:
      - foundation-admix
      - foundation
@@ -251,9 +254,11 @@ R-admix:
      - java/1.8.0
      - OpenBLAS/0.3.6
      - R/3.6.2
+     - R/4.0.2
   provides:
      - R-admix
      - R/3.6.2
+     - R/4.0.2
 systools-admix:
   requires:
 
@@ -265,11 +270,12 @@ systools-admix:
 tensorflow-admix:
   requires:
 
-     - hdf5/1.10.5/gcc.4.8.5
      - python/3.8.0
   provides:
      - tensorflow-admix
+     - bazel/0.26.1
      - tensorflow/2.0.0
+     - tensorRT/6.0.1.5
 parallel-admix:
   requires:
 
@@ -305,9 +311,13 @@ nfsapps-admix:
 
   provides:
      - nfsapps-admix
+     - cellranger/3.0.2
+     - cellranger/3.1.0
      - intel/2020u1
+     - marc/2020
      - MATLAB/R2020a
      - oneAPI/2021.1_beta05
+     - schrodinger/2020.1
      - stata/16
 julia-admix:
   requires:
@@ -315,7 +325,7 @@ julia-admix:
 
   provides:
      - julia-admix
-     - julia/1.4.0
+     - julia/1.4.2
 simulations-admix:
   requires:
 
@@ -330,7 +340,6 @@ simulations-admix:
      - sqlite3/3.32.3
   provides:
      - simulations-admix
-     - dream3d/6.5.138
      - gdal/3.1.0
      - opensees/3.1.0
      - paraview/5.8.0
@@ -353,19 +362,27 @@ genomics-admix:
      - gcc/8.4.0
      - llvm/9.0.1
      - mkl/2019.5.281
+     - perl/5.30.0
      - python/3.8.0
      - rustc/1.45.0
   provides:
      - genomics-admix
      - canu/2.0
+     - cdhit/4.8.1
+     - fasttree/2.1.11
      - flye/2.7.1
+     - imagemagick/7.0.10.26
      - loompy/3.0.6
+     - mafft/7.471
+     - mcl/14.137
      - mummer/4.0.0
      - numba/0.50.1
      - plink/2.00a2.3
+     - prank/170427
      - prodigal/2.6.3
      - raxml/8.2.12
      - rMATS/4.0.2
+     - roary/3.13.0
      - scHLAcount/0.1.1
      - velocyto/0.17.17
-created: 2020-08-07
+created: 2020-09-01

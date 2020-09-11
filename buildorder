@@ -13,12 +13,13 @@ bioconda-admix
 mathlibs-admix
 perl-admix
 rust-admix
-genomics-admix
 tensorflow-admix
 R-admix
 biotools-admix
+genomics-admix
 conda-admix
 chemistry-admix
 julia-admix
 pytorch-admix
 parallel-admix
+imaging-admix
