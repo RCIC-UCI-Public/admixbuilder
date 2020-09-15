@@ -163,3 +163,31 @@ WRF            4.0 https://www2.mmm.ucar.edu/wrf/users/downloads.html
 +gdal  3.1.0            have https://gdal.org/download.html#current-releases
 +geos  3.8.1            have https://trac.osgeo.org/geos/
 +R    3.6.2/4.0.2       have
+
+===== Vawter_lab  #4200
+                REQUIRED
++R >4.0.0   3.6.2/4.0.2       have
++Python 3 
++java (for Picard-tools, IGV and many others),
++awk
+                DESIREDD
++bedtools 2.29.2 (and/or bedops)
++samtools 1.10 (and/or sambamba)
++Picard tools 1.87
++STAR 2.7.3a
++hisat2 2.2.1
++bowtie2 2.4.1
++RSEM 1.3.3
++sra-tools 2.10.4
++CellRanger 3.0.2 3.1.0
++bcftools 1.10.2
++GATK 2.4 4.1.6.0
++Plink 2.00a2.3
+FastQTL
+PlinkSeq
+fastMitoCalc is available at https://lgsun.irp.nia.nih.gov/hsgu/software/mitoAnalyzer/index.html
+
++Tophat2 2.1.1
++DESeq2 (with R)
+DEXSeq2
++Cufflinks 2.2.1 (Cuffdiff, Cuffnorm)
