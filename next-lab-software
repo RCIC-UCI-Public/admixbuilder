@@ -111,8 +111,8 @@ OpenFoam
 +Homer  NO NO NO NO   NOOOOOOOOOOOOOO!
 +bismark              have 0.22.3 https://www.bioinformatics.babraham.ac.uk/projects/bismark/
 +hisat2               have 2.2.1 https://ccb.jhu.edu/software/hisat2/manual.shtml#obtaining-hisat2
-StringTie https://ccb.jhu.edu/software/stringtie/#install
-igv       https://software.broadinstitute.org/software/igv/download
++StringTie            have 2.1.4 https://ccb.jhu.edu/software/stringtie/#install
++igv                  have 2.8.9 https://software.broadinstitute.org/software/igv/download
 
 ===== shupengz_lab
                 REQUIRED
