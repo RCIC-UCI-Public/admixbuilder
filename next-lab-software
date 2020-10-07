@@ -191,3 +191,13 @@ fastMitoCalc is available at https://lgsun.irp.nia.nih.gov/hsgu/software/mitoAna
 +DESeq2 (with R)
 DEXSeq2
 +Cufflinks 2.2.1 (Cuffdiff, Cuffnorm)
+
+===== Whiteson_lab  #4290
+                REQUIRED
+Diamond v0.9.24 https://github.com/bbuchfink/diamond
+Prinseq v0.20.4 http://prinseq.sourceforge.net/
+Usearch v11.0.667 https://drive5.com/usearch/download.html
+                DESIREDD
+BBMap Suite v38.86 https://sourceforge.net/projects/bbmap/
+BLAST+ v2.10.0 https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download
+MEGAHIT v1.2.9 https://github.com/voutcn/megahit
