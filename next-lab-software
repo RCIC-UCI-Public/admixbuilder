@@ -1,5 +1,5 @@
 
-===== hetaha_lab
+===== hetaha_lab  DONE
                 REQUIRED
 +ansys                 have 2020R2/2019R2
                        need verification
@@ -26,24 +26,24 @@ arcasHLA                https://github.com/RabadanLab/arcasHLA
 xerces/3.2.0
 SUNDIALS/4.1.0
 +scanpy                 have in python admx
-rstudio 1.3
++rstudio 1.3            have 1.3.1073
 +julia 1.4              have 1.4.0/1.4.2
 +R 4.0.2                have
 +CUDA       10.0/11.0   have 10.1.243
-gcc/7.3            NO
-gcc 6.3.x          NO   (the latest version that is matlab mex compatible on linux)
-gfortran 6.3.x     NO   (the latest version that is matlab mex compatible on linux)
+-gcc/7.3            NO
+-gcc 6.3.x          NO   (the latest version that is matlab mex compatible on linux)
+-gfortran 6.3.x     NO   (the latest version that is matlab mex compatible on linux)
 
 ===== cglabe_lab
                 REQUIRED
-Prinseq   NO, can run 2 perl files out of user area
+-Prinseq   NO, can run 2 perl files out of user area
                 DESIRED
 PRATT 2.1
 
-===== allison_lab
+===== allison_lab  DONE
                 REQUIRED
 +R 4.0.2        have
-     RStan 2.21 (https://mc-stan.org/users/interfaces/rstan)
+    +RStan 2.21 have 2.19 (https://mc-stan.org/users/interfaces/rstan)
     +CmdStanR (https://mc-stan.org/cmdstanr/)
     +loo 2.3.1 (https://mc-stan.org/users/interfaces/loo)
     +Bayesplot (https://mc-stan.org/users/in! terfaces/ bayesplot)
@@ -83,16 +83,16 @@ OrthoMCL DB  needs mysql access  https://orthomcl.org/orthomcl/
 
 ===== valdevit_lab
                 REQUIRED
-Simulia Abaqus (already installed on the old HPC)
++Simulia Abaqus   have 2019
++LAMMPS           have 3Mar2020
 CALPHAD
-LAMMPS Molecular Dynamic Simulator
 VASPVienna Ab Initio Simulation Package. 
                 DESIRED
 Fluent
 Comsol Multiphysics
 OpenFoam
 
-===== thompson_lab + Sandmeyerlab (GHTF) see #4114/4115
+===== thompson_lab + Sandmeyerlab (GHTF) see #4114/4115 DONE
                 REQUIRED
 +GATK                 have 2.4 and 4.1.6.0
 +Salmon               have 1.2.1
@@ -118,30 +118,7 @@ OpenFoam
 +StringTie            have 2.1.4 https://ccb.jhu.edu/software/stringtie/#install
 +igv                  have 2.8.9 https://software.broadinstitute.org/software/igv/download
 
-===== shupengz_lab
-                REQUIRED
-+openmpi-1.8.3/intel-12.0.5  have openmpi-4.0.3/intel/2020u1 
-+hdf5           1.8.13       have hdf5/1.10.5/
-+zlib            1.2.8       have system 1.2.7
-+netcdf-c        4.6.1       have netcdf-c 4.7.0
-+netcdf-fortran  4.4.4       have netcdf-fortran 4.5.2
-+ioapi             3.2       have
-                DESIRED 
-Python 3:
-   PseudoNetCDF
-   Openpyxl
-   Fuzzywuzzy
-   PyNGL
-   PyNIO (http://www.pyngl.ucar.edu/)
-NCL 6+ 
-Verdi 
-Kdiff3 
-+sync           have system
-+display        have with imagemagick 7.0.10.26
-wgrib
-gdrive
-
-===== samuelsen_lab  (need to remove shupengz lab)
+===== samuelsen_lab  + shupengz_lab  (need to remove shupengz lab)
                 REQUIRED
 +openmpi-1.8.3/intel-12.0.5  have openmpi-4.0.3/intel/2020u1 
 +hdf5           1.8.13       have hdf5/1.10.5/
@@ -161,6 +138,13 @@ PyNGL & PyNIO      http://www.pyngl.ucar.edu/
 +PyTorch     1.6.0 have 1.5.1 
 AMET           1.4 https://www.epa.gov/cmaq/atmospheric-model-evaluation-tool
 WRF            4.0 https://www2.mmm.ucar.edu/wrf/users/downloads.html
+                DESIREDD (shupengz)
++sync           have system
++display        have with imagemagick 7.0.10.26
+Verdi 
+Kdiff3 
+wgrib
+gdrive
 
 ===== jranders_lab DONE #4138
                 REQUIRED
@@ -190,7 +174,6 @@ WRF            4.0 https://www2.mmm.ucar.edu/wrf/users/downloads.html
 FastQTL
 PlinkSeq
 fastMitoCalc is available at https://lgsun.irp.nia.nih.gov/hsgu/software/mitoAnalyzer/index.html
-
 +Tophat2 2.1.1
 +DESeq2 (with R)
 DEXSeq2
@@ -199,14 +182,14 @@ DEXSeq2
 ===== Whiteson_lab  #4290
                 REQUIRED
 Diamond v0.9.24 https://github.com/bbuchfink/diamond
-Prinseq v0.20.4 http://prinseq.sourceforge.net/
+-Prinseq v0.20.4 NO, can download 2 perl files to ser area http://prinseq.sourceforge.net/
 Usearch v11.0.667 https://drive5.com/usearch/download.html
                 DESIREDD
 BBMap Suite v38.86 https://sourceforge.net/projects/bbmap/
 BLAST+ v2.10.0 https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download
 MEGAHIT v1.2.9 https://github.com/voutcn/megahit
 
-======= grylee_lab  #4327
+======= grylee_lab DONE  #4327
                 REQUIRED
 +bwa/0.7.17        have        https://sourceforge.net/projects/bio-bwa/files/
 +samtools/1.11     have 1.10   https://github.com/samtools/samtools
@@ -231,3 +214,7 @@ MAKER v3.01.03                 https://www.yandell-lab.org/software/maker.html
 Trinity v2.11.0                https://github.com/trinityrnaseq/trinityrnaseq/releases
 phantompeakqualtools 1.2.2     https://github.com/kundajelab/phantompeakqualtools
 Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/
+
+======= tvanerp_lab #4210
+                REQUIRED
++fsl 6.0.4         have https://fsl.fmrib.ox.ac.uk/fsldownloads_registration
