@@ -216,18 +216,18 @@ MEGAHIT v1.2.9 https://github.com/voutcn/megahit
 +bedtools 2.28.0   have 2.29.2 https://bedtools.readthedocs.io/en/latest/
 +Sratoolkit 2.10.8 have 2.10.4 https://github.com/ncbi/sra-tools
 +Bowtie2 v2.4.2    have 2.4.1  http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
-paftools.js                    https://github.com/lh3/minimap2/tree/master/misc
-Cutadapt v2.10                 https://cutadapt.readthedocs.io/en/stable/
++paftools.js       with minimap2 https://github.com/lh3/minimap2/tree/master/misc
++Cutadapt v2.10    have 2.10    https://cutadapt.readthedocs.io/en/stable/
                 DESIREDD
 +pbmm2             have with bioconda https://github.com/PacificBiosciences/pbmm2
++gcpp v2.0.0       have 1.9.0  with bioconda https://github.com/PacificBiosciences/gcpp
 +GATK 4            have 4.1.6.0 https://github.com/broadinstitute/gatk
 +MUMmer v4         have 4.0.0  https://github.com/mummer4/mummer
-+gcpp v2.0.0       have 1.9.0 with bioconda https://github.com/PacificBiosciences/gcpp
++macs2 2.2.7.1     have        https://github.com/macs3-project/MACS
 smrtanalysis/7.0.0             https://www.pacb.com/support/software-downloads/
-repeatmodeler v2.0.1 http://www.repeatmasker.org/RepeatModeler/
-gffread https://github.com/gpertea/gffread
-MAKER v3.01.03 https://www.yandell-lab.org/software/maker.html
-Trinity v2.11.0 https://github.com/trinityrnaseq/trinityrnaseq/releases
-macs2 2.2.7.1 https://github.com/macs3-project/MACS
-phantompeakqualtools 1.2.2 https://github.com/kundajelab/phantompeakqualtools
-Trim Galore v0.6.5 https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/
+repeatmodeler v2.0.1           http://www.repeatmasker.org/RepeatModeler/
+gffread                        https://github.com/gpertea/gffread
+MAKER v3.01.03                 https://www.yandell-lab.org/software/maker.html
+Trinity v2.11.0                https://github.com/trinityrnaseq/trinityrnaseq/releases
+phantompeakqualtools 1.2.2     https://github.com/kundajelab/phantompeakqualtools
+Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/
