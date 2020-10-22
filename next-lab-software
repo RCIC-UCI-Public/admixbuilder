@@ -10,7 +10,7 @@
                 DESIRED 
 BioNetGen 2.5.1        https://github.com/RuleWorld/bionetgen
 MCell       3.4        https://mcell.org/download.html
-bedops   2.4.14
++bedops   2.4.14        have 2.4.39
 +bedtools 2.25.0        have 2.29.2
 
 ===== qnie_lab/satwood_lab
@@ -181,7 +181,7 @@ DEXSeq2
 
 ===== Whiteson_lab  #4290
                 REQUIRED
-Diamond v0.9.24 https://github.com/bbuchfink/diamond
++Diamond v0.9.24   have 2.0.4 https://github.com/bbuchfink/diamond
 -Prinseq v0.20.4 NO, can download 2 perl files to ser area http://prinseq.sourceforge.net/
 Usearch v11.0.667 https://drive5.com/usearch/download.html
                 DESIREDD
