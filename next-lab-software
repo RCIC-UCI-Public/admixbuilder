@@ -8,7 +8,7 @@
                 REQUIRED
 +SmolDyn    2.61       http://www.smoldyn.org/download.html
                 DESIRED 
-BioNetGen 2.5.1        https://github.com/RuleWorld/bionetgen
++BioNetGen 2.5.1       have  https://github.com/RuleWorld/bionetgen
 MCell       3.4        https://mcell.org/download.html
 +bedops   2.4.14        have 2.4.39
 +bedtools 2.25.0        have 2.29.2
