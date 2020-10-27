@@ -12,6 +12,7 @@
 MCell       3.4        https://mcell.org/download.html
 +bedops   2.4.14        have 2.4.39
 +bedtools 2.25.0        have 2.29.2
++VCell                  have 7.2.0.39
 
 ===== qnie_lab/satwood_lab
                 REQUIRED
