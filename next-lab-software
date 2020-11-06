@@ -2,17 +2,16 @@
 ===== hetaha_lab  DONE
                 REQUIRED
 +ansys                 have 2020R2/2019R2
-                       need verification
 
 ===== elread_lab
                 REQUIRED
 +SmolDyn    2.61       http://www.smoldyn.org/download.html
                 DESIRED 
 +BioNetGen 2.5.1       have  https://github.com/RuleWorld/bionetgen
++bedops   2.4.14       have 2.4.39
++bedtools 2.25.0       have 2.29.2
++VCell                 have 7.2.0.39
 MCell       3.4        https://mcell.org/download.html
-+bedops   2.4.14        have 2.4.39
-+bedtools 2.25.0        have 2.29.2
-+VCell                  have 7.2.0.39
 
 ===== qnie_lab/satwood_lab
                 REQUIRED
@@ -131,7 +130,7 @@ OpenFoam
 +R               3.6.3       have 3.6.2
 +MySQL           5.7.30      have system (mariadb) 5.5.64
 +NCL              6.6.2      have https://www.ncl.ucar.edu/Download/
-                DESIREDD
+                DESIRED
 PseudoNetCDF 3.1.0 https://pypi.org/project/PseudoNetCDF/
 Openpyxl     3.0.5 https://openpyxl.readthedocs.io/en/stable/
 Fuzzywuzzy  0.18.0 https://pypi.org/project/fuzzywuzzy/
@@ -139,7 +138,7 @@ PyNGL & PyNIO      http://www.pyngl.ucar.edu/
 +PyTorch     1.6.0 have 1.5.1 
 AMET           1.4 https://www.epa.gov/cmaq/atmospheric-model-evaluation-tool
 WRF            4.0 https://www2.mmm.ucar.edu/wrf/users/downloads.html
-                DESIREDD (shupengz)
+                DESIRED (shupengz)
 +sync           have system
 +display        have with imagemagick 7.0.10.26
 Verdi 
@@ -159,7 +158,7 @@ gdrive
 +Python 3 
 +java (for Picard-tools, IGV and many others),
 +awk
-                DESIREDD
+                DESIRED
 +bedtools 2.29.2 (and/or bedops)
 +samtools 1.10 (and/or sambamba)
 +Picard tools 1.87
@@ -185,7 +184,7 @@ DEXSeq2
 +Diamond v0.9.24   have 2.0.4 https://github.com/bbuchfink/diamond
 -Prinseq v0.20.4 NO, can download 2 perl files to ser area http://prinseq.sourceforge.net/
 Usearch v11.0.667 https://drive5.com/usearch/download.html
-                DESIREDD
+                DESIRED
 BBMap Suite v38.86 https://sourceforge.net/projects/bbmap/
 BLAST+ v2.10.0 https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download
 MEGAHIT v1.2.9 https://github.com/voutcn/megahit
@@ -202,7 +201,7 @@ MEGAHIT v1.2.9 https://github.com/voutcn/megahit
 +Bowtie2 v2.4.2    have 2.4.1  http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
 +paftools.js       with minimap2 https://github.com/lh3/minimap2/tree/master/misc
 +Cutadapt v2.10    have 2.10    https://cutadapt.readthedocs.io/en/stable/
-                DESIREDD
+                DESIRED
 +pbmm2             have with bioconda https://github.com/PacificBiosciences/pbmm2
 +gcpp v2.0.0       have 1.9.0  with bioconda https://github.com/PacificBiosciences/gcpp
 +GATK 4            have 4.1.6.0 https://github.com/broadinstitute/gatk
@@ -219,10 +218,14 @@ Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/project
 ======= tvanerp_lab #4210
                 REQUIRED
 +fsl 6.0.4         have https://fsl.fmrib.ox.ac.uk/fsldownloads_registration
-afni  v19.0.01     have 20.03.01
++afni  v19.0.01    have 20.03.01
 ants 2.2.0-118     http://picsl.upenn.edu/software/ants/
                    https://brianavants.wordpress.com/2012/04/13/updated-ants-compile-instructions-april-12-2012/
 MRtrix3 3.0.2      https://www.mrtrix.org/
                    https://www.mrtrix.org/download/linux-anaconda/
 ASHS ashs-fastashs/r90 https://www.nitrc.org/projects/ashs/
                    source https://www.nitrc.org/scm/?group_id=370
+
+=========
+
++meme 5.2.0
