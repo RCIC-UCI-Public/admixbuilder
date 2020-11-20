@@ -219,13 +219,12 @@ Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/project
                 REQUIRED
 +fsl 6.0.4         have https://fsl.fmrib.ox.ac.uk/fsldownloads_registration
 +afni  v19.0.01    have 20.03.01
-ants 2.2.0-118     http://picsl.upenn.edu/software/ants/
++ants 2.2.0-118  have 2.2.0   http://picsl.upenn.edu/software/ants/
                    https://brianavants.wordpress.com/2012/04/13/updated-ants-compile-instructions-april-12-2012/
 MRtrix3 3.0.2      https://www.mrtrix.org/
                    https://www.mrtrix.org/download/linux-anaconda/
 ASHS ashs-fastashs/r90 https://www.nitrc.org/projects/ashs/
                    source https://www.nitrc.org/scm/?group_id=370
-
 =========
 
 +meme 5.2.0
