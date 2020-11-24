@@ -88,13 +88,13 @@ OrthoMCL DB  needs mysql access  https://orthomcl.org/orthomcl/
 CALPHAD
 VASPVienna Ab Initio Simulation Package. 
                 DESIRED
-Fluent
++ Fluent          part of Ansys. Installed
 Comsol Multiphysics
-OpenFoam
++ OpenFoam       have openfoam/7
 
 ===== thompson_lab + Sandmeyerlab (GHTF) see #4114/4115 DONE
                 REQUIRED
-+GATK                 have 2.4 and 4.1.6.0
++GATK                 have 2.4 and 4.1.9.0
 +Salmon               have 1.2.1
 +Bowtie2              have 2.4.1
 +BWA                  have 0.7.8
@@ -112,7 +112,7 @@ OpenFoam
 +Python               have 2.7.17 and 3.8.0
 +Perl                 have 5.30.0
 +rMATs                have 4.0.2
-+Homer  NO NO NO NO   NOOOOOOOOOOOOOO!
+-Homer  NO NO NO NO   NOOOOOOOOOOOOOO!
 +bismark              have 0.22.3 https://www.bioinformatics.babraham.ac.uk/projects/bismark/
 +hisat2               have 2.2.1 https://ccb.jhu.edu/software/hisat2/manual.shtml#obtaining-hisat2
 +StringTie            have 2.1.4 https://ccb.jhu.edu/software/stringtie/#install
@@ -144,7 +144,8 @@ WRF            4.0 https://www2.mmm.ucar.edu/wrf/users/downloads.html
 Verdi 
 Kdiff3 
 wgrib
-gdrive
+- gdrive        No longer maintained. Last update 5 years ago. Use rclone instead
+rclone
 
 ===== jranders_lab DONE #4138
                 REQUIRED
@@ -183,7 +184,7 @@ DEXSeq2
                 REQUIRED
 +Diamond v0.9.24   have 2.0.4 https://github.com/bbuchfink/diamond
 -Prinseq v0.20.4 NO, can download 2 perl files to ser area http://prinseq.sourceforge.net/
-Usearch v11.0.667 https://drive5.com/usearch/download.html
++ usearch v11.0.667 https://drive5.com/usearch/download.html
                 DESIRED
 BBMap Suite v38.86 https://sourceforge.net/projects/bbmap/
 BLAST+ v2.10.0 https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download
