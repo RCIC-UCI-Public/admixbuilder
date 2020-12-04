@@ -75,11 +75,10 @@ XPP     6.0               http://www.math.pitt.edu/~bard/xpp/xpp.html
 +RAxML     8.0.0  have 8.2.12 https://cme.h-its.org/exelixis/web/software/raxml/index.html
 +Prodigal    2.6  have 2.6.3  https://github.com/hyattpd/Prodigal/releases/tag/v2.6.3
 +Roary     3.11.2 have 3.13.0 https://sanger-pathogens.github.io/Roary
-                        to add RPM and perl genomics RPMS (perl_5.30.0-baseline-genomics)
 +Qiime2 latest    have 2020.8, https://docs.qiime2.org/2020.6/install/native/ with miniconda3
 -dbCAN2  NO, it s a webserver http://bcb.unl.edu/dbCAN2/
 -Prokka: NO, user needs to do with conda env  https://github.com/tseemann/prokka)
-OrthoMCL DB  needs mysql access  https://orthomcl.org/orthomcl/
+-OrthoMCL DB  needs mysql access  https://orthomcl.org/orthomcl/
 
 ===== valdevit_lab
                 REQUIRED
@@ -105,9 +104,9 @@ Comsol Multiphysics
 +R                    have 3.6.2
 +  ggplot             have 3.3.1
 +  bioconductor       have multiple packages from biocondactor.org repo
-+  seurat             have 3.1.5/3.2.0 add RPM
-+MACS2                have 2.2.7.1 add RPM
-+Bamtools             have 2.5.1 add RPM
++  seurat             have 3.1.5/3.2.0 
++MACS2                have 2.2.7.1 
++Bamtools             have 2.5.1 
 +bedtools             have  2.29.2
 +Python               have 2.7.17 and 3.8.0
 +Perl                 have 5.30.0
@@ -173,21 +172,21 @@ rclone
 +GATK 2.4 4.1.6.0
 +Plink 2.00a2.3
 FastQTL
-PlinkSeq
++PlinkSeq 0.08
 fastMitoCalc is available at https://lgsun.irp.nia.nih.gov/hsgu/software/mitoAnalyzer/index.html
 +Tophat2 2.1.1
 +DESeq2 (with R)
-DEXSeq2
+DEXSeq2 (need to add to R)
 +Cufflinks 2.2.1 (Cuffdiff, Cuffnorm)
 
 ===== Whiteson_lab  #4290
                 REQUIRED
 +Diamond v0.9.24   have 2.0.4 https://github.com/bbuchfink/diamond
 -Prinseq v0.20.4 NO, can download 2 perl files to ser area http://prinseq.sourceforge.net/
-+ usearch v11.0.667 https://drive5.com/usearch/download.html
++usearch v11.0.667 https://drive5.com/usearch/download.html
                 DESIRED
 BBMap Suite v38.86 https://sourceforge.net/projects/bbmap/
-BLAST+ v2.10.0 https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download
+BLAST+ (have blast) v2.10.0 https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download
 MEGAHIT v1.2.9 https://github.com/voutcn/megahit
 
 ======= grylee_lab DONE  #4327
@@ -220,10 +219,9 @@ Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/project
                 REQUIRED
 +fsl 6.0.4         have https://fsl.fmrib.ox.ac.uk/fsldownloads_registration
 +afni  v19.0.01    have 20.03.01
-+ants 2.2.0-118  have 2.2.0   http://picsl.upenn.edu/software/ants/
++ants 2.2.0-118    have 2.2.0   http://picsl.upenn.edu/software/ants/
                    https://brianavants.wordpress.com/2012/04/13/updated-ants-compile-instructions-april-12-2012/
-MRtrix3 3.0.2      https://www.mrtrix.org/
-                   https://www.mrtrix.org/download/linux-anaconda/
++MRtrix3 3.0.2     https://www.mrtrix.org/
 ASHS ashs-fastashs/r90 https://www.nitrc.org/projects/ashs/
                    source https://www.nitrc.org/scm/?group_id=370
 =========
@@ -235,9 +233,8 @@ ASHS ashs-fastashs/r90 https://www.nitrc.org/projects/ashs/
 ViennaRNA https://www.tbi.univie.ac.at/RNA/
 
 ======== rongshej lab #4564
-
+                REQUIRED
 RELION 3.1.0 (https://blog.exxactcorp.com/relion-3-1-0-release/)
 cistem-1.0.0  (https://cistem.org/)
 UCSF chimera-1.15 (https://www.cgl.ucsf.edu/chimera/download.html)
 CryoSPARC Version 2.15 (https://cryosparc.com/)  
-
