@@ -3,7 +3,7 @@
                 REQUIRED
 +ansys                 have 2020R2/2019R2
 
-===== elread_lab
+===== elread_lab R-DONE
                 REQUIRED
 +SmolDyn    2.61       http://www.smoldyn.org/download.html
                 DESIRED 
@@ -13,10 +13,11 @@
 +VCell                 have 7.2.0.39
 MCell       3.4        https://mcell.org/download.html
 
-===== qnie_lab/satwood_lab
+===== qnie_lab/satwood_lab DONE
                 REQUIRED
 +velocyto               have 0.17.17 https://velocyto.org/velocyto.py/install/index.html
-arcasHLA                https://github.com/RabadanLab/arcasHLA
+-arcasHLA                https://github.com/RabadanLab/arcasHLA
+                        no response from the user
 +cellranger 3.0.0/3.1.0 https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/4.0/
                 DESIRED
 +bowtie                 have 1.2.3
@@ -40,7 +41,7 @@ SUNDIALS/4.1.0
                 DESIRED
 PRATT 2.1
 
-===== allison_lab  DONE
+===== allison_lab  R-DONE
                 REQUIRED
 +R 4.0.2        have
     +RStan 2.21 have 2.19 (https://mc-stan.org/users/interfaces/rstan)
@@ -117,7 +118,7 @@ Comsol Multiphysics
 +StringTie            have 2.1.4 https://ccb.jhu.edu/software/stringtie/#install
 +igv                  have 2.8.9 https://software.broadinstitute.org/software/igv/download
 
-===== samuelsen_lab  + shupengz_lab  (need to remove shupengz lab)
+===== samuelsen_lab  + shupengz_lab  (need to remove shupengz lab) R-DONE
                 REQUIRED
 +openmpi-1.8.3/intel-12.0.5  have openmpi-4.0.3/intel/2020u1 
 +hdf5           1.8.13       have hdf5/1.10.5/
@@ -146,13 +147,13 @@ wgrib
 - gdrive        No longer maintained. Last update 5 years ago. Use rclone instead
 rclone
 
-===== jranders_lab DONE #4138
+===== jranders_lab DONE #4138 DONE
                 REQUIRED
 +gdal  3.1.0            have https://gdal.org/download.html#current-releases
 +geos  3.8.1            have https://trac.osgeo.org/geos/
 +R    3.6.2/4.0.2       have
 
-===== Vawter_lab  #4200
+===== Vawter_lab  #4200 R-DONE
                 REQUIRED
 +R >4.0.0   3.6.2/4.0.2       have
 +Python 3 
@@ -179,17 +180,17 @@ fastMitoCalc is available at https://lgsun.irp.nia.nih.gov/hsgu/software/mitoAna
 DEXSeq2 (need to add to R)
 +Cufflinks 2.2.1 (Cuffdiff, Cuffnorm)
 
-===== Whiteson_lab  #4290
+===== Whiteson_lab  #4290 R-DONE
                 REQUIRED
 +Diamond v0.9.24   have 2.0.4 https://github.com/bbuchfink/diamond
 -Prinseq v0.20.4 NO, can download 2 perl files to ser area http://prinseq.sourceforge.net/
 +usearch v11.0.667 https://drive5.com/usearch/download.html
                 DESIRED
 BBMap Suite v38.86 https://sourceforge.net/projects/bbmap/
-BLAST+ (have blast) v2.10.0 https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download
++BLAST+ (have blast) v2.10.0 https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download
 MEGAHIT v1.2.9 https://github.com/voutcn/megahit
 
-======= grylee_lab DONE  #4327
+======= grylee_lab DONE  #4327 R-DONE
                 REQUIRED
 +bwa/0.7.17        have        https://sourceforge.net/projects/bio-bwa/files/
 +samtools/1.11     have 1.10   https://github.com/samtools/samtools
@@ -215,7 +216,7 @@ MAKER v3.01.03                 https://www.yandell-lab.org/software/maker.html
 phantompeakqualtools 1.2.2     https://github.com/kundajelab/phantompeakqualtools
 Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/
 
-======= tvanerp_lab #4210
+======= tvanerp_lab #4210 DONE
                 REQUIRED
 +fsl 6.0.4         have https://fsl.fmrib.ox.ac.uk/fsldownloads_registration
 +afni  v19.0.01    have 20.03.01
