@@ -211,7 +211,7 @@ smrtanalysis/7.0.0             https://www.pacb.com/support/software-downloads/
 repeatmodeler v2.0.1           http://www.repeatmasker.org/RepeatModeler/
 gffread                        https://github.com/gpertea/gffread
 MAKER v3.01.03                 https://www.yandell-lab.org/software/maker.html
-Trinity v2.11.0                https://github.com/trinityrnaseq/trinityrnaseq/releases
++Trinity v2.11.0                https://github.com/trinityrnaseq/trinityrnaseq/releases
 phantompeakqualtools 1.2.2     https://github.com/kundajelab/phantompeakqualtools
 Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/
 
@@ -222,7 +222,7 @@ Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/project
 +ants 2.2.0-118    have 2.2.0   http://picsl.upenn.edu/software/ants/
                    https://brianavants.wordpress.com/2012/04/13/updated-ants-compile-instructions-april-12-2012/
 +MRtrix3 3.0.2     https://www.mrtrix.org/
-ASHS ashs-fastashs/r90 https://www.nitrc.org/projects/ashs/
++ASHS ashs-fastashs/r90 https://www.nitrc.org/projects/ashs/
                    source https://www.nitrc.org/scm/?group_id=370
 =========
 
