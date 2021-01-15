@@ -1,5 +1,4 @@
-
-===== hetaha_lab  DONE
+===== hetaha_lab R-DONE
                 REQUIRED
 +ansys                 have 2020R2/2019R2
 
@@ -13,7 +12,7 @@
 +VCell                 have 7.2.0.39
 MCell       3.4        https://mcell.org/download.html
 
-===== qnie_lab/satwood_lab DONE
+===== qnie_lab/satwood_lab R-DONE
                 REQUIRED
 +velocyto               have 0.17.17 https://velocyto.org/velocyto.py/install/index.html
 -arcasHLA                https://github.com/RabadanLab/arcasHLA
@@ -145,7 +144,7 @@ Verdi
 Kdiff3 
 wgrib
 - gdrive        No longer maintained. Last update 5 years ago. Use rclone instead
-rclone
+- rclone, NO: single binary can be installed in user space
 
 ===== jranders_lab DONE #4138 DONE
                 REQUIRED
@@ -225,23 +224,23 @@ Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/project
 +MRtrix3 3.0.2     https://www.mrtrix.org/
 +ASHS ashs-fastashs/r90 https://www.nitrc.org/projects/ashs/
                    source https://www.nitrc.org/scm/?group_id=370
-=========
-
-+meme 5.2.0
-
 ========= spitale_lab #4534
                 DESIRED 
 ViennaRNA https://www.tbi.univie.ac.at/RNA/
 
 ======== rongshej lab #4564
                 REQUIRED
-+ RELION 3.1.0 (https://blog.exxactcorp.com/relion-3-1-0-release/)
++RELION 3.1.0 (https://blog.exxactcorp.com/relion-3-1-0-release/)
 +cistem-1.0.0  (https://cistem.org/)
 +UCSF chimera-1.15 (https://www.cgl.ucsf.edu/chimera/download.html)
 CryoSPARC Version 2.15 (https://cryosparc.com/)  
 
 ======== joachim lab #4736
                 DESIRED 
-JAGS (latest) https://sourceforge.net/projects/mcmc-jags/
++JAGS (latest) https://sourceforge.net/projects/mcmc-jags/
 Stan (latest) https://mc-stan.org/ cmdstan interface
-libtool-ltdl-devel
++libtool-ltdl-devel
+
+======== users requests for commonly used software
++meme 5.2.0
++subread 2.0.1  ticket #4828 https://sourceforge.net/projects/subread/files/subread-2.0.1/
