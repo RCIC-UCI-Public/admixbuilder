@@ -24,7 +24,7 @@ MCell       3.4        https://mcell.org/download.html
 +boost/1.65.1           have 1.66/1.71
 +hdf5/1.10.0            have 1.10.5
 xerces/3.2.0
-SUNDIALS/4.1.0
++SUNDIALS/4.1.0   have 5.6.1 https://computing.llnl.gov/projects/sundials/sundials-software
 +scanpy                 have in python admx
 +rstudio 1.3            have 1.3.1073
 +julia 1.4              have 1.4.0/1.4.2
@@ -49,7 +49,9 @@ PRATT 2.1
     +Bayesplot (https://mc-stan.org/users/in! terfaces/ bayesplot)
 +Julia 1.4.2    have
                 DESIRED
-XPP     6.0               http://www.math.pitt.edu/~bard/xpp/xpp.html
+-XPP     6.0   NO http://www.math.pitt.edu/~bard/xpp/xpp.html
+               Even the last version 8.0 is too old 2016. USers can compile 
+               a single executable which is a GUI old X-widget style app. 
 
 ===== dtobias_lab  DONE
                 REQUIRED
@@ -85,11 +87,11 @@ XPP     6.0               http://www.math.pitt.edu/~bard/xpp/xpp.html
 +Simulia Abaqus   have 2019
 +LAMMPS           have 3Mar2020
 CALPHAD
-VASPVienna Ab Initio Simulation Package. 
++VASP: Vienna Ab Initio Simulation Package. 
                 DESIRED
-+ Fluent          part of Ansys. Installed
++Fluent          part of Ansys. Installed
 Comsol Multiphysics
-+ OpenFoam       have openfoam/7
++OpenFoam       have openfoam/7
 
 ===== thompson_lab + Sandmeyerlab (GHTF) see #4114/4115 DONE
                 REQUIRED
@@ -226,7 +228,7 @@ Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/project
                    source https://www.nitrc.org/scm/?group_id=370
 ========= spitale_lab #4534
                 DESIRED 
-ViennaRNA https://www.tbi.univie.ac.at/RNA/
++ViennaRNA https://www.tbi.univie.ac.at/RNA/
 
 ======== rongshej lab #4564
                 REQUIRED
