@@ -1,4 +1,4 @@
-===== hetaha_lab R-DONE
+===== hetaha_lab DONE
                 REQUIRED
 +ansys                 have 2020R2/2019R2
 
@@ -35,11 +35,11 @@ MCell       3.4        https://mcell.org/download.html
 -gcc 6.3.x          NO   (the latest version that is matlab mex compatible on linux)
 -gfortran 6.3.x     NO   (the latest version that is matlab mex compatible on linux)
 
-===== cglabe_lab
+===== cglabe_lab DONE
                 REQUIRED
 -Prinseq   NO, can run 2 perl files out of user area
                 DESIRED
-PRATT 2.1
++PRATT 2.1      this is ancient, from last century
 
 ===== allison_lab  R-DONE
                 REQUIRED
