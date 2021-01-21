@@ -41,7 +41,7 @@ MCell       3.4        https://mcell.org/download.html
                 DESIRED
 +PRATT 2.1      this is ancient, from last century
 
-===== allison_lab  R-DONE
+===== allison_lab  DONE
                 REQUIRED
 +R 4.0.2        have
     +RStan 2.21 have 2.19 (https://mc-stan.org/users/interfaces/rstan)
@@ -185,15 +185,15 @@ wgrib
 DEXSeq2 (need to add to R)
 +Cufflinks 2.2.1 (Cuffdiff, Cuffnorm)
 
-===== Whiteson_lab  #4290 R-DONE
+===== Whiteson_lab  #4290 DONE
                 REQUIRED
 +Diamond v0.9.24   have 2.0.4 https://github.com/bbuchfink/diamond
 -Prinseq v0.20.4 NO, can download 2 perl files to ser area http://prinseq.sourceforge.net/
 +usearch v11.0.667 https://drive5.com/usearch/download.html
                 DESIRED
-BBMap Suite v38.86 https://sourceforge.net/projects/bbmap/
++BBMap Suite v38.86 https://sourceforge.net/projects/bbmap/
 +BLAST+ (have blast) v2.10.0 https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download
-MEGAHIT v1.2.9 https://github.com/voutcn/megahit
++MEGAHIT v1.2.9 https://github.com/voutcn/megahit
 
 ======= grylee_lab DONE  #4327 R-DONE
                 REQUIRED
@@ -230,7 +230,8 @@ Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/project
 +MRtrix3 3.0.2     https://www.mrtrix.org/
 +ASHS ashs-fastashs/r90 https://www.nitrc.org/projects/ashs/
                    source https://www.nitrc.org/scm/?group_id=370
-========= spitale_lab #4534
+
+========= spitale_lab #4534  DONE
                 DESIRED 
 +ViennaRNA https://www.tbi.univie.ac.at/RNA/
 
