@@ -214,8 +214,10 @@ DEXSeq2 (need to add to R)
 +MUMmer v4         have 4.0.0  https://github.com/mummer4/mummer
 +macs2 2.2.7.1     have        https://github.com/macs3-project/MACS
 smrtanalysis/7.0.0             https://www.pacb.com/support/software-downloads/
+                   Requires setting up a web server, ports 8243, 9090. dedicated user
+                   may be able to add only tools.
 repeatmodeler v2.0.1           http://www.repeatmasker.org/RepeatModeler/
-gffread                        https://github.com/gpertea/gffread
++gffread                        https://github.com/gpertea/gffread
 MAKER v3.01.03                 https://www.yandell-lab.org/software/maker.html
 +Trinity v2.11.0                https://github.com/trinityrnaseq/trinityrnaseq/releases
 phantompeakqualtools 1.2.2     https://github.com/kundajelab/phantompeakqualtools
