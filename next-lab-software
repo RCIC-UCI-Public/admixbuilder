@@ -244,10 +244,12 @@ Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/project
 +UCSF chimera-1.15 (https://www.cgl.ucsf.edu/chimera/download.html)
 CryoSPARC Version 2.15 (https://cryosparc.com/)  
 
-======== joachim lab #4736
+======== joachim lab #4736 DONE
                 DESIRED 
 +JAGS (latest) https://sourceforge.net/projects/mcmc-jags/
-Stan (latest) https://mc-stan.org/ cmdstan interface
+-Stan (latest) NO https://mc-stan.org/ cmdstan interface
+               stan expects initial and any future compilations to be done from the source dir.
+               not possible to deparate. Thus user install is the only option.
 +libtool-ltdl-devel
 
 ======== users requests for commonly used software
