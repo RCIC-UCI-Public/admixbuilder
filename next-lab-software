@@ -146,8 +146,6 @@ WRF            4.0 https://www2.mmm.ucar.edu/wrf/users/downloads.html
 Verdi 
 Kdiff3 
 wgrib
-- gdrive        No longer maintained. Last update 5 years ago. Use rclone instead
-- rclone, NO: single binary can be installed in user space
 
 ===== jranders_lab DONE #4138 DONE
                 REQUIRED
@@ -166,8 +164,6 @@ wgrib
 +samtools 1.10 (and/or sambamba)
 +Picard tools 1.87
 +STAR 2.7.3a
-+hisat2 2.2.1
-+bowtie2 2.4.1
 +RSEM 1.3.3
 +sra-tools 2.10.4
 +CellRanger 3.0.2 3.1.0
@@ -237,12 +233,18 @@ Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/project
                 DESIRED 
 +ViennaRNA https://www.tbi.univie.ac.at/RNA/
 
-======== rongshej lab #4564
+======== rongshej lab #4564 DONE
                 REQUIRED
 +RELION 3.1.0 (https://blog.exxactcorp.com/relion-3-1-0-release/)
 +cistem-1.0.0  (https://cistem.org/)
 +UCSF chimera-1.15 (https://www.cgl.ucsf.edu/chimera/download.html)
-CryoSPARC Version 2.15 (https://cryosparc.com/)  
+-CryoSPARC Version 2.15 NO (https://cryosparc.com/)  
+ This setup requires master/client configuration, opening port for web access
+ settign up a database, and special scripts for submitting jobs, internal cryosparc
+ scheduler submits job to cluster scheduler, tracking of users accounts, Gpu access on
+ all worker nodes. The cryoSPARC database holds metadata, images, plots and logs of 
+ jobs that have run, have to do a database backup. 
+ See https://guide.cryosparc.com/setup-configuration-and-management/how-to-download-install-and-configure
 
 ======== joachim lab #4736 DONE
                 DESIRED 
