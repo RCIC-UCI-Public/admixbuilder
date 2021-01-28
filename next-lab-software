@@ -15,10 +15,10 @@ MCell       3.4        https://mcell.org/download.html
 ===== qnie_lab/satwood_lab DONE
                 REQUIRED
 +velocyto               have 0.17.17 https://velocyto.org/velocyto.py/install/index.html
++cellranger 3.0.0/3.1.0 https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/4.0/
 -arcasHLA               https://github.com/RabadanLab/arcasHLA
                         Provided a user with commands to instakl and asked to verify 
                         what databases they need.  no response from the user
-+cellranger 3.0.0/3.1.0 https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/4.0/
                 DESIRED
 +bowtie                 have 1.2.3
 +scHLAcount             have 1.1.1 https://github.com/10XGenomics
@@ -43,12 +43,12 @@ MCell       3.4        https://mcell.org/download.html
 
 ===== allison_lab  DONE
                 REQUIRED
++Julia 1.4.2    have
 +R 4.0.2        have
     +RStan 2.21 have 2.19 (https://mc-stan.org/users/interfaces/rstan)
     +CmdStanR (https://mc-stan.org/cmdstanr/)
     +loo 2.3.1 (https://mc-stan.org/users/interfaces/loo)
     +Bayesplot (https://mc-stan.org/users/in! terfaces/ bayesplot)
-+Julia 1.4.2    have
                 DESIRED
 -XPP     6.0   NO http://www.math.pitt.edu/~bard/xpp/xpp.html
                Even the last version 8.0 is too old 2016. USers can compile 
@@ -87,12 +87,12 @@ MCell       3.4        https://mcell.org/download.html
                 REQUIRED
 +Simulia Abaqus   have 2019
 +LAMMPS           have 3Mar2020
-CALPHAD
 +VASP: Vienna Ab Initio Simulation Package. 
+CALPHAD
                 DESIRED
-+Fluent          part of Ansys. Installed
-Comsol Multiphysics
++Fluent         part of Ansys. Installed
 +OpenFoam       have openfoam/7
+Comsol Multiphysics
 
 ===== thompson_lab + Sandmeyerlab (GHTF) see #4114/4115 DONE
                 REQUIRED
@@ -114,11 +114,11 @@ Comsol Multiphysics
 +Python               have 2.7.17 and 3.8.0
 +Perl                 have 5.30.0
 +rMATs                have 4.0.2
--Homer  NO NO NO NO   NOOOOOOOOOOOOOO!
 +bismark              have 0.22.3 https://www.bioinformatics.babraham.ac.uk/projects/bismark/
 +hisat2               have 2.2.1 https://ccb.jhu.edu/software/hisat2/manual.shtml#obtaining-hisat2
 +StringTie            have 2.1.4 https://ccb.jhu.edu/software/stringtie/#install
 +igv                  have 2.8.9 https://software.broadinstitute.org/software/igv/download
+-Homer  NO NO NO NO   NOOOOOOOOOOOOOO!
 
 ===== samuelsen_lab  + shupengz_lab  (need to remove shupengz lab) R-DONE
                 REQUIRED
@@ -133,16 +133,16 @@ Comsol Multiphysics
 +MySQL           5.7.30      have system (mariadb) 5.5.64
 +NCL              6.6.2      have https://www.ncl.ucar.edu/Download/
                 DESIRED
++PyTorch     1.6.0 have 1.5.1 
++sync           have system
++display        have with imagemagick 7.0.10.26
 PseudoNetCDF 3.1.0 https://pypi.org/project/PseudoNetCDF/
 Openpyxl     3.0.5 https://openpyxl.readthedocs.io/en/stable/
 Fuzzywuzzy  0.18.0 https://pypi.org/project/fuzzywuzzy/
 PyNGL & PyNIO      http://www.pyngl.ucar.edu/
-+PyTorch     1.6.0 have 1.5.1 
 AMET           1.4 https://www.epa.gov/cmaq/atmospheric-model-evaluation-tool
 WRF            4.0 https://www2.mmm.ucar.edu/wrf/users/downloads.html
                 DESIRED (shupengz)
-+sync           have system
-+display        have with imagemagick 7.0.10.26
 Verdi 
 Kdiff3 
 wgrib
@@ -172,20 +172,20 @@ wgrib
 +Plink 2.00a2.3
 +FastQTL      have 2.184 http://fastqtl.sourceforge.net
 +PlinkSeq 0.08
++Tophat2 2.1.1
++DESeq2 (with R)
++Cufflinks 2.2.1 (Cuffdiff, Cuffnorm)
 -fastMitoCalc NO  at https://lgsun.irp.nia.nih.gov/hsgu/software/mitoAnalyzer/index.html
               there is a download zip with precompiled binalry and single perl file.
               per tutorial at the above link can also compile a single source file with
               a single command.
-+Tophat2 2.1.1
-+DESeq2 (with R)
 DEXSeq2 (need to add to R)
-+Cufflinks 2.2.1 (Cuffdiff, Cuffnorm)
 
 ===== Whiteson_lab  #4290 DONE
                 REQUIRED
 +Diamond v0.9.24   have 2.0.4 https://github.com/bbuchfink/diamond
--Prinseq v0.20.4 NO, can download 2 perl files to ser area http://prinseq.sourceforge.net/
 +usearch v11.0.667 https://drive5.com/usearch/download.html
+-Prinseq v0.20.4 NO, can download 2 perl files to ser area http://prinseq.sourceforge.net/
                 DESIRED
 +BBMap Suite v38.86 https://sourceforge.net/projects/bbmap/
 +BLAST+ (have blast) v2.10.0 https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download
@@ -209,15 +209,16 @@ DEXSeq2 (need to add to R)
 +GATK 4            have 4.1.6.0 https://github.com/broadinstitute/gatk
 +MUMmer v4         have 4.0.0  https://github.com/mummer4/mummer
 +macs2 2.2.7.1     have        https://github.com/macs3-project/MACS
-smrtanalysis/7.0.0             https://www.pacb.com/support/software-downloads/
-                   Requires setting up a web server, ports 8243, 9090. dedicated user
-                   may be able to add only tools.
 repeatmodeler v2.0.1           http://www.repeatmasker.org/RepeatModeler/
-+gffread                        https://github.com/gpertea/gffread
++gffread                       https://github.com/gpertea/gffread
++Trinity v2.11.0               https://github.com/trinityrnaseq/trinityrnaseq/releases
++Trim Galore 0.6.5 have 0.6.6  https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/
+smrtanalysis/7.0.0             https://www.pacb.com/support/software-downloads/
+                               Requires setting up a web server, ports 8243, 9090. dedicated user
+                               may be able to add only tools.
 MAKER v3.01.03                 https://www.yandell-lab.org/software/maker.html
-+Trinity v2.11.0                https://github.com/trinityrnaseq/trinityrnaseq/releases
-phantompeakqualtools 1.2.2     https://github.com/kundajelab/phantompeakqualtools
-Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/
+-phantompeakqualtools 1.2.2    NO https://github.com/kundajelab/phantompeakqualtools
+                               multiple R packages are installed in user space
 
 ======= tvanerp_lab #4210 DONE
                 REQUIRED
@@ -249,10 +250,10 @@ Trim Galore v0.6.5             https://www.bioinformatics.babraham.ac.uk/project
 ======== joachim lab #4736 DONE
                 DESIRED 
 +JAGS (latest) https://sourceforge.net/projects/mcmc-jags/
++libtool-ltdl-devel
 -Stan (latest) NO https://mc-stan.org/ cmdstan interface
                stan expects initial and any future compilations to be done from the source dir.
                not possible to deparate. Thus user install is the only option.
-+libtool-ltdl-devel
 
 ======== users requests for commonly used software
 +meme 5.2.0
