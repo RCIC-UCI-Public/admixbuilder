@@ -217,6 +217,7 @@ smrtanalysis/7.0.0             https://www.pacb.com/support/software-downloads/
                                Requires setting up a web server, ports 8243, 9090. dedicated user
                                may be able to add only tools.
 MAKER v3.01.03                 https://www.yandell-lab.org/software/maker.html
+    waiting for confirmation from the user
 -phantompeakqualtools 1.2.2    NO https://github.com/kundajelab/phantompeakqualtools
                                multiple R packages are installed in user space
 
