@@ -153,7 +153,7 @@ wgrib
 +geos  3.8.1            have https://trac.osgeo.org/geos/
 +R    3.6.2/4.0.2       have
 
-===== Vawter_lab  #4200 R-DONE
+===== Vawter_lab  #4200 DONE
                 REQUIRED
 +R >4.0.0   3.6.2/4.0.2       have
 +Python 3 
@@ -179,7 +179,7 @@ wgrib
               there is a download zip with precompiled binalry and single perl file.
               per tutorial at the above link can also compile a single source file with
               a single command.
-DEXSeq2 (need to add to R)
++DEXSeq added with R/4.0.4
 
 ===== Whiteson_lab  #4290 DONE
                 REQUIRED
@@ -218,7 +218,7 @@ smrtanalysis/7.0.0             https://www.pacb.com/support/software-downloads/
                                may be able to add only tools.
                                waiting for confirmation from the user
 MAKER v3.01.03                 https://www.yandell-lab.org/software/maker.html
-    waiting for confirmation from the user
+                               waiting for confirmation from the user
 -phantompeakqualtools 1.2.2    NO https://github.com/kundajelab/phantompeakqualtools
                                multiple R packages are installed in user space
 
@@ -261,3 +261,4 @@ MAKER v3.01.03                 https://www.yandell-lab.org/software/maker.html
 +meme 5.2.0
 +subread 2.0.1  ticket #4828 https://sourceforge.net/projects/subread/files/subread-2.0.1/
 +gaussian 16 
++vasp 6.1.2 (src distro from Qomi)
