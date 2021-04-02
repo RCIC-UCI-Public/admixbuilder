@@ -14,7 +14,7 @@ mathlibs-admix
 perl-admix
 rust-admix
 tensorflow-admix
-R-admix
+R4-admix
 biotools-admix
 genomics-admix
 conda-admix
