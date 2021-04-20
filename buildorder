@@ -5,12 +5,12 @@ nfsapps-admix
 foundation-admix
 systools-admix
 buildlibs-admix
+mathlibs-admix
 fileformats-admix
 python-admix
 cuda-admix
 simulations-admix
 bioconda-admix
-mathlibs-admix
 perl-admix
 rust-admix
 tensorflow-admix
