@@ -1,11 +1,11 @@
 yaml2rpm
 buildtools-admix
 gcc-admix
-nfsapps-admix
 foundation-admix
+mathlibs-admix
+nfsapps-admix
 systools-admix
 buildlibs-admix
-mathlibs-admix
 fileformats-admix
 python-admix
 cuda-admix
