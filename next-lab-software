@@ -174,8 +174,8 @@ Separate listing for:
 +java (for Picard-tools, IGV and many others),
 +awk
                 DESIRED
-+bedtools (and/or bedops)   have bedtools 2.29.2
-+samtools (and/or sambamba) have samtools 1.10
++bedtools (and/or bedops)   have bedtools 2.29.2, bedops 2.4.49
++samtools (and/or sambamba) have samtools 1.10, sambamba 08.0 (binary downbload)
 +Picard tools               have 1.87/2.24.1 
 +STAR                       have 2.7.3a
 +RSEM                       have 1.3.3
@@ -189,9 +189,7 @@ Separate listing for:
 +Tophat2                    have 2.1.1
 +DESeq2                     have with R 4.0.2/4.0.4
 +Cufflinks                  have 2.2.1 (Cuffdiff, Cuffnorm)
--fastMitoCalc NO            at https://lgsun.irp.nia.nih.gov/hsgu/software/mitoAnalyzer/index.html
-                            there is a download zip with precompiled binalry and single perl file.
-                            per tutorial at the above link can compile one source file with one command.
++fastMitoCalc               have  https://lgsun.irp.nia.nih.gov/hsgu/software/mitoAnalyzer/index.html
 +DEXSeq                     have with R/4.0.4
 
 ===== Whiteson_lab  #4290 DONE
