@@ -3,7 +3,7 @@ Software requests are in general separated by lab (per ticket)
 Lines are: 
 (x)package name | verison if available in request | comment
 x == + means installed
-x == - means will nott be installed
+x == - means will not be installed
 x == ? means under consideration if need is proved by the user
 
 Separate listing for:
@@ -39,7 +39,7 @@ Separate listing for:
 +hdf5/1.10.0            have 1.10.5
 +xerces/3.2.0           have 3.2.3 http://xerces.apache.org/xerces-c/
 +SUNDIALS/4.1.0         have 5.6.1 https://computing.llnl.gov/projects/sundials/sundials-software
-+scanpy                 have with python
+-scanpy                 have in biotools-admix, see sunset
 +rstudio 1.3            have 1.3.1073
 +julia 1.4              have 1.4.0/1.4.2
 +R 4.0.2                have 4.0.2/4.0.4
@@ -50,7 +50,7 @@ Separate listing for:
 
 ===== cglabe_lab DONE
                 REQUIRED
--Prinseq   NO, can run 2 perl files out of user area
+-Prinseq    NO  can run 2 perl files out of user area
                 DESIRED
 +PRATT 2.1      this is ancient, from last century
 
@@ -273,3 +273,8 @@ repeatmodeler v2.0.1           http://www.repeatmasker.org/RepeatModeler/
 +subread 2.0.1      ticket #4828 https://sourceforge.net/projects/subread/files/subread-2.0.1/
 +gaussian 16        NFS install
 +vasp 6.1.2         NFS install, src distro from Qomi
+
+======== Software sunset
+scanpy     in biotools-admix. As original build it does not work
+           because there are requirements missing. Nobody used 
+           or complained. Add abd renew build when users need it. 
