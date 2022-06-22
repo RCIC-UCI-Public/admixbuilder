@@ -62,7 +62,7 @@ class Node(object):
         provlist = provlist + "\n</TD></TR>"       
         print ('%s [shape=plaintext, %s' % (self.mangleName(),self.labelheader))
         print ('%s%s%s%s]' % (self.namepattern % self.name, reqlist, provlist,self.labeltrailer))
-	edgenames = map(lambda x: x.mangleName(), self.edges)
+        edgenames = map(lambda x: x.mangleName(), self.edges)
         for edge in edgenames:
             print ("%s -> %s;" % (self.mangleName(), edge))
 
@@ -82,7 +82,7 @@ providers = []
 for am in admixes.keys():
    p = admixes[am]['provides']
    if p is not None:
-	providers.extend([(mod, am) for mod in p])
+      providers.extend([(mod, am) for mod in p])
 
 # Create a dictionary the maps provides to admix names.
 provlist = { x[0]:x[1] for x in providers }
@@ -96,7 +96,7 @@ for node in nodes:
     ## don't fail if there is no admix the provides the module (might be system provided)
     reqsByAdmix = []
     if reqs is not None:
-    	for r in reqs:
+        for r in reqs:
             try:
                 providerAdmix = provlist[r]
                 if providerAdmix not in reqsByAdmix:
@@ -104,10 +104,9 @@ for node in nodes:
             except:
                 pass
     ## remove self-dependency
-    edges = filter(lambda x: x != node.name, reqsByAdmix) 
-
+    edges = list(filter(lambda x: x != node.name, reqsByAdmix)) 
     for edge in edges:
-	edgeNode = filter(lambda x: x.name == edge, nodes)[0]
+        edgeNode = list(filter(lambda x: x.name == edge, nodes))[0]
         node.addEdge(edgeNode)
     # node.printNode()
 resolved = []
