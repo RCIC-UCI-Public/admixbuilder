@@ -3,386 +3,627 @@ yaml2rpm:
 
 
   provides:
-     - yaml2rpm
 
 biotools-admix:
   requires:
 
+     - bcftools/1.10.2
+     - bcftools/1.15.1
      - boost/1.66.0/gcc.8.4.0
+     - boost/1.78.0/gcc.11.2.0
      - bowtie2/2.4.1
+     - bowtie2/2.4.5
      - eigen/3.3.7
-     - foundation
+     - foundation/v8
+     - gcc/11.2.0
      - gcc/8.4.0
      - gsl/2.6/gcc.8.4.0
+     - gsl/2.7.1/gcc.11.2.0
      - hdf5/1.10.5/gcc.8.4.0
+     - hdf5/1.13.1/gcc.11.2.0
      - hmmer/3.3
      - htslib/1.10.2
+     - htslib/1.15.1
      - intel-tbb/20190605
-     - java/1.7.0
+     - isal/2.30.0
+     - java/11
+     - java/17
      - java/1.8.0
+     - jsoncpp/1.9.4
+     - jsoncpp/1.9.5
+     - libdeflate/1.10
      - ncbi-blast/2.10.0
+     - ncbi-blast/2.13.0
      - ncbi-ngs/2.10.2
+     - openmpi/4.0.3/gcc.8.4.0
+     - openmpi/4.1.2/gcc.11.2.0
      - perl/5.30.0
-     - pilon/1.23
-     - protobuf/3.11.4
+     - perl/5.34.1
      - python/2.7.17
+     - python/3.10.2
      - python/3.8.0
-     - R/3.6.2
+     - R/4.0.4
      - racon/1.4.13
+     - racon/1.5.0
      - samtools/1.10
+     - samtools/1.15.1
      - SPAdes/3.14.0
+     - SPAdes/3.15.4
      - trf/4.0.9
   provides:
-     - biotools-admix
-     - bandage/0.8.1
+     - bamtools/2.5.1
+     - bamtools/2.5.2
      - bcftools/1.10.2
+     - bcftools/1.15.1
      - bedtools2/2.29.2
+     - bedtools2/2.30.0
      - bowtie/1.2.3
      - bowtie2/2.4.1
+     - bowtie2/2.4.4
+     - bowtie2/2.4.5
+     - bowtie2-python2/2.4.1
      - bustools/0.40.0
      - bwa/0.7.17
      - bwa/0.7.8
      - cufflinks/2.2.1
-     - edirect/1.0
+     - cutadapt/2.10
+     - cutadapt/4.0
+     - deeptools/3.5.0
+     - deeptools/3.5.1
+     - edirect/2020
+     - edirect/2022
      - fastp/0.20.0
+     - fastp/0.23.2
      - fastqc/0.11.9
      - freebayes/1.3.2
-     - gatk/2.4
-     - gatk/4.1.6.0
+     - gatk/4.1.9.0
+     - gatk/4.2.6.1
      - hmmer/3.3
      - htslib/1.10.2
+     - htslib/1.15.1
+     - isal/2.30.0
+     - Jellyfish/2.3.0
+     - jsoncpp/1.9.4
+     - jsoncpp/1.9.5
      - kallisto/0.46.2
-     - mapDamage/2.2.0
+     - kallisto/0.48.0
+     - libdeflate/1.10
+     - macs/2.2.7.1
+     - meme/5.2.0
+     - meme/5.4.1
      - minimap2/2.17
+     - minimap2/2.24
      - ncbi-blast/2.10.0
+     - ncbi-blast/2.13.0
      - ncbi-ngs/2.10.2
      - ncbi-vdb/2.10.2
      - picard-tools/1.87
+     - picard-tools/2.26.10
+     - picard-tools/2.27.1
      - pilon/1.23
-     - qtltools/1.3
+     - pilon/1.24
      - racon/1.4.13
+     - racon/1.5.0
      - repeatmasker/4.1.0
      - rsem/1.3.3
      - salmon/1.2.1
+     - salmon/1.8.0
      - samtools/1.10
-     - smoldyn/2.61
+     - samtools/1.15.1
      - SPAdes/3.14.0
-     - sra-tools/2.10.4
+     - SPAdes/3.15.4
+     - sra-tools/2.10.9
+     - sra-tools/2.11.3
+     - star/2.7.10a
      - star/2.7.3a
-     - stitch/1.6.3
+     - star/2.7.8a
+     - subread/2.0.1
+     - subread/2.0.3
      - tophat/2.1.1
-     - transdecoder/5.5.0
      - trf/4.0.9
+     - trimgalore/0.6.6
+     - trimgalore/0.6.7
+     - trinity/2.8.6
      - ucsc-tools/v393
+     - ucsc-tools/v429
      - unicycler/0.4.8
-     - vcflib/1.0.1
+     - unicycler/0.5.0
      - vcftools/0.1.16
-     - vg/1.23.0
 buildlibs-admix:
   requires:
-     - foundation
+
+     - foundation/v8
+     - gcc/11.2.0
+     - gcc/6.5.0
      - gcc/8.4.0
+     - gcc/system
      - intel/2020u1
-     - llvm/10.0.0
+     - intel/2022.2
+     - llvm/11.1.0
+     - llvm/13.0.0
+     - openmpi/4.0.3/gcc.8.4.0
+     - openmpi/4.1.2/gcc.11.2.0
      - singularity/3.4.1
+     - singularity/3.9.4
+     - ucx/1.12.0
+     - ucx/1.8.0
   provides:
-     - buildlibs-admix
+     - boost/1.50.0/gcc.8.4.0
      - boost/1.66.0/gcc.8.4.0
      - boost/1.71.0/gcc.8.4.0
-     - clang/10.0.0
-     - fftw/3.3.8
+     - boost/1.78.0/gcc.11.2.0
+     - boost/1.78.0/gcc.8.4.0
+     - clang/11.1.0
+     - clang/13.0.0
+     - fftw/3.3.10/gcc.11.2.0
+     - fftw/3.3.10/gcc.11.2.0-openmpi.4.1.2
+     - fftw/3.3.8/gcc.8.4.0
+     - fftw/3.3.8/gcc.8.4.0-openmpi.4.0.3
+     - fftw/3.3.8/gcc.system
+     - geos/3.10.2
      - geos/3.8.1
-     - llvm/10.0.0
+     - lapack/3.9.0
+     - llvm/11.1.0
+     - llvm/13.0.0
      - llvm/9.0.1
      - mpich/3.3.2/gcc.8.4.0
-     - mpich/3.3.2/intel.2020u1
+     - mpich/3.4/gcc.8.4.0
+     - mpich/3.4/intel.2020u1
+     - mpich/4.0/gcc.11.2.0
+     - mpich/4.0/intel.2022.2
+     - openmpi/4.0.3/gcc.6.5.0
      - openmpi/4.0.3/gcc.8.4.0
      - openmpi/4.0.3/intel.2020u1
+     - openmpi/4.1.2/gcc.11.2.0
+     - openmpi/4.1.2/gcc.8.4.0
+     - openmpi/4.1.2/intel.2022.2
      - protobuf/3.11.4
-     - xz/5.2.4
+     - protobuf/3.19.4
+     - scalapack/2.1.0
+     - ucx/1.12.0
+     - ucx/1.8.0
+     - xz/5.2.5
 buildtools-admix:
   requires:
 
-     - tcl/8.6.9
+     - go/1.17.7
+     - tcl/8.6.12
   provides:
-     - buildtools-admix
-     - gcc/4.8.5
+     - gcc/system
+     - go/1.17.7
      - icu/65.1
+     - icu/70.1
+     - intel/2020u1
+     - intel/2022.2
      - intel-tbb/20190605
+     - intel-tbb/2021.5.0
      - java/11
-     - java/1.7.0
+     - java/17
      - java/1.8.0
      - likwid/5.0.1
-     - openmpi/1.10.7/gcc.4.8.5
+     - likwid/5.2.1
+     - lz4/1.9.3
+     - openmpi/4.1.1/gcc.system
      - parallel/20200222
+     - parallel/20211222
+     - singularity/3.4.1
+     - singularity/3.7.2
+     - singularity/3.9.4
+     - tcl/8.6.12
      - tcl/8.6.9
-     - tk/8.6.9
+     - tk/8.6.12
 chemistry-admix:
   requires:
 
-     - boost/1.66.0/gcc.8.4.0
      - charm/6.10.1/gcc.8.4.0
      - cuda/10.1.243
-     - eigen/3.3.7
-     - foundation
+     - cuda/11.4.0
+     - ffmpeg/4.1.3
+     - fftw/3.3.10/gcc.11.2.0
+     - fftw/3.3.8/gcc.8.4.0
+     - foundation/v8
+     - gcc/11.2.0
      - gcc/8.4.0
+     - gsl/2.6/gcc.8.4.0
+     - gsl/2.7.1/gcc.11.2.0
+     - hdf5/1.10.5/gcc.8.4.0
+     - hdf5/1.13.1/gcc.11.2.0
      - mkl/2019.5.281
+     - netcdf-c/4.7.0/gcc.8.4.0
+     - netcdf-c/4.8.1/gcc.11.2.0
      - openmpi/4.0.3/gcc.8.4.0
+     - openmpi/4.1.2/gcc.11.2.0
+     - openmpi/4.1.2/gcc.8.4.0
+     - plumed/2.6.1/gcc.8.4.0-openmpi.4.0.3
+     - python/3.10.2
      - python/3.8.0
-     - wxWidgets/3.1.3
   provides:
-     - chemistry-admix
      - amber/19.11/gcc.8.4.0
+     - amber/21.12/gcc.11.2.0
      - charm/6.10.1/gcc.8.4.0
-     - charm/6.10.1/gcc.8.4.0-openmpi.4.0.3
-     - gromacs/2019.4/gcc.8.4.0
-     - gromacs/2019.4/gcc.8.4.0-openmpi.4.0.3
-     - gromacs/2020/gcc.8.4.0
-     - gromacs/2020/gcc.8.4.0-openmpi.4.0.3
-     - mdanalysis/0.20.1
+     - charm/7.0.0/gcc.11.2.0
+     - gromacs/2020.4/gcc.8.4.0
+     - gromacs/2020.4/gcc.8.4.0-cuda.10.1.243
+     - gromacs/2020.4/gcc.8.4.0-cuda.10.1.243.openmpi.4.0.3
+     - gromacs/2020.4/gcc.8.4.0-cuda.10.1.243.openmpi.4.0.3.plumed.2.6.1
+     - gromacs/2020.4/gcc.8.4.0-openmpi.4.0.3
+     - gromacs/2021.2/gcc.8.4.0
+     - gromacs/2021.2/gcc.8.4.0-cuda.10.1.243
+     - gromacs/2021.2/gcc.8.4.0-cuda.10.1.243.openmpi.4.0.3
+     - gromacs/2021.2/gcc.8.4.0-openmpi.4.0.3
+     - gromacs/2022.1/gcc.8.4.0
+     - gromacs/2022.1/gcc.8.4.0-cuda.11.4.0
+     - gromacs/2022.1/gcc.8.4.0-cuda.11.4.0.openmpi.4.1.2
+     - gromacs/2022.1/gcc.8.4.0-openmpi.4.1.2
+     - lammps/29Sep2021/gcc.11.2.0
+     - lammps/3Mar2020/gcc.8.4.0
      - mdtraj/1.9.3
+     - mdtraj/1.9.7
      - namd/2.14b2/gcc.8.4.0
      - namd/2.14b2/gcc.8.4.0-cuda.10.1.243
      - namd/2.14b2/gcc.8.4.0-openmpi.4.0.3
-     - openbabel/3.0.0
-     - openeye-toolkits/2019.10.2
-     - openmm/7.4.1
-     - openmoltools/0.8.6
-     - pyemma/2.5.7
-     - wxWidgets/3.1.3
+     - plumed/2.6.1/gcc.8.4.0-openmpi.4.0.3
+     - plumed/2.8.0/gcc.11.2.0
+     - plumed/2.8.0/gcc.11.2.0-openmpi.4.1.2
 conda-admix:
   requires:
 
 
   provides:
-     - conda-admix
-     - anaconda/2019.10
+     - anaconda/2020.07
+     - anaconda/2021.11
+     - anaconda/2022.05
 cuda-admix:
   requires:
 
-     - cuda/10.1.243_418.87.00
-  provides:
-     - cuda-admix
      - cuda/10.1.243
+     - cuda/11.4.0
+  provides:
+     - cuda/10.1.243
+     - cuda/11.4.0
      - ffmpeg/0.10.16
      - ffmpeg/1.2.12
      - ffmpeg/4.1.3
 fileformats-admix:
   requires:
 
-     - gcc/4.8.5
+     - foundation/v8
+     - gcc/11.2.0
      - gcc/8.4.0
-     - hdf5/1.10.5/gcc.4.8.5
+     - gcc/system
+     - gsl/2.6/gcc.8.4.0
+     - gsl/2.7.1/gcc.11.2.0
      - hdf5/1.10.5/gcc.8.4.0
      - hdf5/1.10.5/intel.2020u1
+     - hdf5/1.13.1/gcc.11.2.0
+     - hdf5/1.13.1/intel.2022.2
      - intel/2020u1
+     - intel/2022.2
+     - java/17
      - java/1.8.0
-     - netcdf-c/4.7.0/gcc.4.8.5
      - netcdf-c/4.7.0/gcc.8.4.0
      - netcdf-c/4.7.0/intel.2020u1
-     - openmpi/1.10.7/gcc.4.8.5
+     - netcdf-c/4.8.1/gcc.11.2.0
+     - netcdf-c/4.8.1/intel.2022.2
      - openmpi/4.0.3/gcc.8.4.0
      - openmpi/4.0.3/intel.2020u1
+     - openmpi/4.1.1/gcc.system
+     - openmpi/4.1.2/gcc.11.2.0
+     - openmpi/4.1.2/intel.2022.2
+     - udunits/2.2.26/gcc.8.4.0
+     - udunits/2.2.28/gcc.11.2.0
   provides:
-     - fileformats-admix
-     - hdf5/1.10.5/gcc.4.8.5
-     - hdf5/1.10.5/gcc.4.8.5-openmpi.1.10.7
      - hdf5/1.10.5/gcc.8.4.0
      - hdf5/1.10.5/gcc.8.4.0-openmpi.4.0.3
+     - hdf5/1.10.5/gcc.system
+     - hdf5/1.10.5/gcc.system-openmpi.4.1.1
      - hdf5/1.10.5/intel.2020u1
      - hdf5/1.10.5/intel.2020u1-openmpi.4.0.3
-     - ioapi/3.2/gcc.4.8.5
-     - ioapi/3.2/gcc.8.4.0
+     - hdf5/1.13.1/gcc.11.2.0
+     - hdf5/1.13.1/gcc.11.2.0-openmpi.4.1.2
+     - hdf5/1.13.1/gcc.system
+     - hdf5/1.13.1/gcc.system-openmpi.4.1.1
+     - hdf5/1.13.1/intel.2022.2
+     - hdf5/1.13.1/intel.2022.2-openmpi.4.1.2
+     - ioapi/3.2/gcc.11.2.0
      - ioapi/3.2/intel.2020u1
-     - netcdf-c/4.7.0/gcc.4.8.5
+     - ioapi/3.2/intel.2022.2
+     - nco/4.9.6/gcc.8.4.0
+     - nco/5.0.6/gcc.11.2.0
      - netcdf-c/4.7.0/gcc.8.4.0
      - netcdf-c/4.7.0/intel.2020u1
-     - udunits/2.2.26/gcc.4.8.5
+     - netcdf-c/4.8.1/gcc.11.2.0
+     - netcdf-c/4.8.1/intel.2022.2
      - udunits/2.2.26/gcc.8.4.0
      - udunits/2.2.26/intel.2020u1
+     - udunits/2.2.28/gcc.11.2.0
+     - udunits/2.2.28/intel.2022.2
 foundation-admix:
   requires:
 
-     - foundation
-     - go
+     - foundation/v7
+     - foundation/v8
+     - go/1.17.7
   provides:
-     - foundation-admix
-     - foundation
+     - cmake/3.20.5
+     - cmake/3.22.1
+     - foundation/v7
+     - foundation/v8
      - scons/3.1.1
+     - scons/4.2.0
 gcc-admix:
   requires:
 
+     - gcc/11.2.0
      - gcc/6.5.0
      - gcc/8.4.0
   provides:
-     - gcc-admix
+     - gcc/11.2.0
      - gcc/6.5.0
      - gcc/8.4.0
 mathlibs-admix:
   requires:
 
-     - foundation
+     - foundation/v8
+     - gcc/11.2.0
      - gcc/8.4.0
-     - mkl/2019.5.281
   provides:
-     - mathlibs-admix
      - eigen/3.3.7
+     - eigen/3.4.0
      - gsl/2.6/gcc.8.4.0
+     - gsl/2.7.1/gcc.11.2.0
      - mkl/2019.5.281
+     - OpenBLAS/0.3.19
      - OpenBLAS/0.3.6
-     - suitesparse/5.7.1
 perl-admix:
   requires:
 
 
   provides:
-     - perl-admix
      - perl/5.30.0
+     - perl/5.34.1
 python-admix:
   requires:
 
-     - hdf5/1.10.5/gcc.4.8.5
+     - foundation/v8
+     - gcc/system
+     - hdf5/1.10.5/gcc.system
+     - hdf5/1.13.1/gcc.system
+     - intel-tbb/20190605
+     - intel-tbb/2021.5.0
+     - llvm/11.1.0
+     - llvm/9.0.1
      - python/2.7.17
+     - python/3.10.2
      - python/3.8.0
   provides:
-     - python-admix
      - python/2.7.17
+     - python/3.10.2
      - python/3.8.0
-R-admix:
+R4-admix:
   requires:
 
+     - gcc/11.2.0
+     - gcc/8.4.0
+     - java/17
      - java/1.8.0
+     - OpenBLAS/0.3.19
      - OpenBLAS/0.3.6
-     - R/3.6.2
-     - R/4.0.2
+     - R/4.0.4
+     - R/4.1.2
   provides:
-     - R-admix
-     - R/3.6.2
-     - R/4.0.2
+     - R/4.0.4
+     - R/4.1.2
+     - rstudio/1.4.1106
+     - rstudio/2022.02.1.461
 systools-admix:
   requires:
 
-     - go/1.13
+     - go/1.17.7
   provides:
-     - systools-admix
-     - go/1.13
-     - singularity/3.4.1
+
 tensorflow-admix:
   requires:
 
+     - java/11
+     - python/3.10.2
      - python/3.8.0
   provides:
-     - tensorflow-admix
      - bazel/0.26.1
+     - bazel/4.2.2
      - tensorflow/2.0.0
-     - tensorRT/6.0.1.5
-parallel-admix:
-  requires:
-
-     - foundation
-  provides:
-     - parallel-admix
-     - computecpp/1.3.0
-     - OpenCL/2.2
+     - tensorflow/2.8.0
+     - tensorRT/8.2.3.0
 pytorch-admix:
   requires:
 
      - cuda/10.1.243
+     - cuda/11.4.0
      - ffmpeg/4.1.3
-     - fftw/3.3.8
-     - foundation
+     - fftw/3.3.8/gcc.8.4.0
+     - foundation/v8
      - gcc/8.4.0
      - mkl/2019.5.281
+     - python/3.10.2
      - python/3.8.0
+     - pytorch/1.11.0
      - pytorch/1.5.1
   provides:
-     - pytorch-admix
+     - pytorch/1.11.0
      - pytorch/1.5.1
 bioconda-admix:
   requires:
 
 
   provides:
-     - bioconda-admix
      - bioconda/4.8.3
+     - miniconda3/4.12.0
+     - miniconda3/4.8.5
+     - qiime2/2020.8
+     - qiime2/2021.2
+     - qiime2/2022.2
 nfsapps-admix:
   requires:
 
 
   provides:
-     - nfsapps-admix
+     - ansys/2019R2
+     - ansys/2020R2
      - cellranger/3.0.2
      - cellranger/3.1.0
-     - intel/2020u1
+     - cellranger/6.1.2
+     - freesurfer/6.0.1
+     - freesurfer/7.1.1
+     - freesurfer/7.2.0
+     - fsl/6.0.4
+     - gaussian/16
      - marc/2020
      - MATLAB/R2020a
-     - oneAPI/2021.1_beta05
-     - schrodinger/2020.1
+     - MATLAB/R2020b
+     - MATLAB/R2021b
+     - mentat/2020
+     - sas/94M7
      - stata/16
+     - stata/17
+     - turbomole/7.5
+     - turbomole/7.6
+     - turbomole-smp/7.5
+     - turbomole-smp/7.6
+     - vasp/5.4.4
+     - vasp/6.1.2
 julia-admix:
   requires:
 
 
   provides:
-     - julia-admix
-     - julia/1.4.2
+     - julia/1.5.1
+     - julia/1.6.0
+     - julia/1.7.1
 simulations-admix:
   requires:
 
-     - ffmpeg/4.1.3
-     - foundation
+     - foundation/v8
+     - gcc/11.2.0
      - gcc/8.4.0
-     - gdal/3.1.0
-     - intel-tbb/20190605
-     - openmpi/4.0.3/gcc.8.4.0
+     - geos/3.10.2
+     - geos/3.8.1
      - proj/6.3.2
-     - python/3.8.0
+     - proj/9.0.0
      - sqlite3/3.32.3
+     - sqlite3/3.38.2
   provides:
-     - simulations-admix
+     - aria2/1.36.0
      - gdal/3.1.0
-     - opensees/3.1.0
-     - paraview/5.8.0
+     - gdal/3.4.1
+     - jags/4.3.0
+     - opensees/3.3.0
+     - opensees/3.4.0
      - proj/6.3.2
-     - scotch/6.0.9
+     - proj/9.0.0
      - sqlite3/3.32.3
+     - sqlite3/3.38.2
 rust-admix:
   requires:
 
-     - foundation
-     - gcc/8.4.0
-     - llvm/10.0.0
+     - foundation/v8
+     - gcc/11.2.0
+     - llvm/13.0.0
   provides:
-     - rust-admix
-     - rustc/1.45.0
+     - rustc/1.62.0
 genomics-admix:
   requires:
 
-     - foundation
+     - foundation/v8
+     - gcc/11.2.0
      - gcc/8.4.0
-     - llvm/9.0.1
+     - gsl/2.6/gcc.8.4.0
+     - gsl/2.7.1/gcc.11.2.0
+     - java/17
+     - java/1.8.0
      - mkl/2019.5.281
+     - ncbi-ngs/2.10.2
+     - ncbi-vdb/2.10.2
      - perl/5.30.0
+     - perl/5.34.1
+     - python/3.10.2
      - python/3.8.0
-     - rustc/1.45.0
   provides:
-     - genomics-admix
+     - bbmap/38.87
+     - bbmap/38.96
+     - bedops/2.4.39
+     - biom-format/2.1.12
+     - bionetgen/2.5.1
+     - bionetgen/2.8.0
+     - bismark/0.22.3
+     - bismark/0.23.1
+     - bracken/2.6.0
+     - bracken/2.6.2
      - canu/2.0
      - cdhit/4.8.1
+     - cmseq/1.0.4
+     - dendropy/4.5.2
+     - diamond/2.0.15
+     - diamond/2.0.4
      - fasttree/2.1.11
-     - flye/2.7.1
+     - glpk/5.0
+     - hclust2/1.0.0
+     - hisat2/2.2.1
+     - humann/3.0.1
+     - igv/2.12.3
+     - igv/2.8.9
      - imagemagick/7.0.10.26
+     - imagemagick/7.1.0.30
+     - kneaddata/0.10.0
+     - kraken2/2.1.1
+     - kraken2/2.1.2
      - loompy/3.0.6
      - mafft/7.471
      - mcl/14.137
+     - megahit/1.2.9
+     - metaphlan/3.0.14
+     - midas/1.3.2
      - mummer/4.0.0
-     - numba/0.50.1
+     - phylophlan/3.0.2
      - plink/2.00a2.3
      - prank/170427
      - prodigal/2.6.3
-     - raxml/8.2.12
-     - rMATS/4.0.2
+     - rMATS/4.1.0
+     - rMATS/4.1.1
+     - rMATS/4.1.2
      - roary/3.13.0
-     - scHLAcount/0.1.1
+     - stringtie/2.1.4
+     - stringtie/2.2.1
+     - trimmomatic/0.39
      - velocyto/0.17.17
-created: 2020-09-01
+imaging-admix:
+  requires:
+
+     - eigen/3.3.7
+     - fftw/3.3.8/gcc.8.4.0
+     - foundation/v8
+     - freetype/2.10.2
+     - gcc/6.5.0
+     - gcc/8.4.0
+     - gcc/system
+     - gsl/2.6/gcc.8.4.0
+     - hdf4/4.2.15
+     - libjpeg/9d
+     - libpng/1.6.37
+     - netcdf-c/4.7.0/gcc.8.4.0
+     - python/3.8.0
+     - szip/2.1.1
+     - udunits/2.2.26/gcc.8.4.0
+  provides:
+     - afni/20.3.01
+     - afni/22.1.09
+     - ants/2.2.0
+     - ants/2.3.5
+     - freetype/2.10.2
+     - hdf4/4.2.15
+     - libjpeg/9d
+     - libpng/1.6.37
+     - mrtrix3/3.0.2
+     - mrtrix3/3.0.3
+     - ncl/6.6.2
+     - szip/2.1.1
+created: 2022-07-27
