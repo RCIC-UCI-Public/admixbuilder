@@ -16,6 +16,8 @@ ADMIXDIRS = $(patsubst, %, $(ADMIXROOT)%,$(ADMIXES))
 PWD := $(shell pwd)
 BUILDORDER = $(shell cat buildorder)
 
+DOTFILES = dot-buildorder dot-byadmix dot-bycategory
+
 .PHONY: force
 
 deplist2.yaml:
@@ -30,8 +32,14 @@ deplist.yaml:
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am module-requires-provides >> $@; done 
 	echo "created: $$(date +%F)" >> $@
 
-dot: deplist.yaml
+dot: deplist.yaml deplist2.yaml
 	./depend.py 
+
+dotpdf:
+	( for df in $(DOTFILES); do					\
+		if [ -f $$df ]; then dot -Tpdf $$df -o $$df.pdf; fi ;	\
+	  done								\
+        )
 
 ansible: $(ANSIBLEDIR) force
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am ansible > $(ANSIBLEDIR)/$$am.yml; done 
