@@ -18,6 +18,12 @@ BUILDORDER = $(shell cat buildorder)
 
 .PHONY: force
 
+deplist2.yaml:
+	- /bin/rm $@
+	echo "### Scanning admixes for module-requires-provides-category ###"
+	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am module-requires-provides-category >> $@; done
+	echo "created: $$(date +%F)" >> $@
+
 deplist.yaml: 
 	- /bin/rm $@
 	echo "### Scanning admixes for module-requires-provides ###"
