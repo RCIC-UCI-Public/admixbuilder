@@ -45,6 +45,11 @@ class Category(object):
     def getCategoryEdges(self):
         return self.edges
 
+    def orderCategoryModules(self):
+        # rm duplicates
+        self.requires = list(OrderedDict.fromkeys(self.requires))
+        self.provides = list(OrderedDict.fromkeys(self.provides))
+
     def printCategoryDotHeader(self):
         title = "Software Modules by Category (%s)\n\nReusable  packages  created  with  yaml2rpm\nhttps://github.com/RCIC-UCI-Public/yaml2rpm\n\n" % self.created
 
@@ -111,15 +116,16 @@ class Category(object):
         txt += "\n"
         return txt
 
-class Node(object):
-    def __init__(self,name,admixes,created):
+class Admix(object):
+    def __init__(self,name,info,created):
         self.name = name
         self.edges = []
         self.requires = []
         self.provides = []
         self.requires_category = {}
         self.provides_category = {}
-        self.created = created;
+        self.created = created
+        self.packages = []
 
         self.colorTitle = "dodgerblue4"     # graph title
         self.colorSpecs = "blue"            # for requires: and provides:
@@ -130,32 +136,47 @@ class Node(object):
         self.labeltrailer = "</TABLE>>"
         self.namepattern = '<TR><TD bgcolor="%s"><font point-size="16" face="Times-Bold">%s</font></TD></TR>\n'
 
-        if name in admixes.keys():
-           requires = admixes[name]['requires']
-           provides = admixes[name]['provides']
-           (self.requires, self.requires_category) = self.extractAdmixInfo(requires)
-           (self.provides, self.provides_category) = self.extractAdmixInfo(provides)
+        self.processInfo(info)
 
-    def extractAdmixInfo(self, admixModlist):
-        r = []
-        modules = []
-        modulesByCategory = {}
-        if admixModlist:  # modules list from admix, either provides or requires
-            try:
-                admixModlist[0].split()
-                for i in admixModlist:
-                    r_modname,r_modcat = i.split()
-                    r.append(r_modname)
-                    if r_modcat in modulesByCategory.keys():
-                        modulesByCategory[r_modcat].append(r_modname)
+    def processInfo(self,info):
+        for key, value in info.items():
+            self.packages.append(key)
+            provides = value['provides']  # is a list with a single item
+            requires = value['requires']  # is a list with 0 or more items
+            category = value['category']
+            if provides:
+                provides = self.checkExceptions(provides)
+                self.provides += provides
+            if requires:
+                self.requires += requires
+            if category: 
+                if category in self.provides_category.keys():
+                    # dont add if already present
+                    if provides[0] not in self.provides_category[category]:
+                        self.provides_category[category] += provides
+                else:
+                    self.provides_category[category] = provides
+
+                if requires: 
+                    if category in self.requires_category.keys():
+                        self.requires_category[category] += requires
                     else:
-                        modulesByCategory[r_modcat] = [r_modname]
-            except:
-                for i in admixModlist:
-                    r.append(i)
-        # remove duplicates
-        modules = list(OrderedDict.fromkeys(r))
-        return (modules, modulesByCategory)
+                        self.requires_category[category] = requires
+
+        self.requires = list(OrderedDict.fromkeys(self.requires))
+        self.provides = list(OrderedDict.fromkeys(self.provides))
+
+    def checkExceptions(self,modname):
+        # this is a temp way to eliminate pytorch-cuda names from provides.
+        # we use pytorch-cuda in module logger and in RPM name and  provides but
+        # the users only se a single module pytorch/<version>
+        # cuda-enabled version is installed on cuda nodes.
+        self.exceptions = {"pytorch-cuda":"pytorch"}
+        update = modname[0]
+        for origName, changedName in self.exceptions.items():
+            if modname[0].find(origName) == 0:
+                update = modname[0].replace(origName,changedName)
+        return [update]
 
     def getRequires(self):
         return self.requires
@@ -171,12 +192,6 @@ class Node(object):
 
     def mangleName(self):
         return self.name.replace("-","_")
-
-    def resolve(self,resolved):
-        for edge in self.edges:
-            if edge not in resolved:
-                edge.resolve(resolved)
-        resolved.append(self)
 
     def printNode(self):
         print(self.name)
@@ -238,7 +253,7 @@ class Node(object):
         return txt
 
 #####################################################
-class Graphs:
+class Content:
     def __init__(self, args=None):
         self.prog = args[0]
         self.args = args[1:]     # command line arguments
@@ -250,12 +265,12 @@ class Graphs:
 
     def parseArg(self):
         if not self.args:
-            self.infile = "deplist.yaml"
+            self.infile = "depinfo.yaml"
             return
 
         if self.args[0] in ["-h","--h","help","-help","--help"]:
-            helpStr = "Usage: %s [inputFile]\n"
-            helpStr += "If inputFile is not provideed a default is deplist.yaml\n"
+            helpStr = "Usage: %s [inFile]\n" % self.prog
+            helpStr += "      If inpile is not provideed a default is depinfo.yaml\n"
             print (helpStr)
             sys.exit(0)
 
@@ -271,11 +286,21 @@ class Graphs:
            del admixes['created']
         except:
            created = str(date.today())
-        self.admixes = admixes
+        self.yamlcontent = admixes
         self.created = created
 
-    def createDepNodes(self):
-        self.nodes = [ Node(name,self.admixes,self.created) for name in self.admixes.keys()]
+    def processYamlInfo(self):
+        self.nodes = [] # for admix nodes
+        for admixname, admixinfo in self.yamlcontent.items():
+            self.nodes.append(Admix(admixname,admixinfo,self.created))
+
+    def Debug(self):
+        for node in self.nodes:
+            print ("XXX",node.name)
+            print ("XXX    self.requires ", len(node.requires),  node.requires)
+            print ("XXX    requires_category ", node.requires_category)
+            print ("XXX    self.provides ",  len(node.provides), node.provides)
+            print ("XXX    provides_category ", node.provides_category)
 
     def createDepProviders(self):
         providers = []
@@ -289,10 +314,7 @@ class Graphs:
         self.provlist = { x[0]:x[1] for x in providers }
 
     def connectDepGraph(self):
-        # make a head node add all edges to it to make sure that the dependency graph is connected
-        self.head = Node('ROOT',self.admixes,self.created)
         for node in self.nodes:
-            self.head.addEdge(node)
             reqs = node.getRequires()
             ## this converts the requires (a module name ) to the admix name that provides the module.
             ## don't fail if there is no admix the provides the module (might be system provided)
@@ -311,17 +333,11 @@ class Graphs:
                 edgeNode = list(filter(lambda x: x.name == edge, self.nodes))[0]
                 node.addEdge(edgeNode)
 
-        # Resolve
-        resolved = []
-        self.head.resolve(resolved)
-        self.resolved = resolved
-
     def showDepGraph(self):
-        lines = self.head.printDotHeader()
-        for admix in self.resolved:
-            if admix.name != "ROOT":
-               lines += admix.printDotNotation()
-        lines += self.head.printDotTrailer()
+        lines = self.nodes[0].printDotHeader()
+        for admix in self.nodes:
+            lines += admix.printDotNotation()
+        lines += self.nodes[0].printDotTrailer()
 
         f = open(self.depgraph, "w")
         f.writelines(lines)
@@ -353,9 +369,7 @@ class Graphs:
         txt += "{rank = same; 8; genomics_admix};\n"
         txt += "{rank = same; 9; conda_admix; bioconda_admix; nfsapps_admix; julia_admix};\n"
 
-        for admix in self.resolved:
-            if admix.name == "ROOT":
-                continue
+        for admix in self.nodes:
             txt += "\n## %s\n" % admix.name
             txt += '%s [shape=plaintext, %s\n' % (admix.mangleName(),admix.labelheader)
             txt += '%s%s]' % (admix.namepattern % (admix.colorLabelBG,admix.name), admix.labeltrailer)
@@ -372,8 +386,7 @@ class Graphs:
         f.close()
 
     def buildDepGraph(self):
-        # creat admix dependency graph
-        self.createDepNodes()
+        # create admix dependency graph
         self.createDepProviders()
         self.connectDepGraph()
         self.showDepGraph()
@@ -400,6 +413,8 @@ class Graphs:
                     if reqCatName == name:
                         category.addCategoryRequires(reqCatModules)
 
+            category.orderCategoryModules()
+
         # dictionary of all modules, key is module name value is its category
         allm = {}
         for category in self.categories:
@@ -417,7 +432,7 @@ class Graphs:
         lines = head.printCategoryDotHeader()
 
         for category in self.categories:
-               lines += category.printCategoryDotNotation()
+            lines += category.printCategoryDotNotation()
         lines += head.printCategoryDotTrailer()
 
         f = open(self.catgraph, "w")
@@ -432,11 +447,12 @@ class Graphs:
 
     def run(self):
         self.readYaml()
+        self.processYamlInfo()
         self.buildDepGraph()
         self.buildOrderGraph()
         self.buildCategoryGraph()
 
 #####################################################
 if __name__ == "__main__":
-    app = Graphs(sys.argv)
+    app = Content(sys.argv)
     app.run()

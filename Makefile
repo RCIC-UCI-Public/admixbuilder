@@ -20,6 +20,12 @@ DOTFILES = dot-buildorder dot-byadmix dot-bycategory
 
 .PHONY: force
 
+depinfo.yaml:
+	- /bin/rm $@
+	echo "### Scanning admixes for module-info ###"
+	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am module-info >> $@; done
+	echo "created: $$(date +%F)" >> $@
+
 deplist2.yaml:
 	- /bin/rm $@
 	echo "### Scanning admixes for module-requires-provides-category ###"
