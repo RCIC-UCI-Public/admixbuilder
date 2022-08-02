@@ -1,0 +1,5670 @@
+yaml2rpm:
+  rcic-dev-repo:
+    category: False
+    requires:
+    provides:
+  yaml2rpm:
+    category: False
+    requires:
+    provides:
+  rcic-module-support:
+    category: False
+    requires:
+    provides:
+  rcic-module-path:
+    category: False
+    requires:
+    provides:
+biotools-admix:
+  bedtools2_2.29.2:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  bedtools2_2.29.2-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - bedtools2/2.29.2
+  bwa_0.7.8:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  bwa_0.7.8-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - bwa/0.7.8
+  bustools_0.40.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  bustools_0.40.0-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - bustools/0.40.0
+  tophat_2.1.1:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  tophat_2.1.1-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - tophat/2.1.1
+  gatk_4.1.9.0:
+    category: False
+    requires:
+      - java/1.8.0
+    provides:
+  gatk_4.1.9.0-module:
+    category: BIOTOOLS
+    requires:
+      - java/1.8.0
+    provides:
+      - gatk/4.1.9.0
+  kallisto_0.46.2:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - hdf5/1.10.5/gcc.8.4.0
+    provides:
+  kallisto_0.46.2-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - hdf5/1.10.5/gcc.8.4.0
+    provides:
+      - kallisto/0.46.2
+  minimap2_2.17:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+  minimap2_2.17-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+      - minimap2/2.17
+  ncbi-vdb_2.10.2:
+    category: False
+    requires:
+      - ncbi-ngs/2.10.2
+      - gcc/8.4.0
+      - hdf5/1.10.5/gcc.8.4.0
+    provides:
+  ncbi-vdb_2.10.2-module:
+    category: BIOTOOLS
+    requires:
+      - ncbi-ngs/2.10.2
+      - gcc/8.4.0
+      - hdf5/1.10.5/gcc.8.4.0
+    provides:
+      - ncbi-vdb/2.10.2
+  picard-tools_1.87:
+    category: False
+    requires:
+      - java/1.8.0
+    provides:
+  picard-tools_1.87-module:
+    category: BIOTOOLS
+    requires:
+      - java/1.8.0
+    provides:
+      - picard-tools/1.87
+  picard-tools_2.26.10:
+    category: False
+    requires:
+      - java/1.8.0
+    provides:
+  picard-tools_2.26.10-module:
+    category: BIOTOOLS
+    requires:
+      - java/1.8.0
+    provides:
+      - picard-tools/2.26.10
+  fastp_0.20.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  fastp_0.20.0-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - fastp/0.20.0
+  salmon_1.2.1:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - boost/1.66.0/gcc.8.4.0
+    provides:
+  salmon_1.2.1-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - boost/1.66.0/gcc.8.4.0
+    provides:
+      - salmon/1.2.1
+  python_3.8.0-PyVCF:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+  bowtie_1.2.3:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - intel-tbb/20190605
+    provides:
+  bowtie_1.2.3-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - intel-tbb/20190605
+    provides:
+      - bowtie/1.2.3
+  rsem_1.3.3:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+      - python/3.8.0
+      - R/4.0.4
+    provides:
+  rsem_1.3.3-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+      - python/3.8.0
+      - R/4.0.4
+    provides:
+      - rsem/1.3.3
+  star_2.7.3a:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  star_2.7.3a-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - star/2.7.3a
+  sra-tools_2.10.9:
+    category: False
+    requires:
+    provides:
+  sra-tools_2.10.9-module:
+    category: BIOTOOLS
+    requires:
+    provides:
+      - sra-tools/2.10.9
+  repeatmasker_4.1.0:
+    category: False
+    requires:
+      - perl/5.30.0
+      - python/3.8.0
+      - trf/4.0.9
+      - ncbi-blast/2.10.0
+      - hmmer/3.3
+    provides:
+  repeatmasker_4.1.0-module:
+    category: BIOTOOLS
+    requires:
+      - perl/5.30.0
+      - python/3.8.0
+      - trf/4.0.9
+      - ncbi-blast/2.10.0
+      - hmmer/3.3
+    provides:
+      - repeatmasker/4.1.0
+  ucsc-tools_v393:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  ucsc-tools_v393-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - ucsc-tools/v393
+  unicycler_0.4.8:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+      - SPAdes/3.14.0
+      - racon/1.4.13
+      - samtools/1.10
+      - bcftools/1.10.2
+      - java/1.8.0
+      - bowtie2/2.4.1
+      - ncbi-blast/2.10.0
+    provides:
+  unicycler_0.4.8-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+      - SPAdes/3.14.0
+      - racon/1.4.13
+      - samtools/1.10
+      - bcftools/1.10.2
+      - java/1.8.0
+      - bowtie2/2.4.1
+      - ncbi-blast/2.10.0
+    provides:
+      - unicycler/0.4.8
+  vcftools_0.1.16:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  vcftools_0.1.16-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - vcftools/0.1.16
+  fastqc_0.11.9:
+    category: False
+    requires:
+      - java/1.8.0
+    provides:
+  fastqc_0.11.9-module:
+    category: BIOTOOLS
+    requires:
+      - java/1.8.0
+    provides:
+      - fastqc/0.11.9
+  freebayes_1.3.2:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  freebayes_1.3.2-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - freebayes/1.3.2
+  cufflinks_2.2.1:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - boost/1.66.0/gcc.8.4.0
+      - eigen/3.3.7
+      - htslib/1.10.2
+      - samtools/1.10
+    provides:
+  cufflinks_2.2.1-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - boost/1.66.0/gcc.8.4.0
+      - eigen/3.3.7
+      - htslib/1.10.2
+      - samtools/1.10
+    provides:
+      - cufflinks/2.2.1
+  python_3.8.0-MACS:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  macs_2.2.7.1-module:
+    category: BIOTOOLS
+    requires:
+      - python/3.8.0
+    provides:
+      - macs/2.2.7.1
+  bamtools_2.5.1:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - jsoncpp/1.9.4
+    provides:
+  bamtools_2.5.1-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - jsoncpp/1.9.4
+    provides:
+      - bamtools/2.5.1
+  cutadapt_2.10:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+  cutadapt_2.10-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+      - cutadapt/2.10
+  meme_5.2.0:
+    category: False
+    requires:
+      - openmpi/4.0.3/gcc.8.4.0
+      - perl/5.30.0
+    provides:
+  meme_5.2.0-module:
+    category: BIOTOOLS
+    requires:
+      - openmpi/4.0.3/gcc.8.4.0
+      - perl/5.30.0
+    provides:
+      - meme/5.2.0
+  trinityrnaseq_2.8.6:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - perl/5.30.0
+    provides:
+  trinityrnaseq_2.8.6-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - perl/5.30.0
+    provides:
+      - trinity/2.8.6
+  deeptools_3.5.0:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  deeptools_3.5.0-module:
+    category: BIOTOOLS
+    requires:
+      - python/3.8.0
+    provides:
+      - deeptools/3.5.0
+  subread_2.0.1:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  subread_2.0.1-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - subread/2.0.1
+  trimgalore_0.6.6:
+    category: False
+    requires:
+    provides:
+  trimgalore_0.6.6-module:
+    category: BIOTOOLS
+    requires:
+    provides:
+      - trimgalore/0.6.6
+  htslib_1.10.2:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  htslib_1.10.2-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - htslib/1.10.2
+  trf_4.0.9:
+    category: False
+    requires:
+    provides:
+  trf_4.0.9-module:
+    category: BIOTOOLS
+    requires:
+    provides:
+      - trf/4.0.9
+  edirect_2020:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  edirect_2020-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - edirect/2020
+  ncbi-blast_2.10.0:
+    category: False
+    requires:
+      - python/3.8.0
+      - boost/1.66.0/gcc.8.4.0
+    provides:
+  ncbi-blast_2.10.0-module:
+    category: BIOTOOLS
+    requires:
+      - python/3.8.0
+      - boost/1.66.0/gcc.8.4.0
+    provides:
+      - ncbi-blast/2.10.0
+  hmmer_3.3:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  hmmer_3.3-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - hmmer/3.3
+  SPAdes_3.14.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+  SPAdes_3.14.0-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+      - SPAdes/3.14.0
+  racon_1.4.13:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  racon_1.4.13-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - racon/1.4.13
+  pilon_1.23:
+    category: False
+    requires:
+      - java/1.8.0
+    provides:
+  pilon_1.23-module:
+    category: BIOTOOLS
+    requires:
+      - java/1.8.0
+    provides:
+      - pilon/1.23
+  bowtie2_2.4.1:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+      - python/3.8.0
+      - intel-tbb/20190605
+    provides:
+  bowtie2_2.4.1-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+      - python/3.8.0
+      - intel-tbb/20190605
+    provides:
+      - bowtie2/2.4.1
+  samtools_1.10:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - htslib/1.10.2
+    provides:
+  samtools_1.10-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - htslib/1.10.2
+    provides:
+      - samtools/1.10
+  jsoncpp_1.9.4:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  jsoncpp_1.9.4-module:
+    category: LIBRARIES
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - jsoncpp/1.9.4
+  yaggo:
+    category: False
+    requires:
+    provides:
+  Jellyfish_2.3.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - htslib/1.10.2
+      - samtools/1.10
+      - python/3.8.0
+    provides:
+  Jellyfish_2.3.0-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - htslib/1.10.2
+      - samtools/1.10
+      - python/3.8.0
+    provides:
+      - Jellyfish/2.3.0
+  python_3.8.0-pysam:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+  python_3.8.0-py2bit:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pyBigWig:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-sphinx:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-numpydoc:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-plotly:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-deeptoolsintervals:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  perl_5.30.0-Text-Soundex:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  bcftools_1.10.2:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - htslib/1.10.2
+      - gsl/2.6/gcc.8.4.0
+    provides:
+  bcftools_1.10.2-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - htslib/1.10.2
+      - gsl/2.6/gcc.8.4.0
+    provides:
+      - bcftools/1.10.2
+  ncbi-ngs_2.10.2:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+      - java/1.8.0
+    provides:
+  ncbi-ngs_2.10.2-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+      - java/1.8.0
+    provides:
+      - ncbi-ngs/2.10.2
+  bwa_0.7.17:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  bwa_0.7.17-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - bwa/0.7.17
+  star_2.7.8a:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  star_2.7.8a-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - star/2.7.8a
+  bowtie2_2.4.4:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+      - python/3.8.0
+    provides:
+  bowtie2_2.4.4-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+      - python/3.8.0
+    provides:
+      - bowtie2/2.4.4
+  bowtie2-python2_2.4.1:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+      - python/2.7.17
+      - intel-tbb/20190605
+    provides:
+  bowtie2-python2_2.4.1-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+      - python/2.7.17
+      - intel-tbb/20190605
+    provides:
+      - bowtie2-python2/2.4.1
+  python_2.7.17-pysam:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/2.7.17
+    provides:
+  python_2.7.17-PyVCF:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/2.7.17
+    provides:
+  bedtools2_2.30.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  bedtools2_2.30.0-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - bedtools2/2.30.0
+  gatk_4.2.6.1:
+    category: False
+    requires:
+      - java/17
+    provides:
+  gatk_4.2.6.1-module:
+    category: BIOTOOLS
+    requires:
+      - java/17
+    provides:
+      - gatk/4.2.6.1
+  kallisto_0.48.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - hdf5/1.13.1/gcc.11.2.0
+    provides:
+  kallisto_0.48.0-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - hdf5/1.13.1/gcc.11.2.0
+    provides:
+      - kallisto/0.48.0
+  minimap2_2.24:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+  minimap2_2.24-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+      - minimap2/2.24
+  picard-tools_2.27.1:
+    category: False
+    requires:
+      - java/11
+    provides:
+  picard-tools_2.27.1-module:
+    category: BIOTOOLS
+    requires:
+      - java/11
+    provides:
+      - picard-tools/2.27.1
+  fastp_0.23.2:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - isal/2.30.0
+      - libdeflate/1.10
+    provides:
+  fastp_0.23.2-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+      - isal/2.30.0
+      - libdeflate/1.10
+    provides:
+      - fastp/0.23.2
+  salmon_1.8.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - boost/1.78.0/gcc.11.2.0
+    provides:
+  salmon_1.8.0-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - boost/1.78.0/gcc.11.2.0
+    provides:
+      - salmon/1.8.0
+  python_3.10.2-PyVCF:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+  star_2.7.10a:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  star_2.7.10a-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - star/2.7.10a
+  sra-tools_2.11.3:
+    category: False
+    requires:
+    provides:
+  sra-tools_2.11.3-module:
+    category: BIOTOOLS
+    requires:
+    provides:
+      - sra-tools/2.11.3
+  ucsc-tools_v429:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  ucsc-tools_v429-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - ucsc-tools/v429
+  unicycler_0.5.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+      - SPAdes/3.15.4
+      - racon/1.5.0
+      - samtools/1.15.1
+      - bcftools/1.15.1
+      - java/17
+      - bowtie2/2.4.5
+      - ncbi-blast/2.13.0
+    provides:
+  unicycler_0.5.0-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+      - SPAdes/3.15.4
+      - racon/1.5.0
+      - samtools/1.15.1
+      - bcftools/1.15.1
+      - java/17
+      - bowtie2/2.4.5
+      - ncbi-blast/2.13.0
+    provides:
+      - unicycler/0.5.0
+  bamtools_2.5.2:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - jsoncpp/1.9.5
+    provides:
+  bamtools_2.5.2-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - jsoncpp/1.9.5
+    provides:
+      - bamtools/2.5.2
+  cutadapt_4.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+  cutadapt_4.0-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+      - cutadapt/4.0
+  meme_5.4.1:
+    category: False
+    requires:
+      - openmpi/4.1.2/gcc.11.2.0
+      - perl/5.34.1
+    provides:
+  meme_5.4.1-module:
+    category: BIOTOOLS
+    requires:
+      - openmpi/4.1.2/gcc.11.2.0
+      - perl/5.34.1
+    provides:
+      - meme/5.4.1
+  deeptools_3.5.1:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  deeptools_3.5.1-module:
+    category: BIOTOOLS
+    requires:
+      - python/3.10.2
+    provides:
+      - deeptools/3.5.1
+  subread_2.0.3:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  subread_2.0.3-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - subread/2.0.3
+  trimgalore_0.6.7:
+    category: False
+    requires:
+    provides:
+  trimgalore_0.6.7-module:
+    category: BIOTOOLS
+    requires:
+    provides:
+      - trimgalore/0.6.7
+  htslib_1.15.1:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  htslib_1.15.1-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - htslib/1.15.1
+  edirect_2022:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  edirect_2022-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - edirect/2022
+  ncbi-blast_2.13.0:
+    category: False
+    requires:
+      - python/3.10.2
+      - boost/1.78.0/gcc.11.2.0
+    provides:
+  ncbi-blast_2.13.0-module:
+    category: BIOTOOLS
+    requires:
+      - python/3.10.2
+      - boost/1.78.0/gcc.11.2.0
+    provides:
+      - ncbi-blast/2.13.0
+  SPAdes_3.15.4:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+  SPAdes_3.15.4-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+      - SPAdes/3.15.4
+  racon_1.5.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+    provides:
+  racon_1.5.0-module:
+    category: BIOTOOLS
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+    provides:
+      - racon/1.5.0
+  pilon_1.24:
+    category: False
+    requires:
+      - java/17
+    provides:
+  pilon_1.24-module:
+    category: BIOTOOLS
+    requires:
+      - java/17
+    provides:
+      - pilon/1.24
+  bowtie2_2.4.5:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - perl/5.34.1
+      - python/3.10.2
+    provides:
+  bowtie2_2.4.5-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+      - perl/5.34.1
+      - python/3.10.2
+    provides:
+      - bowtie2/2.4.5
+  samtools_1.15.1:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - htslib/1.15.1
+    provides:
+  samtools_1.15.1-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+      - htslib/1.15.1
+    provides:
+      - samtools/1.15.1
+  jsoncpp_1.9.5:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+    provides:
+  jsoncpp_1.9.5-module:
+    category: LIBRARIES
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+    provides:
+      - jsoncpp/1.9.5
+  python_3.10.2-pysam:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+  python_3.10.2-py2bit:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pyBigWig:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-sphinx:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-numpydoc:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-plotly:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-deeptoolsintervals:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  bcftools_1.15.1:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - htslib/1.15.1
+      - gsl/2.7.1/gcc.11.2.0
+    provides:
+  bcftools_1.15.1-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+      - htslib/1.15.1
+      - gsl/2.7.1/gcc.11.2.0
+    provides:
+      - bcftools/1.15.1
+  isal_2.30.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  isal_2.30.0-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - isal/2.30.0
+  libdeflate_1.10:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  libdeflate_1.10-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - libdeflate/1.10
+buildlibs-admix:
+  boost_1.66.0_gcc_8.4.0:
+    category: False
+    requires:
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  boost_1.66.0_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - boost/1.66.0/gcc.8.4.0
+  boost_1.50.0_gcc_8.4.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  boost_1.50.0_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - boost/1.50.0/gcc.8.4.0
+  fftw_3.3.8_gcc_8.4.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  fftw_3.3.8_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - fftw/3.3.8/gcc.8.4.0
+  fftw_3.3.8_gcc_8.4.0_openmpi_4.0.3:
+    category: False
+    requires:
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  fftw_3.3.8_gcc_8.4.0_openmpi_4.0.3-module:
+    category: TOOLS
+    requires:
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - fftw/3.3.8/gcc.8.4.0-openmpi.4.0.3
+  mpich_3.4_gcc_8.4.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  mpich_3.4_gcc_8.4.0-module:
+    category: COMPILERS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - mpich/3.4/gcc.8.4.0
+  protobuf_3.11.4:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  protobuf_3.11.4-module:
+    category: TOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - protobuf/3.11.4
+  geos_3.8.1:
+    category: False
+    requires:
+      - foundation/v8
+    provides:
+  geos_3.8.1-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+    provides:
+      - geos/3.8.1
+  scalapack_2.1.0:
+    category: False
+    requires:
+      - foundation/v8
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  scalapack_2.1.0-module:
+    category: LIBRARIES
+    requires:
+      - foundation/v8
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - scalapack/2.1.0
+  lapack_3.9.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  lapack_3.9.0-module:
+    category: LIBRARIES
+    requires:
+      - gcc/8.4.0
+    provides:
+      - lapack/3.9.0
+  ucx_1.8.0:
+    category: False
+    requires:
+    provides:
+  ucx_1.8.0-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - ucx/1.8.0
+  llvm_9.0.1:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  llvm_9.0.1-module:
+    category: COMPILERS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - llvm/9.0.1
+  openmpi_4.0.3_gcc_8.4.0:
+    category: False
+    requires:
+      - singularity/3.4.1
+      - ucx/1.8.0
+      - gcc/8.4.0
+    provides:
+  openmpi_4.0.3_gcc_8.4.0-module:
+    category: COMPILERS
+    requires:
+      - singularity/3.4.1
+      - ucx/1.8.0
+      - gcc/8.4.0
+    provides:
+      - openmpi/4.0.3/gcc.8.4.0
+  fftw_3.3.8_gcc_system:
+    category: False
+    requires:
+      - gcc/system
+    provides:
+  fftw_3.3.8_gcc_system-module:
+    category: TOOLS
+    requires:
+      - gcc/system
+    provides:
+      - fftw/3.3.8/gcc.system
+  openmpi_4.0.3_intel_2020u1:
+    category: False
+    requires:
+      - singularity/3.4.1
+      - ucx/1.8.0
+      - intel/2020u1
+    provides:
+  openmpi_4.0.3_intel_2020u1-module:
+    category: COMPILERS
+    requires:
+      - singularity/3.4.1
+      - ucx/1.8.0
+      - intel/2020u1
+    provides:
+      - openmpi/4.0.3/intel.2020u1
+  mpich_3.4_intel_2020u1:
+    category: False
+    requires:
+      - intel/2020u1
+    provides:
+  mpich_3.4_intel_2020u1-module:
+    category: COMPILERS
+    requires:
+      - intel/2020u1
+    provides:
+      - mpich/3.4/intel.2020u1
+  openmpi_4.0.3_gcc_6.5.0:
+    category: False
+    requires:
+      - singularity/3.4.1
+      - ucx/1.8.0
+      - gcc/6.5.0
+    provides:
+  openmpi_4.0.3_gcc_6.5.0-module:
+    category: COMPILERS
+    requires:
+      - singularity/3.4.1
+      - ucx/1.8.0
+      - gcc/6.5.0
+    provides:
+      - openmpi/4.0.3/gcc.6.5.0
+  clang_11.1.0:
+    category: False
+    requires:
+      - foundation/v8
+      - llvm/11.1.0
+    provides:
+  clang_11.1.0-module:
+    category: COMPILERS
+    requires:
+      - foundation/v8
+      - llvm/11.1.0
+    provides:
+      - clang/11.1.0
+  boost_1.71.0_gcc_8.4.0:
+    category: False
+    requires:
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  boost_1.71.0_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - boost/1.71.0/gcc.8.4.0
+  llvm_11.1.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  llvm_11.1.0-module:
+    category: COMPILERS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - llvm/11.1.0
+  boost_1.78.0_gcc_8.4.0:
+    category: False
+    requires:
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  boost_1.78.0_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - boost/1.78.0/gcc.8.4.0
+  mpich_3.3.2_gcc_8.4.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  mpich_3.3.2_gcc_8.4.0-module:
+    category: COMPILERS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - mpich/3.3.2/gcc.8.4.0
+  boost_1.78.0_gcc_11.2.0:
+    category: False
+    requires:
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+  boost_1.78.0_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+      - boost/1.78.0/gcc.11.2.0
+  clang_13.0.0:
+    category: False
+    requires:
+      - foundation/v8
+      - llvm/13.0.0
+    provides:
+  clang_13.0.0-module:
+    category: COMPILERS
+    requires:
+      - foundation/v8
+      - llvm/13.0.0
+    provides:
+      - clang/13.0.0
+  fftw_3.3.10_gcc_11.2.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  fftw_3.3.10_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - fftw/3.3.10/gcc.11.2.0
+  fftw_3.3.10_gcc_11.2.0_openmpi_4.1.2:
+    category: False
+    requires:
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+  fftw_3.3.10_gcc_11.2.0_openmpi_4.1.2-module:
+    category: TOOLS
+    requires:
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+      - fftw/3.3.10/gcc.11.2.0-openmpi.4.1.2
+  mpich_4.0_gcc_11.2.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  mpich_4.0_gcc_11.2.0-module:
+    category: COMPILERS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - mpich/4.0/gcc.11.2.0
+  protobuf_3.19.4:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  protobuf_3.19.4-module:
+    category: TOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - protobuf/3.19.4
+  geos_3.10.2:
+    category: False
+    requires:
+      - foundation/v8
+    provides:
+  geos_3.10.2-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+    provides:
+      - geos/3.10.2
+  xz_5.2.5:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  xz_5.2.5-module:
+    category: TOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - xz/5.2.5
+  ucx_1.12.0:
+    category: False
+    requires:
+    provides:
+  ucx_1.12.0-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - ucx/1.12.0
+  llvm_13.0.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+    provides:
+  llvm_13.0.0-module:
+    category: COMPILERS
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+    provides:
+      - llvm/13.0.0
+  openmpi_4.1.2_gcc_11.2.0:
+    category: False
+    requires:
+      - singularity/3.9.4
+      - ucx/1.12.0
+      - gcc/11.2.0
+    provides:
+  openmpi_4.1.2_gcc_11.2.0-module:
+    category: COMPILERS
+    requires:
+      - singularity/3.9.4
+      - ucx/1.12.0
+      - gcc/11.2.0
+    provides:
+      - openmpi/4.1.2/gcc.11.2.0
+  openmpi_4.1.2_intel_2022.2:
+    category: False
+    requires:
+      - singularity/3.9.4
+      - ucx/1.12.0
+      - intel/2022.2
+    provides:
+  openmpi_4.1.2_intel_2022.2-module:
+    category: COMPILERS
+    requires:
+      - singularity/3.9.4
+      - ucx/1.12.0
+      - intel/2022.2
+    provides:
+      - openmpi/4.1.2/intel.2022.2
+  mpich_4.0_intel_2022.2:
+    category: False
+    requires:
+      - intel/2022.2
+    provides:
+  mpich_4.0_intel_2022.2-module:
+    category: COMPILERS
+    requires:
+      - intel/2022.2
+    provides:
+      - mpich/4.0/intel.2022.2
+  openmpi_4.1.2_gcc_8.4.0:
+    category: False
+    requires:
+      - singularity/3.9.4
+      - ucx/1.12.0
+      - gcc/8.4.0
+    provides:
+  openmpi_4.1.2_gcc_8.4.0-module:
+    category: COMPILERS
+    requires:
+      - singularity/3.9.4
+      - ucx/1.12.0
+      - gcc/8.4.0
+    provides:
+      - openmpi/4.1.2/gcc.8.4.0
+buildtools-admix:
+  java8-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - java/1.8.0
+  java11-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - java/11
+  intel_2020u1-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - intel/2020u1
+  openmpi_4.1.1_gcc_system-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - openmpi/4.1.1/gcc.system
+  nodejs_17.3.0:
+    category: False
+    requires:
+    provides:
+  intel-tbb_20190605:
+    category: False
+    requires:
+    provides:
+  intel-tbb_20190605-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - intel-tbb/20190605
+  icu_65.1:
+    category: False
+    requires:
+    provides:
+  icu_65.1-module:
+    category: TOOLS
+    requires:
+    provides:
+      - icu/65.1
+  parallel_20200222:
+    category: False
+    requires:
+    provides:
+  parallel_20200222-module:
+    category: TOOLS
+    requires:
+    provides:
+      - parallel/20200222
+  likwid_5.0.1:
+    category: False
+    requires:
+    provides:
+  likwid_5.0.1-module:
+    category: TOOLS
+    requires:
+    provides:
+      - likwid/5.0.1
+  singularity_3.4.1:
+    category: False
+    requires:
+      - go/1.17.7
+    provides:
+  singularity_3.4.1-module:
+    category: TOOLS
+    requires:
+      - go/1.17.7
+    provides:
+      - singularity/3.4.1
+  gcc_system-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - gcc/system
+  tcl_8.6.9:
+    category: False
+    requires:
+    provides:
+  tcl_8.6.9-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - tcl/8.6.9
+  go_1.17.7:
+    category: False
+    requires:
+    provides:
+  go_1.17.7-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - go/1.17.7
+  singularity_3.7.2:
+    category: False
+    requires:
+      - go/1.17.7
+    provides:
+  singularity_3.7.2-module:
+    category: TOOLS
+    requires:
+      - go/1.17.7
+    provides:
+      - singularity/3.7.2
+  java17-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - java/17
+  lz4_1.9.3:
+    category: False
+    requires:
+    provides:
+  lz4_1.9.3-module:
+    category: TOOLS
+    requires:
+    provides:
+      - lz4/1.9.3
+  tk_8.6.12:
+    category: False
+    requires:
+      - tcl/8.6.12
+    provides:
+  tk_8.6.12-module:
+    category: LANGUAGES
+    requires:
+      - tcl/8.6.12
+    provides:
+      - tk/8.6.12
+  intel_2022.2-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - intel/2022.2
+  intel-tbb_2021.5.0:
+    category: False
+    requires:
+    provides:
+  intel-tbb_2021.5.0-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - intel-tbb/2021.5.0
+  icu_70.1:
+    category: False
+    requires:
+    provides:
+  icu_70.1-module:
+    category: TOOLS
+    requires:
+    provides:
+      - icu/70.1
+  parallel_20211222:
+    category: False
+    requires:
+    provides:
+  parallel_20211222-module:
+    category: TOOLS
+    requires:
+    provides:
+      - parallel/20211222
+  likwid_5.2.1:
+    category: False
+    requires:
+    provides:
+  likwid_5.2.1-module:
+    category: TOOLS
+    requires:
+    provides:
+      - likwid/5.2.1
+  singularity_3.9.4:
+    category: False
+    requires:
+      - go/1.17.7
+    provides:
+  singularity_3.9.4-module:
+    category: TOOLS
+    requires:
+      - go/1.17.7
+    provides:
+      - singularity/3.9.4
+  tcl_8.6.12:
+    category: False
+    requires:
+    provides:
+  tcl_8.6.12-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - tcl/8.6.12
+chemistry-admix:
+  amber_19.11_gcc_8.4.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+  amber_19.11_gcc_8.4.0-module:
+    category: CHEMISTRY
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+      - amber/19.11/gcc.8.4.0
+  namd_2.14b2_gcc_8.4.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - charm/6.10.1/gcc.8.4.0
+      - mkl/2019.5.281
+    provides:
+  namd_2.14b2_gcc_8.4.0-module:
+    category: CHEMISTRY
+    requires:
+      - gcc/8.4.0
+      - charm/6.10.1/gcc.8.4.0
+      - mkl/2019.5.281
+    provides:
+      - namd/2.14b2/gcc.8.4.0
+  namd_2.14b2_gcc_8.4.0_cuda_10.1.243:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - charm/6.10.1/gcc.8.4.0
+      - mkl/2019.5.281
+      - cuda/10.1.243
+    provides:
+  namd_2.14b2_gcc_8.4.0_cuda_10.1.243-module:
+    category: CHEMISTRY
+    requires:
+      - gcc/8.4.0
+      - charm/6.10.1/gcc.8.4.0
+      - mkl/2019.5.281
+      - cuda/10.1.243
+    provides:
+      - namd/2.14b2/gcc.8.4.0-cuda.10.1.243
+  namd_2.14b2_gcc_8.4.0_openmpi_4.0.3:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - charm/6.10.1/gcc.8.4.0
+      - mkl/2019.5.281
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  namd_2.14b2_gcc_8.4.0_openmpi_4.0.3-module:
+    category: CHEMISTRY
+    requires:
+      - gcc/8.4.0
+      - charm/6.10.1/gcc.8.4.0
+      - mkl/2019.5.281
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - namd/2.14b2/gcc.8.4.0-openmpi.4.0.3
+  lammps_3Mar2020_gcc_8.4.0:
+    category: False
+    requires:
+      - foundation/v8
+      - ffmpeg/4.1.3
+      - hdf5/1.10.5/gcc.8.4.0
+      - gsl/2.6/gcc.8.4.0
+      - fftw/3.3.8/gcc.8.4.0
+      - netcdf-c/4.7.0/gcc.8.4.0
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  lammps_3Mar2020_gcc_8.4.0-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - ffmpeg/4.1.3
+      - hdf5/1.10.5/gcc.8.4.0
+      - gsl/2.6/gcc.8.4.0
+      - fftw/3.3.8/gcc.8.4.0
+      - netcdf-c/4.7.0/gcc.8.4.0
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - lammps/3Mar2020/gcc.8.4.0
+  gromacs_2020.4_gcc_8.4.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  gromacs_2020.4_gcc_8.4.0-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - gromacs/2020.4/gcc.8.4.0
+  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+    provides:
+  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+    provides:
+      - gromacs/2020.4/gcc.8.4.0-cuda.10.1.243
+  gromacs_2020.4_gcc_8.4.0_openmpi_4.0.3:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  gromacs_2020.4_gcc_8.4.0_openmpi_4.0.3-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - gromacs/2020.4/gcc.8.4.0-openmpi.4.0.3
+  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+    provides:
+  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+    provides:
+      - gromacs/2020.4/gcc.8.4.0-cuda.10.1.243
+  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - gromacs/2020.4/gcc.8.4.0-cuda.10.1.243.openmpi.4.0.3
+  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3_plumed_2.6.1:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+      - openmpi/4.0.3/gcc.8.4.0
+      - plumed/2.6.1/gcc.8.4.0-openmpi.4.0.3
+    provides:
+  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3_plumed_2.6.1-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+      - openmpi/4.0.3/gcc.8.4.0
+      - plumed/2.6.1/gcc.8.4.0-openmpi.4.0.3
+    provides:
+      - gromacs/2020.4/gcc.8.4.0-cuda.10.1.243.openmpi.4.0.3.plumed.2.6.1
+  mdtraj_1.9.3:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  mdtraj_1.9.3-module:
+    category: CHEMISTRY
+    requires:
+      - python/3.8.0
+    provides:
+      - mdtraj/1.9.3
+  charm_6.10.1_gcc_8.4.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  charm_6.10.1_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - charm/6.10.1/gcc.8.4.0
+  plumed_2.6.1_gcc_8.4.0_openmpi_4.0.3:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  plumed_2.6.1_gcc_8.4.0_openmpi_4.0.3-module:
+    category: TOOLS
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - plumed/2.6.1/gcc.8.4.0-openmpi.4.0.3
+  gromacs_2021.2_gcc_8.4.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  gromacs_2021.2_gcc_8.4.0-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - gromacs/2021.2/gcc.8.4.0
+  gromacs_2021.2_gcc_8.4.0_cuda_10.1.243:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+    provides:
+  gromacs_2021.2_gcc_8.4.0_cuda_10.1.243-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+    provides:
+      - gromacs/2021.2/gcc.8.4.0-cuda.10.1.243
+  gromacs_2021.2_gcc_8.4.0_openmpi_4.0.3:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  gromacs_2021.2_gcc_8.4.0_openmpi_4.0.3-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - gromacs/2021.2/gcc.8.4.0-openmpi.4.0.3
+  gromacs_2021.2_gcc_8.4.0_cuda_10.1.243:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+    provides:
+  gromacs_2021.2_gcc_8.4.0_cuda_10.1.243-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+    provides:
+      - gromacs/2021.2/gcc.8.4.0-cuda.10.1.243
+  gromacs_2021.2_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  gromacs_2021.2_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/10.1.243
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - gromacs/2021.2/gcc.8.4.0-cuda.10.1.243.openmpi.4.0.3
+  gromacs_2022.1_gcc_8.4.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  gromacs_2022.1_gcc_8.4.0-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - gromacs/2022.1/gcc.8.4.0
+  gromacs_2022.1_gcc_8.4.0_cuda_11.4.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/11.4.0
+      - python/3.10.2
+    provides:
+  gromacs_2022.1_gcc_8.4.0_cuda_11.4.0-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/11.4.0
+      - python/3.10.2
+    provides:
+      - gromacs/2022.1/gcc.8.4.0-cuda.11.4.0
+  gromacs_2022.1_gcc_8.4.0_openmpi_4.1.2:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - openmpi/4.1.2/gcc.8.4.0
+    provides:
+  gromacs_2022.1_gcc_8.4.0_openmpi_4.1.2-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - openmpi/4.1.2/gcc.8.4.0
+    provides:
+      - gromacs/2022.1/gcc.8.4.0-openmpi.4.1.2
+  gromacs_2022.1_gcc_8.4.0_cuda_11.4.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/11.4.0
+      - python/3.10.2
+    provides:
+  gromacs_2022.1_gcc_8.4.0_cuda_11.4.0-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/11.4.0
+      - python/3.10.2
+    provides:
+      - gromacs/2022.1/gcc.8.4.0-cuda.11.4.0
+  gromacs_2022.1_gcc_8.4.0_cuda_11.4.0_openmpi_4.1.2:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/11.4.0
+      - openmpi/4.1.2/gcc.8.4.0
+    provides:
+  gromacs_2022.1_gcc_8.4.0_cuda_11.4.0_openmpi_4.1.2-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - cuda/11.4.0
+      - openmpi/4.1.2/gcc.8.4.0
+    provides:
+      - gromacs/2022.1/gcc.8.4.0-cuda.11.4.0.openmpi.4.1.2
+  amber_21.12_gcc_11.2.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+      - foundation/v8
+      - mkl/2019.5.281
+    provides:
+  amber_21.12_gcc_11.2.0-module:
+    category: CHEMISTRY
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+      - foundation/v8
+      - mkl/2019.5.281
+    provides:
+      - amber/21.12/gcc.11.2.0
+  lammps_29Sep2021_gcc_11.2.0:
+    category: False
+    requires:
+      - foundation/v8
+      - ffmpeg/4.1.3
+      - hdf5/1.13.1/gcc.11.2.0
+      - gsl/2.7.1/gcc.11.2.0
+      - fftw/3.3.10/gcc.11.2.0
+      - netcdf-c/4.8.1/gcc.11.2.0
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+  lammps_29Sep2021_gcc_11.2.0-module:
+    category: CHEMISTRY
+    requires:
+      - foundation/v8
+      - ffmpeg/4.1.3
+      - hdf5/1.13.1/gcc.11.2.0
+      - gsl/2.7.1/gcc.11.2.0
+      - fftw/3.3.10/gcc.11.2.0
+      - netcdf-c/4.8.1/gcc.11.2.0
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+      - lammps/29Sep2021/gcc.11.2.0
+  mdtraj_1.9.7:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  mdtraj_1.9.7-module:
+    category: CHEMISTRY
+    requires:
+      - python/3.10.2
+    provides:
+      - mdtraj/1.9.7
+  charm_7.0.0_gcc_11.2.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+    provides:
+  charm_7.0.0_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+    provides:
+      - charm/7.0.0/gcc.11.2.0
+  plumed_2.8.0_gcc_11.2.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+  plumed_2.8.0_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+      - plumed/2.8.0/gcc.11.2.0
+  plumed_2.8.0_gcc_11.2.0_openmpi_4.1.2:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+  plumed_2.8.0_gcc_11.2.0_openmpi_4.1.2-module:
+    category: TOOLS
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+      - plumed/2.8.0/gcc.11.2.0-openmpi.4.1.2
+conda-admix:
+  anaconda_2020.07:
+    category: False
+    requires:
+    provides:
+  anaconda_2020.07-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - anaconda/2020.07
+  anaconda_2021.11:
+    category: False
+    requires:
+    provides:
+  anaconda_2021.11-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - anaconda/2021.11
+  anaconda_2022.05:
+    category: False
+    requires:
+    provides:
+  anaconda_2022.05-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - anaconda/2022.05
+cuda-admix:
+  ffmpeg_0.10.16:
+    category: False
+    requires:
+    provides:
+  ffmpeg_0.10.16-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - ffmpeg/0.10.16
+  ffmpeg_1.2.12:
+    category: False
+    requires:
+    provides:
+  ffmpeg_1.2.12-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - ffmpeg/1.2.12
+  ffmpeg_4.1.3:
+    category: False
+    requires:
+    provides:
+  ffmpeg_4.1.3-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - ffmpeg/4.1.3
+  cuda-toolkit-doc_10.1.243:
+    category: False
+    requires:
+    provides:
+  cuda-toolkit-nsight_10.1.243:
+    category: False
+    requires:
+    provides:
+  cuda-toolkit-extras_10.1.243:
+    category: False
+    requires:
+    provides:
+  cuda-cublas_10.1.243:
+    category: False
+    requires:
+    provides:
+  cuda-toolkit-samples_10.1.243:
+    category: False
+    requires:
+      - cuda/10.1.243
+    provides:
+  cuda-driver_10.1.243:
+    category: False
+    requires:
+    provides:
+  cuda-toolkit_10.1.243:
+    category: False
+    requires:
+    provides:
+  cuda_10.1.243-module:
+    category: TOOLS
+    requires:
+    provides:
+      - cuda/10.1.243
+  cudnn-download_7.6.4.38:
+    category: False
+    requires:
+    provides:
+  cuda-driver_11.4.0:
+    category: False
+    requires:
+    provides:
+  cuda-toolkit-nsight_11.4.0:
+    category: False
+    requires:
+    provides:
+  cuda-toolkit-samples_11.4.0:
+    category: False
+    requires:
+      - cuda/11.4.0
+    provides:
+  cudnn-download_8.2.2.26:
+    category: False
+    requires:
+    provides:
+  cuda-toolkit_11.4.0:
+    category: False
+    requires:
+    provides:
+  cuda-toolkit-static-libs_11.4.0:
+    category: False
+    requires:
+    provides:
+  cuda_11.4.0-module:
+    category: TOOLS
+    requires:
+    provides:
+      - cuda/11.4.0
+fileformats-admix:
+  hdf5_1.10.5_gcc_system:
+    category: False
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - gcc/system
+    provides:
+  hdf5_1.10.5_gcc_system-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - gcc/system
+    provides:
+      - hdf5/1.10.5/gcc.system
+  hdf5_1.10.5_gcc_system_openmpi_4.1.1:
+    category: False
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - openmpi/4.1.1/gcc.system
+    provides:
+  hdf5_1.10.5_gcc_system_openmpi_4.1.1-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - openmpi/4.1.1/gcc.system
+    provides:
+      - hdf5/1.10.5/gcc.system-openmpi.4.1.1
+  nco_4.9.6_gcc_8.4.0:
+    category: False
+    requires:
+      - netcdf-c/4.7.0/gcc.8.4.0
+      - hdf5/1.10.5/gcc.8.4.0
+      - udunits/2.2.26/gcc.8.4.0
+      - gsl/2.6/gcc.8.4.0
+      - gcc/8.4.0
+    provides:
+  nco_4.9.6_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - netcdf-c/4.7.0/gcc.8.4.0
+      - hdf5/1.10.5/gcc.8.4.0
+      - udunits/2.2.26/gcc.8.4.0
+      - gsl/2.6/gcc.8.4.0
+      - gcc/8.4.0
+    provides:
+      - nco/4.9.6/gcc.8.4.0
+  hdf5_1.10.5_gcc_8.4.0:
+    category: False
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - gcc/8.4.0
+    provides:
+  hdf5_1.10.5_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - gcc/8.4.0
+    provides:
+      - hdf5/1.10.5/gcc.8.4.0
+  hdf5_1.10.5_gcc_8.4.0_openmpi_4.0.3:
+    category: False
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+  hdf5_1.10.5_gcc_8.4.0_openmpi_4.0.3-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - openmpi/4.0.3/gcc.8.4.0
+    provides:
+      - hdf5/1.10.5/gcc.8.4.0-openmpi.4.0.3
+  netcdf-c_4.7.0_gcc_8.4.0:
+    category: False
+    requires:
+      - hdf5/1.10.5/gcc.8.4.0
+      - gcc/8.4.0
+    provides:
+  netcdf-c_4.7.0_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - hdf5/1.10.5/gcc.8.4.0
+      - gcc/8.4.0
+    provides:
+      - netcdf-c/4.7.0/gcc.8.4.0
+  netcdf-fortran_4.5.2_gcc_8.4.0:
+    category: False
+    requires:
+      - netcdf-c/4.7.0/gcc.8.4.0
+    provides:
+  udunits_2.2.26_gcc_8.4.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  udunits_2.2.26_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - udunits/2.2.26/gcc.8.4.0
+  ioapi_3.2_intel_2020u1:
+    category: False
+    requires:
+      - intel/2020u1
+      - netcdf-c/4.7.0/intel.2020u1
+    provides:
+  ioapi_3.2_intel_2020u1-module:
+    category: TOOLS
+    requires:
+      - intel/2020u1
+      - netcdf-c/4.7.0/intel.2020u1
+    provides:
+      - ioapi/3.2/intel.2020u1
+  hdf5_1.10.5_intel_2020u1:
+    category: False
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - intel/2020u1
+    provides:
+  hdf5_1.10.5_intel_2020u1-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - intel/2020u1
+    provides:
+      - hdf5/1.10.5/intel.2020u1
+  hdf5_1.10.5_intel_2020u1_openmpi_4.0.3:
+    category: False
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - openmpi/4.0.3/intel.2020u1
+    provides:
+  hdf5_1.10.5_intel_2020u1_openmpi_4.0.3-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - openmpi/4.0.3/intel.2020u1
+    provides:
+      - hdf5/1.10.5/intel.2020u1-openmpi.4.0.3
+  netcdf-c_4.7.0_intel_2020u1:
+    category: False
+    requires:
+      - hdf5/1.10.5/intel.2020u1
+      - intel/2020u1
+    provides:
+  netcdf-c_4.7.0_intel_2020u1-module:
+    category: TOOLS
+    requires:
+      - hdf5/1.10.5/intel.2020u1
+      - intel/2020u1
+    provides:
+      - netcdf-c/4.7.0/intel.2020u1
+  netcdf-fortran_4.5.2_intel_2020u1:
+    category: False
+    requires:
+      - netcdf-c/4.7.0/intel.2020u1
+    provides:
+  udunits_2.2.26_intel_2020u1:
+    category: False
+    requires:
+      - intel/2020u1
+    provides:
+  udunits_2.2.26_intel_2020u1-module:
+    category: TOOLS
+    requires:
+      - intel/2020u1
+    provides:
+      - udunits/2.2.26/intel.2020u1
+  hdf5_1.13.1_gcc_system:
+    category: False
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - gcc/system
+    provides:
+  hdf5_1.13.1_gcc_system-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - gcc/system
+    provides:
+      - hdf5/1.13.1/gcc.system
+  hdf5_1.13.1_gcc_system_openmpi_4.1.1:
+    category: False
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - openmpi/4.1.1/gcc.system
+    provides:
+  hdf5_1.13.1_gcc_system_openmpi_4.1.1-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/1.8.0
+      - openmpi/4.1.1/gcc.system
+    provides:
+      - hdf5/1.13.1/gcc.system-openmpi.4.1.1
+  nco_5.0.6_gcc_11.2.0:
+    category: False
+    requires:
+      - netcdf-c/4.8.1/gcc.11.2.0
+      - hdf5/1.13.1/gcc.11.2.0
+      - udunits/2.2.28/gcc.11.2.0
+      - gsl/2.7.1/gcc.11.2.0
+      - gcc/11.2.0
+    provides:
+  nco_5.0.6_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - netcdf-c/4.8.1/gcc.11.2.0
+      - hdf5/1.13.1/gcc.11.2.0
+      - udunits/2.2.28/gcc.11.2.0
+      - gsl/2.7.1/gcc.11.2.0
+      - gcc/11.2.0
+    provides:
+      - nco/5.0.6/gcc.11.2.0
+  ioapi_3.2_gcc_11.2.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - netcdf-c/4.8.1/gcc.11.2.0
+    provides:
+  ioapi_3.2_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - gcc/11.2.0
+      - netcdf-c/4.8.1/gcc.11.2.0
+    provides:
+      - ioapi/3.2/gcc.11.2.0
+  hdf5_1.13.1_gcc_11.2.0:
+    category: False
+    requires:
+      - foundation/v8
+      - java/17
+      - gcc/11.2.0
+    provides:
+  hdf5_1.13.1_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/17
+      - gcc/11.2.0
+    provides:
+      - hdf5/1.13.1/gcc.11.2.0
+  hdf5_1.13.1_gcc_11.2.0_openmpi_4.1.2:
+    category: False
+    requires:
+      - foundation/v8
+      - java/17
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+  hdf5_1.13.1_gcc_11.2.0_openmpi_4.1.2-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/17
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+      - hdf5/1.13.1/gcc.11.2.0-openmpi.4.1.2
+  netcdf-c_4.8.1_gcc_11.2.0:
+    category: False
+    requires:
+      - hdf5/1.13.1/gcc.11.2.0
+      - gcc/11.2.0
+    provides:
+  netcdf-c_4.8.1_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - hdf5/1.13.1/gcc.11.2.0
+      - gcc/11.2.0
+    provides:
+      - netcdf-c/4.8.1/gcc.11.2.0
+  netcdf-fortran_4.5.4_gcc_11.2.0:
+    category: False
+    requires:
+      - netcdf-c/4.8.1/gcc.11.2.0
+    provides:
+  udunits_2.2.28_gcc_11.2.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  udunits_2.2.28_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - udunits/2.2.28/gcc.11.2.0
+  ioapi_3.2_intel_2022.2:
+    category: False
+    requires:
+      - intel/2022.2
+      - netcdf-c/4.8.1/intel.2022.2
+    provides:
+  ioapi_3.2_intel_2022.2-module:
+    category: TOOLS
+    requires:
+      - intel/2022.2
+      - netcdf-c/4.8.1/intel.2022.2
+    provides:
+      - ioapi/3.2/intel.2022.2
+  hdf5_1.13.1_intel_2022.2:
+    category: False
+    requires:
+      - foundation/v8
+      - java/17
+      - intel/2022.2
+    provides:
+  hdf5_1.13.1_intel_2022.2-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/17
+      - intel/2022.2
+    provides:
+      - hdf5/1.13.1/intel.2022.2
+  hdf5_1.13.1_intel_2022.2_openmpi_4.1.2:
+    category: False
+    requires:
+      - foundation/v8
+      - java/17
+      - openmpi/4.1.2/intel.2022.2
+    provides:
+  hdf5_1.13.1_intel_2022.2_openmpi_4.1.2-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - java/17
+      - openmpi/4.1.2/intel.2022.2
+    provides:
+      - hdf5/1.13.1/intel.2022.2-openmpi.4.1.2
+  netcdf-c_4.8.1_intel_2022.2:
+    category: False
+    requires:
+      - hdf5/1.13.1/intel.2022.2
+      - intel/2022.2
+    provides:
+  netcdf-c_4.8.1_intel_2022.2-module:
+    category: TOOLS
+    requires:
+      - hdf5/1.13.1/intel.2022.2
+      - intel/2022.2
+    provides:
+      - netcdf-c/4.8.1/intel.2022.2
+  netcdf-fortran_4.5.4_intel_2022.2:
+    category: False
+    requires:
+      - netcdf-c/4.8.1/intel.2022.2
+    provides:
+  udunits_2.2.28_intel_2022.2:
+    category: False
+    requires:
+      - intel/2022.2
+    provides:
+  udunits_2.2.28_intel_2022.2-module:
+    category: TOOLS
+    requires:
+      - intel/2022.2
+    provides:
+      - udunits/2.2.28/intel.2022.2
+foundation-admix:
+  foundation-cmake_3.20.5:
+    category: False
+    requires:
+    provides:
+  foundation-cmake_3.20.5-module:
+    category: TOOLS
+    requires:
+    provides:
+      - cmake/3.20.5
+  foundation-curl_7.66.0:
+    category: False
+    requires:
+    provides:
+  foundation-pigz_2.4:
+    category: False
+    requires:
+    provides:
+  foundation-scons_3.1.1:
+    category: False
+    requires:
+    provides:
+  foundation-scons_3.1.1-module:
+    category: TOOLS
+    requires:
+    provides:
+      - scons/3.1.1
+  foundation-swig_4.0.1:
+    category: False
+    requires:
+    provides:
+  foundation-ninja_1.9.0:
+    category: False
+    requires:
+    provides:
+  foundation-git-lfs_2.11.0:
+    category: False
+    requires:
+      - go/1.17.7
+      - foundation/v7
+    provides:
+  foundation-git_2.23.0:
+    category: False
+    requires:
+    provides:
+  foundation_v7-module:
+    category: TOOLS
+    requires:
+    provides:
+      - foundation/v7
+  foundation-rubygem-rdiscount-v7:
+    category: False
+    requires:
+    provides:
+  foundation-rubygem-hpricot-v7:
+    category: False
+    requires:
+    provides:
+  foundation-rubygem-mustache-v7:
+    category: False
+    requires:
+    provides:
+  foundation-rubygem-ronn-v7:
+    category: False
+    requires:
+    provides:
+  foundation-cmake_3.22.1:
+    category: False
+    requires:
+    provides:
+  foundation-cmake_3.22.1-module:
+    category: TOOLS
+    requires:
+    provides:
+      - cmake/3.22.1
+  foundation-curl_7.81.0:
+    category: False
+    requires:
+    provides:
+  foundation-pigz_2.6:
+    category: False
+    requires:
+    provides:
+  foundation-scons_4.2.0:
+    category: False
+    requires:
+    provides:
+  foundation-scons_4.2.0-module:
+    category: TOOLS
+    requires:
+    provides:
+      - scons/4.2.0
+  foundation-swig_4.0.2:
+    category: False
+    requires:
+    provides:
+  foundation-ninja_1.10.2:
+    category: False
+    requires:
+    provides:
+  foundation-git-lfs_3.0.2:
+    category: False
+    requires:
+      - go/1.17.7
+      - foundation/v8
+    provides:
+  foundation-git_2.34.1:
+    category: False
+    requires:
+    provides:
+  foundation_v8-module:
+    category: TOOLS
+    requires:
+    provides:
+      - foundation/v8
+  foundation-rubygem-rdiscount-v8:
+    category: False
+    requires:
+    provides:
+  foundation-rubygem-hpricot-v8:
+    category: False
+    requires:
+    provides:
+  foundation-rubygem-mustache-v8:
+    category: False
+    requires:
+    provides:
+  foundation-rubygem-ronn-v8:
+    category: False
+    requires:
+    provides:
+gcc-admix:
+  gcc_6.5.0-gmp:
+    category: False
+    requires:
+      - gcc/6.5.0
+    provides:
+  gcc_6.5.0-libiconv:
+    category: False
+    requires:
+      - gcc/6.5.0
+    provides:
+  gcc_6.5.0-mpc:
+    category: False
+    requires:
+      - gcc/6.5.0
+    provides:
+  gcc_6.5.0-binutils-bootstrap:
+    category: False
+    requires:
+    provides:
+  gcc_6.5.0:
+    category: False
+    requires:
+    provides:
+  gcc_6.5.0-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - gcc/6.5.0
+  gcc_6.5.0-binutils:
+    category: False
+    requires:
+      - gcc/6.5.0
+    provides:
+  gcc_6.5.0-mpfr:
+    category: False
+    requires:
+      - gcc/6.5.0
+    provides:
+  gcc_8.4.0-gmp:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  gcc_8.4.0-libiconv:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  gcc_8.4.0-mpc:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  gcc_8.4.0-annobin:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  gcc_8.4.0-binutils-bootstrap:
+    category: False
+    requires:
+    provides:
+  gcc_8.4.0:
+    category: False
+    requires:
+    provides:
+  gcc_8.4.0-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - gcc/8.4.0
+  gcc_8.4.0-binutils:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  gcc_8.4.0-mpfr:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  gcc_11.2.0-gmp:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  gcc_11.2.0-libiconv:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  gcc_11.2.0-mpc:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  gcc_11.2.0-annobin:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  gcc_11.2.0-binutils-bootstrap:
+    category: False
+    requires:
+    provides:
+  gcc_11.2.0:
+    category: False
+    requires:
+    provides:
+  gcc_11.2.0-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - gcc/11.2.0
+  gcc_11.2.0-binutils:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  gcc_11.2.0-mpfr:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+mathlibs-admix:
+  OpenBLAS_0.3.6:
+    category: False
+    requires:
+    provides:
+  OpenBLAS_0.3.6-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - OpenBLAS/0.3.6
+  gsl_2.6_gcc_8.4.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  gsl_2.6_gcc_8.4.0-module:
+    category: LIBRARIES
+    requires:
+      - gcc/8.4.0
+    provides:
+      - gsl/2.6/gcc.8.4.0
+  eigen_3.3.7:
+    category: False
+    requires:
+      - foundation/v8
+    provides:
+  eigen_3.3.7-module:
+    category: LIBRARIES
+    requires:
+      - foundation/v8
+    provides:
+      - eigen/3.3.7
+  mkl_2019.5.281:
+    category: False
+    requires:
+    provides:
+  mkl_2019.5.281-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - mkl/2019.5.281
+  OpenBLAS_0.3.19:
+    category: False
+    requires:
+    provides:
+  OpenBLAS_0.3.19-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - OpenBLAS/0.3.19
+  gsl_2.7.1_gcc_11.2.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  gsl_2.7.1_gcc_11.2.0-module:
+    category: LIBRARIES
+    requires:
+      - gcc/11.2.0
+    provides:
+      - gsl/2.7.1/gcc.11.2.0
+  eigen_3.4.0:
+    category: False
+    requires:
+      - foundation/v8
+    provides:
+  eigen_3.4.0-module:
+    category: LIBRARIES
+    requires:
+      - foundation/v8
+    provides:
+      - eigen/3.4.0
+  mkl_2019.5.281:
+    category: False
+    requires:
+    provides:
+  mkl_2019.5.281-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - mkl/2019.5.281
+perl-admix:
+  perl_5.30.0:
+    category: False
+    requires:
+    provides:
+  perl_5.30.0-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - perl/5.30.0
+  perl_5.34.1:
+    category: False
+    requires:
+    provides:
+  perl_5.34.1-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - perl/5.34.1
+python-admix:
+  python_3.8.0-virtualenv:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pyyaml:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-sqlalchemy:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pytz:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-graphviz:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-future:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-cffi:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-urllib3:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-chardet:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-certifi:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-idna:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-requests:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-tqdm:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-ruamel.yaml.clib:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-ruamel.yaml:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pandas:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-scikit-learn:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-mypy_extensions:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-typing_extensions:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-typed_ast:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-mypy:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-cycler:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-kiwisolver:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-matplotlib:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-msgpack:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-biopython:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-decorator:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-networkx:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pp:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-dill:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pox:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-multiprocess:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-psutil:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-Mako:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-appdirs:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-distlib:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-line_profiler:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-memory_profiler:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-ipython:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-ipython_genutils:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-traitlets:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pexpect:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-ptyprocess:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pickleshare:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-backcall:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-prompt_toolkit:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-wcwidth:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pygments:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-h5py:
+    category: False
+    requires:
+      - hdf5/1.10.5/gcc.system
+      - python/3.8.0
+    provides:
+  python_3.8.0-click:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-numpy-groupies:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-llvmlite:
+    category: False
+    requires:
+      - llvm/9.0.1
+      - gcc/system
+      - python/3.8.0
+    provides:
+  python_3.8.0-numba:
+    category: False
+    requires:
+      - gcc/system
+      - python/3.8.0
+      - intel-tbb/20190605
+    provides:
+  python_3.8.0:
+    category: False
+    requires:
+    provides:
+  python_3.8.0-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - python/3.8.0
+  python_3.8.0-setuptools:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pip:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-cython:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-numpy:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pybind11:
+    category: False
+    requires:
+      - python/3.8.0
+      - foundation/v8
+    provides:
+  python_3.8.0-scipy:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-joblib:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-packaging:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-distro:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-scikit-build:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pyparsing:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-wheel:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-six:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-pkgconfig:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-dateutil:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-filelock:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_2.7.17-virtualenv:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-pyyaml:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-sqlalchemy:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-pytz:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-dateutil:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-six:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-graphviz:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-future:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-pyparsing:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-cffi:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-urllib3:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-chardet:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-certifi:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-idna:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-requests:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-tqdm:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-ruamel.yaml.clib:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-ruamel.yaml:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-scipy:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-pandas:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-appdirs:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-distlib:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-filelock:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17:
+    category: False
+    requires:
+    provides:
+  python_2.7.17-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - python/2.7.17
+  python_2.7.17-setuptools:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-setuptools_scm:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-pip:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-cython:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-numpy:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+  python_2.7.17-pybind11:
+    category: False
+    requires:
+      - python/2.7.17
+      - foundation/v8
+    provides:
+  python_3.10.2-platformdirs:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-distlib:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-virtualenv:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pyyaml:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-sqlalchemy:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pytz:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-graphviz:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-future:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pycparser:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-cffi:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-urllib3:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-chardet:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-certifi:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-idna:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-requests:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-tqdm:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-ruamel.yaml.clib:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-ruamel.yaml:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pandas:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-threadpoolctl:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-scikit-learn:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-mypy_extensions:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-typing_extensions:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-typed_ast:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-mypy:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-cycler:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-kiwisolver:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pillow:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-fonttools:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-matplotlib:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-msgpack:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-biopython:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-decorator:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-networkx:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pp:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-dill:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pox:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-multiprocess:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-psutil:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-Mako:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-appdirs:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-line_profiler:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-memory_profiler:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-ipython:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-ipython_genutils:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-traitlets:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pexpect:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-ptyprocess:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pickleshare:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-backcall:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-prompt_toolkit:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-wcwidth:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pygments:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-h5py:
+    category: False
+    requires:
+      - hdf5/1.13.1/gcc.system
+      - python/3.10.2
+    provides:
+  python_3.10.2-attrs:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-iniconfig:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pytest:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pluggy:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-py:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-tomli:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-sortedcontainers:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-hypothesis:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-flit:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-flit_core:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-docutils:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-asttokens:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-executing:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pure_eval:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-stack_data:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-click:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-numpy-groupies:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-llvmlite:
+    category: False
+    requires:
+      - llvm/11.1.0
+      - gcc/system
+      - python/3.10.2
+    provides:
+  python_3.10.2-numba:
+    category: False
+    requires:
+      - gcc/system
+      - python/3.10.2
+      - intel-tbb/2021.5.0
+    provides:
+  python_3.10.2:
+    category: False
+    requires:
+    provides:
+  python_3.10.2-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - python/3.10.2
+  python_3.10.2-setuptools:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-setuptools_scm:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pip:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-cython:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-numpy:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pybind11:
+    category: False
+    requires:
+      - python/3.10.2
+      - foundation/v8
+    provides:
+  python_3.10.2-ply:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-gast:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-beniget:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pythran:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-scipy:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-joblib:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-packaging:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-distro:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-scikit-build:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pyparsing:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-wheel:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-six:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-pkgconfig:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-dateutil:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-filelock:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+R4-admix:
+  R_4.0.4:
+    category: False
+    requires:
+      - OpenBLAS/0.3.6
+      - java/1.8.0
+      - gcc/8.4.0
+    provides:
+  R_4.0.4-module:
+    category: LANGUAGES
+    requires:
+      - OpenBLAS/0.3.6
+      - java/1.8.0
+      - gcc/8.4.0
+    provides:
+      - R/4.0.4
+  rstudio_1.4.1106:
+    category: False
+    requires:
+    provides:
+  rstudio_1.4.1106-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - rstudio/1.4.1106
+  R_4.0.4-GenomeInfoDbData:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-tmvnsim:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.1.2:
+    category: False
+    requires:
+      - OpenBLAS/0.3.19
+      - java/17
+      - gcc/11.2.0
+    provides:
+  R_4.1.2-module:
+    category: LANGUAGES
+    requires:
+      - OpenBLAS/0.3.19
+      - java/17
+      - gcc/11.2.0
+    provides:
+      - R/4.1.2
+  rstudio_2022.02.1.461:
+    category: False
+    requires:
+    provides:
+  rstudio_2022.02.1.461-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - rstudio/2022.02.1.461
+  R_4.1.2-GenomeInfoDbData:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-tmvnsim:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+systools-admix:
+  perl-Crypt-Rijndael:
+    category: False
+    requires:
+    provides:
+  perl-Expect:
+    category: False
+    requires:
+    provides:
+  perl-HTML-Form:
+    category: False
+    requires:
+    provides:
+  perl-IO-Stty:
+    category: False
+    requires:
+    provides:
+  perl-Net-HTTPS-NB:
+    category: False
+    requires:
+    provides:
+  python3-ansible-lint:
+    category: False
+    requires:
+    provides:
+  python3-scandir:
+    category: False
+    requires:
+    provides:
+  python3-pathlib2:
+    category: False
+    requires:
+    provides:
+  perl-OLE-Storage_Lite:
+    category: False
+    requires:
+    provides:
+  perl-Parse-RecDescent:
+    category: False
+    requires:
+    provides:
+  perl-Unicode-Map:
+    category: False
+    requires:
+    provides:
+  perl-Jcode:
+    category: False
+    requires:
+    provides:
+  perl-Spreadsheet-WriteExcel:
+    category: False
+    requires:
+    provides:
+  nmon:
+    category: False
+    requires:
+    provides:
+  python3-collectd:
+    category: False
+    requires:
+    provides:
+  python3-hostlist:
+    category: False
+    requires:
+    provides:
+  zfs-auto-snapshot:
+    category: False
+    requires:
+    provides:
+  rclone:
+    category: False
+    requires:
+      - go/1.17.7
+    provides:
+  perl-Test-SharedFork:
+    category: False
+    requires:
+    provides:
+  perl-Test-TCP:
+    category: False
+    requires:
+    provides:
+  perl-HTTP-Server-Simple:
+    category: False
+    requires:
+    provides:
+  perl-HTTP-Async:
+    category: False
+    requires:
+    provides:
+  perl-IO-Select:
+    category: False
+    requires:
+    provides:
+  python3-bcrypt:
+    category: False
+    requires:
+    provides:
+  python3-pynacl:
+    category: False
+    requires:
+    provides:
+  python3-paramiko:
+    category: False
+    requires:
+    provides:
+  ansible:
+    category: False
+    requires:
+    provides:
+  python3-cffi:
+    category: False
+    requires:
+    provides:
+tensorflow-admix:
+  tensorflow_2.0.0_python3.8.0:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-module:
+    category: AI-LEARNING
+    requires:
+      - python/3.8.0
+    provides:
+      - tensorflow/2.0.0
+  tensorflow_2.0.0_python3.8.0-astor:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-backports.weakref:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-keras-applications:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-markdown:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-werkzeug:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-absl-py:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-gast:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-google-pasta:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-keras-preprocessing:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-keras:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-opt_einsum:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-grpcio:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-protobuf:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-tensorboard:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-tensorflow_estimator:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-termcolor:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  tensorflow_2.0.0_python3.8.0-wrapt:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  bazel_0.26.1:
+    category: False
+    requires:
+    provides:
+  bazel_0.26.1-module:
+    category: TOOLS
+    requires:
+    provides:
+      - bazel/0.26.1
+  tensorflow_2.8.0_python3.10.2:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-module:
+    category: AI-LEARNING
+    requires:
+      - python/3.10.2
+    provides:
+      - tensorflow/2.8.0
+  tensorflow_2.8.0_python3.10.2-astunparse:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-flatbuffers:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-libclang:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-absl-py:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-gast:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-google-pasta:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-keras-preprocessing:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-keras:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-opt_einsum:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-grpcio:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-protobuf:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-tensorboard:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-tensorflow_estimator:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-termcolor:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorflow_2.8.0_python3.10.2-wrapt:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorRT_8.2.3.0_python3.10.2:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  tensorRT_8.2.3.0_python3.10.2-module:
+    category: AI-LEARNING
+    requires:
+      - python/3.10.2
+    provides:
+      - tensorRT/8.2.3.0
+  bazel_4.2.2:
+    category: False
+    requires:
+      - java/11
+    provides:
+  bazel_4.2.2-module:
+    category: TOOLS
+    requires:
+      - java/11
+    provides:
+      - bazel/4.2.2
+pytorch-admix:
+  pytorch_1.5.1_python3.8.0_vision:
+    category: False
+    requires:
+      - foundation/v8
+      - pytorch/1.5.1
+    provides:
+  pytorch_1.5.1_python3.8.0_pillow-simd:
+    category: False
+    requires:
+      - python/3.8.0
+      - gcc/8.4.0
+    provides:
+  pytorch_1.5.1_python3.8.0_cuda_10.1.243:
+    category: False
+    requires:
+      - cuda/10.1.243
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.8.0
+      - mkl/2019.5.281
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+    provides:
+  pytorch_1.5.1_python3.8.0_cuda_10.1.243-module:
+    category: AI-LEARNING
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.8.0
+      - mkl/2019.5.281
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+    provides:
+      - pytorch-cuda/1.5.1
+  pytorch_1.5.1_python3.8.0_cuda_10.1.243_vision:
+    category: False
+    requires:
+      - foundation/v8
+      - cuda/10.1.243
+      - pytorch/1.5.1
+    provides:
+  pytorch_1.5.1_python3.8.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.8.0
+      - mkl/2019.5.281
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+    provides:
+  pytorch_1.5.1_python3.8.0-module:
+    category: AI-LEARNING
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.8.0
+      - mkl/2019.5.281
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+    provides:
+      - pytorch/1.5.1
+  pytorch_1.11.0_python3.10.2_vision:
+    category: False
+    requires:
+      - foundation/v8
+      - pytorch/1.11.0
+    provides:
+  pytorch_1.11.0_python3.10.2_pillow-simd:
+    category: False
+    requires:
+      - python/3.10.2
+      - gcc/8.4.0
+    provides:
+  pytorch_1.11.0_python3.10.2_cuda_11.4.0:
+    category: False
+    requires:
+      - cuda/11.4.0
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.10.2
+      - mkl/2019.5.281
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+    provides:
+  pytorch_1.11.0_python3.10.2_cuda_11.4.0-module:
+    category: AI-LEARNING
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.10.2
+      - mkl/2019.5.281
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+    provides:
+      - pytorch-cuda/1.11.0
+  pytorch_1.11.0_python3.10.2_cuda_11.4.0_vision:
+    category: False
+    requires:
+      - foundation/v8
+      - cuda/11.4.0
+      - pytorch/1.11.0
+    provides:
+  pytorch_1.11.0_python3.10.2:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.10.2
+      - mkl/2019.5.281
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+    provides:
+  pytorch_1.11.0_python3.10.2-module:
+    category: AI-LEARNING
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.10.2
+      - mkl/2019.5.281
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+    provides:
+      - pytorch/1.11.0
+bioconda-admix:
+  bioconda_4.8.3:
+    category: False
+    requires:
+    provides:
+  bioconda_4.8.3-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - bioconda/4.8.3
+  miniconda3_4.8.5:
+    category: False
+    requires:
+    provides:
+  miniconda3_4.8.5-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - miniconda3/4.8.5
+  qiime2_2020.8-module:
+    category: BIOTOOLS
+    requires:
+    provides:
+      - qiime2/2020.8
+  qiime2_2021.2-module:
+    category: BIOTOOLS
+    requires:
+    provides:
+      - qiime2/2021.2
+  miniconda3_4.12.0:
+    category: False
+    requires:
+    provides:
+  miniconda3_4.12.0-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - miniconda3/4.12.0
+  qiime2_2022.2-module:
+    category: BIOTOOLS
+    requires:
+    provides:
+      - qiime2/2022.2
+nfsapps-admix:
+  MATLAB_R2020a-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - MATLAB/R2020a
+  stata_16-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - stata/16
+  cellranger_3.0.2-module:
+    category: GENOMICS
+    requires:
+    provides:
+      - cellranger/3.0.2
+  marc_2020-module:
+    category: PHYSICS
+    requires:
+    provides:
+      - marc/2020
+  mentat_2020-module:
+    category: PHYSICS
+    requires:
+    provides:
+      - mentat/2020
+  ansys_2019R2-module:
+    category: ENGINEERING
+    requires:
+    provides:
+      - ansys/2019R2
+  freesurfer_6.0.1-module:
+    category: IMAGING
+    requires:
+    provides:
+      - freesurfer/6.0.1
+  turbomole_7.5-module:
+    category: CHEMISTRY
+    requires:
+    provides:
+      - turbomole/7.5
+  turbomole-smp_7.5-module:
+    category: CHEMISTRY
+    requires:
+    provides:
+      - turbomole-smp/7.5
+  fsl_6.0.4-module:
+    category: IMAGING
+    requires:
+    provides:
+      - fsl/6.0.4
+  vasp_5.4.4-module:
+    category: ENGINEERING
+    requires:
+    provides:
+      - vasp/5.4.4
+  gaussian_16-module:
+    category: ENGINEERING
+    requires:
+    provides:
+      - gaussian/16
+  sas_94M7-module:
+    category: ENGINEERING
+    requires:
+    provides:
+      - sas/94M7
+  ansys_2020R2-module:
+    category: ENGINEERING
+    requires:
+    provides:
+      - ansys/2020R2
+  cellranger_3.1.0-module:
+    category: GENOMICS
+    requires:
+    provides:
+      - cellranger/3.1.0
+  MATLAB_R2020b-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - MATLAB/R2020b
+  freesurfer_7.2.0-module:
+    category: IMAGING
+    requires:
+    provides:
+      - freesurfer/7.2.0
+  vasp_6.1.2-module:
+    category: ENGINEERING
+    requires:
+    provides:
+      - vasp/6.1.2
+  stata_17-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - stata/17
+  turbomole_7.6-module:
+    category: CHEMISTRY
+    requires:
+    provides:
+      - turbomole/7.6
+  turbomole-smp_7.6-module:
+    category: CHEMISTRY
+    requires:
+    provides:
+      - turbomole-smp/7.6
+  MATLAB_R2021b-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - MATLAB/R2021b
+  cellranger_6.1.2-module:
+    category: GENOMICS
+    requires:
+    provides:
+      - cellranger/6.1.2
+  freesurfer_7.1.1-module:
+    category: IMAGING
+    requires:
+    provides:
+      - freesurfer/7.1.1
+julia-admix:
+  julia_1.6.0:
+    category: False
+    requires:
+    provides:
+  julia_1.6.0-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - julia/1.6.0
+  julia_1.5.1:
+    category: False
+    requires:
+    provides:
+  julia_1.5.1-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - julia/1.5.1
+  julia_1.7.1:
+    category: False
+    requires:
+    provides:
+  julia_1.7.1-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - julia/1.7.1
+simulations-admix:
+  opensees_3.3.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  opensees_3.3.0-module:
+    category: PHYSICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - opensees/3.3.0
+  jags_4.3.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  jags_4.3.0-module:
+    category: STATISTICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - jags/4.3.0
+  aria2_1.36.0:
+    category: False
+    requires:
+    provides:
+  aria2_1.36.0-module:
+    category: STATISTICS
+    requires:
+    provides:
+      - aria2/1.36.0
+  sqlite3_3.32.3:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  sqlite3_3.32.3-module:
+    category: LIBRARIES
+    requires:
+      - gcc/8.4.0
+    provides:
+      - sqlite3/3.32.3
+  proj_6.3.2:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - sqlite3/3.32.3
+    provides:
+  proj_6.3.2-module:
+    category: LIBRARIES
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - sqlite3/3.32.3
+    provides:
+      - proj/6.3.2
+  gdal_3.1.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - proj/6.3.2
+      - sqlite3/3.32.3
+      - geos/3.8.1
+    provides:
+  gdal_3.1.0-module:
+    category: LIBRARIES
+    requires:
+      - gcc/8.4.0
+      - proj/6.3.2
+      - sqlite3/3.32.3
+      - geos/3.8.1
+    provides:
+      - gdal/3.1.0
+  opensees_3.4.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  opensees_3.4.0-module:
+    category: PHYSICS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - opensees/3.4.0
+  sqlite3_3.38.2:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  sqlite3_3.38.2-module:
+    category: LIBRARIES
+    requires:
+      - gcc/11.2.0
+    provides:
+      - sqlite3/3.38.2
+  proj_9.0.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - sqlite3/3.38.2
+    provides:
+  proj_9.0.0-module:
+    category: LIBRARIES
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - sqlite3/3.38.2
+    provides:
+      - proj/9.0.0
+  gdal_3.4.1:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - proj/9.0.0
+      - sqlite3/3.38.2
+      - geos/3.10.2
+    provides:
+  gdal_3.4.1-module:
+    category: LIBRARIES
+    requires:
+      - gcc/11.2.0
+      - proj/9.0.0
+      - sqlite3/3.38.2
+      - geos/3.10.2
+    provides:
+      - gdal/3.4.1
+rust-admix:
+  rustc_1.62.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - llvm/13.0.0
+    provides:
+  rustc_1.62.0-module:
+    category: COMPILERS
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - llvm/13.0.0
+    provides:
+      - rustc/1.62.0
+genomics-admix:
+  plink_2.00a2.3:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - mkl/2019.5.281
+    provides:
+  plink_2.00a2.3-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+      - mkl/2019.5.281
+    provides:
+      - plink/2.00a2.3
+  rMATS_4.1.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.8.0
+      - gsl/2.6/gcc.8.4.0
+    provides:
+  rMATS_4.1.0-module:
+    category: GENOMICS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.8.0
+      - gsl/2.6/gcc.8.4.0
+    provides:
+      - rMATS/4.1.0
+  canu_2.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  canu_2.0-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - canu/2.0
+  mummer_4.0.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  mummer_4.0.0-module:
+    category: GENOMICS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - mummer/4.0.0
+  velocyto_0.17.17:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+  velocyto_0.17.17-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+      - velocyto/0.17.17
+  prodigal_2.6.3:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  prodigal_2.6.3-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - prodigal/2.6.3
+  roary_3.13.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  roary_3.13.0-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - roary/3.13.0
+  midas_1.3.2:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  midas_1.3.2-module:
+    category: GENOMICS
+    requires:
+      - python/3.8.0
+    provides:
+      - midas/1.3.2
+  hisat2_2.2.1:
+    category: False
+    requires:
+      - ncbi-ngs/2.10.2
+      - ncbi-vdb/2.10.2
+      - gcc/8.4.0
+    provides:
+  hisat2_2.2.1-module:
+    category: GENOMICS
+    requires:
+      - ncbi-ngs/2.10.2
+      - ncbi-vdb/2.10.2
+      - gcc/8.4.0
+    provides:
+      - hisat2/2.2.1
+  bismark_0.22.3:
+    category: False
+    requires:
+    provides:
+  bismark_0.22.3-module:
+    category: GENOMICS
+    requires:
+    provides:
+      - bismark/0.22.3
+  stringtie_2.1.4:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  stringtie_2.1.4-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - stringtie/2.1.4
+  igv_2.8.9:
+    category: False
+    requires:
+    provides:
+  igv_2.8.9-module:
+    category: GENOMICS
+    requires:
+    provides:
+      - igv/2.8.9
+  bedops_2.4.39:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  bedops_2.4.39-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - bedops/2.4.39
+  bionetgen_2.5.1:
+    category: False
+    requires:
+      - foundation/v8
+      - python/3.8.0
+      - gcc/8.4.0
+    provides:
+  bionetgen_2.5.1-module:
+    category: GENOMICS
+    requires:
+      - foundation/v8
+      - python/3.8.0
+      - gcc/8.4.0
+    provides:
+      - bionetgen/2.5.1
+  bbmap_38.87:
+    category: False
+    requires:
+      - java/1.8.0
+    provides:
+  bbmap_38.87-module:
+    category: GENOMICS
+    requires:
+      - java/1.8.0
+    provides:
+      - bbmap/38.87
+  megahit_1.2.9:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  megahit_1.2.9-module:
+    category: GENOMICS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - megahit/1.2.9
+  kraken2_2.1.1:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  kraken2_2.1.1-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - kraken2/2.1.1
+  bracken_2.6.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  bracken_2.6.0-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - bracken/2.6.0
+  loompy_3.0.6:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+  loompy_3.0.6-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+      - python/3.8.0
+    provides:
+      - loompy/3.0.6
+  imagemagick_7.0.10.26:
+    category: False
+    requires:
+      - perl/5.30.0
+      - gcc/8.4.0
+    provides:
+  imagemagick_7.0.10.26-module:
+    category: TOOLS
+    requires:
+      - perl/5.30.0
+      - gcc/8.4.0
+    provides:
+      - imagemagick/7.0.10.26
+  cdhit_4.8.1:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+    provides:
+  cdhit_4.8.1-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+    provides:
+      - cdhit/4.8.1
+  mcl_14.137:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  mcl_14.137-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - mcl/14.137
+  prank_170427:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  prank_170427-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - prank/170427
+  mafft_7.471:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  mafft_7.471-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - mafft/7.471
+  fasttree_2.1.11:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  fasttree_2.1.11-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - fasttree/2.1.11
+  rMATS_4.1.1:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.8.0
+      - gsl/2.6/gcc.8.4.0
+    provides:
+  rMATS_4.1.1-module:
+    category: GENOMICS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - python/3.8.0
+      - gsl/2.6/gcc.8.4.0
+    provides:
+      - rMATS/4.1.1
+  rMATS_4.1.2:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - python/3.10.2
+      - gsl/2.7.1/gcc.11.2.0
+    provides:
+  rMATS_4.1.2-module:
+    category: GENOMICS
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - python/3.10.2
+      - gsl/2.7.1/gcc.11.2.0
+    provides:
+      - rMATS/4.1.2
+  bismark_0.23.1:
+    category: False
+    requires:
+    provides:
+  bismark_0.23.1-module:
+    category: GENOMICS
+    requires:
+    provides:
+      - bismark/0.23.1
+  stringtie_2.2.1:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  stringtie_2.2.1-module:
+    category: GENOMICS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - stringtie/2.2.1
+  igv_2.12.3:
+    category: False
+    requires:
+    provides:
+  igv_2.12.3-module:
+    category: GENOMICS
+    requires:
+    provides:
+      - igv/2.12.3
+  diamond_2.0.15:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+    provides:
+  diamond_2.0.15-module:
+    category: GENOMICS
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+    provides:
+      - diamond/2.0.15
+  bionetgen_2.8.0:
+    category: False
+    requires:
+      - foundation/v8
+      - python/3.10.2
+      - gcc/11.2.0
+    provides:
+  bionetgen_2.8.0-module:
+    category: GENOMICS
+    requires:
+      - foundation/v8
+      - python/3.10.2
+      - gcc/11.2.0
+    provides:
+      - bionetgen/2.8.0
+  bbmap_38.96:
+    category: False
+    requires:
+      - java/17
+    provides:
+  bbmap_38.96-module:
+    category: GENOMICS
+    requires:
+      - java/17
+    provides:
+      - bbmap/38.96
+  kraken2_2.1.2:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  kraken2_2.1.2-module:
+    category: GENOMICS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - kraken2/2.1.2
+  bracken_2.6.2:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  bracken_2.6.2-module:
+    category: GENOMICS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - bracken/2.6.2
+  imagemagick_7.1.0.30:
+    category: False
+    requires:
+      - perl/5.34.1
+      - gcc/11.2.0
+    provides:
+  imagemagick_7.1.0.30-module:
+    category: TOOLS
+    requires:
+      - perl/5.34.1
+      - gcc/11.2.0
+    provides:
+      - imagemagick/7.1.0.30
+  metaphlan_3.0.14:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  metaphlan_3.0.14-module:
+    category: GENOMICS
+    requires:
+      - python/3.8.0
+    provides:
+      - metaphlan/3.0.14
+  humann_3.0.1:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  humann_3.0.1-module:
+    category: GENOMICS
+    requires:
+      - python/3.8.0
+    provides:
+      - humann/3.0.1
+  kneaddata_0.10.0:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  kneaddata_0.10.0-module:
+    category: GENOMICS
+    requires:
+      - python/3.8.0
+    provides:
+      - kneaddata/0.10.0
+  python_3.8.0-bcbio-gff:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  python_3.8.0-seaborn:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  cmseq_1.0.4:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  cmseq_1.0.4-module:
+    category: GENOMICS
+    requires:
+      - python/3.8.0
+    provides:
+      - cmseq/1.0.4
+  glpk_5.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  glpk_5.0-module:
+    category: GENOMICS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - glpk/5.0
+  biom-format_2.1.12:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  biom-format_2.1.12-module:
+    category: GENOMICS
+    requires:
+      - python/3.8.0
+    provides:
+      - biom-format/2.1.12
+  dendropy_4.5.2:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  dendropy_4.5.2-module:
+    category: GENOMICS
+    requires:
+      - python/3.8.0
+    provides:
+      - dendropy/4.5.2
+  hclust2_1.0.0:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  hclust2_1.0.0-module:
+    category: GENOMICS
+    requires:
+      - python/3.8.0
+    provides:
+      - hclust2/1.0.0
+  phylophlan_3.0.2:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+  phylophlan_3.0.2-module:
+    category: GENOMICS
+    requires:
+      - python/3.8.0
+    provides:
+      - phylophlan/3.0.2
+  trimmomatic_0.39:
+    category: False
+    requires:
+      - java/1.8.0
+    provides:
+  trimmomatic_0.39-module:
+    category: GENOMICS
+    requires:
+      - java/1.8.0
+    provides:
+      - trimmomatic/0.39
+  diamond_2.0.4:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+  diamond_2.0.4-module:
+    category: GENOMICS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+    provides:
+      - diamond/2.0.4
+imaging-admix:
+  ncl_6.6.2:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - szip/2.1.1
+      - libjpeg/9d
+      - libpng/1.6.37
+      - hdf4/4.2.15
+      - netcdf-c/4.7.0/gcc.8.4.0
+      - freetype/2.10.2
+      - udunits/2.2.26/gcc.8.4.0
+      - gsl/2.6/gcc.8.4.0
+    provides:
+  ncl_6.6.2-module:
+    category: TOOLS
+    requires:
+      - foundation/v8
+      - gcc/8.4.0
+      - szip/2.1.1
+      - libjpeg/9d
+      - libpng/1.6.37
+      - hdf4/4.2.15
+      - netcdf-c/4.7.0/gcc.8.4.0
+      - freetype/2.10.2
+      - udunits/2.2.26/gcc.8.4.0
+      - gsl/2.6/gcc.8.4.0
+    provides:
+      - ncl/6.6.2
+  afni_20.3.01:
+    category: False
+    requires:
+    provides:
+  afni_20.3.01-module:
+    category: IMAGING
+    requires:
+    provides:
+      - afni/20.3.01
+  ants_2.2.0:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/6.5.0
+    provides:
+  ants_2.2.0-module:
+    category: IMAGING
+    requires:
+      - foundation/v8
+      - gcc/6.5.0
+    provides:
+      - ants/2.2.0
+  mrtrix3_3.0.2:
+    category: False
+    requires:
+      - eigen/3.3.7
+      - gcc/8.4.0
+      - fftw/3.3.8/gcc.8.4.0
+      - python/3.8.0
+    provides:
+  mrtrix3_3.0.2-module:
+    category: IMAGING
+    requires:
+      - eigen/3.3.7
+      - gcc/8.4.0
+      - fftw/3.3.8/gcc.8.4.0
+      - python/3.8.0
+    provides:
+      - mrtrix3/3.0.2
+  libpng_1.6.37:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  libpng_1.6.37-module:
+    category: LIBRARIES
+    requires:
+      - gcc/8.4.0
+    provides:
+      - libpng/1.6.37
+  libjpeg_9d:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  libjpeg_9d-module:
+    category: LIBRARIES
+    requires:
+      - gcc/8.4.0
+    provides:
+      - libjpeg/9d
+  freetype_2.10.2:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  freetype_2.10.2-module:
+    category: LIBRARIES
+    requires:
+      - gcc/8.4.0
+    provides:
+      - freetype/2.10.2
+  szip_2.1.1:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+  szip_2.1.1-module:
+    category: LIBRARIES
+    requires:
+      - gcc/8.4.0
+    provides:
+      - szip/2.1.1
+  hdf4_4.2.15:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - szip/2.1.1
+      - libjpeg/9d
+    provides:
+  hdf4_4.2.15-module:
+    category: LIBRARIES
+    requires:
+      - gcc/8.4.0
+      - szip/2.1.1
+      - libjpeg/9d
+    provides:
+      - hdf4/4.2.15
+  afni_22.1.09:
+    category: False
+    requires:
+    provides:
+  afni_22.1.09-module:
+    category: IMAGING
+    requires:
+    provides:
+      - afni/22.1.09
+  ants_2.3.5:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/system
+    provides:
+  ants_2.3.5-module:
+    category: IMAGING
+    requires:
+      - foundation/v8
+      - gcc/system
+    provides:
+      - ants/2.3.5
+  mrtrix3_3.0.3:
+    category: False
+    requires:
+      - eigen/3.3.7
+      - gcc/8.4.0
+      - fftw/3.3.8/gcc.8.4.0
+      - python/3.8.0
+    provides:
+  mrtrix3_3.0.3-module:
+    category: IMAGING
+    requires:
+      - eigen/3.3.7
+      - gcc/8.4.0
+      - fftw/3.3.8/gcc.8.4.0
+      - python/3.8.0
+    provides:
+      - mrtrix3/3.0.3
+created: 2022-07-29
