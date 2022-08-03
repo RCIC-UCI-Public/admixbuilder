@@ -26,19 +26,13 @@ depinfo.yaml:
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am module-info >> $@; done
 	echo "created: $$(date +%F)" >> $@
 
-deplist2.yaml:
-	- /bin/rm $@
-	echo "### Scanning admixes for module-requires-provides-category ###"
-	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am module-requires-provides-category >> $@; done
-	echo "created: $$(date +%F)" >> $@
-
 deplist.yaml: 
 	- /bin/rm $@
 	echo "### Scanning admixes for module-requires-provides ###"
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am module-requires-provides >> $@; done 
 	echo "created: $$(date +%F)" >> $@
 
-dot: deplist.yaml deplist2.yaml
+dot: depinfo.yaml
 	./depend.py 
 
 dotpdf:
