@@ -364,10 +364,10 @@ class Content:
         txt += "{rank = same; 3; systools_admix; foundation_admix; };\n"
         txt += "{rank = same; 4; buildlibs_admix; mathlibs_admix} ;\n"
         txt += "{rank = same; 5; R4_admix;rust_admix simulations_admix; fileformats_admix; };\n"
-        txt += "{rank = same; 6; python_admix;cuda_admix; perl_admix};\n"
+        txt += "{rank = same; 6; python_admix;cuda_admix; perl_admix, nfsapps_admix};\n"
         txt += "{rank = same; 7; imaging_admix;  tensorflow_admix; biotools_admix;chemistry_admix;pytorch_admix};\n"
         txt += "{rank = same; 8; genomics_admix};\n"
-        txt += "{rank = same; 9; conda_admix; bioconda_admix; nfsapps_admix; julia_admix};\n"
+        txt += "{rank = same; 9; conda_admix; bioconda_admix; julia_admix};\n"
 
         for admix in self.nodes:
             txt += "\n## %s\n" % admix.name
