@@ -47,7 +47,6 @@ biotools-admix:
   bustools_0.40.0-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - bustools/0.40.0
@@ -83,7 +82,6 @@ biotools-admix:
   kallisto_0.46.2-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - hdf5/1.10.5/gcc.8.4.0
     provides:
@@ -111,7 +109,6 @@ biotools-admix:
   ncbi-vdb_2.10.2-module:
     category: BIOTOOLS
     requires:
-      - ncbi-ngs/2.10.2
       - gcc/8.4.0
       - hdf5/1.10.5/gcc.8.4.0
     provides:
@@ -159,7 +156,6 @@ biotools-admix:
   salmon_1.2.1-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - boost/1.66.0/gcc.8.4.0
     provides:
@@ -266,6 +262,7 @@ biotools-admix:
   unicycler_0.4.8-module:
     category: BIOTOOLS
     requires:
+      - pilon/1.23
       - gcc/8.4.0
       - python/3.8.0
       - SPAdes/3.14.0
@@ -308,7 +305,6 @@ biotools-admix:
   freebayes_1.3.2-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - freebayes/1.3.2
@@ -352,7 +348,6 @@ biotools-admix:
   bamtools_2.5.1-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - jsoncpp/1.9.4
     provides:
@@ -393,7 +388,15 @@ biotools-admix:
   trinityrnaseq_2.8.6-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
+      - java/1.8.0
+      - python/3.8.0
+      - bowtie/1.2.3
+      - bowtie2/2.4.1
+      - gatk/4.1.9.0
+      - Jellyfish/2.3.0
+      - kallisto/0.46.2
+      - salmon/1.2.1
+      - samtools/1.10
       - gcc/8.4.0
       - perl/5.30.0
     provides:
@@ -427,6 +430,8 @@ biotools-admix:
   trimgalore_0.6.6-module:
     category: BIOTOOLS
     requires:
+      - fastqc/0.11.9
+      - cutadapt/2.10
     provides:
       - trimgalore/0.6.6
   htslib_1.10.2:
@@ -457,7 +462,6 @@ biotools-admix:
   edirect_2020-module:
     category: BIOTOOLS
     requires:
-      - gcc/8.4.0
     provides:
       - edirect/2020
   ncbi-blast_2.10.0:
@@ -469,6 +473,7 @@ biotools-admix:
   ncbi-blast_2.10.0-module:
     category: BIOTOOLS
     requires:
+      - edirect/2020
       - python/3.8.0
       - boost/1.66.0/gcc.8.4.0
     provides:
@@ -494,7 +499,6 @@ biotools-admix:
   SPAdes_3.14.0-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - python/3.8.0
     provides:
@@ -508,7 +512,6 @@ biotools-admix:
   racon_1.4.13-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - racon/1.4.13
@@ -562,7 +565,6 @@ biotools-admix:
   jsoncpp_1.9.4-module:
     category: LIBRARIES
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - jsoncpp/1.9.4
@@ -582,7 +584,6 @@ biotools-admix:
   Jellyfish_2.3.0-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - htslib/1.10.2
       - samtools/1.10
@@ -758,7 +759,6 @@ biotools-admix:
   kallisto_0.48.0-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/11.2.0
       - hdf5/1.13.1/gcc.11.2.0
     provides:
@@ -812,7 +812,6 @@ biotools-admix:
   salmon_1.8.0-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/11.2.0
       - boost/1.78.0/gcc.11.2.0
     provides:
@@ -870,6 +869,7 @@ biotools-admix:
   unicycler_0.5.0-module:
     category: BIOTOOLS
     requires:
+      - pilon/1.24
       - gcc/11.2.0
       - python/3.10.2
       - SPAdes/3.15.4
@@ -891,7 +891,6 @@ biotools-admix:
   bamtools_2.5.2-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/11.2.0
       - jsoncpp/1.9.5
     provides:
@@ -951,6 +950,8 @@ biotools-admix:
   trimgalore_0.6.7-module:
     category: BIOTOOLS
     requires:
+      - fastqc/0.11.9
+      - cutadapt/4.0
     provides:
       - trimgalore/0.6.7
   htslib_1.15.1:
@@ -972,7 +973,6 @@ biotools-admix:
   edirect_2022-module:
     category: BIOTOOLS
     requires:
-      - gcc/11.2.0
     provides:
       - edirect/2022
   ncbi-blast_2.13.0:
@@ -984,6 +984,7 @@ biotools-admix:
   ncbi-blast_2.13.0-module:
     category: BIOTOOLS
     requires:
+      - edirect/2022
       - python/3.10.2
       - boost/1.78.0/gcc.11.2.0
     provides:
@@ -998,7 +999,6 @@ biotools-admix:
   SPAdes_3.15.4-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/11.2.0
       - python/3.10.2
     provides:
@@ -1012,7 +1012,6 @@ biotools-admix:
   racon_1.5.0-module:
     category: BIOTOOLS
     requires:
-      - foundation/v8
       - gcc/11.2.0
     provides:
       - racon/1.5.0
@@ -1064,7 +1063,6 @@ biotools-admix:
   jsoncpp_1.9.5-module:
     category: LIBRARIES
     requires:
-      - foundation/v8
       - gcc/11.2.0
     provides:
       - jsoncpp/1.9.5
@@ -1216,7 +1214,6 @@ buildlibs-admix:
   geos_3.8.1-module:
     category: TOOLS
     requires:
-      - foundation/v8
     provides:
       - geos/3.8.1
   scalapack_2.1.0:
@@ -1228,8 +1225,6 @@ buildlibs-admix:
   scalapack_2.1.0-module:
     category: LIBRARIES
     requires:
-      - foundation/v8
-      - openmpi/4.0.3/gcc.8.4.0
     provides:
       - scalapack/2.1.0
   lapack_3.9.0:
@@ -1261,7 +1256,6 @@ buildlibs-admix:
   llvm_9.0.1-module:
     category: COMPILERS
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - llvm/9.0.1
@@ -1275,8 +1269,6 @@ buildlibs-admix:
   openmpi_4.0.3_gcc_8.4.0-module:
     category: COMPILERS
     requires:
-      - singularity/3.4.1
-      - ucx/1.8.0
       - gcc/8.4.0
     provides:
       - openmpi/4.0.3/gcc.8.4.0
@@ -1301,8 +1293,6 @@ buildlibs-admix:
   openmpi_4.0.3_intel_2020u1-module:
     category: COMPILERS
     requires:
-      - singularity/3.4.1
-      - ucx/1.8.0
       - intel/2020u1
     provides:
       - openmpi/4.0.3/intel.2020u1
@@ -1327,8 +1317,6 @@ buildlibs-admix:
   openmpi_4.0.3_gcc_6.5.0-module:
     category: COMPILERS
     requires:
-      - singularity/3.4.1
-      - ucx/1.8.0
       - gcc/6.5.0
     provides:
       - openmpi/4.0.3/gcc.6.5.0
@@ -1341,7 +1329,6 @@ buildlibs-admix:
   clang_11.1.0-module:
     category: COMPILERS
     requires:
-      - foundation/v8
       - llvm/11.1.0
     provides:
       - clang/11.1.0
@@ -1365,7 +1352,6 @@ buildlibs-admix:
   llvm_11.1.0-module:
     category: COMPILERS
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - llvm/11.1.0
@@ -1411,7 +1397,6 @@ buildlibs-admix:
   clang_13.0.0-module:
     category: COMPILERS
     requires:
-      - foundation/v8
       - llvm/13.0.0
     provides:
       - clang/13.0.0
@@ -1467,7 +1452,6 @@ buildlibs-admix:
   geos_3.10.2-module:
     category: TOOLS
     requires:
-      - foundation/v8
     provides:
       - geos/3.10.2
   xz_5.2.5:
@@ -1499,7 +1483,6 @@ buildlibs-admix:
   llvm_13.0.0-module:
     category: COMPILERS
     requires:
-      - foundation/v8
       - gcc/11.2.0
     provides:
       - llvm/13.0.0
@@ -1513,8 +1496,6 @@ buildlibs-admix:
   openmpi_4.1.2_gcc_11.2.0-module:
     category: COMPILERS
     requires:
-      - singularity/3.9.4
-      - ucx/1.12.0
       - gcc/11.2.0
     provides:
       - openmpi/4.1.2/gcc.11.2.0
@@ -1528,8 +1509,6 @@ buildlibs-admix:
   openmpi_4.1.2_intel_2022.2-module:
     category: COMPILERS
     requires:
-      - singularity/3.9.4
-      - ucx/1.12.0
       - intel/2022.2
     provides:
       - openmpi/4.1.2/intel.2022.2
@@ -1554,8 +1533,6 @@ buildlibs-admix:
   openmpi_4.1.2_gcc_8.4.0-module:
     category: COMPILERS
     requires:
-      - singularity/3.9.4
-      - ucx/1.12.0
       - gcc/8.4.0
     provides:
       - openmpi/4.1.2/gcc.8.4.0
@@ -1628,7 +1605,6 @@ buildtools-admix:
   singularity_3.4.1-module:
     category: TOOLS
     requires:
-      - go/1.17.7
     provides:
       - singularity/3.4.1
   gcc_system-module:
@@ -1662,7 +1638,6 @@ buildtools-admix:
   singularity_3.7.2-module:
     category: TOOLS
     requires:
-      - go/1.17.7
     provides:
       - singularity/3.7.2
   java17-module:
@@ -1687,7 +1662,6 @@ buildtools-admix:
   tk_8.6.12-module:
     category: LANGUAGES
     requires:
-      - tcl/8.6.12
     provides:
       - tk/8.6.12
   intel_2022.2-module:
@@ -1739,7 +1713,6 @@ buildtools-admix:
   singularity_3.9.4-module:
     category: TOOLS
     requires:
-      - go/1.17.7
     provides:
       - singularity/3.9.4
   tcl_8.6.12:
@@ -1828,7 +1801,6 @@ chemistry-admix:
   lammps_3Mar2020_gcc_8.4.0-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - ffmpeg/4.1.3
       - hdf5/1.10.5/gcc.8.4.0
       - gsl/2.6/gcc.8.4.0
@@ -1846,7 +1818,6 @@ chemistry-admix:
   gromacs_2020.4_gcc_8.4.0-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - gromacs/2020.4/gcc.8.4.0
@@ -1860,7 +1831,6 @@ chemistry-admix:
   gromacs_2020.4_gcc_8.4.0_cuda_10.1.243-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - cuda/10.1.243
     provides:
@@ -1875,7 +1845,6 @@ chemistry-admix:
   gromacs_2020.4_gcc_8.4.0_openmpi_4.0.3-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - openmpi/4.0.3/gcc.8.4.0
     provides:
@@ -1890,7 +1859,6 @@ chemistry-admix:
   gromacs_2020.4_gcc_8.4.0_cuda_10.1.243-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - cuda/10.1.243
     provides:
@@ -1906,7 +1874,6 @@ chemistry-admix:
   gromacs_2020.4_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - cuda/10.1.243
       - openmpi/4.0.3/gcc.8.4.0
@@ -1924,7 +1891,6 @@ chemistry-admix:
   gromacs_2020.4_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3_plumed_2.6.1-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - cuda/10.1.243
       - openmpi/4.0.3/gcc.8.4.0
@@ -1951,7 +1917,6 @@ chemistry-admix:
   charm_6.10.1_gcc_8.4.0-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - charm/6.10.1/gcc.8.4.0
@@ -1979,7 +1944,6 @@ chemistry-admix:
   gromacs_2021.2_gcc_8.4.0-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - gromacs/2021.2/gcc.8.4.0
@@ -1993,7 +1957,6 @@ chemistry-admix:
   gromacs_2021.2_gcc_8.4.0_cuda_10.1.243-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - cuda/10.1.243
     provides:
@@ -2008,7 +1971,6 @@ chemistry-admix:
   gromacs_2021.2_gcc_8.4.0_openmpi_4.0.3-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - openmpi/4.0.3/gcc.8.4.0
     provides:
@@ -2023,7 +1985,6 @@ chemistry-admix:
   gromacs_2021.2_gcc_8.4.0_cuda_10.1.243-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - cuda/10.1.243
     provides:
@@ -2039,7 +2000,6 @@ chemistry-admix:
   gromacs_2021.2_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - cuda/10.1.243
       - openmpi/4.0.3/gcc.8.4.0
@@ -2054,7 +2014,6 @@ chemistry-admix:
   gromacs_2022.1_gcc_8.4.0-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - gromacs/2022.1/gcc.8.4.0
@@ -2069,7 +2028,6 @@ chemistry-admix:
   gromacs_2022.1_gcc_8.4.0_cuda_11.4.0-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - cuda/11.4.0
       - python/3.10.2
@@ -2085,7 +2043,6 @@ chemistry-admix:
   gromacs_2022.1_gcc_8.4.0_openmpi_4.1.2-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - openmpi/4.1.2/gcc.8.4.0
     provides:
@@ -2101,7 +2058,6 @@ chemistry-admix:
   gromacs_2022.1_gcc_8.4.0_cuda_11.4.0-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - cuda/11.4.0
       - python/3.10.2
@@ -2118,7 +2074,6 @@ chemistry-admix:
   gromacs_2022.1_gcc_8.4.0_cuda_11.4.0_openmpi_4.1.2-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - cuda/11.4.0
       - openmpi/4.1.2/gcc.8.4.0
@@ -2155,7 +2110,6 @@ chemistry-admix:
   lammps_29Sep2021_gcc_11.2.0-module:
     category: CHEMISTRY
     requires:
-      - foundation/v8
       - ffmpeg/4.1.3
       - hdf5/1.13.1/gcc.11.2.0
       - gsl/2.7.1/gcc.11.2.0
@@ -2184,7 +2138,6 @@ chemistry-admix:
   charm_7.0.0_gcc_11.2.0-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - gcc/11.2.0
     provides:
       - charm/7.0.0/gcc.11.2.0
@@ -2351,7 +2304,6 @@ fileformats-admix:
   hdf5_1.10.5_gcc_system-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/1.8.0
       - gcc/system
     provides:
@@ -2366,7 +2318,6 @@ fileformats-admix:
   hdf5_1.10.5_gcc_system_openmpi_4.1.1-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/1.8.0
       - openmpi/4.1.1/gcc.system
     provides:
@@ -2400,7 +2351,6 @@ fileformats-admix:
   hdf5_1.10.5_gcc_8.4.0-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/1.8.0
       - gcc/8.4.0
     provides:
@@ -2415,7 +2365,6 @@ fileformats-admix:
   hdf5_1.10.5_gcc_8.4.0_openmpi_4.0.3-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/1.8.0
       - openmpi/4.0.3/gcc.8.4.0
     provides:
@@ -2472,7 +2421,6 @@ fileformats-admix:
   hdf5_1.10.5_intel_2020u1-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/1.8.0
       - intel/2020u1
     provides:
@@ -2487,7 +2435,6 @@ fileformats-admix:
   hdf5_1.10.5_intel_2020u1_openmpi_4.0.3-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/1.8.0
       - openmpi/4.0.3/intel.2020u1
     provides:
@@ -2531,7 +2478,6 @@ fileformats-admix:
   hdf5_1.13.1_gcc_system-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/1.8.0
       - gcc/system
     provides:
@@ -2546,7 +2492,6 @@ fileformats-admix:
   hdf5_1.13.1_gcc_system_openmpi_4.1.1-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/1.8.0
       - openmpi/4.1.1/gcc.system
     provides:
@@ -2593,7 +2538,6 @@ fileformats-admix:
   hdf5_1.13.1_gcc_11.2.0-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/17
       - gcc/11.2.0
     provides:
@@ -2608,7 +2552,6 @@ fileformats-admix:
   hdf5_1.13.1_gcc_11.2.0_openmpi_4.1.2-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/17
       - openmpi/4.1.2/gcc.11.2.0
     provides:
@@ -2665,7 +2608,6 @@ fileformats-admix:
   hdf5_1.13.1_intel_2022.2-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/17
       - intel/2022.2
     provides:
@@ -2680,7 +2622,6 @@ fileformats-admix:
   hdf5_1.13.1_intel_2022.2_openmpi_4.1.2-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - java/17
       - openmpi/4.1.2/intel.2022.2
     provides:
@@ -2999,7 +2940,6 @@ mathlibs-admix:
   eigen_3.3.7-module:
     category: LIBRARIES
     requires:
-      - foundation/v8
     provides:
       - eigen/3.3.7
   mkl_2019.5.281:
@@ -3039,7 +2979,6 @@ mathlibs-admix:
   eigen_3.4.0-module:
     category: LIBRARIES
     requires:
-      - foundation/v8
     provides:
       - eigen/3.4.0
   mkl_2019.5.281:
@@ -4263,6 +4202,7 @@ tensorflow-admix:
   tensorflow_2.0.0_python3.8.0-module:
     category: AI-LEARNING
     requires:
+      - cuda/10.1.243
       - python/3.8.0
     provides:
       - tensorflow/2.0.0
@@ -4368,6 +4308,7 @@ tensorflow-admix:
   tensorflow_2.8.0_python3.10.2-module:
     category: AI-LEARNING
     requires:
+      - cuda/11.4.0
       - python/3.10.2
     provides:
       - tensorflow/2.8.0
@@ -4454,6 +4395,7 @@ tensorflow-admix:
   tensorRT_8.2.3.0_python3.10.2-module:
     category: AI-LEARNING
     requires:
+      - cuda/11.4.0
       - python/3.10.2
     provides:
       - tensorRT/8.2.3.0
@@ -4465,7 +4407,6 @@ tensorflow-admix:
   bazel_4.2.2-module:
     category: TOOLS
     requires:
-      - java/11
     provides:
       - bazel/4.2.2
 pytorch-admix:
@@ -4495,7 +4436,7 @@ pytorch-admix:
   pytorch_1.5.1_python3.8.0_cuda_10.1.243-module:
     category: AI-LEARNING
     requires:
-      - foundation/v8
+      - cuda/10.1.243
       - gcc/8.4.0
       - python/3.8.0
       - mkl/2019.5.281
@@ -4523,7 +4464,6 @@ pytorch-admix:
   pytorch_1.5.1_python3.8.0-module:
     category: AI-LEARNING
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - python/3.8.0
       - mkl/2019.5.281
@@ -4557,7 +4497,7 @@ pytorch-admix:
   pytorch_1.11.0_python3.10.2_cuda_11.4.0-module:
     category: AI-LEARNING
     requires:
-      - foundation/v8
+      - cuda/11.4.0
       - gcc/8.4.0
       - python/3.10.2
       - mkl/2019.5.281
@@ -4585,7 +4525,6 @@ pytorch-admix:
   pytorch_1.11.0_python3.10.2-module:
     category: AI-LEARNING
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - python/3.10.2
       - mkl/2019.5.281
@@ -4685,11 +4624,14 @@ nfsapps-admix:
   fsl_6.0.4-module:
     category: IMAGING
     requires:
+      - OpenBLAS/0.3.6
     provides:
       - fsl/6.0.4
   vasp_5.4.4-module:
     category: ENGINEERING
     requires:
+      - openmpi/4.0.3/gcc.6.5.0
+      - fftw/3.3.8/gcc.system
     provides:
       - vasp/5.4.4
   gaussian_16-module:
@@ -4725,6 +4667,8 @@ nfsapps-admix:
   vasp_6.1.2-module:
     category: ENGINEERING
     requires:
+      - openmpi/4.0.3/gcc.6.5.0
+      - fftw/3.3.8/gcc.system
     provides:
       - vasp/6.1.2
   stata_17-module:
@@ -4838,7 +4782,6 @@ simulations-admix:
   proj_6.3.2-module:
     category: LIBRARIES
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - sqlite3/3.32.3
     provides:
@@ -4892,7 +4835,6 @@ simulations-admix:
   proj_9.0.0-module:
     category: LIBRARIES
     requires:
-      - foundation/v8
       - gcc/11.2.0
       - sqlite3/3.38.2
     provides:
@@ -4925,7 +4867,6 @@ rust-admix:
   rustc_1.62.0-module:
     category: COMPILERS
     requires:
-      - foundation/v8
       - gcc/11.2.0
       - llvm/13.0.0
     provides:
@@ -4955,7 +4896,8 @@ genomics-admix:
   rMATS_4.1.0-module:
     category: GENOMICS
     requires:
-      - foundation/v8
+      - star/2.7.3a
+      - samtools/1.10
       - gcc/8.4.0
       - python/3.8.0
       - gsl/2.6/gcc.8.4.0
@@ -4969,6 +4911,7 @@ genomics-admix:
   canu_2.0-module:
     category: GENOMICS
     requires:
+      - java/1.8.0
       - gcc/8.4.0
     provides:
       - canu/2.0
@@ -4981,7 +4924,6 @@ genomics-admix:
   mummer_4.0.0-module:
     category: GENOMICS
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - mummer/4.0.0
@@ -4994,6 +4936,7 @@ genomics-admix:
   velocyto_0.17.17-module:
     category: GENOMICS
     requires:
+      - loompy/3.0.6
       - gcc/8.4.0
       - python/3.8.0
     provides:
@@ -5017,7 +4960,15 @@ genomics-admix:
   roary_3.13.0-module:
     category: GENOMICS
     requires:
-      - gcc/8.4.0
+      - perl/5.30.0
+      - ncbi-blast/2.10.0
+      - cdhit/4.8.1
+      - fasttree/2.1.11
+      - mcl/14.137
+      - mafft/7.471
+      - prank/170427
+      - bedtools2/2.29.2
+      - parallel/20200222
     provides:
       - roary/3.13.0
   midas_1.3.2:
@@ -5028,6 +4979,8 @@ genomics-admix:
   midas_1.3.2-module:
     category: GENOMICS
     requires:
+      - bowtie2/2.4.1
+      - samtools/1.10
       - python/3.8.0
     provides:
       - midas/1.3.2
@@ -5041,8 +4994,6 @@ genomics-admix:
   hisat2_2.2.1-module:
     category: GENOMICS
     requires:
-      - ncbi-ngs/2.10.2
-      - ncbi-vdb/2.10.2
       - gcc/8.4.0
     provides:
       - hisat2/2.2.1
@@ -5053,6 +5004,10 @@ genomics-admix:
   bismark_0.22.3-module:
     category: GENOMICS
     requires:
+      - perl/5.30.0
+      - samtools/1.10
+      - bowtie2/2.4.1
+      - hisat2/2.2.1
     provides:
       - bismark/0.22.3
   stringtie_2.1.4:
@@ -5096,8 +5051,6 @@ genomics-admix:
   bionetgen_2.5.1-module:
     category: GENOMICS
     requires:
-      - foundation/v8
-      - python/3.8.0
       - gcc/8.4.0
     provides:
       - bionetgen/2.5.1
@@ -5121,7 +5074,6 @@ genomics-admix:
   megahit_1.2.9-module:
     category: GENOMICS
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - megahit/1.2.9
@@ -5144,6 +5096,7 @@ genomics-admix:
   bracken_2.6.0-module:
     category: GENOMICS
     requires:
+      - kraken2/2.1.1
       - gcc/8.4.0
     provides:
       - bracken/2.6.0
@@ -5156,6 +5109,7 @@ genomics-admix:
   loompy_3.0.6-module:
     category: GENOMICS
     requires:
+      - intel-tbb/20190605
       - gcc/8.4.0
       - python/3.8.0
     provides:
@@ -5169,7 +5123,6 @@ genomics-admix:
   imagemagick_7.0.10.26-module:
     category: TOOLS
     requires:
-      - perl/5.30.0
       - gcc/8.4.0
     provides:
       - imagemagick/7.0.10.26
@@ -5182,6 +5135,7 @@ genomics-admix:
   cdhit_4.8.1-module:
     category: GENOMICS
     requires:
+      - imagemagick/7.0.10.26
       - gcc/8.4.0
       - perl/5.30.0
     provides:
@@ -5241,7 +5195,8 @@ genomics-admix:
   rMATS_4.1.1-module:
     category: GENOMICS
     requires:
-      - foundation/v8
+      - star/2.7.3a
+      - samtools/1.10
       - gcc/8.4.0
       - python/3.8.0
       - gsl/2.6/gcc.8.4.0
@@ -5258,7 +5213,8 @@ genomics-admix:
   rMATS_4.1.2-module:
     category: GENOMICS
     requires:
-      - foundation/v8
+      - star/2.7.3a
+      - samtools/1.10
       - gcc/11.2.0
       - python/3.10.2
       - gsl/2.7.1/gcc.11.2.0
@@ -5271,6 +5227,10 @@ genomics-admix:
   bismark_0.23.1-module:
     category: GENOMICS
     requires:
+      - perl/5.34.1
+      - samtools/1.10
+      - bowtie2/2.4.1
+      - hisat2/2.2.1
     provides:
       - bismark/0.23.1
   stringtie_2.2.1:
@@ -5302,7 +5262,6 @@ genomics-admix:
   diamond_2.0.15-module:
     category: GENOMICS
     requires:
-      - foundation/v8
       - gcc/11.2.0
     provides:
       - diamond/2.0.15
@@ -5316,8 +5275,6 @@ genomics-admix:
   bionetgen_2.8.0-module:
     category: GENOMICS
     requires:
-      - foundation/v8
-      - python/3.10.2
       - gcc/11.2.0
     provides:
       - bionetgen/2.8.0
@@ -5351,6 +5308,7 @@ genomics-admix:
   bracken_2.6.2-module:
     category: GENOMICS
     requires:
+      - kraken2/2.1.2
       - gcc/11.2.0
     provides:
       - bracken/2.6.2
@@ -5363,7 +5321,6 @@ genomics-admix:
   imagemagick_7.1.0.30-module:
     category: TOOLS
     requires:
-      - perl/5.34.1
       - gcc/11.2.0
     provides:
       - imagemagick/7.1.0.30
@@ -5375,6 +5332,12 @@ genomics-admix:
   metaphlan_3.0.14-module:
     category: GENOMICS
     requires:
+      - bowtie2/2.4.1
+      - phylophlan/3.0.2
+      - biom-format/2.1.12
+      - dendropy/4.5.2
+      - cmseq/1.0.4
+      - hclust2/1.0.0
       - python/3.8.0
     provides:
       - metaphlan/3.0.14
@@ -5386,6 +5349,9 @@ genomics-admix:
   humann_3.0.1-module:
     category: GENOMICS
     requires:
+      - glpk/5.0
+      - diamond/2.0.4
+      - bowtie2/2.4.1
       - python/3.8.0
     provides:
       - humann/3.0.1
@@ -5397,6 +5363,11 @@ genomics-admix:
   kneaddata_0.10.0-module:
     category: GENOMICS
     requires:
+      - trimmomatic/0.39
+      - bowtie2/2.4.1
+      - trf/4.0.9
+      - fastqc/0.11.9
+      - samtools/1.10
       - python/3.8.0
     provides:
       - kneaddata/0.10.0
@@ -5418,6 +5389,7 @@ genomics-admix:
   cmseq_1.0.4-module:
     category: GENOMICS
     requires:
+      - samtools/1.10
       - python/3.8.0
     provides:
       - cmseq/1.0.4
@@ -5496,7 +5468,6 @@ genomics-admix:
   diamond_2.0.4-module:
     category: GENOMICS
     requires:
-      - foundation/v8
       - gcc/8.4.0
     provides:
       - diamond/2.0.4
@@ -5518,7 +5489,6 @@ imaging-admix:
   ncl_6.6.2-module:
     category: TOOLS
     requires:
-      - foundation/v8
       - gcc/8.4.0
       - szip/2.1.1
       - libjpeg/9d
@@ -5548,7 +5518,6 @@ imaging-admix:
   ants_2.2.0-module:
     category: IMAGING
     requires:
-      - foundation/v8
       - gcc/6.5.0
     provides:
       - ants/2.2.0
@@ -5563,7 +5532,6 @@ imaging-admix:
   mrtrix3_3.0.2-module:
     category: IMAGING
     requires:
-      - eigen/3.3.7
       - gcc/8.4.0
       - fftw/3.3.8/gcc.8.4.0
       - python/3.8.0
@@ -5646,7 +5614,6 @@ imaging-admix:
   ants_2.3.5-module:
     category: IMAGING
     requires:
-      - foundation/v8
       - gcc/system
     provides:
       - ants/2.3.5
@@ -5661,10 +5628,9 @@ imaging-admix:
   mrtrix3_3.0.3-module:
     category: IMAGING
     requires:
-      - eigen/3.3.7
       - gcc/8.4.0
       - fftw/3.3.8/gcc.8.4.0
       - python/3.8.0
     provides:
       - mrtrix3/3.0.3
-created: 2022-07-29
+created: 2022-08-03
