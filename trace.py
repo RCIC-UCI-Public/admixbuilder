@@ -3,7 +3,7 @@ from __future__ import print_function
 import re
 import sys
 import os
-import yaml
+import ruamel.yaml
 import argparse
 from datetime import date
 from collections import OrderedDict
@@ -105,7 +105,15 @@ class Content:
 
     def readYaml(self):
         f = open(self.infile)
-        admixes = yaml.load(f)
+        self.yaml = ruamel.yaml.YAML(typ='safe', pure=True)
+        admixes = self.yaml.load(f)
+
+        # as of pyyaml 5.* the line below gives a warning.
+        # need to use either the second line below or opt
+        # for ruamel.yaml above which also checks for duplicates in yaml
+        # original line : admixes = yaml.load(f)
+        # works with pyyaml 5.* edited line:  admixes = yaml.load(f,Loader=yaml.FullLoader)
+
         try:
            created = admixes['created']
            del admixes['created']
