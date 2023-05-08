@@ -26,12 +26,6 @@ depinfo.yaml:
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am module-info >> $@; done
 	echo "created: $$(date +%F)" >> $@
 
-deplist.yaml: 
-	- /bin/rm $@
-	echo "### Scanning admixes for module-requires-provides ###"
-	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am module-requires-provides >> $@; done 
-	echo "created: $$(date +%F)" >> $@
-
 dot: depinfo.yaml
 	./depend.py 
 
@@ -40,6 +34,12 @@ dotpdf:
 		if [ -f $$df ]; then dot -Tpdf $$df -o $$df.pdf; fi ;	\
 	  done								\
         )
+dotpng:
+	( for df in $(DOTFILES); do					\
+		if [ -f $$df ]; then dot -Tpng $$df -o $$df.png; fi ;	\
+	  done								\
+        )
+
 
 ansible: $(ANSIBLEDIR) force
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am ansible > $(ANSIBLEDIR)/$$am.yml; done 
