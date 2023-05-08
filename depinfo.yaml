@@ -698,6 +698,15 @@ biotools-admix:
       - python/3.8.0
     provides:
       - bowtie2/2.4.4
+  sra-tools_3.0.0:
+    category: False
+    requires:
+    provides:
+  sra-tools_3.0.0-module:
+    category: BIOTOOLS
+    requires:
+    provides:
+      - sra-tools/3.0.0
   bowtie2-python2_2.4.1:
     category: False
     requires:
@@ -1536,6 +1545,38 @@ buildlibs-admix:
       - gcc/8.4.0
     provides:
       - openmpi/4.1.2/gcc.8.4.0
+  geos_3.11.1:
+    category: False
+    requires:
+      - foundation/v8
+    provides:
+  geos_3.11.1-module:
+    category: TOOLS
+    requires:
+    provides:
+      - geos/3.11.1
+  ucx_1.14.0:
+    category: False
+    requires:
+    provides:
+  ucx_1.14.0-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - ucx/1.14.0
+  openmpi_4.1.5_gcc_11.2.0:
+    category: False
+    requires:
+      - singularity/3.11.1
+      - ucx/1.14.0
+      - gcc/11.2.0
+    provides:
+  openmpi_4.1.5_gcc_11.2.0-module:
+    category: COMPILERS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - openmpi/4.1.5/gcc.11.2.0
 buildtools-admix:
   java8-module:
     category: LANGUAGES
@@ -1724,6 +1765,25 @@ buildtools-admix:
     requires:
     provides:
       - tcl/8.6.12
+  singularity_3.11.1:
+    category: False
+    requires:
+      - go/1.20.2
+    provides:
+  singularity_3.11.1-module:
+    category: TOOLS
+    requires:
+    provides:
+      - singularity/3.11.1
+  go_1.20.2:
+    category: False
+    requires:
+    provides:
+  go_1.20.2-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - go/1.20.2
 chemistry-admix:
   amber_19.11_gcc_8.4.0:
     category: False
@@ -2202,6 +2262,13 @@ cuda-admix:
     requires:
       - cuda/10.1.243
     provides:
+  python_3.8.0-pycuda:
+    category: False
+    requires:
+      - python/3.8.0
+      - gcc/8.4.0
+      - cuda/10.1.243
+    provides:
   cuda-toolkit_10.1.243:
     category: False
     requires:
@@ -2248,6 +2315,13 @@ cuda-admix:
   cuda-driver_11.7.1:
     category: False
     requires:
+    provides:
+  python_3.10.2-pycuda:
+    category: False
+    requires:
+      - python/3.10.2
+      - gcc/11.2.0
+      - cuda/11.7.1
     provides:
   cudnn-download_8.5.0.96:
     category: False
@@ -2628,6 +2702,48 @@ fileformats-admix:
       - intel/2022.2
     provides:
       - udunits/2.2.28/intel.2022.2
+  hdf5_1.13.1_cudasdk_22.9:
+    category: False
+    requires:
+      - foundation/v8
+      - java/17
+      - cudasdk/22.9
+    provides:
+  hdf5_1.13.1_cudasdk_22.9-module:
+    category: TOOLS
+    requires:
+      - java/17
+      - cudasdk/22.9
+    provides:
+      - hdf5/1.13.1/cudasdk.22.9
+  hdf5_1.14.0_gcc_11.2.0:
+    category: False
+    requires:
+      - foundation/v8
+      - java/17
+      - gcc/11.2.0
+    provides:
+  hdf5_1.14.0_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - java/17
+      - gcc/11.2.0
+    provides:
+      - hdf5/1.14.0/gcc.11.2.0
+  hdf5_1.14.0_gcc_11.2.0_openmpi_4.1.2:
+    category: False
+    requires:
+      - foundation/v8
+      - java/17
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+  hdf5_1.14.0_gcc_11.2.0_openmpi_4.1.2-module:
+    category: TOOLS
+    requires:
+      - java/17
+      - openmpi/4.1.2/gcc.11.2.0
+    provides:
+      - hdf5/1.14.0/gcc.11.2.0-openmpi.4.1.2
 foundation-admix:
   foundation-cmake_3.20.5:
     category: False
@@ -2954,6 +3070,15 @@ mathlibs-admix:
     requires:
     provides:
       - eigen/3.4.0
+  OpenBLAS_0.3.21:
+    category: False
+    requires:
+    provides:
+  OpenBLAS_0.3.21-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - OpenBLAS/0.3.21
 perl-admix:
   perl_5.30.0:
     category: False
@@ -3272,6 +3397,7 @@ python-admix:
     category: False
     requires:
       - python/3.8.0
+      - OpenBLAS/0.3.6
     provides:
   python_3.8.0-pybind11:
     category: False
@@ -3283,6 +3409,7 @@ python-admix:
     category: False
     requires:
       - python/3.8.0
+      - OpenBLAS/0.3.6
     provides:
   python_3.8.0-joblib:
     category: False
@@ -3428,6 +3555,7 @@ python-admix:
     category: False
     requires:
       - python/2.7.17
+      - OpenBLAS/0.3.6
     provides:
   python_2.7.17-pandas:
     category: False
@@ -3482,6 +3610,7 @@ python-admix:
     category: False
     requires:
       - python/2.7.17
+      - OpenBLAS/0.3.6
     provides:
   python_2.7.17-pybind11:
     category: False
@@ -3892,6 +4021,7 @@ python-admix:
     category: False
     requires:
       - python/3.10.2
+      - OpenBLAS/0.3.19
     provides:
   python_3.10.2-pybind11:
     category: False
@@ -3923,6 +4053,7 @@ python-admix:
     category: False
     requires:
       - python/3.10.2
+      - OpenBLAS/0.3.19
     provides:
   python_3.10.2-joblib:
     category: False
@@ -4009,6 +4140,2002 @@ R4-admix:
     requires:
       - R/4.0.4
     provides:
+  R_4.0.4-git2r:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Rcpp:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RcppAnnoy:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rjson:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-coda:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-sys:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-askpass:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rstudioapi:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-jsonlite:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-digest:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-yaml:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-packrat:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-curl:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-openssl:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rsconnect:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-crayon:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-withr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RColorBrewer:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-glue:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-cli:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rlang:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-lifecycle:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-viridisLite:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-R6:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-labeling:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-farver:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-colorspace:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-munsell:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-scales:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-magrittr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ellipsis:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-vctrs:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-utf8:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-fansi:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-pillar:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-pkgconfig:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-tibble:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-isoband:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gtable:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ggplot2:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gridExtra:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-viridis:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-purrr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-tidyselect:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-proxy:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-e1071:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-mime:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-httr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ini:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gitcreds:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gh:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-zoo:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-xts:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RcppEigen:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-nloptr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-minqa:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-statmod:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-lme4:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-lazyeval:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-base64enc:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-htmltools:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-htmlwidgets:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RcppArmadillo:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-xfun:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-abind:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-carData:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-matrixStats:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-SparseM:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-MatrixModels:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-conquer:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-quantreg:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ggsci:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-data_table:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-prettyunits:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-hms:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-progress:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-cpp11:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-generics:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-dplyr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-tidyr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-markdown:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-zip:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-polynom:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-BH:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-clipr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-readr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-forcats:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-stringi:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-openxlsx:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-haven:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rematch:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-cellranger:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-readxl:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rio:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-highr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-sp:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-backports:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-stringr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-broom:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-evaluate:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-knitr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-numDeriv:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-pbkrtest:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-maptools:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-car:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ggsignif:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-cowplot:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-corrplot:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rstatix:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ggrepel:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ggpubr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-elliptic:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-BiocGenerics:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Biobase:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-globals:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-parallelly:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-listenv:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-future:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-future_apply:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-bitops:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RCurl:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-S4Vectors:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-IRanges:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-zlibbioc:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-XVector:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-fastmap:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-cachem:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Rhtslib:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-blob:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-bit:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-DBI:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-bit64:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-hdf5r:
+    category: False
+    requires:
+      - R/4.0.4
+      - hdf5/1.10.5/gcc.8.4.0
+    provides:
+  R_4.0.4-memoise:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-plogr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RSQLite:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-AnnotationDbi:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-XML:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-formatR:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-xtable:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-lambda_r:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-futile_options:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-snow:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-futile_logger:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-BiocParallel:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-assertthat:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-MatrixGenerics:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-DelayedArray:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-GenomeInfoDb:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-GenomicRanges:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-SummarizedExperiment:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Biostrings:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-annotate:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-genefilter:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-dbplyr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rappdirs:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-BiocFileCache:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-geneplotter:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-xml2:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-locfit:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-biomaRt:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-DESeq2:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-hwriter:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Rsamtools:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-DEXSeq:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-contfrac:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rprojroot:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-desc:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-pkgload:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RcppParallel:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-remotes:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-checkmate:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-jpeg:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-png:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-latticeExtra:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Formula:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-htmlTable:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Hmisc:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-sessioninfo:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Deriv:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-doBy:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-diffobj:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rematch2:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-waldo:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-maps:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-dotCall64:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-spam:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-fields:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-sandwich:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-scatterplot3d:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ps:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-processx:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-callr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-pkgbuild:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-V8:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-inline:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-loo:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-StanHeaders:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rstan:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-mvtnorm:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-polycor:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-repr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-IRdisplay:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-spatstat_utils:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-spatstat_data:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Lahman:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-FNN:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RMySQL:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-tensor:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-caTools:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-iterators:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-foreach:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-doParallel:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-leaps:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-crosstalk:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-flashClust:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ellipse:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-later:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-promises:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-DT:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-FactoMineR:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-mice:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-missMDA:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-TTR:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-TH_data:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-multcomp:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-R_methodsS3:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-plyr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-reshape2:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-irlba:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RcppProgress:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RSpectra:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-sitmo:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-dqrng:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-uwot:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-mnormt:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-plotly:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-getopt:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-optparse:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-deldir:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-SQUAREM:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-lava:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-uuid:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-fs:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gargle:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-googledrive:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-credentials:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gert:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-xopen:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-praise:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-brio:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-testthat:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rcmdcheck:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-commonmark:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rversions:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-whisker:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-usethis:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-brew:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-roxygen2:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-devtools:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ggridges:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-jquerylib:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-bayesplot:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-selectr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ids:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-googlesheets4:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-sass:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-bslib:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-httpuv:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-sourcetools:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-shiny:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-shinyjs:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-miniUI:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-colourpicker:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rstantools:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rvest:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-shinythemes:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-modelr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-tinytex:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rmarkdown:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-lubridate:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-dtplyr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-reprex:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-tidyverse:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Brobdingnag:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-bridgesampling:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gtools:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-dygraphs:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-igraph:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-threejs:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-shinystan:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-nleqslv:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-optimx:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gamm4:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rngtools:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-projpred:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-brms:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-spatstat_sparse:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-pROC:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gower:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-prodlim:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-timeDate:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ipred:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-recipes:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ModelMetrics:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-caret:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-systemfonts:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-svglite:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-webshot:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-kableExtra:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-reticulate:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-networkD3:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-expm:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-msm:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rJava:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-xlsxjars:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-xlsx:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rbibutils:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-nycflights13:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-polyclip:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-spatstat_geom:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gam:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-labelled:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-BayesCombo:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-psych:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-classInt:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-R_oo:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-R_utils:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-R_cache:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-styler:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-sctransform:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-goftest:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-proto:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-limma:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-leaflet_providers:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-shape:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-diagram:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-BiocManager:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-googleVis:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RgoogleMaps:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ggmap:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-patchwork:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-edgeR:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-sm:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gapminder:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-pbapply:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-gplots:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ROCR:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-questionr:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-manipulateWidget:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-rgl:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-XLConnect:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-stargazer:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-mcmc:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-odbc:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-lfe:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-deSolve:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-hypergeo:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-miniCRAN:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-mapproj:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-lmtest:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-vcd:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-miscTools:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ica:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-dichromat:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-scattermore:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RANN:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-leiden:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-SeuratObject:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-spatstat_core:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Rtsne:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-fitdistrplus:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Seurat:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RPostgreSQL:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ggvis:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-bdsmatrix:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-Rdpack:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-maxLik:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-plm:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-raster:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-pbivnorm:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-ltm:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-MCMCpack:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-geosphere:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-glmnet:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-quantmod:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-lavaan:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-randomForest:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-pbdZMQ:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-BayesFactor:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-RcppGSL:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-leaflet:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-IRkernel:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-terra:
+    category: False
+    requires:
+      - R/4.0.4
+      - gdal/3.1.0
+      - geos/3.8.1
+    provides:
+  R_4.0.4-wk:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-s2:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
+  R_4.0.4-units:
+    category: False
+    requires:
+      - R/4.0.4
+      - udunits/2.2.26/gcc.8.4.0
+    provides:
+  R_4.0.4-sf:
+    category: False
+    requires:
+      - R/4.0.4
+      - gdal/3.1.0
+      - udunits/2.2.26/gcc.8.4.0
+    provides:
   R_4.1.2:
     category: False
     requires:
@@ -4042,6 +6169,4206 @@ R4-admix:
     category: False
     requires:
       - R/4.1.2
+    provides:
+  R_4.1.2-BayesCombo:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-magrittr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Rcpp:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-glue:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-stringi:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-stringr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-coda:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-pbapply:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-mvtnorm:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-gtools:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-MatrixModels:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-elliptic:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-contfrac:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-deSolve:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-hypergeo:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RcppEigen:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-BayesFactor:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-BiocGenerics:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-BiocManager:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-cli:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-digest:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-fansi:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rlang:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-vctrs:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ellipsis:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-lifecycle:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-crayon:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-utf8:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-pillar:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-R6:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-pkgconfig:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-tibble:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-purrr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-tidyselect:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-generics:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-dplyr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-fastmap:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-base64enc:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-htmltools:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-jsonlite:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-yaml:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-htmlwidgets:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-lazyeval:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-crosstalk:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-jquerylib:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-later:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-promises:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-DT:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-zoo:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-xts:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-dygraphs:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-gtable:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-labeling:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-colorspace:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-munsell:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-viridisLite:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-farver:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RColorBrewer:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-scales:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-withr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-isoband:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ggplot2:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-gridExtra:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-igraph:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-mime:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-plyr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-reshape2:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RcppParallel:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-StanHeaders:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-matrixStats:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-backports:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-checkmate:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-loo:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-inline:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rprojroot:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-desc:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ps:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-processx:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-callr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-prettyunits:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-pkgbuild:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-BH:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rstan:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-xtable:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-httpuv:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-fontawesome:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-sourcetools:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-commonmark:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-fs:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rappdirs:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-sass:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-bslib:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-cachem:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-shiny:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-threejs:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-abind:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-tensorA:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-numDeriv:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-distributional:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-posterior:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rstantools:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ggridges:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-bayesplot:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-shinyjs:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-miniUI:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-colourpicker:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-xfun:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-markdown:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-shinythemes:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-shinystan:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Brobdingnag:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-bridgesampling:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-globals:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-listenv:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-parallelly:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-future:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-nleqslv:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-brms:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-evaluate:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-highr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-knitr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rstudioapi:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-minqa:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-brio:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-pkgload:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-praise:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-diffobj:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rematch2:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-waldo:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-testthat:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-nloptr:
+    category: False
+    requires:
+      - R/4.1.2
+      - foundation/v8
+    provides:
+  R_4.1.2-lme4:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-sp:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-maptools:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-cpp11:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-tidyr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-carData:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-broom:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-pbkrtest:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-SparseM:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-quantreg:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-car:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-lubridate:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-proxy:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-e1071:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-iterators:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-foreach:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-data_table:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ModelMetrics:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-pROC:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-gower:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-hardhat:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-future_apply:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-progressr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-SQUAREM:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-lava:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-prodlim:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ipred:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-timeDate:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-recipes:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-caret:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-DBI:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-bit:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-bit64:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-blob:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-memoise:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-plogr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RSQLite:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-XML:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-S4Vectors:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-IRanges:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-bitops:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RCurl:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-GenomeInfoDb:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-zlibbioc:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-XVector:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-GenomicRanges:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Biobase:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-MatrixGenerics:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-DelayedArray:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-SummarizedExperiment:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-formatR:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-lambda_r:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-futile_options:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-futile_logger:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-snow:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-BiocParallel:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-curl:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-sys:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-askpass:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-openssl:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-httr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-png:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Biostrings:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-KEGGREST:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-AnnotationDbi:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-annotate:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-genefilter:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-locfit:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-geneplotter:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RcppArmadillo:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-DESeq2:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-hms:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-progress:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-assertthat:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-dbplyr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-filelock:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-BiocFileCache:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-xml2:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-biomaRt:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-hwriter:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Rhtslib:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Rsamtools:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-statmod:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-DEXSeq:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-whisker:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-clipr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-credentials:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-zip:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-gert:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-gitcreds:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ini:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-gh:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-usethis:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-sessioninfo:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-xopen:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rcmdcheck:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-remotes:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-brew:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-roxygen2:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rversions:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-devtools:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-shape:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-diagram:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-dichromat:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Deriv:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-microbenchmark:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-doBy:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-dotCall64:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-limma:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-edgeR:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-maps:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-spam:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-viridis:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-fields:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-gam:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-gapminder:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-geosphere:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-getopt:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RgoogleMaps:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rjson:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-jpeg:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ggmap:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ggrepel:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ggsci:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-cowplot:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ggsignif:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-polynom:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-corrplot:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rstatix:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ggpubr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ggvis:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-git2r:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-glmnet:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-googleVis:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-caTools:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-gplots:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-forcats:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-tzdb:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-vroom:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-readr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-haven:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-hdf5r:
+    category: False
+    requires:
+      - R/4.1.2
+      - hdf5/1.13.1/gcc.11.2.0
+    provides:
+  R_4.1.2-Formula:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-latticeExtra:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-htmlTable:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Hmisc:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-repr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-IRdisplay:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-pbdZMQ:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-uuid:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-IRkernel:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-selectr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rvest:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-tinytex:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rmarkdown:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-webshot:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-systemfonts:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-svglite:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-kableExtra:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Lahman:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-mnormt:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-pbivnorm:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-lavaan:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-terra:
+    category: False
+    requires:
+      - R/4.1.2
+      - gdal/3.4.1
+      - geos/3.10.2
+    provides:
+  R_4.1.2-raster:
+    category: False
+    requires:
+      - R/4.1.2
+      - proj/9.0.0
+      - gdal/3.4.1
+      - geos/3.10.2
+    provides:
+  R_4.1.2-leaflet_providers:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-leaflet:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-sandwich:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-lfe:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-expm:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-msm:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-admisc:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-polycor:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ltm:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-mapproj:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-mcmc:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-MCMCpack:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-miniCRAN:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ellipse:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-flashClust:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-leaps:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-scatterplot3d:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-FactoMineR:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-mice:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-doParallel:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-missMDA:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-TH_data:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-multcomp:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-networkD3:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-nycflights13:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-odbc:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-optparse:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-bdsmatrix:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-collapse:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-lmtest:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-miscTools:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-maxLik:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rbibutils:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Rdpack:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-plm:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-proto:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-psych:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-TTR:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-quantmod:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-R_methodsS3:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-R_oo:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-R_utils:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-R_cache:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-styler:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-classInt:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-labelled:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-questionr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-randomForest:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RcppGSL:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rgl:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RMySQL:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RPostgreSQL:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-fitdistrplus:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ica:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-irlba:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RcppTOML:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-here:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-reticulate:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-leiden:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-patchwork:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-plotly:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RANN:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RcppAnnoy:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ROCR:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Rtsne:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-scattermore:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-sctransform:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-SeuratObject:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-spatstat_utils:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-spatstat_data:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-deldir:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-polyclip:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-spatstat_geom:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-spatstat_random:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-tensor:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-spatstat_sparse:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-goftest:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-spatstat_core:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RcppProgress:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-FNN:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-RSpectra:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-sitmo:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-dqrng:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-uwot:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-Seurat:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-sm:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-stargazer:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-dtplyr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-gargle:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-googledrive:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rematch:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-cellranger:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-ids:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-googlesheets4:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-modelr:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-readxl:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-reprex:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-tidyverse:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-vcd:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-rJava:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-XLConnect:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-xlsxjars:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-xlsx:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-wk:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-s2:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
+  R_4.1.2-units:
+    category: False
+    requires:
+      - R/4.1.2
+      - udunits/2.2.28/gcc.11.2.0
+    provides:
+  R_4.1.2-sf:
+    category: False
+    requires:
+      - R/4.1.2
+      - gdal/3.4.1
+      - udunits/2.2.28/gcc.11.2.0
+    provides:
+  R_4.2.2-seurat-data:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2:
+    category: False
+    requires:
+      - OpenBLAS/0.3.21
+      - java/17
+      - gcc/11.2.0
+    provides:
+  R_4.2.2-module:
+    category: LANGUAGES
+    requires:
+      - OpenBLAS/0.3.21
+      - java/17
+      - gcc/11.2.0
+    provides:
+      - R/4.2.2
+  R_4.2.2-GenomeInfoDbData:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  rstudio_2022.12.0.353:
+    category: False
+    requires:
+    provides:
+  rstudio_2022.12.0.353-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - rstudio/2022.12.0.353
+  R_4.2.2-BayesCombo:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-cli:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-magrittr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Rcpp:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rlang:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-glue:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-lifecycle:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-stringi:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-vctrs:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-stringr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-coda:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-pbapply:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-mvtnorm:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-MatrixModels:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-elliptic:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-contfrac:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-deSolve:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-hypergeo:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RcppEigen:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-BayesFactor:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-BiocGenerics:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-BiocManager:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-digest:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-fansi:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-utf8:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-pillar:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-R6:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-pkgconfig:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-tibble:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-withr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-tidyselect:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-generics:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-dplyr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-xfun:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-yaml:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-evaluate:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-highr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-knitr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-mime:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-fastmap:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ellipsis:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-base64enc:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-htmltools:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-jsonlite:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-jquerylib:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-cachem:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-fs:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rappdirs:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-sass:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-memoise:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-bslib:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-tinytex:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rmarkdown:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-htmlwidgets:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-lazyeval:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-crosstalk:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-later:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-promises:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-DT:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-zoo:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-xts:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-dygraphs:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-gtable:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-labeling:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-colorspace:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-munsell:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-viridisLite:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-farver:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RColorBrewer:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-scales:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-isoband:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ggplot2:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-gridExtra:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-igraph:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-plyr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-reshape2:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RcppParallel:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-StanHeaders:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-matrixStats:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-backports:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-checkmate:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-loo:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-inline:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rprojroot:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-desc:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ps:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-processx:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-callr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-crayon:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-prettyunits:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-pkgbuild:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-BH:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rstan:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-xtable:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-commonmark:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-httpuv:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-fontawesome:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-sourcetools:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-shiny:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-threejs:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-abind:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-tensorA:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-numDeriv:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-distributional:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-posterior:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rstantools:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ggridges:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-bayesplot:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-shinyjs:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-miniUI:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-colourpicker:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-gtools:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-markdown:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-shinythemes:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-shinystan:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Brobdingnag:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-bridgesampling:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-globals:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-listenv:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-parallelly:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-future:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-nleqslv:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-brms:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-minqa:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-brio:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-pkgload:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-praise:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-diffobj:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rematch2:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-waldo:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-testthat:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-nloptr:
+    category: False
+    requires:
+      - R/4.2.2
+      - foundation/v8
+    provides:
+  R_4.2.2-lme4:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-purrr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-cpp11:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-tidyr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-carData:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-broom:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-pbkrtest:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-SparseM:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-quantreg:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-car:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-timechange:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-lubridate:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-proxy:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-e1071:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-iterators:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-foreach:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-data_table:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ModelMetrics:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-pROC:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-tzdb:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-clock:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-gower:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-hardhat:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-future_apply:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-progressr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-SQUAREM:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-lava:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-prodlim:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ipred:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-timeDate:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-recipes:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-caret:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-DBI:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-bit:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-bit64:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-blob:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-plogr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RSQLite:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-XML:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-S4Vectors:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-IRanges:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-bitops:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RCurl:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-GenomeInfoDb:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-zlibbioc:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-XVector:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-GenomicRanges:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Biobase:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-MatrixGenerics:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-DelayedArray:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-SummarizedExperiment:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-formatR:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-lambda_r:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-futile_options:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-futile_logger:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-snow:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-BiocParallel:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-locfit:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-curl:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-sys:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-askpass:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-openssl:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-httr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-png:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Biostrings:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-KEGGREST:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-AnnotationDbi:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-annotate:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-geneplotter:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RcppArmadillo:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-DESeq2:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-hms:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-progress:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-dbplyr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-filelock:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-BiocFileCache:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-xml2:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-biomaRt:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-hwriter:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Rhtslib:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Rsamtools:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-statmod:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-genefilter:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-DEXSeq:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rstudioapi:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-whisker:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-clipr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-credentials:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-zip:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-gert:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-gitcreds:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-httr2:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ini:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-gh:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-usethis:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-downlit:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-systemfonts:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-textshaping:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ragg:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-pkgdown:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-profvis:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-sessioninfo:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-xopen:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rcmdcheck:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-remotes:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-brew:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-roxygen2:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rversions:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-urlchecker:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-devtools:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-shape:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-diagram:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-dichromat:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Deriv:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-microbenchmark:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-doBy:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-dotCall64:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-limma:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-edgeR:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-maps:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-spam:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-viridis:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-fields:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-gam:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-gapminder:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-sp:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-geosphere:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-getopt:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RgoogleMaps:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-jpeg:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ggmap:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ggrepel:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ggsci:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-cowplot:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ggsignif:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-polynom:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-corrplot:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rstatix:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ggpubr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-assertthat:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ggvis:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-git2r:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-glmnet:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-googleVis:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-caTools:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-gplots:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-forcats:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-vroom:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-readr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-haven:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-hdf5r:
+    category: False
+    requires:
+      - R/4.2.2
+      - hdf5/1.14.0/gcc.11.2.0
+    provides:
+  R_4.2.2-Formula:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-deldir:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-interp:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-latticeExtra:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-htmlTable:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Hmisc:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-repr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-IRdisplay:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-pbdZMQ:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-uuid:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-IRkernel:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-selectr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rvest:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-webshot:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-svglite:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-kableExtra:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Lahman:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-mnormt:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-pbivnorm:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-quadprog:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-lavaan:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-terra:
+    category: False
+    requires:
+      - R/4.2.2
+      - gdal/3.6.2
+      - geos/3.11.1
+    provides:
+  R_4.2.2-raster:
+    category: False
+    requires:
+      - R/4.2.2
+      - proj/9.1.1
+      - gdal/3.6.2
+      - geos/3.11.1
+    provides:
+  R_4.2.2-leaflet_providers:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-leaflet:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-sandwich:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-lfe:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-expm:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-msm:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-admisc:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-polycor:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ltm:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-mapproj:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-maptools:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-mcmc:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-MCMCpack:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-miniCRAN:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ellipse:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-estimability:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-emmeans:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-flashClust:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-leaps:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-multcompView:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-scatterplot3d:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-FactoMineR:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-mice:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-doParallel:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-missMDA:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-TH_data:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-multcomp:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-networkD3:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-nycflights13:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-odbc:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-optparse:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-bdsmatrix:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-collapse:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-lmtest:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-miscTools:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-maxLik:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rbibutils:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Rdpack:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-plm:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-proto:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-psych:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-TTR:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-quantmod:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-R_methodsS3:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-R_oo:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-R_utils:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-R_cache:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-styler:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-classInt:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-labelled:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-questionr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-randomForest:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RcppGSL:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rgl:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RMySQL:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RPostgreSQL:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-fitdistrplus:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ica:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-irlba:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RcppTOML:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-here:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-reticulate:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-leiden:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-patchwork:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-plotly:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RANN:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RcppAnnoy:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ROCR:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Rtsne:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-scattermore:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-sctransform:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-SeuratObject:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-spatstat_utils:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-spatstat_data:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-polyclip:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-spatstat_geom:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-spatstat_random:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-tensor:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-spatstat_sparse:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-goftest:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-spatstat_explore:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-RcppProgress:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-FNN:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-sitmo:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-dqrng:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-uwot:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-Seurat:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-sm:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-stargazer:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-conflicted:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-dtplyr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-gargle:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-googledrive:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rematch:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-cellranger:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-ids:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-googlesheets4:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-modelr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-readxl:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-reprex:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-tidyverse:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-vcd:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-rJava:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-XLConnect:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-xlsxjars:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-xlsx:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-wk:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-s2:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-units:
+    category: False
+    requires:
+      - R/4.2.2
+      - udunits/2.2.28/gcc.11.2.0
+    provides:
+  R_4.2.2-sf:
+    category: False
+    requires:
+      - R/4.2.2
+      - gdal/3.6.2
+      - udunits/2.2.28/gcc.11.2.0
+    provides:
+  R_4.2.2-sn:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-TFisher:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-plotrix:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-multtest:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-mutoss:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-mathjaxr:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-DEoptimR:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-robustbase:
+    category: False
+    requires:
+      - R/4.2.2
+    provides:
+  R_4.2.2-qqconf:
+    category: False
+    requires:
+      - R/4.2.2
+      - fftw/3.3.10/gcc.11.2.0
+    provides:
+  R_4.2.2-metap:
+    category: False
+    requires:
+      - R/4.2.2
     provides:
 systools-admix:
   perl-Crypt-Rijndael:
@@ -4117,6 +10444,27 @@ systools-admix:
     requires:
       - go/1.17.7
     provides:
+  pdsh:
+    category: False
+    requires:
+    provides:
+  rcic-libcgroup:
+    category: False
+    requires:
+    provides:
+  rcic-smem:
+    category: False
+    requires:
+    provides:
+  awscli_2.8.3:
+    category: False
+    requires:
+    provides:
+  awscli_2.8.3-module:
+    category: TOOLS
+    requires:
+    provides:
+      - awscli/2.8.3
   perl-Test-SharedFork:
     category: False
     requires:
@@ -4154,6 +10502,10 @@ systools-admix:
     requires:
     provides:
   python3-cffi:
+    category: False
+    requires:
+    provides:
+  genders:
     category: False
     requires:
     provides:
@@ -4276,6 +10628,12 @@ tensorflow-admix:
       - python/3.10.2
     provides:
       - tensorflow/2.8.0
+  python_3.10.2-pycuda:
+    category: False
+    requires:
+      - python/3.10.2
+      - cuda/11.7.1
+    provides:
   tensorflow_2.8.0_python3.10.2-astunparse:
     category: False
     requires:
@@ -4550,11 +10908,6 @@ nfsapps-admix:
     requires:
     provides:
       - stata/16
-  cellranger_3.0.2-module:
-    category: GENOMICS
-    requires:
-    provides:
-      - cellranger/3.0.2
   marc_2020-module:
     category: PHYSICS
     requires:
@@ -4650,6 +11003,11 @@ nfsapps-admix:
     requires:
     provides:
       - turbomole-smp/7.6
+  cudasdk_22.9-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - cudasdk/22.9
   MATLAB_R2021b-module:
     category: LANGUAGES
     requires:
@@ -4665,6 +11023,35 @@ nfsapps-admix:
     requires:
     provides:
       - freesurfer/7.1.1
+  cellranger_7.0.1-module:
+    category: GENOMICS
+    requires:
+    provides:
+      - cellranger/7.0.1
+  cellranger-arc_2.0.2-module:
+    category: GENOMICS
+    requires:
+    provides:
+      - cellranger-arc/2.0.2
+  vasp_6.3.2_gcc_11.2.0-module:
+    category: ENGINEERING
+    requires:
+      - scalapack/2.1.0
+      - lapack/3.9.0
+      - OpenBLAS/0.3.19
+      - fftw/3.3.10/gcc.11.2.0-openmpi.4.1.2
+      - hdf5/1.13.1/gcc.11.2.0
+      - gcc/11.2.0
+    provides:
+      - vasp/6.3.2/gcc.11.2.0
+  vasp_6.3.2_cudasdk_22.9-module:
+    category: ENGINEERING
+    requires:
+      - cudasdk/22.9
+      - intel/2022.2
+      - hdf5/1.13.1/cudasdk.22.9
+    provides:
+      - vasp/6.3.2/cudasdk.22.9
 julia-admix:
   julia_1.6.0:
     category: False
@@ -4820,6 +11207,48 @@ simulations-admix:
       - geos/3.10.2
     provides:
       - gdal/3.4.1
+  sqlite3_3.41.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+  sqlite3_3.41.0-module:
+    category: LIBRARIES
+    requires:
+      - gcc/11.2.0
+    provides:
+      - sqlite3/3.41.0
+  proj_9.1.1:
+    category: False
+    requires:
+      - foundation/v8
+      - gcc/11.2.0
+      - sqlite3/3.41.0
+    provides:
+  proj_9.1.1-module:
+    category: LIBRARIES
+    requires:
+      - gcc/11.2.0
+      - sqlite3/3.41.0
+    provides:
+      - proj/9.1.1
+  gdal_3.6.2:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - proj/9.1.1
+      - sqlite3/3.41.0
+      - geos/3.11.1
+    provides:
+  gdal_3.6.2-module:
+    category: LIBRARIES
+    requires:
+      - gcc/11.2.0
+      - proj/9.1.1
+      - sqlite3/3.41.0
+      - geos/3.11.1
+    provides:
+      - gdal/3.6.2
 rust-admix:
   rustc_1.62.0:
     category: False
@@ -5467,12 +11896,19 @@ imaging-admix:
   afni_20.3.01:
     category: False
     requires:
+      - R/4.0.4
     provides:
   afni_20.3.01-module:
     category: IMAGING
     requires:
+      - R/4.0.4
     provides:
       - afni/20.3.01
+  R_4.0.4-phia:
+    category: False
+    requires:
+      - R/4.0.4
+    provides:
   ants_2.2.0:
     category: False
     requires:
@@ -5563,12 +11999,19 @@ imaging-admix:
   afni_22.1.09:
     category: False
     requires:
+      - R/4.1.2
     provides:
   afni_22.1.09-module:
     category: IMAGING
     requires:
+      - R/4.1.2
     provides:
       - afni/22.1.09
+  R_4.1.2-phia:
+    category: False
+    requires:
+      - R/4.1.2
+    provides:
   ants_2.3.5:
     category: False
     requires:
@@ -5597,4 +12040,4 @@ imaging-admix:
       - python/3.8.0
     provides:
       - mrtrix3/3.0.3
-created: 2022-08-12
+created: 2023-05-04
