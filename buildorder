@@ -3,7 +3,6 @@ buildtools-admix
 gcc-admix
 foundation-admix
 mathlibs-admix
-nfsapps-admix
 systools-admix
 buildlibs-admix
 fileformats-admix
@@ -23,3 +22,4 @@ julia-admix
 pytorch-admix
 parallel-admix
 imaging-admix
+nfsapps-admix
