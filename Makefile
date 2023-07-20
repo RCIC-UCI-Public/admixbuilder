@@ -8,6 +8,7 @@ ADMIXES += pytorch-admix
 ADMIXES += bioconda-admix nfsapps-admix julia-admix simulations-admix
 ADMIXES += rust-admix genomics-admix 
 ADMIXES += imaging-admix 
+ADMIXES += protected-admix 
 
 ADMIXROOT = ..
 ANSIBLEDIR = playbooks

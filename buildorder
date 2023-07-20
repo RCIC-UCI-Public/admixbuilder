@@ -20,6 +20,7 @@ conda-admix
 chemistry-admix
 julia-admix
 pytorch-admix
-parallel-admix
 imaging-admix
 nfsapps-admix
+protected-admix
+
