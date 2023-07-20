@@ -86,19 +86,6 @@ biotools-admix:
       - hdf5/1.10.5/gcc.8.4.0
     provides:
       - kallisto/0.46.2
-  minimap2_2.17:
-    category: False
-    requires:
-      - gcc/8.4.0
-      - python/3.8.0
-    provides:
-  minimap2_2.17-module:
-    category: BIOTOOLS
-    requires:
-      - gcc/8.4.0
-      - python/3.8.0
-    provides:
-      - minimap2/2.17
   ncbi-vdb_2.10.2:
     category: False
     requires:
@@ -207,15 +194,6 @@ biotools-admix:
       - gcc/8.4.0
     provides:
       - star/2.7.3a
-  sra-tools_2.10.9:
-    category: False
-    requires:
-    provides:
-  sra-tools_2.10.9-module:
-    category: BIOTOOLS
-    requires:
-    provides:
-      - sra-tools/2.10.9
   repeatmasker_4.1.0:
     category: False
     requires:
@@ -246,34 +224,6 @@ biotools-admix:
       - gcc/8.4.0
     provides:
       - ucsc-tools/v393
-  unicycler_0.4.8:
-    category: False
-    requires:
-      - gcc/8.4.0
-      - python/3.8.0
-      - SPAdes/3.14.0
-      - racon/1.4.13
-      - samtools/1.10
-      - bcftools/1.10.2
-      - java/1.8.0
-      - bowtie2/2.4.1
-      - ncbi-blast/2.10.0
-    provides:
-  unicycler_0.4.8-module:
-    category: BIOTOOLS
-    requires:
-      - pilon/1.23
-      - gcc/8.4.0
-      - python/3.8.0
-      - SPAdes/3.14.0
-      - racon/1.4.13
-      - samtools/1.10
-      - bcftools/1.10.2
-      - java/1.8.0
-      - bowtie2/2.4.1
-      - ncbi-blast/2.10.0
-    provides:
-      - unicycler/0.4.8
   vcftools_0.1.16:
     category: False
     requires:
@@ -308,25 +258,6 @@ biotools-admix:
       - gcc/8.4.0
     provides:
       - freebayes/1.3.2
-  cufflinks_2.2.1:
-    category: False
-    requires:
-      - gcc/8.4.0
-      - boost/1.66.0/gcc.8.4.0
-      - eigen/3.3.7
-      - htslib/1.10.2
-      - samtools/1.10
-    provides:
-  cufflinks_2.2.1-module:
-    category: BIOTOOLS
-    requires:
-      - gcc/8.4.0
-      - boost/1.66.0/gcc.8.4.0
-      - eigen/3.3.7
-      - htslib/1.10.2
-      - samtools/1.10
-    provides:
-      - cufflinks/2.2.1
   python_3.8.0-MACS:
     category: False
     requires:
@@ -338,20 +269,6 @@ biotools-admix:
       - python/3.8.0
     provides:
       - macs/2.2.7.1
-  bamtools_2.5.1:
-    category: False
-    requires:
-      - foundation/v8
-      - gcc/8.4.0
-      - jsoncpp/1.9.4
-    provides:
-  bamtools_2.5.1-module:
-    category: BIOTOOLS
-    requires:
-      - gcc/8.4.0
-      - jsoncpp/1.9.4
-    provides:
-      - bamtools/2.5.1
   cutadapt_2.10:
     category: False
     requires:
@@ -365,19 +282,6 @@ biotools-admix:
       - python/3.8.0
     provides:
       - cutadapt/2.10
-  meme_5.2.0:
-    category: False
-    requires:
-      - openmpi/4.0.3/gcc.8.4.0
-      - perl/5.30.0
-    provides:
-  meme_5.2.0-module:
-    category: BIOTOOLS
-    requires:
-      - openmpi/4.0.3/gcc.8.4.0
-      - perl/5.30.0
-    provides:
-      - meme/5.2.0
   trinityrnaseq_2.8.6:
     category: False
     requires:
@@ -503,29 +407,6 @@ biotools-admix:
       - python/3.8.0
     provides:
       - SPAdes/3.14.0
-  racon_1.4.13:
-    category: False
-    requires:
-      - foundation/v8
-      - gcc/8.4.0
-    provides:
-  racon_1.4.13-module:
-    category: BIOTOOLS
-    requires:
-      - gcc/8.4.0
-    provides:
-      - racon/1.4.13
-  pilon_1.23:
-    category: False
-    requires:
-      - java/1.8.0
-    provides:
-  pilon_1.23-module:
-    category: BIOTOOLS
-    requires:
-      - java/1.8.0
-    provides:
-      - pilon/1.23
   bowtie2_2.4.1:
     category: False
     requires:
@@ -556,18 +437,6 @@ biotools-admix:
       - htslib/1.10.2
     provides:
       - samtools/1.10
-  jsoncpp_1.9.4:
-    category: False
-    requires:
-      - foundation/v8
-      - gcc/8.4.0
-    provides:
-  jsoncpp_1.9.4-module:
-    category: LIBRARIES
-    requires:
-      - gcc/8.4.0
-    provides:
-      - jsoncpp/1.9.4
   yaggo:
     category: False
     requires:
@@ -842,15 +711,6 @@ biotools-admix:
       - gcc/11.2.0
     provides:
       - star/2.7.10a
-  sra-tools_2.11.3:
-    category: False
-    requires:
-    provides:
-  sra-tools_2.11.3-module:
-    category: BIOTOOLS
-    requires:
-    provides:
-      - sra-tools/2.11.3
   ucsc-tools_v429:
     category: False
     requires:
@@ -1148,6 +1008,21 @@ biotools-admix:
       - gcc/11.2.0
     provides:
       - libdeflate/1.10
+  bowtie2_2.5.1:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+      - python/3.8.0
+    provides:
+  bowtie2_2.5.1-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+      - perl/5.30.0
+      - python/3.8.0
+    provides:
+      - bowtie2/2.5.1
 buildlibs-admix:
   boost_1.66.0_gcc_8.4.0:
     category: False
@@ -1555,28 +1430,6 @@ buildlibs-admix:
     requires:
     provides:
       - geos/3.11.1
-  ucx_1.14.0:
-    category: False
-    requires:
-    provides:
-  ucx_1.14.0-module:
-    category: LIBRARIES
-    requires:
-    provides:
-      - ucx/1.14.0
-  openmpi_4.1.5_gcc_11.2.0:
-    category: False
-    requires:
-      - singularity/3.11.1
-      - ucx/1.14.0
-      - gcc/11.2.0
-    provides:
-  openmpi_4.1.5_gcc_11.2.0-module:
-    category: COMPILERS
-    requires:
-      - gcc/11.2.0
-    provides:
-      - openmpi/4.1.5/gcc.11.2.0
 buildtools-admix:
   java8-module:
     category: LANGUAGES
@@ -1611,15 +1464,6 @@ buildtools-admix:
     requires:
     provides:
       - intel-tbb/20190605
-  icu_65.1:
-    category: False
-    requires:
-    provides:
-  icu_65.1-module:
-    category: TOOLS
-    requires:
-    provides:
-      - icu/65.1
   parallel_20200222:
     category: False
     requires:
@@ -1686,6 +1530,15 @@ buildtools-admix:
     requires:
     provides:
       - java/17
+  icu_70.1:
+    category: False
+    requires:
+    provides:
+  icu_70.1-module:
+    category: TOOLS
+    requires:
+    provides:
+      - icu/70.1
   lz4_1.9.3:
     category: False
     requires:
@@ -1719,15 +1572,6 @@ buildtools-admix:
     requires:
     provides:
       - intel-tbb/2021.5.0
-  icu_70.1:
-    category: False
-    requires:
-    provides:
-  icu_70.1-module:
-    category: TOOLS
-    requires:
-    provides:
-      - icu/70.1
   parallel_20211222:
     category: False
     requires:
@@ -1765,25 +1609,30 @@ buildtools-admix:
     requires:
     provides:
       - tcl/8.6.12
-  singularity_3.11.1:
+  singularity_3.11.3:
     category: False
     requires:
-      - go/1.20.2
+      - go/1.20.4
     provides:
-  singularity_3.11.1-module:
+  singularity_3.11.3-module:
     category: TOOLS
     requires:
     provides:
-      - singularity/3.11.1
-  go_1.20.2:
+      - singularity/3.11.3
+  go_1.20.4:
     category: False
     requires:
     provides:
-  go_1.20.2-module:
+  go_1.20.4-module:
     category: LANGUAGES
     requires:
     provides:
-      - go/1.20.2
+      - go/1.20.4
+  cudasdk_22.9-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - cudasdk/22.9
 chemistry-admix:
   amber_19.11_gcc_8.4.0:
     category: False
@@ -1834,7 +1683,7 @@ chemistry-admix:
     category: False
     requires:
       - gcc/8.4.0
-      - charm/6.10.1/gcc.8.4.0
+      - charm/6.10.1/gcc.8.4.0-openmpi.4.0.3
       - mkl/2019.5.281
       - openmpi/4.0.3/gcc.8.4.0
     provides:
@@ -1842,7 +1691,7 @@ chemistry-admix:
     category: CHEMISTRY
     requires:
       - gcc/8.4.0
-      - charm/6.10.1/gcc.8.4.0
+      - charm/6.10.1/gcc.8.4.0-openmpi.4.0.3
       - mkl/2019.5.281
       - openmpi/4.0.3/gcc.8.4.0
     provides:
@@ -1895,65 +1744,6 @@ chemistry-admix:
       - cuda/10.1.243
     provides:
       - gromacs/2020.4/gcc.8.4.0-cuda.10.1.243
-  gromacs_2020.4_gcc_8.4.0_openmpi_4.0.3:
-    category: False
-    requires:
-      - foundation/v8
-      - gcc/8.4.0
-      - openmpi/4.0.3/gcc.8.4.0
-    provides:
-  gromacs_2020.4_gcc_8.4.0_openmpi_4.0.3-module:
-    category: CHEMISTRY
-    requires:
-      - gcc/8.4.0
-      - openmpi/4.0.3/gcc.8.4.0
-    provides:
-      - gromacs/2020.4/gcc.8.4.0-openmpi.4.0.3
-  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3:
-    category: False
-    requires:
-      - foundation/v8
-      - gcc/8.4.0
-      - cuda/10.1.243
-      - openmpi/4.0.3/gcc.8.4.0
-    provides:
-  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3-module:
-    category: CHEMISTRY
-    requires:
-      - gcc/8.4.0
-      - cuda/10.1.243
-      - openmpi/4.0.3/gcc.8.4.0
-    provides:
-      - gromacs/2020.4/gcc.8.4.0-cuda.10.1.243.openmpi.4.0.3
-  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3_plumed_2.6.1:
-    category: False
-    requires:
-      - foundation/v8
-      - gcc/8.4.0
-      - cuda/10.1.243
-      - openmpi/4.0.3/gcc.8.4.0
-      - plumed/2.6.1/gcc.8.4.0-openmpi.4.0.3
-    provides:
-  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3_plumed_2.6.1-module:
-    category: CHEMISTRY
-    requires:
-      - gcc/8.4.0
-      - cuda/10.1.243
-      - openmpi/4.0.3/gcc.8.4.0
-      - plumed/2.6.1/gcc.8.4.0-openmpi.4.0.3
-    provides:
-      - gromacs/2020.4/gcc.8.4.0-cuda.10.1.243.openmpi.4.0.3.plumed.2.6.1
-  mdtraj_1.9.3:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-  mdtraj_1.9.3-module:
-    category: CHEMISTRY
-    requires:
-      - python/3.8.0
-    provides:
-      - mdtraj/1.9.3
   charm_6.10.1_gcc_8.4.0:
     category: False
     requires:
@@ -1966,21 +1756,20 @@ chemistry-admix:
       - gcc/8.4.0
     provides:
       - charm/6.10.1/gcc.8.4.0
-  plumed_2.6.1_gcc_8.4.0_openmpi_4.0.3:
+  charm_6.10.1_gcc_8.4.0_openmpi_4.0.3:
     category: False
     requires:
+      - foundation/v8
       - gcc/8.4.0
-      - python/3.8.0
       - openmpi/4.0.3/gcc.8.4.0
     provides:
-  plumed_2.6.1_gcc_8.4.0_openmpi_4.0.3-module:
+  charm_6.10.1_gcc_8.4.0_openmpi_4.0.3-module:
     category: TOOLS
     requires:
       - gcc/8.4.0
-      - python/3.8.0
       - openmpi/4.0.3/gcc.8.4.0
     provides:
-      - plumed/2.6.1/gcc.8.4.0-openmpi.4.0.3
+      - charm/6.10.1/gcc.8.4.0-openmpi.4.0.3
   gromacs_2021.2_gcc_8.4.0:
     category: False
     requires:
@@ -2134,17 +1923,6 @@ chemistry-admix:
       - openmpi/4.1.2/gcc.11.2.0
     provides:
       - lammps/29Sep2021/gcc.11.2.0
-  mdtraj_1.9.7:
-    category: False
-    requires:
-      - python/3.10.2
-    provides:
-  mdtraj_1.9.7-module:
-    category: CHEMISTRY
-    requires:
-      - python/3.10.2
-    provides:
-      - mdtraj/1.9.7
   charm_7.0.0_gcc_11.2.0:
     category: False
     requires:
@@ -2266,7 +2044,6 @@ cuda-admix:
     category: False
     requires:
       - python/3.8.0
-      - gcc/8.4.0
       - cuda/10.1.243
     provides:
   cuda-toolkit_10.1.243:
@@ -2320,7 +2097,6 @@ cuda-admix:
     category: False
     requires:
       - python/3.10.2
-      - gcc/11.2.0
       - cuda/11.7.1
     provides:
   cudnn-download_8.5.0.96:
@@ -2716,34 +2492,34 @@ fileformats-admix:
       - cudasdk/22.9
     provides:
       - hdf5/1.13.1/cudasdk.22.9
-  hdf5_1.14.0_gcc_11.2.0:
+  hdf5_1.14.1_gcc_11.2.0:
     category: False
     requires:
       - foundation/v8
       - java/17
       - gcc/11.2.0
     provides:
-  hdf5_1.14.0_gcc_11.2.0-module:
+  hdf5_1.14.1_gcc_11.2.0-module:
     category: TOOLS
     requires:
       - java/17
       - gcc/11.2.0
     provides:
-      - hdf5/1.14.0/gcc.11.2.0
-  hdf5_1.14.0_gcc_11.2.0_openmpi_4.1.2:
+      - hdf5/1.14.1/gcc.11.2.0
+  hdf5_1.14.1_gcc_11.2.0_openmpi_4.1.2:
     category: False
     requires:
       - foundation/v8
       - java/17
       - openmpi/4.1.2/gcc.11.2.0
     provides:
-  hdf5_1.14.0_gcc_11.2.0_openmpi_4.1.2-module:
+  hdf5_1.14.1_gcc_11.2.0_openmpi_4.1.2-module:
     category: TOOLS
     requires:
       - java/17
       - openmpi/4.1.2/gcc.11.2.0
     provides:
-      - hdf5/1.14.0/gcc.11.2.0-openmpi.4.1.2
+      - hdf5/1.14.1/gcc.11.2.0-openmpi.4.1.2
 foundation-admix:
   foundation-cmake_3.20.5:
     category: False
@@ -3098,6 +2874,1976 @@ perl-admix:
     requires:
     provides:
       - perl/5.34.1
+  perl_5.30.0-Class-Method-Modifiers:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Safe-Isa:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-HTML-Tagset:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Data-Dump:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Module-Pluggable:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Module-Build:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-ExtUtils-Config:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Eval-Closure:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Sub-Install:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-HTTP-Date:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Class-Inspector:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-JSON-MaybeXS:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Net-SSLeay:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Encode-Locale:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Path-Tiny:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Sub-Exporter-Progressive:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-ExtUtils-Helpers:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Sort-Naturally:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Digest-HMAC:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Mozilla-CA:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-PadWalker:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-PerlIO-utf8_strict:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Params-Util:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-IO-HTML:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-TermReadKey:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-URI:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Variable-Magic:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Ref-Util:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-File-Which:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Role-Tiny:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-YAML-LibYAML:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Sub-Quote:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Carp-Assert:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-LWP-MediaTypes:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-String-ShellQuote:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-App-cpanminus:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Exporter-Tiny:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Devel-OverrideGlobalRequire:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-B-Keywords:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Try-Tiny:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Clone-PP:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Net-HTTP:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-HTTP-Message:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-HTTP-Cookies:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-File-Listing:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-WWW-RobotRules:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-ExtUtils-InstallPaths:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Module-Build-Tiny:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-HTTP-Daemon:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-HTML-Parser:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-HTTP-Negotiate:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-NTLM:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-libwww-perl:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Data-OptList:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Sub-Exporter:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Mixin-Linewise:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Config-INI:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Config-INI-Reader-Ordered:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Module-Runtime:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Dist-CheckConflicts:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Module-Implementation:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Package-Stash:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-B-Hooks-EndOfScope:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-namespace-clean:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Params-Validate:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Getopt-Long-Descriptive:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Class-Load:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-HTML-Form:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-HTML-Tree:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-WWW-Mechanize:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-App-Nopaste:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-File-HomeDir:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Devel-Caller:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Devel-LexAlias:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Data-Printer:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Proc-InvokeEditor:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Class-Unload:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Class-Refresh:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Reply:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Devel-GlobalDestruction:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Moo:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Type-Tiny:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-IO-Socket-SSL:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-MetaCPAN-Client:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Math-Random:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Jcode:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-OLE-Storage_Lite:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-TimeDate:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Parse-RecDescent:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Unicode-Map:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Spreadsheet-WriteExcel:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Text-Template-Simple:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Sys-Info-Base:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Sys-Info:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Clone:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-baseline-metacpan:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.34.1-Class-Method-Modifiers:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Safe-Isa:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-HTML-Tagset:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Data-Dump:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Module-Pluggable:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Module-Build:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-ExtUtils-Config:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Eval-Closure:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Sub-Install:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-HTTP-Date:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Class-Inspector:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-JSON-MaybeXS:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Net-SSLeay:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Encode-Locale:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Path-Tiny:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Sub-Exporter-Progressive:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-ExtUtils-Helpers:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Sort-Naturally:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Digest-HMAC:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Mozilla-CA:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-PadWalker:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-PerlIO-utf8_strict:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Params-Util:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-IO-HTML:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-TermReadKey:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-URI:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Variable-Magic:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Ref-Util:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-File-Which:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Role-Tiny:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-YAML-LibYAML:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Sub-Quote:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Carp-Assert:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-LWP-MediaTypes:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-String-ShellQuote:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-App-cpanminus:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Exporter-Tiny:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Devel-OverrideGlobalRequire:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-B-Keywords:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Try-Tiny:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Clone-PP:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Net-HTTP:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-HTTP-Message:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-HTTP-Cookies:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-File-Listing:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-WWW-RobotRules:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-ExtUtils-InstallPaths:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Module-Build-Tiny:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-HTTP-Daemon:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-HTML-Parser:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-HTTP-Negotiate:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-NTLM:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-libwww-perl:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Data-OptList:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Sub-Exporter:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Mixin-Linewise:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Config-INI:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Config-INI-Reader-Ordered:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Module-Runtime:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Dist-CheckConflicts:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Module-Implementation:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Package-Stash:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-B-Hooks-EndOfScope:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-namespace-clean:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Params-Validate:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Getopt-Long-Descriptive:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Class-Load:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-HTML-Form:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-HTML-Tree:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-WWW-Mechanize:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-App-Nopaste:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-File-HomeDir:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Devel-Caller:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Devel-LexAlias:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Data-Printer:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Proc-InvokeEditor:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Class-Unload:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Class-Refresh:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Reply:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Devel-GlobalDestruction:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Moo:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Type-Tiny:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-IO-Socket-SSL:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-MetaCPAN-Client:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Math-Random:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Jcode:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-OLE-Storage_Lite:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-TimeDate:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Parse-RecDescent:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Unicode-Map:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Spreadsheet-WriteExcel:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Text-Template-Simple:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Sys-Info-Base:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Sys-Info:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Clone:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-baseline-metacpan:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.30.0-IO-String:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-Writer:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-NamespaceSupport:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Tk:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Sort-Versions:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Set-Scalar:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Capture-Tiny:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-JSON:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-FFI-CheckLib:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-RegExp:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-XPathEngine:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Sub-Uplevel:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Devel-StackTrace:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Test-RequiresInternet:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-List-MoreUtils-XS:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Algorithm-Diff:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-Parser:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-libxml-perl:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Class-Data-Inheritable:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-File-chdir:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Error:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-SAX-Base:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-ExtUtils-PkgConfig:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-Filter-BufferText:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-IO-Tty:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Test-Deep:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-YAML:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-IO-Stringy:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Mojo-DOM58:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-FreezeThaw:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-MLDBM:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Graph:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-SAX-Writer:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Alien-Build:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-IPC-Run:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-List-MoreUtils:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-DOM:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-DOM-XPath:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Alien-Libxml2:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-SAX:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-LibXML:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Text-Diff:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Test-Differences:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Test-Warn:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Test-Exception:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Exception-Class:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Test-Most:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-Twig:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-LibXSLT:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-GD:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Data-Stag:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-BioPerl:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Statistics-Descriptive:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-baseline-bioperl:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.34.1-IO-String:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-Writer:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-NamespaceSupport:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Tk:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Sort-Versions:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Set-Scalar:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Capture-Tiny:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-JSON:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-FFI-CheckLib:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-RegExp:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-XPathEngine:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Sub-Uplevel:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Devel-StackTrace:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Test-RequiresInternet:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-List-MoreUtils-XS:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Algorithm-Diff:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-Parser:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-libxml-perl:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Class-Data-Inheritable:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-File-chdir:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Error:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-SAX-Base:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-ExtUtils-PkgConfig:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-Filter-BufferText:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-IO-Tty:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Test-Deep:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-YAML:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-IO-Stringy:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Mojo-DOM58:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-FreezeThaw:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-MLDBM:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Graph:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-SAX-Writer:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Alien-Build:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-IPC-Run:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-List-MoreUtils:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-DOM:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-DOM-XPath:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Alien-Libxml2:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-SAX:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-LibXML:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Text-Diff:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Test-Differences:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Test-Warn:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Test-Exception:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Exception-Class:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Test-Most:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-Twig:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-LibXSLT:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-GD:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Data-Stag:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-BioPerl:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Statistics-Descriptive:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-baseline-bioperl:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.30.0-Net-SMTP-SSL:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Mail-Sendmail:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-MailTools:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Mail-Sender:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Email-Date-Format:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-MIME-Lite:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-File-Grep:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-IPC-ShareLite:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Bio-DB-EMBL:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-File-Slurper:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Number-Compare:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Bio-Tools-Run-RemoteBlast:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Digest-SHA1:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-MRO-Compat:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Sub-Name:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Parse-Yapp:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Test-Fatal:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Bio-Variation:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Text-CSV:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Array-Utils:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Bio-DB-RefSeq:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Bio-DB-SwissProt:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Digest-MD5-File:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Sub-Identify:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Text-Glob:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Params-ValidationCompiler:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-namespace-autoclean:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Specio:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Log-Dispatch:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Log-Log4perl:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-CGI:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Bio-Cluster:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Bio-ASN1-EntrezGene:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Cache-Cache:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-LWP-Protocol-https:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Bio-DB-NCBIHelper:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Bio-Procedural:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Devel-OverloadInfo:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Package-DeprecationManager:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Moose:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-Graph-ReadWrite:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-File-Find-Rule:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-File-Copy-Recursive:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-SAX-Expat:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-HTML-Template:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-XML-Simple:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.30.0-baseline-genomics:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+  perl_5.34.1-Net-SMTP-SSL:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Mail-Sendmail:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-MailTools:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Mail-Sender:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Email-Date-Format:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-MIME-Lite:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-File-Grep:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-IPC-ShareLite:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Bio-DB-EMBL:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-File-Slurper:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Number-Compare:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Bio-Tools-Run-RemoteBlast:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Digest-SHA1:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-MRO-Compat:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Sub-Name:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Parse-Yapp:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Test-Fatal:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Bio-Variation:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Text-CSV:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Array-Utils:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Bio-DB-RefSeq:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Bio-DB-SwissProt:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Digest-MD5-File:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Sub-Identify:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Text-Glob:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Params-ValidationCompiler:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-namespace-autoclean:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Specio:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Log-Dispatch:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Log-Log4perl:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-CGI:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Bio-Cluster:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Bio-ASN1-EntrezGene:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Cache-Cache:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-LWP-Protocol-https:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Bio-DB-NCBIHelper:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Bio-Procedural:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Devel-OverloadInfo:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Package-DeprecationManager:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Moose:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-Graph-ReadWrite:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-File-Find-Rule:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-File-Copy-Recursive:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-SAX-Expat:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-HTML-Template:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-XML-Simple:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+  perl_5.34.1-baseline-genomics:
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
 python-admix:
   python_3.8.0-virtualenv:
     category: False
@@ -3378,6 +5124,11 @@ python-admix:
     requires:
     provides:
       - python/3.8.0
+  python_3.8.0-packaging:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
   python_3.8.0-setuptools:
     category: False
     requires:
@@ -3412,11 +5163,6 @@ python-admix:
       - OpenBLAS/0.3.6
     provides:
   python_3.8.0-joblib:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-  python_3.8.0-packaging:
     category: False
     requires:
       - python/3.8.0
@@ -3555,7 +5301,6 @@ python-admix:
     category: False
     requires:
       - python/2.7.17
-      - OpenBLAS/0.3.6
     provides:
   python_2.7.17-pandas:
     category: False
@@ -3610,7 +5355,6 @@ python-admix:
     category: False
     requires:
       - python/2.7.17
-      - OpenBLAS/0.3.6
     provides:
   python_2.7.17-pybind11:
     category: False
@@ -3914,11 +5658,6 @@ python-admix:
     requires:
       - python/3.10.2
     provides:
-  python_3.10.2-tomli:
-    category: False
-    requires:
-      - python/3.10.2
-    provides:
   python_3.10.2-sortedcontainers:
     category: False
     requires:
@@ -3997,12 +5736,22 @@ python-admix:
     requires:
     provides:
       - python/3.10.2
+  python_3.10.2-packaging:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
   python_3.10.2-setuptools:
     category: False
     requires:
       - python/3.10.2
     provides:
   python_3.10.2-setuptools_scm:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+  python_3.10.2-tomli:
     category: False
     requires:
       - python/3.10.2
@@ -4056,11 +5805,6 @@ python-admix:
       - OpenBLAS/0.3.19
     provides:
   python_3.10.2-joblib:
-    category: False
-    requires:
-      - python/3.10.2
-    provides:
-  python_3.10.2-packaging:
     category: False
     requires:
       - python/3.10.2
@@ -10391,10 +12135,6 @@ systools-admix:
     category: False
     requires:
     provides:
-  python3-ansible-lint:
-    category: False
-    requires:
-    provides:
   python3-scandir:
     category: False
     requires:
@@ -10438,11 +12178,6 @@ systools-admix:
   zfs-auto-snapshot:
     category: False
     requires:
-    provides:
-  rclone:
-    category: False
-    requires:
-      - go/1.17.7
     provides:
   pdsh:
     category: False
@@ -10509,6 +12244,20 @@ systools-admix:
     category: False
     requires:
     provides:
+  rclone:
+    category: False
+    requires:
+      - go/1.20.4
+    provides:
+  awscli_2.11.21:
+    category: False
+    requires:
+    provides:
+  awscli_2.11.21-module:
+    category: TOOLS
+    requires:
+    provides:
+      - awscli/2.11.21
 tensorflow-admix:
   tensorflow_2.0.0_python3.8.0:
     category: False
@@ -10628,12 +12377,6 @@ tensorflow-admix:
       - python/3.10.2
     provides:
       - tensorflow/2.8.0
-  python_3.10.2-pycuda:
-    category: False
-    requires:
-      - python/3.10.2
-      - cuda/11.7.1
-    provides:
   tensorflow_2.8.0_python3.10.2-astunparse:
     category: False
     requires:
@@ -10956,11 +12699,6 @@ nfsapps-admix:
     requires:
     provides:
       - gaussian/16
-  sas_94M7-module:
-    category: ENGINEERING
-    requires:
-    provides:
-      - sas/94M7
   ansys_2020R2-module:
     category: ENGINEERING
     requires:
@@ -11003,11 +12741,6 @@ nfsapps-admix:
     requires:
     provides:
       - turbomole-smp/7.6
-  cudasdk_22.9-module:
-    category: COMPILERS
-    requires:
-    provides:
-      - cudasdk/22.9
   MATLAB_R2021b-module:
     category: LANGUAGES
     requires:
@@ -11062,15 +12795,6 @@ julia-admix:
     requires:
     provides:
       - julia/1.6.0
-  julia_1.5.1:
-    category: False
-    requires:
-    provides:
-  julia_1.5.1-module:
-    category: LANGUAGES
-    requires:
-    provides:
-      - julia/1.5.1
   julia_1.7.1:
     category: False
     requires:
@@ -11080,6 +12804,15 @@ julia-admix:
     requires:
     provides:
       - julia/1.7.1
+  julia_1.8.2:
+    category: False
+    requires:
+    provides:
+  julia_1.8.2-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - julia/1.8.2
 simulations-admix:
   opensees_3.3.0:
     category: False
@@ -11278,24 +13011,6 @@ genomics-admix:
       - mkl/2019.5.281
     provides:
       - plink/2.00a2.3
-  rMATS_4.1.0:
-    category: False
-    requires:
-      - foundation/v8
-      - gcc/8.4.0
-      - python/3.8.0
-      - gsl/2.6/gcc.8.4.0
-    provides:
-  rMATS_4.1.0-module:
-    category: GENOMICS
-    requires:
-      - star/2.7.3a
-      - samtools/1.10
-      - gcc/8.4.0
-      - python/3.8.0
-      - gsl/2.6/gcc.8.4.0
-    provides:
-      - rMATS/4.1.0
   canu_2.0:
     category: False
     requires:
@@ -11308,18 +13023,6 @@ genomics-admix:
       - gcc/8.4.0
     provides:
       - canu/2.0
-  mummer_4.0.0:
-    category: False
-    requires:
-      - foundation/v8
-      - gcc/8.4.0
-    provides:
-  mummer_4.0.0-module:
-    category: GENOMICS
-    requires:
-      - gcc/8.4.0
-    provides:
-      - mummer/4.0.0
   velocyto_0.17.17:
     category: False
     requires:
@@ -11364,19 +13067,6 @@ genomics-admix:
       - parallel/20200222
     provides:
       - roary/3.13.0
-  midas_1.3.2:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-  midas_1.3.2-module:
-    category: GENOMICS
-    requires:
-      - bowtie2/2.4.1
-      - samtools/1.10
-      - python/3.8.0
-    provides:
-      - midas/1.3.2
   hisat2_2.2.1:
     category: False
     requires:
@@ -11414,15 +13104,6 @@ genomics-admix:
       - gcc/8.4.0
     provides:
       - stringtie/2.1.4
-  igv_2.8.9:
-    category: False
-    requires:
-    provides:
-  igv_2.8.9-module:
-    category: GENOMICS
-    requires:
-    provides:
-      - igv/2.8.9
   bedops_2.4.39:
     category: False
     requires:
@@ -11470,29 +13151,6 @@ genomics-admix:
       - gcc/8.4.0
     provides:
       - megahit/1.2.9
-  kraken2_2.1.1:
-    category: False
-    requires:
-      - gcc/8.4.0
-    provides:
-  kraken2_2.1.1-module:
-    category: GENOMICS
-    requires:
-      - gcc/8.4.0
-    provides:
-      - kraken2/2.1.1
-  bracken_2.6.0:
-    category: False
-    requires:
-      - gcc/8.4.0
-    provides:
-  bracken_2.6.0-module:
-    category: GENOMICS
-    requires:
-      - kraken2/2.1.1
-      - gcc/8.4.0
-    provides:
-      - bracken/2.6.0
   loompy_3.0.6:
     category: False
     requires:
@@ -12040,4 +13698,52 @@ imaging-admix:
       - python/3.8.0
     provides:
       - mrtrix3/3.0.3
-created: 2023-05-04
+protected-admix:
+  rosetta_3.13:
+    category: False
+    requires:
+      - gcc/system
+      - hdf5/1.13.1/gcc.system
+    provides:
+  rosetta_3.13-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/system
+      - hdf5/1.13.1/gcc.system
+    provides:
+      - rosetta/3.13
+  qe_7.1_gcc_11.2.0:
+    category: False
+    requires:
+      - foundation/v8
+      - openmpi/4.1.2/gcc.11.2.0
+      - OpenBLAS/0.3.19
+      - scalapack/2.1.0
+      - fftw/3.3.10/gcc.11.2.0
+      - hdf5/1.13.1/gcc.11.2.0-openmpi.4.1.2
+    provides:
+  qe_7.1_gcc_11.2.0-module:
+    category: PHYSICS
+    requires:
+      - openmpi/4.1.2/gcc.11.2.0
+      - OpenBLAS/0.3.19
+      - scalapack/2.1.0
+      - fftw/3.3.10/gcc.11.2.0
+      - hdf5/1.13.1/gcc.11.2.0-openmpi.4.1.2
+    provides:
+      - qe/7.1/gcc.11.2.0-openmpi.4.1.2
+  qe_7.1_cudasdk_22.9:
+    category: False
+    requires:
+      - foundation/v8
+      - openmpi/4.1.2/intel.2022.2
+      - cudasdk/22.9
+    provides:
+  qe_7.1_cudasdk_22.9-module:
+    category: PHYSICS
+    requires:
+      - openmpi/4.1.2/intel.2022.2
+      - cudasdk/22.9
+    provides:
+      - qe/7.1/intel.2022.2-cudasdk.22.9.openmpi.4.1.2
+created: 2023-07-20
