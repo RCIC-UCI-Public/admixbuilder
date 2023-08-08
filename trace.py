@@ -84,7 +84,7 @@ class Content:
     def parseArg(self):
         self.infile = "depinfo.yaml"
 
-        description = "Show all packages by admix that depend on a given package"
+        description = "Show all packages by admix that depend on a given package name"
         helpdefaults = "specify yaml file to use. If none is provided, use %s\n" % self.infile
         helpdefaults += "that has requires, provides, category info for all packages."
 
@@ -174,7 +174,9 @@ class Content:
             return
 
         print ("\nNeed to rebuild packages")
-        for admixname, pkglist in self.update.items():
+        for item in sorted(self.update.items()):
+            admixname = item[0]
+            pkglist = item[1]
             print ("\n%s:" % admixname)
             for pkg in pkglist: 
                 print ("    %s" % pkg)
