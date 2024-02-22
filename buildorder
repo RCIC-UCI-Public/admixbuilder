@@ -4,10 +4,10 @@ gcc-admix
 foundation-admix
 mathlibs-admix
 systools-admix
+cuda-admix
 buildlibs-admix
 fileformats-admix
 python-admix
-cuda-admix
 simulations-admix
 bioconda-admix
 perl-admix
