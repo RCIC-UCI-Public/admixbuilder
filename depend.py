@@ -112,6 +112,7 @@ class Category(object):
 
         edgenames = self.getCategoryEdges()
         for edge in edgenames:
+            edge = edge.replace("-","_")
             txt += "\n%s -> %s;" % (name, edge)
         txt += "\n"
         return txt
