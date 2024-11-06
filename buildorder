@@ -1,3 +1,5 @@
+## This is the order to build Admixes 
+# Lines starting with '#' are ignored
 yaml2rpm
 buildtools-admix
 gcc-admix
@@ -23,4 +25,3 @@ pytorch-admix
 imaging-admix
 nfsapps-admix
 protected-admix
-

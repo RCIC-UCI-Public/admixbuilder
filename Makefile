@@ -1,21 +1,16 @@
 ## This Makefile is a high-level builder of all Admixes
 REPOROOT = git@github.com:RCIC-UCI-Public
-CRSPDIR = /mnt/crsp/RPMS.CURRENT
-ADMIXES = yaml2rpm biotools-admix buildlibs-admix buildtools-admix chemistry-admix conda-admix
-ADMIXES += cuda-admix fileformats-admix foundation-admix gcc-admix
-ADMIXES += mathlibs-admix perl-admix python-admix R4-admix systools-admix tensorflow-admix
-ADMIXES += pytorch-admix
-ADMIXES += bioconda-admix nfsapps-admix julia-admix simulations-admix
-ADMIXES += rust-admix genomics-admix 
-ADMIXES += imaging-admix 
-ADMIXES += protected-admix 
-
-ADMIXROOT = ..
+CRSPDIR = /mnt/crsp/RPMS/RPMS.EL8.10
 ANSIBLEDIR = playbooks
 
+## Admixes are listed in buildorder.  Lines starting with # are ignored
+BUILDORDER = $(shell cat buildorder | grep -v '^\#')
+
+ADMIXROOT = ..
+ADMIXES=$(BUILDORDER)
 ADMIXDIRS = $(patsubst, %, $(ADMIXROOT)%,$(ADMIXES))
+
 PWD := $(shell pwd)
-BUILDORDER = $(shell cat buildorder)
 
 DOTFILES = dot-buildorder dot-byadmix dot-bycategory
 
