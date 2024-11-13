@@ -64,7 +64,7 @@ status push pull: force
 rpmcopy: force
 	for am in $(ADMIXES); do echo $$am; ( 					\
 		if [ ! -d $(CRSPDIR)/$$am ]; then mkdir $(CRSPDIR)/$$am; fi ; \
-		cd $(ADMIXROOT)/$$am; find RPMS -name '*rpm' > $$am.rpms; /bin/cp --preserve=timestamps $$(cat $$am.rpms) $(CRSPDIR)/$$am) done 
+		cd $(ADMIXROOT)/$$am; find RPMS -name '*rpm' > $$am.rpms; /bin/cp --verbose --update --preserve=timestamps $$(cat $$am.rpms) $(CRSPDIR)/$$am) done 
 
 
 download:
