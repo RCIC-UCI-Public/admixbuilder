@@ -1,0 +1,48 @@
+Bootstrap: docker
+From: rockylinux:8 
+#From: rockylinux:9
+%runscript
+      exec /bin/bash -l "$@"
+%environment
+      export PS1='[(Builder)\u@\h \W]\$ '
+      
+%post
+      MAJOR=$(cat /etc/redhat-release | sed 's/.*release \([0-9]\+\).*/\1/')
+      dnf -y update
+      dnf -y install git make rocky-release
+      dnf -y --allowerasing install coreutils
+      dnf -y install yum-utils
+      if [ "$MAJOR" == "8" ]; then
+          dnf -y module install python36
+      fi 
+      if [ "$MAJOR" == "9" ]; then
+          dnf -y install python 
+      fi 
+      dnf -y install sudo
+      dnf -y install vim vim-enhanced
+      dnf -y groupinstall "Development Tools"
+      dnf -y groupinstall "Legacy UNIX Compatibility"
+      dnf -y install glib2-devel libseccomp-devel libX11-devel
+      dnf -y install ncurses-devel ncurses-devel.i686 glibc-devel.i686 
+
+      # Get yumdownloader
+      yum -y install yum-utils
+
+      # enable the powertools repo
+      if [ "$MAJOR" == "8" ]; then
+           echo "Enabling powertools yum repo"
+           yum-config-manager --enable powertools
+      fi
+      # enable the crb repo
+      if [ "$MAJOR" == "9" ]; then
+         echo "Enabling powertools crb repo"
+         yum-config-manager --enable crb
+      fi
+
+      # "de facto" standard paths for admixbuilding
+      mkdir -p /export/repositories 
+      mkdir -p /data/opt/apps
+
+%files
+      admixprompt.sh /etc/profile.d/admixprompt.sh
+
