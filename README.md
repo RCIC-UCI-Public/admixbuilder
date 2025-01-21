@@ -29,3 +29,11 @@ the previous contents:
 ```html
 <!-- auto-changelog-above -->
 ```
+
+## dependency graphs
+
+Need ``dot`` command provided by
+
+```bash
+yum install graphviz
+```
