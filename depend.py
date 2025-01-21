@@ -89,7 +89,7 @@ class Category(object):
         txt += '{rank = same; 1; CHEMISTRY, ENGINEERING, GENOMICS, IMAGING, AI_LEARNING}\n'
         txt += '{rank = same; 2; TOOLS, BIOTOOLS}\n'
         txt += '{rank = same; 3; LANGUAGES, LIBRARIES}\n'
-        txt += '{rank = same; 4; COMPILERS; PHYSICS; STATISTICS}\n'
+        txt += '{rank = same; 4; COMPILERS; PHYSICS}\n'
 
         return txt
 
@@ -105,7 +105,7 @@ class Category(object):
         provlist='<TR><TD bgcolor="%s">\n  <BR/>' % self.colorModulesBG
         provides = self.getCategoryProvides()
         if provides is not None:
-           provlist="%s%s" % (provlist, "\n  <BR/>".join(provides))
+           provlist="%s%s" % (provlist, "\n  <BR/>".join(sorted(provides)))
         provlist = provlist + "\n</TD></TR>\n"
 
         txt += '%s%s%s]' % (self.namepattern % (self.colorLabelBG,self.getCategoryName()), provlist, self.labeltrailer)
