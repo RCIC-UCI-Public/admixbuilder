@@ -1,6 +1,6 @@
 Bootstrap: docker
-From: rockylinux:8 
-#From: rockylinux:9
+#From: rockylinux:8 
+From: rockylinux:9
 %runscript
       exec /bin/bash -l "$@"
 %environment
@@ -8,7 +8,7 @@ From: rockylinux:8
       
 %post
       MAJOR=$(cat /etc/redhat-release | sed 's/.*release \([0-9]\+\).*/\1/')
-      dnf -y update
+      #dnf -y update
       dnf -y install git make rocky-release
       dnf -y --allowerasing install coreutils
       dnf -y install yum-utils
@@ -16,7 +16,7 @@ From: rockylinux:8
           dnf -y module install python36
       fi 
       if [ "$MAJOR" == "9" ]; then
-          dnf -y install python 
+          dnf -y install python createrepo_c python3-setuptools 
       fi 
       dnf -y install sudo
       dnf -y install vim vim-enhanced
