@@ -24,6 +24,7 @@ From: rockylinux:9
       dnf -y groupinstall "Legacy UNIX Compatibility"
       dnf -y install glib2-devel libseccomp-devel libX11-devel
       dnf -y install ncurses-devel ncurses-devel.i686 glibc-devel.i686 
+      dnf -y install environment-modules
 
       # Get yumdownloader
       yum -y install yum-utils
@@ -42,6 +43,10 @@ From: rockylinux:9
       # "de facto" standard paths for admixbuilding
       mkdir -p /export/repositories 
       mkdir -p /data/opt/apps
+
+      dnf -y clean all
+      /bin/rm -rf /var/cache/dnf/*
+
 
 %files
       admixprompt.sh /etc/profile.d/admixprompt.sh
