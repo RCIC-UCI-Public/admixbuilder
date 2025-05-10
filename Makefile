@@ -7,7 +7,10 @@ ANSIBLEDIR = playbooks
 BUILDORDER = $(shell cat buildorder | grep -v '^\#')
 
 ADMIXROOT = ..
+ifeq ($(origin ADMIXES), undefined)
 ADMIXES=$(BUILDORDER)
+endif
+
 ADMIXDIRS = $(patsubst, %, $(ADMIXROOT)%,$(ADMIXES))
 
 PWD := $(shell pwd)
@@ -43,12 +46,13 @@ ansible: $(ANSIBLEDIR) force
 $(ANSIBLEDIR):
 	mkdir $@
 
-buildall:
+buildall buildall-parallel:
 	- /bin/rm buildall.log
 	( for admix in $(BUILDORDER); do                     \
 	     echo "$$admix build start at `date`" >> $(PWD)/buildall.log; \
+	     if [ ! -d $(ADMIXROOT)/$$admix ]; then make clone ADMIXES=$$admix; fi; \
 	     cd $(ADMIXROOT)/$$admix;                        \
-	     make buildall &> $(PWD)/$$admix.log;            \
+	     make $@ &> $(PWD)/$$admix.log;            \
 	     make -s YES=-y install-admix &> $(PWD)/$$admix.install.log; \
 	     cd $(PWD);                                      \
 	     echo "$$admix build end at `date`" >> $(PWD)/buildall.log; \
