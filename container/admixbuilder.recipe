@@ -14,9 +14,16 @@ From: rockylinux:9
       dnf -y install yum-utils
       if [ "$MAJOR" == "8" ]; then
           dnf -y module install python36
+          echo "Installing EPEL repo RPMS, disabled"
+          dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+          dnf config-manager --set-disabled epel
       fi 
       if [ "$MAJOR" == "9" ]; then
           dnf -y install python createrepo_c python3-setuptools 
+          echo "Installing EPEL repo RPMS, disabled"
+          dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+          dnf config-manager --set-disabled epel
+          dnf config-manager --set-disabled epel-cisco-openh264
       fi 
       dnf -y install sudo
       dnf -y install vim vim-enhanced
@@ -38,6 +45,9 @@ From: rockylinux:9
          echo "Enabling powertools crb repo"
          yum-config-manager --enable crb
       fi
+      # Some useful tools
+      echo "install sshfs,losf,pstree"
+      dnf -y --enable-repo=epel fuse-sshfs psmisc lsof
 
       # "de facto" standard paths for admixbuilding
       mkdir -p /export/repositories 
