@@ -96,16 +96,6 @@ buildtools-admix:
     requires:
     provides:
       - java/17
-  intel-tbb_2021.5.0:
-    category: False
-    requires:
-    provides:
-      - intel-tbb_2021.5.0
-  intel-tbb_2021.5.0-module:
-    category: COMPILERS
-    requires:
-    provides:
-      - intel-tbb/2021.5.0
   tk_8.6.12:
     category: False
     requires:
@@ -143,6 +133,16 @@ buildtools-admix:
     requires:
     provides:
       - singularity/3.9.4
+  cmake_3.20.5:
+    category: False
+    requires:
+    provides:
+      - cmake_3.20.5
+  cmake_3.20.5-module:
+    category: TOOLS
+    requires:
+    provides:
+      - cmake/3.20.5
   tcl_8.6.12:
     category: False
     requires:
@@ -169,6 +169,11 @@ buildtools-admix:
     requires:
     provides:
       - nodejs_21.4.0
+  cudasdk_22.9-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - cudasdk/22.9
   go_1.20.4:
     category: False
     requires:
@@ -179,16 +184,46 @@ buildtools-admix:
     requires:
     provides:
       - go/1.20.4
-  cudasdk_22.9-module:
-    category: COMPILERS
-    requires:
-    provides:
-      - cudasdk/22.9
   intel_2024.0.1-module:
     category: COMPILERS
     requires:
     provides:
       - intel/2024.0.1
+  intel-tbb_2021.11-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - intel-tbb/2021.11
+  cmake_3.30.2:
+    category: False
+    requires:
+    provides:
+      - cmake_3.30.2
+  cmake_3.30.2-module:
+    category: TOOLS
+    requires:
+    provides:
+      - cmake/3.30.2
+  curl_7.81.0:
+    category: False
+    requires:
+    provides:
+      - curl_7.81.0
+  curl_7.81.0-module:
+    category: TOOLS
+    requires:
+    provides:
+      - curl/7.81.0
+  ninja_1.10.2:
+    category: False
+    requires:
+    provides:
+      - ninja_1.10.2
+  ninja_1.10.2-module:
+    category: TOOLS
+    requires:
+    provides:
+      - ninja/1.10.2
   go_1.22.3:
     category: False
     requires:
@@ -199,6 +234,16 @@ buildtools-admix:
     requires:
     provides:
       - go/1.22.3
+  intel_2025.1.0-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - intel/2025.1.0
+  intel-tbb_2022.1-module:
+    category: COMPILERS
+    requires:
+    provides:
+      - intel-tbb/2022.1
 gcc-admix:
   gcc_6.5.0-gmp:
     category: False
@@ -348,36 +393,6 @@ gcc-admix:
     provides:
       - gcc_11.2.0-mpfr
 foundation-admix:
-  cmake_3.20.5:
-    category: False
-    requires:
-    provides:
-      - cmake_3.20.5
-  cmake_3.20.5-module:
-    category: TOOLS
-    requires:
-    provides:
-      - cmake/3.20.5
-  cmake_3.30.2:
-    category: False
-    requires:
-    provides:
-      - cmake_3.30.2
-  cmake_3.30.2-module:
-    category: TOOLS
-    requires:
-    provides:
-      - cmake/3.30.2
-  curl_7.81.0:
-    category: False
-    requires:
-    provides:
-      - curl_7.81.0
-  curl_7.81.0-module:
-    category: TOOLS
-    requires:
-    provides:
-      - curl/7.81.0
   pigz_2.6:
     category: False
     requires:
@@ -408,16 +423,6 @@ foundation-admix:
     requires:
     provides:
       - swig/4.0.2
-  ninja_1.10.2:
-    category: False
-    requires:
-    provides:
-      - ninja_1.10.2
-  ninja_1.10.2-module:
-    category: TOOLS
-    requires:
-    provides:
-      - ninja/1.10.2
   git-lfs_3.5.1:
     category: False
     requires:
@@ -464,6 +469,16 @@ foundation-admix:
     provides:
       - asciidoctor/2.0.23
 mathlibs-admix:
+  mkl_2019.5.281:
+    category: False
+    requires:
+    provides:
+      - mkl_2019.5.281
+  mkl_2019.5.281-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - mkl/2019.5.281
   OpenBLAS_0.3.6:
     category: False
     requires:
@@ -489,7 +504,7 @@ mathlibs-admix:
   eigen_3.3.7:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
     provides:
       - eigen_3.3.7
   eigen_3.3.7-module:
@@ -509,16 +524,6 @@ mathlibs-admix:
       - gcc/8.4.0
     provides:
       - glpk/5.0/gcc.8.4.0
-  mkl_2019.5.281:
-    category: False
-    requires:
-    provides:
-      - mkl_2019.5.281
-  mkl_2019.5.281-module:
-    category: LIBRARIES
-    requires:
-    provides:
-      - mkl/2019.5.281
   OpenBLAS_0.3.19:
     category: False
     requires:
@@ -650,6 +655,11 @@ systools-admix:
     requires:
     provides:
       - perl-Spreadsheet-WriteExcel
+  perl-Env:
+    category: False
+    requires:
+    provides:
+      - perl-Env
   nmon:
     category: False
     requires:
@@ -725,11 +735,6 @@ systools-admix:
     requires:
     provides:
       - python3-paramiko
-  ansible:
-    category: False
-    requires:
-    provides:
-      - ansible
   python3-cffi:
     category: False
     requires:
@@ -756,57 +761,6 @@ systools-admix:
     provides:
       - awscli/2.11.21
 cuda-admix:
-  ffmpeg_4.1.3:
-    category: False
-    requires:
-    provides:
-      - ffmpeg_4.1.3
-  ffmpeg_4.1.3-module:
-    category: LIBRARIES
-    requires:
-    provides:
-      - ffmpeg/4.1.3
-  cuda-toolkit-doc_10.1.243:
-    category: False
-    requires:
-    provides:
-      - cuda-toolkit-doc_10.1.243
-  cuda-cublas_10.1.243:
-    category: False
-    requires:
-    provides:
-      - cuda-cublas_10.1.243
-  cuda-toolkit-samples_10.1.243:
-    category: False
-    requires:
-      - cuda/10.1.243
-    provides:
-      - cuda-toolkit-samples_10.1.243
-  cuda-toolkit_10.1.243:
-    category: False
-    requires:
-    provides:
-      - cuda-toolkit_10.1.243
-  cuda_10.1.243-module:
-    category: TOOLS
-    requires:
-    provides:
-      - cuda/10.1.243
-  cuda-toolkit-static-libs_10.1.243:
-    category: False
-    requires:
-    provides:
-      - cuda-toolkit-static-libs_10.1.243
-  cuda-toolkit-nsight_10.1.243:
-    category: False
-    requires:
-    provides:
-      - cuda-toolkit-nsight_10.1.243
-  cudnn-download_7.6.4.38:
-    category: False
-    requires:
-    provides:
-      - cudnn-download_7.6.4.38
   cuda-toolkit-samples_11.4.0:
     category: False
     requires:
@@ -833,11 +787,6 @@ cuda-admix:
     requires:
     provides:
       - cuda-toolkit-nsight_11.4.0
-  cudnn-download_8.2.2.26:
-    category: False
-    requires:
-    provides:
-      - cudnn-download_8.2.2.26
   gdrcopy_2.4.1:
     category: False
     requires:
@@ -849,6 +798,16 @@ cuda-admix:
     requires:
     provides:
       - gdrcopy/2.4.1
+  ffmpeg_4.1.3:
+    category: False
+    requires:
+    provides:
+      - ffmpeg_4.1.3
+  ffmpeg_4.1.3-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - ffmpeg/4.1.3
   cuda-toolkit_11.7.1:
     category: False
     requires:
@@ -869,11 +828,6 @@ cuda-admix:
     requires:
     provides:
       - cuda-toolkit-nsight_11.7.1
-  cudnn-download_8.5.0.96:
-    category: False
-    requires:
-    provides:
-      - cudnn-download_8.5.0.96
   ffmpeg_6.1:
     category: False
     requires:
@@ -906,11 +860,6 @@ cuda-admix:
     requires:
     provides:
       - cuda-toolkit-nsight_12.2.0
-  cudnn-download_8.9.6.50:
-    category: False
-    requires:
-    provides:
-      - cudnn-download_8.9.6.50
   ffnvcodec_12.1.14.0:
     category: False
     requires:
@@ -921,6 +870,11 @@ cuda-admix:
     requires:
     provides:
       - ffnvcodec/12.1.14.0
+  cudnn-download_8.9.6.50:
+    category: False
+    requires:
+    provides:
+      - cudnn-download_8.9.6.50
   cuda-driver_12.2.0:
     category: False
     requires:
@@ -975,21 +929,23 @@ buildlibs-admix:
       - gcc/8.4.0
     provides:
       - protobuf/3.11.4
-  geos_3.8.1:
+  geos_3.8.1_gcc_8.4.0:
     category: False
     requires:
-      - cmake/3.20.5
+      - gcc/8.4.0
+      - cmake/3.30.2
     provides:
-      - geos_3.8.1
-  geos_3.8.1-module:
+      - geos_3.8.1_gcc_8.4.0
+  geos_3.8.1_gcc_8.4.0-module:
     category: TOOLS
     requires:
+      - gcc/8.4.0
     provides:
-      - geos/3.8.1
+      - geos/3.8.1/gcc.8.4.0
   scalapack_2.1.0:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - openmpi/4.0.3/gcc.8.4.0
     provides:
       - scalapack_2.1.0
@@ -1022,7 +978,7 @@ buildlibs-admix:
   llvm_9.0.1:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - ninja/1.10.2
       - gcc/8.4.0
     provides:
@@ -1030,7 +986,6 @@ buildlibs-admix:
   llvm_9.0.1-module:
     category: COMPILERS
     requires:
-      - gcc/8.4.0
     provides:
       - llvm/9.0.1
   openmpi_4.0.3_gcc_8.4.0:
@@ -1059,32 +1014,16 @@ buildlibs-admix:
       - gcc/system
     provides:
       - fftw/3.3.8/gcc.system
-  openmpi_4.0.3_intel_2020u1:
+  ucx_1.12.0:
     category: False
     requires:
-      - intel/2020u1
-      - singularity/3.7.2
-      - ucx/1.8.0/gcc.system
     provides:
-      - openmpi_4.0.3_intel_2020u1
-  openmpi_4.0.3_intel_2020u1-module:
-    category: COMPILERS
+      - ucx_1.12.0
+  ucx_1.12.0-module:
+    category: LIBRARIES
     requires:
-      - intel/2020u1
     provides:
-      - openmpi/4.0.3/intel.2020u1
-  mpich_3.4_intel_2020u1:
-    category: False
-    requires:
-      - intel/2020u1
-    provides:
-      - mpich_3.4_intel_2020u1
-  mpich_3.4_intel_2020u1-module:
-    category: COMPILERS
-    requires:
-      - intel/2020u1
-    provides:
-      - mpich/3.4/intel.2020u1
+      - ucx/1.12.0/gcc.system
   openmpi_4.0.3_gcc_6.5.0:
     category: False
     requires:
@@ -1099,10 +1038,50 @@ buildlibs-admix:
       - gcc/6.5.0
     provides:
       - openmpi/4.0.3/gcc.6.5.0
+  openmpi_4.1.2_gcc_8.4.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - singularity/3.9.4
+      - ucx/1.12.0/gcc.system
+    provides:
+      - openmpi_4.1.2_gcc_8.4.0
+  openmpi_4.1.2_gcc_8.4.0-module:
+    category: COMPILERS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - openmpi/4.1.2/gcc.8.4.0
+  openmpi_4.1.2_intel_2022.2:
+    category: False
+    requires:
+      - intel/2022.2
+      - singularity/3.9.4
+      - ucx/1.12.0/gcc.system
+    provides:
+      - openmpi_4.1.2_intel_2022.2
+  openmpi_4.1.2_intel_2022.2-module:
+    category: COMPILERS
+    requires:
+      - intel/2022.2
+    provides:
+      - openmpi/4.1.2/intel.2022.2
+  mpich_4.0_intel_2022.2:
+    category: False
+    requires:
+      - intel/2022.2
+    provides:
+      - mpich_4.0_intel_2022.2
+  mpich_4.0_intel_2022.2-module:
+    category: COMPILERS
+    requires:
+      - intel/2022.2
+    provides:
+      - mpich/4.0/intel.2022.2
   clang_11.1.0:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - ninja/1.10.2
       - llvm/11.1.0
     provides:
@@ -1140,7 +1119,7 @@ buildlibs-admix:
   llvm_11.1.0:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - ninja/1.10.2
       - gcc/8.4.0
     provides:
@@ -1148,7 +1127,6 @@ buildlibs-admix:
   llvm_11.1.0-module:
     category: COMPILERS
     requires:
-      - gcc/8.4.0
     provides:
       - llvm/11.1.0
   boost_1.78.0_gcc_11.2.0:
@@ -1225,27 +1203,19 @@ buildlibs-admix:
       - gcc/11.2.0
     provides:
       - protobuf/3.19.4
-  geos_3.10.2:
+  geos_3.10.2_gcc_11.2.0:
     category: False
     requires:
+      - gcc/11.2.0
       - cmake/3.30.2
     provides:
-      - geos_3.10.2
-  geos_3.10.2-module:
+      - geos_3.10.2_gcc_11.2.0
+  geos_3.10.2_gcc_11.2.0-module:
     category: TOOLS
     requires:
+      - gcc/11.2.0
     provides:
-      - geos/3.10.2
-  ucx_1.12.0:
-    category: False
-    requires:
-    provides:
-      - ucx_1.12.0
-  ucx_1.12.0-module:
-    category: LIBRARIES
-    requires:
-    provides:
-      - ucx/1.12.0/gcc.system
+      - geos/3.10.2/gcc.11.2.0
   llvm_13.0.0:
     category: False
     requires:
@@ -1257,7 +1227,6 @@ buildlibs-admix:
   llvm_13.0.0-module:
     category: COMPILERS
     requires:
-      - gcc/11.2.0
     provides:
       - llvm/13.0.0
   openmpi_4.1.2_gcc_11.2.0:
@@ -1265,7 +1234,7 @@ buildlibs-admix:
     requires:
       - gcc/11.2.0
       - singularity/3.9.4
-      - ucx/1.12.0/gcc.system
+      - ucx/1.8.0/gcc.system
     provides:
       - openmpi_4.1.2_gcc_11.2.0
   openmpi_4.1.2_gcc_11.2.0-module:
@@ -1274,57 +1243,6 @@ buildlibs-admix:
       - gcc/11.2.0
     provides:
       - openmpi/4.1.2/gcc.11.2.0
-  openmpi_4.1.2_intel_2022.2:
-    category: False
-    requires:
-      - intel/2022.2
-      - singularity/3.9.4
-      - ucx/1.12.0/gcc.system
-    provides:
-      - openmpi_4.1.2_intel_2022.2
-  openmpi_4.1.2_intel_2022.2-module:
-    category: COMPILERS
-    requires:
-      - intel/2022.2
-    provides:
-      - openmpi/4.1.2/intel.2022.2
-  mpich_4.0_intel_2022.2:
-    category: False
-    requires:
-      - intel/2022.2
-    provides:
-      - mpich_4.0_intel_2022.2
-  mpich_4.0_intel_2022.2-module:
-    category: COMPILERS
-    requires:
-      - intel/2022.2
-    provides:
-      - mpich/4.0/intel.2022.2
-  openmpi_4.1.2_gcc_8.4.0:
-    category: False
-    requires:
-      - gcc/8.4.0
-      - singularity/3.9.4
-      - ucx/1.12.0/gcc.system
-    provides:
-      - openmpi_4.1.2_gcc_8.4.0
-  openmpi_4.1.2_gcc_8.4.0-module:
-    category: COMPILERS
-    requires:
-      - gcc/8.4.0
-    provides:
-      - openmpi/4.1.2/gcc.8.4.0
-  geos_3.11.1:
-    category: False
-    requires:
-      - cmake/3.20.5
-    provides:
-      - geos_3.11.1
-  geos_3.11.1-module:
-    category: TOOLS
-    requires:
-    provides:
-      - geos/3.11.1
   clang_18.1.4:
     category: False
     requires:
@@ -1339,20 +1257,31 @@ buildlibs-admix:
       - llvm/18.1.4
     provides:
       - clang/18.1.4
-  llvm_18.1.4:
+  geos_3.11.1_gcc_11.2.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - cmake/3.30.2
+    provides:
+      - geos_3.11.1_gcc_11.2.0
+  geos_3.11.1_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - geos/3.11.1/gcc.11.2.0
+  libgit2_1.8.4:
     category: False
     requires:
       - cmake/3.30.2
-      - ninja/1.10.2
       - gcc/11.2.0
     provides:
-      - llvm_18.1.4
-  llvm_18.1.4-module:
-    category: COMPILERS
+      - libgit2_1.8.4
+  libgit2_1.8.4-module:
+    category: TOOLS
     requires:
-      - gcc/11.2.0
     provides:
-      - llvm/18.1.4
+      - libgit2/1.8.4
   ucx_1.15.0:
     category: False
     requires:
@@ -1363,6 +1292,18 @@ buildlibs-admix:
     requires:
     provides:
       - ucx/1.15.0/gcc.system
+  ucx_1.15.0_cuda_11.7.1:
+    category: False
+    requires:
+      - gdrcopy/2.4.1
+      - cuda/11.7.1
+    provides:
+      - ucx_1.15.0_cuda_11.7.1
+  ucx_1.15.0_cuda_11.7.1-module:
+    category: LIBRARIES
+    requires:
+    provides:
+      - ucx/1.15.0/cuda.11.7.1
   openmpi_5.0.1_gcc_11.2.0:
     category: False
     requires:
@@ -1377,18 +1318,6 @@ buildlibs-admix:
       - gcc/11.2.0
     provides:
       - openmpi/5.0.1/gcc.11.2.0
-  ucx_1.15.0_cuda_11.7.1:
-    category: False
-    requires:
-      - gdrcopy/2.4.1
-      - cuda/11.7.1
-    provides:
-      - ucx_1.15.0_cuda_11.7.1
-  ucx_1.15.0_cuda_11.7.1-module:
-    category: LIBRARIES
-    requires:
-    provides:
-      - ucx/1.15.0/cuda.11.7.1
   openmpi_5.0.1_gcc_11.2.0_cuda_11.7.1:
     category: False
     requires:
@@ -1405,24 +1334,25 @@ buildlibs-admix:
       - cuda/11.7.1
     provides:
       - openmpi/5.0.1/gcc.11.2.0-cuda.11.7.1
-  libgit2_1.8.4:
+  llvm_18.1.4:
     category: False
     requires:
       - cmake/3.30.2
+      - ninja/1.10.2
       - gcc/11.2.0
     provides:
-      - libgit2_1.8.4
-  libgit2_1.8.4-module:
-    category: TOOLS
+      - llvm_18.1.4
+  llvm_18.1.4-module:
+    category: COMPILERS
     requires:
       - gcc/11.2.0
     provides:
-      - libgit2/1.8.4
+      - llvm/18.1.4
 fileformats-admix:
   hdf5_1.10.5_gcc_system:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - java/1.8.0
       - gcc/system
     provides:
@@ -1437,7 +1367,7 @@ fileformats-admix:
   hdf5_1.10.5_gcc_8.4.0:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - java/1.8.0
       - gcc/8.4.0
     provides:
@@ -1452,7 +1382,7 @@ fileformats-admix:
   hdf5_1.10.5_gcc_8.4.0_openmpi_4.0.3:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - java/1.8.0
       - openmpi/4.0.3/gcc.8.4.0
     provides:
@@ -1496,59 +1426,10 @@ fileformats-admix:
       - gcc/8.4.0
     provides:
       - udunits/2.2.26/gcc.8.4.0
-  ioapi_3.2_intel_2020u1:
-    category: False
-    requires:
-      - intel/2020u1
-      - netcdf-c/4.7.0/intel.2020u1
-    provides:
-      - ioapi_3.2_intel_2020u1
-  ioapi_3.2_intel_2020u1-module:
-    category: TOOLS
-    requires:
-      - intel/2020u1
-      - netcdf-c/4.7.0/intel.2020u1
-    provides:
-      - ioapi/3.2/intel.2020u1
-  hdf5_1.10.5_intel_2020u1:
-    category: False
-    requires:
-      - cmake/3.20.5
-      - java/1.8.0
-      - intel/2020u1
-    provides:
-      - hdf5_1.10.5_intel_2020u1
-  hdf5_1.10.5_intel_2020u1-module:
-    category: TOOLS
-    requires:
-      - java/1.8.0
-      - intel/2020u1
-    provides:
-      - hdf5/1.10.5/intel.2020u1
-  netcdf-c_4.7.0_intel_2020u1:
-    category: False
-    requires:
-      - hdf5/1.10.5/intel.2020u1
-      - intel/2020u1
-    provides:
-      - netcdf-c_4.7.0_intel_2020u1
-  netcdf-c_4.7.0_intel_2020u1-module:
-    category: TOOLS
-    requires:
-      - hdf5/1.10.5/intel.2020u1
-      - intel/2020u1
-    provides:
-      - netcdf-c/4.7.0/intel.2020u1
-  netcdf-fortran_4.5.2_intel_2020u1:
-    category: False
-    requires:
-      - netcdf-c/4.7.0/intel.2020u1
-    provides:
-      - netcdf-fortran_4.5.2_intel_2020u1
   hdf5_1.13.1_gcc_system:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - java/1.8.0
       - gcc/system
     provides:
@@ -1563,7 +1444,7 @@ fileformats-admix:
   hdf5_1.13.1_gcc_system_openmpi_4.1.1:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - java/1.8.0
       - openmpi/4.1.1/gcc.system
     provides:
@@ -1750,7 +1631,7 @@ fileformats-admix:
   hdf5_1.13.1_cudasdk_22.9:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - java/17
       - cudasdk/22.9
     provides:
@@ -1792,7 +1673,221 @@ fileformats-admix:
       - openmpi/4.1.2/gcc.11.2.0
     provides:
       - hdf5/1.14.1/gcc.11.2.0-openmpi.4.1.2
+  hdf5_1.13.1_gcc_8.4.0:
+    category: False
+    requires:
+      - cmake/3.30.2
+      - java/1.8.0
+      - gcc/8.4.0
+    provides:
+      - hdf5_1.13.1_gcc_8.4.0
+  hdf5_1.13.1_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - java/1.8.0
+      - gcc/8.4.0
+    provides:
+      - hdf5/1.13.1/gcc.8.4.0
+  hdf5_1.14.1_gcc_11.2.0_openmpi_5.0.1:
+    category: False
+    requires:
+      - cmake/3.30.2
+      - java/17
+      - openmpi/5.0.1/gcc.11.2.0
+    provides:
+      - hdf5_1.14.1_gcc_11.2.0_openmpi_5.0.1
+  hdf5_1.14.1_gcc_11.2.0_openmpi_5.0.1-module:
+    category: TOOLS
+    requires:
+      - java/17
+      - openmpi/5.0.1/gcc.11.2.0
+    provides:
+      - hdf5/1.14.1/gcc.11.2.0-openmpi.5.0.1
 python-admix:
+  python_2.7.17-virtualenv:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-virtualenv
+  python_2.7.17-pyyaml:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-pyyaml
+  python_2.7.17-sqlalchemy:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-sqlalchemy
+  python_2.7.17-pytz:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-pytz
+  python_2.7.17-dateutil:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-dateutil
+  python_2.7.17-six:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-six
+  python_2.7.17-graphviz:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-graphviz
+  python_2.7.17-future:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-future
+  python_2.7.17-pyparsing:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-pyparsing
+  python_2.7.17-cffi:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-cffi
+  python_2.7.17-urllib3:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-urllib3
+  python_2.7.17-chardet:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-chardet
+  python_2.7.17-certifi:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-certifi
+  python_2.7.17-idna:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-idna
+  python_2.7.17-requests:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-requests
+  python_2.7.17-tqdm:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-tqdm
+  python_2.7.17-ruamel.yaml.clib:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-ruamel.yaml.clib
+  python_2.7.17-ruamel.yaml:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-ruamel.yaml
+  python_2.7.17-scipy:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-scipy
+  python_2.7.17-pandas:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-pandas
+  python_2.7.17-appdirs:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-appdirs
+  python_2.7.17-distlib:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-distlib
+  python_2.7.17-filelock:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-filelock
+  python_2.7.17:
+    category: False
+    requires:
+    provides:
+      - python_2.7.17
+  python_2.7.17-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - python/2.7.17
+  python_2.7.17-setuptools:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-setuptools
+  python_2.7.17-setuptools_scm:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-setuptools_scm
+  python_2.7.17-pip:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-pip
+  python_2.7.17-cython:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-cython
+  python_2.7.17-numpy:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-numpy
+  python_2.7.17-pybind11:
+    category: False
+    requires:
+      - python/2.7.17
+    provides:
+      - python_2.7.17-pybind11
   python_3.8.0-virtualenv:
     category: False
     requires:
@@ -2084,7 +2179,7 @@ python-admix:
   python_3.8.0-h5py:
     category: False
     requires:
-      - hdf5/1.10.5/gcc.system
+      - hdf5/1.14.1/gcc.system
       - python/3.8.0
     provides:
       - python_3.8.0-h5py
@@ -2113,14 +2208,14 @@ python-admix:
     requires:
       - gcc/system
       - python/3.8.0
-      - intel-tbb/20190605
+      - intel-tbb/2022.1
     provides:
       - python_3.8.0-numba
   python_3.8.0-pycuda:
     category: False
     requires:
       - python/3.8.0
-      - cuda/10.1.243
+      - cuda/11.7.1
     provides:
       - python_3.8.0-pycuda
   python_3.8.0:
@@ -2155,7 +2250,7 @@ python-admix:
     category: False
     requires:
       - python/3.8.0
-      - OpenBLAS/0.3.6
+      - OpenBLAS/0.3.26
     provides:
       - python_3.8.0-numpy
   python_3.8.0-pybind11:
@@ -2164,11 +2259,35 @@ python-admix:
       - python/3.8.0
     provides:
       - python_3.8.0-pybind11
+  python_3.8.0-ply:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+      - python_3.8.0-ply
+  python_3.8.0-gast:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+      - python_3.8.0-gast
+  python_3.8.0-beniget:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+      - python_3.8.0-beniget
+  python_3.8.0-pythran:
+    category: False
+    requires:
+      - python/3.8.0
+    provides:
+      - python_3.8.0-pythran
   python_3.8.0-scipy:
     category: False
     requires:
       - python/3.8.0
-      - OpenBLAS/0.3.6
+      - OpenBLAS/0.3.26
     provides:
       - python_3.8.0-scipy
   python_3.8.0-joblib:
@@ -2231,190 +2350,6 @@ python-admix:
       - python/3.8.0
     provides:
       - python_3.8.0-filelock
-  python_2.7.17-virtualenv:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-virtualenv
-  python_2.7.17-pyyaml:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-pyyaml
-  python_2.7.17-sqlalchemy:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-sqlalchemy
-  python_2.7.17-pytz:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-pytz
-  python_2.7.17-dateutil:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-dateutil
-  python_2.7.17-six:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-six
-  python_2.7.17-graphviz:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-graphviz
-  python_2.7.17-future:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-future
-  python_2.7.17-pyparsing:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-pyparsing
-  python_2.7.17-cffi:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-cffi
-  python_2.7.17-urllib3:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-urllib3
-  python_2.7.17-chardet:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-chardet
-  python_2.7.17-certifi:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-certifi
-  python_2.7.17-idna:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-idna
-  python_2.7.17-requests:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-requests
-  python_2.7.17-tqdm:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-tqdm
-  python_2.7.17-ruamel.yaml.clib:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-ruamel.yaml.clib
-  python_2.7.17-ruamel.yaml:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-ruamel.yaml
-  python_2.7.17-scipy:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-scipy
-  python_2.7.17-pandas:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-pandas
-  python_2.7.17-appdirs:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-appdirs
-  python_2.7.17-distlib:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-distlib
-  python_2.7.17-filelock:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-filelock
-  python_2.7.17:
-    category: False
-    requires:
-    provides:
-      - python_2.7.17
-  python_2.7.17-module:
-    category: LANGUAGES
-    requires:
-    provides:
-      - python/2.7.17
-  python_2.7.17-setuptools:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-setuptools
-  python_2.7.17-setuptools_scm:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-setuptools_scm
-  python_2.7.17-pip:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-pip
-  python_2.7.17-cython:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-cython
-  python_2.7.17-numpy:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-numpy
-  python_2.7.17-pybind11:
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-pybind11
   python_3.10.2-platformdirs:
     category: False
     requires:
@@ -2849,7 +2784,7 @@ python-admix:
     requires:
       - gcc/system
       - python/3.10.2
-      - intel-tbb/2021.5.0
+      - intel-tbb/2021.11
     provides:
       - python_3.10.2-numba
   python_3.10.2-sympy:
@@ -3142,96 +3077,96 @@ simulations-admix:
       - gcc/8.4.0
     provides:
       - opensees/3.3.0
-  sqlite3_3.32.3:
+  sqlite3_3.32.3_gcc_8.4.0:
     category: False
     requires:
       - gcc/8.4.0
     provides:
-      - sqlite3_3.32.3
-  sqlite3_3.32.3-module:
+      - sqlite3_3.32.3_gcc_8.4.0
+  sqlite3_3.32.3_gcc_8.4.0-module:
     category: LIBRARIES
     requires:
       - gcc/8.4.0
     provides:
-      - sqlite3/3.32.3
-  proj_6.3.2:
+      - sqlite3/3.32.3/gcc.8.4.0
+  proj_6.3.2_gcc_8.4.0:
     category: False
     requires:
       - gcc/8.4.0
-      - sqlite3/3.32.3
-      - cmake/3.20.5
-    provides:
-      - proj_6.3.2
-  proj_6.3.2-module:
-    category: LIBRARIES
-    requires:
-      - gcc/8.4.0
-      - sqlite3/3.32.3
-    provides:
-      - proj/6.3.2
-  gdal_3.1.0:
-    category: False
-    requires:
-      - gcc/8.4.0
-      - proj/6.3.2
-      - sqlite3/3.32.3
-      - geos/3.8.1
-    provides:
-      - gdal_3.1.0
-  gdal_3.1.0-module:
-    category: LIBRARIES
-    requires:
-      - gcc/8.4.0
-      - proj/6.3.2
-      - sqlite3/3.32.3
-      - geos/3.8.1
-    provides:
-      - gdal/3.1.0
-  sqlite3_3.38.2:
-    category: False
-    requires:
-      - gcc/11.2.0
-    provides:
-      - sqlite3_3.38.2
-  sqlite3_3.38.2-module:
-    category: LIBRARIES
-    requires:
-      - gcc/11.2.0
-    provides:
-      - sqlite3/3.38.2
-  proj_9.0.0:
-    category: False
-    requires:
-      - gcc/11.2.0
-      - sqlite3/3.38.2
+      - sqlite3/3.32.3/gcc.8.4.0
       - cmake/3.30.2
     provides:
-      - proj_9.0.0
-  proj_9.0.0-module:
+      - proj_6.3.2_gcc_8.4.0
+  proj_6.3.2_gcc_8.4.0-module:
     category: LIBRARIES
     requires:
-      - gcc/11.2.0
-      - sqlite3/3.38.2
+      - gcc/8.4.0
+      - sqlite3/3.32.3/gcc.8.4.0
     provides:
-      - proj/9.0.0
-  gdal_3.4.1:
+      - proj/6.3.2/gcc.8.4.0
+  gdal_3.1.0_gcc_8.4.0:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - proj/6.3.2/gcc.8.4.0
+      - sqlite3/3.32.3/gcc.8.4.0
+      - geos/3.8.1/gcc.8.4.0
+    provides:
+      - gdal_3.1.0_gcc_8.4.0
+  gdal_3.1.0_gcc_8.4.0-module:
+    category: LIBRARIES
+    requires:
+      - gcc/8.4.0
+      - proj/6.3.2/gcc.8.4.0
+      - sqlite3/3.32.3/gcc.8.4.0
+      - geos/3.8.1/gcc.8.4.0
+    provides:
+      - gdal/3.1.0/gcc.8.4.0
+  sqlite3_3.38.2_gcc_11.2.0:
     category: False
     requires:
       - gcc/11.2.0
-      - proj/9.0.0
-      - sqlite3/3.38.2
-      - geos/3.10.2
     provides:
-      - gdal_3.4.1
-  gdal_3.4.1-module:
+      - sqlite3_3.38.2_gcc_11.2.0
+  sqlite3_3.38.2_gcc_11.2.0-module:
     category: LIBRARIES
     requires:
       - gcc/11.2.0
-      - proj/9.0.0
-      - sqlite3/3.38.2
-      - geos/3.10.2
     provides:
-      - gdal/3.4.1
+      - sqlite3/3.38.2/gcc.11.2.0
+  proj_9.0.0_gcc_11.2.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - sqlite3/3.38.2/gcc.11.2.0
+      - cmake/3.30.2
+    provides:
+      - proj_9.0.0_gcc_11.2.0
+  proj_9.0.0_gcc_11.2.0-module:
+    category: LIBRARIES
+    requires:
+      - gcc/11.2.0
+      - sqlite3/3.38.2/gcc.11.2.0
+    provides:
+      - proj/9.0.0/gcc.11.2.0
+  gdal_3.4.1_gcc_11.2.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - proj/9.0.0/gcc.11.2.0
+      - sqlite3/3.38.2/gcc.11.2.0
+      - geos/3.10.2/gcc.11.2.0
+    provides:
+      - gdal_3.4.1_gcc_11.2.0
+  gdal_3.4.1_gcc_11.2.0-module:
+    category: LIBRARIES
+    requires:
+      - gcc/11.2.0
+      - proj/9.0.0/gcc.11.2.0
+      - sqlite3/3.38.2/gcc.11.2.0
+      - geos/3.10.2/gcc.11.2.0
+    provides:
+      - gdal/3.4.1/gcc.11.2.0
   petsc_3.20.1_gcc_11.2.0:
     category: False
     requires:
@@ -3258,51 +3193,51 @@ simulations-admix:
       - cuda/11.7.1
     provides:
       - petsc/3.20.1/gcc.11.2.0-cuda.11.7.1
-  sqlite3_3.41.0:
+  sqlite3_3.41.0_gcc_11.2.0:
     category: False
     requires:
       - gcc/11.2.0
     provides:
-      - sqlite3_3.41.0
-  sqlite3_3.41.0-module:
+      - sqlite3_3.41.0_gcc_11.2.0
+  sqlite3_3.41.0_gcc_11.2.0-module:
     category: LIBRARIES
     requires:
       - gcc/11.2.0
     provides:
-      - sqlite3/3.41.0
-  proj_9.1.1:
+      - sqlite3/3.41.0/gcc.11.2.0
+  proj_9.1.1_gcc_11.2.0:
     category: False
     requires:
       - gcc/11.2.0
-      - sqlite3/3.41.0
+      - sqlite3/3.41.0/gcc.11.2.0
       - cmake/3.30.2
     provides:
-      - proj_9.1.1
-  proj_9.1.1-module:
+      - proj_9.1.1_gcc_11.2.0
+  proj_9.1.1_gcc_11.2.0-module:
     category: LIBRARIES
     requires:
       - gcc/11.2.0
-      - sqlite3/3.41.0
+      - sqlite3/3.41.0/gcc.11.2.0
     provides:
-      - proj/9.1.1
-  gdal_3.6.2:
+      - proj/9.1.1/gcc.11.2.0
+  gdal_3.6.2_gcc_11.2.0:
     category: False
     requires:
       - gcc/11.2.0
-      - proj/9.1.1
-      - sqlite3/3.41.0
-      - geos/3.11.1
+      - proj/9.1.1/gcc.11.2.0
+      - sqlite3/3.41.0/gcc.11.2.0
+      - geos/3.11.1/gcc.11.2.0
     provides:
-      - gdal_3.6.2
-  gdal_3.6.2-module:
+      - gdal_3.6.2_gcc_11.2.0
+  gdal_3.6.2_gcc_11.2.0-module:
     category: LIBRARIES
     requires:
       - gcc/11.2.0
-      - proj/9.1.1
-      - sqlite3/3.41.0
-      - geos/3.11.1
+      - proj/9.1.1/gcc.11.2.0
+      - sqlite3/3.41.0/gcc.11.2.0
+      - geos/3.11.1/gcc.11.2.0
     provides:
-      - gdal/3.6.2
+      - gdal/3.6.2/gcc.11.2.0
 bioconda-admix:
   bioconda_4.8.3:
     category: False
@@ -3355,16 +3290,6 @@ perl-admix:
     requires:
     provides:
       - perl/5.30.0
-  perl_5.34.1:
-    category: False
-    requires:
-    provides:
-      - perl_5.34.1(:VERSION) = 5.34.1
-  perl_5.34.1-module:
-    category: LANGUAGES
-    requires:
-    provides:
-      - perl/5.34.1
   perl_5.30.0-Class-Method-Modifiers:
     category: False
     requires:
@@ -3943,6 +3868,622 @@ perl-admix:
       - perl/5.30.0
     provides:
       - perl_5.30.0-baseline-metacpan
+  perl_5.30.0-IO-String:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-IO-String
+  perl_5.30.0-XML-Writer:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-Writer
+  perl_5.30.0-XML-NamespaceSupport:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-NamespaceSupport
+  perl_5.30.0-Tk:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Tk
+  perl_5.30.0-Sort-Versions:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Sort-Versions
+  perl_5.30.0-Set-Scalar:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Set-Scalar
+  perl_5.30.0-Capture-Tiny:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Capture-Tiny
+  perl_5.30.0-JSON:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-JSON
+  perl_5.30.0-FFI-CheckLib:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-FFI-CheckLib
+  perl_5.30.0-XML-RegExp:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-RegExp
+  perl_5.30.0-XML-XPathEngine:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-XPathEngine
+  perl_5.30.0-Sub-Uplevel:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Sub-Uplevel
+  perl_5.30.0-Devel-StackTrace:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Devel-StackTrace
+  perl_5.30.0-Test-RequiresInternet:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Test-RequiresInternet
+  perl_5.30.0-List-MoreUtils-XS:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-List-MoreUtils-XS
+  perl_5.30.0-Algorithm-Diff:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Algorithm-Diff
+  perl_5.30.0-XML-Parser:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-Parser
+  perl_5.30.0-libxml-perl:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-libxml-perl
+  perl_5.30.0-Class-Data-Inheritable:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Class-Data-Inheritable
+  perl_5.30.0-File-chdir:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-File-chdir
+  perl_5.30.0-Error:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Error
+  perl_5.30.0-XML-SAX-Base:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-SAX-Base
+  perl_5.30.0-ExtUtils-PkgConfig:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-ExtUtils-PkgConfig
+  perl_5.30.0-XML-Filter-BufferText:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-Filter-BufferText
+  perl_5.30.0-IO-Tty:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-IO-Tty
+  perl_5.30.0-Test-Deep:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Test-Deep
+  perl_5.30.0-YAML:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-YAML
+  perl_5.30.0-IO-Stringy:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-IO-Stringy
+  perl_5.30.0-Mojo-DOM58:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Mojo-DOM58
+  perl_5.30.0-FreezeThaw:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-FreezeThaw
+  perl_5.30.0-MLDBM:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-MLDBM
+  perl_5.30.0-Graph:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Graph
+  perl_5.30.0-XML-SAX-Writer:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-SAX-Writer
+  perl_5.30.0-Alien-Build:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Alien-Build
+  perl_5.30.0-IPC-Run:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-IPC-Run
+  perl_5.30.0-List-MoreUtils:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-List-MoreUtils
+  perl_5.30.0-XML-DOM:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-DOM
+  perl_5.30.0-XML-DOM-XPath:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-DOM-XPath
+  perl_5.30.0-Alien-Libxml2:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Alien-Libxml2
+  perl_5.30.0-XML-SAX:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-SAX
+  perl_5.30.0-XML-LibXML:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-LibXML
+  perl_5.30.0-Text-Diff:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Text-Diff
+  perl_5.30.0-Test-Differences:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Test-Differences
+  perl_5.30.0-Test-Warn:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Test-Warn
+  perl_5.30.0-Test-Exception:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Test-Exception
+  perl_5.30.0-Exception-Class:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Exception-Class
+  perl_5.30.0-Test-Most:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Test-Most
+  perl_5.30.0-XML-Twig:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-Twig
+  perl_5.30.0-XML-LibXSLT:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-LibXSLT
+  perl_5.30.0-GD:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-GD
+  perl_5.30.0-Data-Stag:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Data-Stag
+  perl_5.30.0-BioPerl:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-BioPerl
+  perl_5.30.0-Statistics-Descriptive:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Statistics-Descriptive
+  perl_5.30.0-baseline-bioperl:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-baseline-bioperl
+  perl_5.30.0-Net-SMTP-SSL:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Net-SMTP-SSL
+  perl_5.30.0-Mail-Sendmail:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Mail-Sendmail
+  perl_5.30.0-MailTools:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-MailTools
+  perl_5.30.0-Mail-Sender:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Mail-Sender
+  perl_5.30.0-Email-Date-Format:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Email-Date-Format
+  perl_5.30.0-MIME-Lite:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-MIME-Lite
+  perl_5.30.0-File-Grep:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-File-Grep
+  perl_5.30.0-IPC-ShareLite:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-IPC-ShareLite
+  perl_5.30.0-Bio-DB-EMBL:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Bio-DB-EMBL
+  perl_5.30.0-File-Slurper:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-File-Slurper
+  perl_5.30.0-Number-Compare:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Number-Compare
+  perl_5.30.0-Bio-Tools-Run-RemoteBlast:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Bio-Tools-Run-RemoteBlast
+  perl_5.30.0-Digest-SHA1:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Digest-SHA1
+  perl_5.30.0-MRO-Compat:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-MRO-Compat
+  perl_5.30.0-Sub-Name:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Sub-Name
+  perl_5.30.0-Parse-Yapp:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Parse-Yapp
+  perl_5.30.0-Test-Fatal:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Test-Fatal
+  perl_5.30.0-Bio-Variation:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Bio-Variation
+  perl_5.30.0-Text-CSV:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Text-CSV
+  perl_5.30.0-Array-Utils:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Array-Utils
+  perl_5.30.0-Bio-DB-RefSeq:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Bio-DB-RefSeq
+  perl_5.30.0-Bio-DB-SwissProt:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Bio-DB-SwissProt
+  perl_5.30.0-Digest-MD5-File:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Digest-MD5-File
+  perl_5.30.0-Sub-Identify:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Sub-Identify
+  perl_5.30.0-Text-Glob:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Text-Glob
+  perl_5.30.0-Params-ValidationCompiler:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Params-ValidationCompiler
+  perl_5.30.0-namespace-autoclean:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-namespace-autoclean
+  perl_5.30.0-Specio:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Specio
+  perl_5.30.0-Log-Dispatch:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Log-Dispatch
+  perl_5.30.0-Log-Log4perl:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Log-Log4perl
+  perl_5.30.0-CGI:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-CGI
+  perl_5.30.0-Bio-Cluster:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Bio-Cluster
+  perl_5.30.0-Bio-ASN1-EntrezGene:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Bio-ASN1-EntrezGene
+  perl_5.30.0-Cache-Cache:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Cache-Cache
+  perl_5.30.0-LWP-Protocol-https:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-LWP-Protocol-https
+  perl_5.30.0-Bio-DB-NCBIHelper:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Bio-DB-NCBIHelper
+  perl_5.30.0-Bio-Procedural:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Bio-Procedural
+  perl_5.30.0-Devel-OverloadInfo:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Devel-OverloadInfo
+  perl_5.30.0-Package-DeprecationManager:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Package-DeprecationManager
+  perl_5.30.0-Moose:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Moose
+  perl_5.30.0-Graph-ReadWrite:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-Graph-ReadWrite
+  perl_5.30.0-File-Find-Rule:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-File-Find-Rule
+  perl_5.30.0-File-Copy-Recursive:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-File-Copy-Recursive
+  perl_5.30.0-XML-SAX-Expat:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-SAX-Expat
+  perl_5.30.0-HTML-Template:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-HTML-Template
+  perl_5.30.0-XML-Simple:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-XML-Simple
+  perl_5.30.0-baseline-genomics:
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-baseline-genomics
+  perl_5.34.1:
+    category: False
+    requires:
+    provides:
+      - perl_5.34.1(:VERSION) = 5.34.1
+  perl_5.34.1-module:
+    category: LANGUAGES
+    requires:
+    provides:
+      - perl/5.34.1
   perl_5.34.1-Class-Method-Modifiers:
     category: False
     requires:
@@ -4521,330 +5062,6 @@ perl-admix:
       - perl/5.34.1
     provides:
       - perl_5.34.1-baseline-metacpan
-  perl_5.30.0-IO-String:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-IO-String
-  perl_5.30.0-XML-Writer:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-Writer
-  perl_5.30.0-XML-NamespaceSupport:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-NamespaceSupport
-  perl_5.30.0-Tk:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Tk
-  perl_5.30.0-Sort-Versions:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Sort-Versions
-  perl_5.30.0-Set-Scalar:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Set-Scalar
-  perl_5.30.0-Capture-Tiny:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Capture-Tiny
-  perl_5.30.0-JSON:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-JSON
-  perl_5.30.0-FFI-CheckLib:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-FFI-CheckLib
-  perl_5.30.0-XML-RegExp:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-RegExp
-  perl_5.30.0-XML-XPathEngine:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-XPathEngine
-  perl_5.30.0-Sub-Uplevel:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Sub-Uplevel
-  perl_5.30.0-Devel-StackTrace:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Devel-StackTrace
-  perl_5.30.0-Test-RequiresInternet:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Test-RequiresInternet
-  perl_5.30.0-List-MoreUtils-XS:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-List-MoreUtils-XS
-  perl_5.30.0-Algorithm-Diff:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Algorithm-Diff
-  perl_5.30.0-XML-Parser:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-Parser
-  perl_5.30.0-libxml-perl:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-libxml-perl
-  perl_5.30.0-Class-Data-Inheritable:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Class-Data-Inheritable
-  perl_5.30.0-File-chdir:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-File-chdir
-  perl_5.30.0-Error:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Error
-  perl_5.30.0-XML-SAX-Base:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-SAX-Base
-  perl_5.30.0-ExtUtils-PkgConfig:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-ExtUtils-PkgConfig
-  perl_5.30.0-XML-Filter-BufferText:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-Filter-BufferText
-  perl_5.30.0-IO-Tty:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-IO-Tty
-  perl_5.30.0-Test-Deep:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Test-Deep
-  perl_5.30.0-YAML:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-YAML
-  perl_5.30.0-IO-Stringy:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-IO-Stringy
-  perl_5.30.0-Mojo-DOM58:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Mojo-DOM58
-  perl_5.30.0-FreezeThaw:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-FreezeThaw
-  perl_5.30.0-MLDBM:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-MLDBM
-  perl_5.30.0-Graph:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Graph
-  perl_5.30.0-XML-SAX-Writer:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-SAX-Writer
-  perl_5.30.0-Alien-Build:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Alien-Build
-  perl_5.30.0-IPC-Run:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-IPC-Run
-  perl_5.30.0-List-MoreUtils:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-List-MoreUtils
-  perl_5.30.0-XML-DOM:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-DOM
-  perl_5.30.0-XML-DOM-XPath:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-DOM-XPath
-  perl_5.30.0-Alien-Libxml2:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Alien-Libxml2
-  perl_5.30.0-XML-SAX:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-SAX
-  perl_5.30.0-XML-LibXML:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-LibXML
-  perl_5.30.0-Text-Diff:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Text-Diff
-  perl_5.30.0-Test-Differences:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Test-Differences
-  perl_5.30.0-Test-Warn:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Test-Warn
-  perl_5.30.0-Test-Exception:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Test-Exception
-  perl_5.30.0-Exception-Class:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Exception-Class
-  perl_5.30.0-Test-Most:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Test-Most
-  perl_5.30.0-XML-Twig:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-Twig
-  perl_5.30.0-XML-LibXSLT:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-LibXSLT
-  perl_5.30.0-GD:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-GD
-  perl_5.30.0-Data-Stag:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Data-Stag
-  perl_5.30.0-BioPerl:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-BioPerl
-  perl_5.30.0-Statistics-Descriptive:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Statistics-Descriptive
-  perl_5.30.0-baseline-bioperl:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-baseline-bioperl
   perl_5.34.1-IO-String:
     category: False
     requires:
@@ -5169,288 +5386,6 @@ perl-admix:
       - perl/5.34.1
     provides:
       - perl_5.34.1-baseline-bioperl
-  perl_5.30.0-Net-SMTP-SSL:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Net-SMTP-SSL
-  perl_5.30.0-Mail-Sendmail:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Mail-Sendmail
-  perl_5.30.0-MailTools:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-MailTools
-  perl_5.30.0-Mail-Sender:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Mail-Sender
-  perl_5.30.0-Email-Date-Format:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Email-Date-Format
-  perl_5.30.0-MIME-Lite:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-MIME-Lite
-  perl_5.30.0-File-Grep:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-File-Grep
-  perl_5.30.0-IPC-ShareLite:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-IPC-ShareLite
-  perl_5.30.0-Bio-DB-EMBL:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Bio-DB-EMBL
-  perl_5.30.0-File-Slurper:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-File-Slurper
-  perl_5.30.0-Number-Compare:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Number-Compare
-  perl_5.30.0-Bio-Tools-Run-RemoteBlast:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Bio-Tools-Run-RemoteBlast
-  perl_5.30.0-Digest-SHA1:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Digest-SHA1
-  perl_5.30.0-MRO-Compat:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-MRO-Compat
-  perl_5.30.0-Sub-Name:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Sub-Name
-  perl_5.30.0-Parse-Yapp:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Parse-Yapp
-  perl_5.30.0-Test-Fatal:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Test-Fatal
-  perl_5.30.0-Bio-Variation:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Bio-Variation
-  perl_5.30.0-Text-CSV:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Text-CSV
-  perl_5.30.0-Array-Utils:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Array-Utils
-  perl_5.30.0-Bio-DB-RefSeq:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Bio-DB-RefSeq
-  perl_5.30.0-Bio-DB-SwissProt:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Bio-DB-SwissProt
-  perl_5.30.0-Digest-MD5-File:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Digest-MD5-File
-  perl_5.30.0-Sub-Identify:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Sub-Identify
-  perl_5.30.0-Text-Glob:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Text-Glob
-  perl_5.30.0-Params-ValidationCompiler:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Params-ValidationCompiler
-  perl_5.30.0-namespace-autoclean:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-namespace-autoclean
-  perl_5.30.0-Specio:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Specio
-  perl_5.30.0-Log-Dispatch:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Log-Dispatch
-  perl_5.30.0-Log-Log4perl:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Log-Log4perl
-  perl_5.30.0-CGI:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-CGI
-  perl_5.30.0-Bio-Cluster:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Bio-Cluster
-  perl_5.30.0-Bio-ASN1-EntrezGene:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Bio-ASN1-EntrezGene
-  perl_5.30.0-Cache-Cache:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Cache-Cache
-  perl_5.30.0-LWP-Protocol-https:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-LWP-Protocol-https
-  perl_5.30.0-Bio-DB-NCBIHelper:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Bio-DB-NCBIHelper
-  perl_5.30.0-Bio-Procedural:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Bio-Procedural
-  perl_5.30.0-Devel-OverloadInfo:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Devel-OverloadInfo
-  perl_5.30.0-Package-DeprecationManager:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Package-DeprecationManager
-  perl_5.30.0-Moose:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Moose
-  perl_5.30.0-Graph-ReadWrite:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-Graph-ReadWrite
-  perl_5.30.0-File-Find-Rule:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-File-Find-Rule
-  perl_5.30.0-File-Copy-Recursive:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-File-Copy-Recursive
-  perl_5.30.0-XML-SAX-Expat:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-SAX-Expat
-  perl_5.30.0-HTML-Template:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-HTML-Template
-  perl_5.30.0-XML-Simple:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-XML-Simple
-  perl_5.30.0-baseline-genomics:
-    category: False
-    requires:
-      - perl/5.30.0
-    provides:
-      - perl_5.30.0-baseline-genomics
   perl_5.34.1-Net-SMTP-SSL:
     category: False
     requires:
@@ -5750,145 +5685,6 @@ rust-admix:
     provides:
       - rustc/1.78.0
 tensorflow-admix:
-  tensorflow_2.0.0_python3.8.0:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0
-  tensorflow_2.0.0_python3.8.0-module:
-    category: AI-LEARNING
-    requires:
-      - python/3.8.0
-      - cuda/10.1.243
-      - tensorRT/6.0.1.5
-    provides:
-      - tensorflow/2.0.0
-  tensorflow_2.0.0_python3.8.0-astor:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-astor
-  tensorflow_2.0.0_python3.8.0-backports.weakref:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-backports.weakref
-  tensorflow_2.0.0_python3.8.0-keras-applications:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-keras-applications
-  tensorflow_2.0.0_python3.8.0-markdown:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-markdown
-  tensorflow_2.0.0_python3.8.0-werkzeug:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-werkzeug
-  tensorflow_2.0.0_python3.8.0-absl-py:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-absl-py
-  tensorflow_2.0.0_python3.8.0-gast:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-gast
-  tensorflow_2.0.0_python3.8.0-google-pasta:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-google-pasta
-  tensorflow_2.0.0_python3.8.0-keras-preprocessing:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-keras-preprocessing
-  tensorflow_2.0.0_python3.8.0-keras:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-keras
-  tensorflow_2.0.0_python3.8.0-opt_einsum:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-opt_einsum
-  tensorflow_2.0.0_python3.8.0-grpcio:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-grpcio
-  tensorflow_2.0.0_python3.8.0-protobuf:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-protobuf
-  tensorflow_2.0.0_python3.8.0-tensorboard:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-tensorboard
-  tensorflow_2.0.0_python3.8.0-termcolor:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-termcolor
-  tensorflow_2.0.0_python3.8.0-wrapt:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-wrapt
-  tensorflow_2.0.0_python3.8.0-tensorflow_estimator:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorflow_2.0.0_python3.8.0-tensorflow_estimator
-  bazel_0.26.1:
-    category: False
-    requires:
-    provides:
-      - bazel_0.26.1
-  bazel_0.26.1-module:
-    category: TOOLS
-    requires:
-    provides:
-      - bazel/0.26.1
-  tensorRT_6.0.1.5_python3.8.0:
-    category: False
-    requires:
-      - python/3.8.0
-    provides:
-      - tensorRT_6.0.1.5_python3.8.0
-  tensorRT_6.0.1.5_python3.8.0-module:
-    category: AI-LEARNING
-    requires:
-      - python/3.8.0
-      - cuda/10.1.243
-    provides:
-      - tensorRT/6.0.1.5
   tensorflow_2.8.0_python3.10.2:
     category: False
     requires:
@@ -5921,6 +5717,12 @@ tensorflow-admix:
       - python/3.10.2
     provides:
       - tensorflow_2.8.0_python3.10.2-libclang
+  tensorflow_2.8.0_python3.10.2-tensorflow_estimator:
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+      - tensorflow_2.8.0_python3.10.2-tensorflow_estimator
   tensorflow_2.8.0_python3.10.2-absl-py:
     category: False
     requires:
@@ -5987,12 +5789,6 @@ tensorflow-admix:
       - python/3.10.2
     provides:
       - tensorflow_2.8.0_python3.10.2-wrapt
-  tensorflow_2.8.0_python3.10.2-tensorflow_estimator:
-    category: False
-    requires:
-      - python/3.10.2
-    provides:
-      - tensorflow_2.8.0_python3.10.2-tensorflow_estimator
   tensorRT_8.4.2.4_python3.10.2:
     category: False
     requires:
@@ -6169,16 +5965,16 @@ R4-admix:
     category: False
     requires:
       - OpenBLAS/0.3.6
-      - java/1.8.0
-      - gcc/8.4.0
+      - java/11
+      - gcc/11.2.0
     provides:
       - R_4.0.4
   R_4.0.4-module:
     category: LANGUAGES
     requires:
       - OpenBLAS/0.3.6
-      - java/1.8.0
-      - gcc/8.4.0
+      - java/11
+      - gcc/11.2.0
     provides:
       - R/4.0.4
   rstudio_1.4.1106:
@@ -6999,7 +6795,7 @@ R4-admix:
     category: False
     requires:
       - R/4.0.4
-      - hdf5/1.10.5/gcc.8.4.0
+      - hdf5/1.14.1/gcc.11.2.0
     provides:
       - R_4.0.4-hdf5r
   R_4.0.4-memoise:
@@ -8566,8 +8362,8 @@ R4-admix:
     category: False
     requires:
       - R/4.0.4
-      - gdal/3.1.0
-      - geos/3.8.1
+      - gdal/3.4.1/gcc.11.2.0
+      - geos/3.10.2/gcc.11.2.0
     provides:
       - R_4.0.4-terra
   R_4.0.4-wk:
@@ -8586,15 +8382,15 @@ R4-admix:
     category: False
     requires:
       - R/4.0.4
-      - udunits/2.2.26/gcc.8.4.0
+      - udunits/2.2.28/gcc.11.2.0
     provides:
       - R_4.0.4-units
   R_4.0.4-sf:
     category: False
     requires:
       - R/4.0.4
-      - gdal/3.1.0
-      - udunits/2.2.26/gcc.8.4.0
+      - gdal/3.4.1/gcc.11.2.0
+      - udunits/2.2.28/gcc.11.2.0
     provides:
       - R_4.0.4-sf
   R_4.1.2:
@@ -10404,17 +10200,17 @@ R4-admix:
     category: False
     requires:
       - R/4.1.2
-      - gdal/3.4.1
-      - geos/3.10.2
+      - gdal/3.4.1/gcc.11.2.0
+      - geos/3.10.2/gcc.11.2.0
     provides:
       - R_4.1.2-terra
   R_4.1.2-raster:
     category: False
     requires:
       - R/4.1.2
-      - proj/9.0.0
-      - gdal/3.4.1
-      - geos/3.10.2
+      - proj/9.0.0/gcc.11.2.0
+      - gdal/3.4.1/gcc.11.2.0
+      - geos/3.10.2/gcc.11.2.0
     provides:
       - R_4.1.2-raster
   R_4.1.2-leaflet_providers:
@@ -10765,12 +10561,6 @@ R4-admix:
       - R/4.1.2
     provides:
       - R_4.1.2-reticulate
-  R_4.1.2-leiden:
-    category: False
-    requires:
-      - R/4.1.2
-    provides:
-      - R_4.1.2-leiden
   R_4.1.2-patchwork:
     category: False
     requires:
@@ -10921,12 +10711,6 @@ R4-admix:
       - R/4.1.2
     provides:
       - R_4.1.2-uwot
-  R_4.1.2-Seurat:
-    category: False
-    requires:
-      - R/4.1.2
-    provides:
-      - R_4.1.2-Seurat
   R_4.1.2-sm:
     category: False
     requires:
@@ -11058,7 +10842,7 @@ R4-admix:
     category: False
     requires:
       - R/4.1.2
-      - gdal/3.4.1
+      - gdal/3.4.1/gcc.11.2.0
       - udunits/2.2.28/gcc.11.2.0
     provides:
       - R_4.1.2-sf
@@ -12923,17 +12707,17 @@ R4-admix:
     category: False
     requires:
       - R/4.2.2
-      - gdal/3.6.2
-      - geos/3.11.1
+      - gdal/3.6.2/gcc.11.2.0
+      - geos/3.11.1/gcc.11.2.0
     provides:
       - R_4.2.2-terra
   R_4.2.2-raster:
     category: False
     requires:
       - R/4.2.2
-      - proj/9.1.1
-      - gdal/3.6.2
-      - geos/3.11.1
+      - proj/9.1.1/gcc.11.2.0
+      - gdal/3.6.2/gcc.11.2.0
+      - geos/3.11.1/gcc.11.2.0
     provides:
       - R_4.2.2-raster
   R_4.2.2-leaflet_providers:
@@ -13308,12 +13092,6 @@ R4-admix:
       - R/4.2.2
     provides:
       - R_4.2.2-reticulate
-  R_4.2.2-leiden:
-    category: False
-    requires:
-      - R/4.2.2
-    provides:
-      - R_4.2.2-leiden
   R_4.2.2-patchwork:
     category: False
     requires:
@@ -13452,12 +13230,6 @@ R4-admix:
       - R/4.2.2
     provides:
       - R_4.2.2-uwot
-  R_4.2.2-Seurat:
-    category: False
-    requires:
-      - R/4.2.2
-    provides:
-      - R_4.2.2-Seurat
   R_4.2.2-sm:
     category: False
     requires:
@@ -13595,7 +13367,7 @@ R4-admix:
     category: False
     requires:
       - R/4.2.2
-      - gdal/3.6.2
+      - gdal/3.6.2/gcc.11.2.0
       - udunits/2.2.28/gcc.11.2.0
     provides:
       - R_4.2.2-sf
@@ -15510,17 +15282,17 @@ R4-admix:
     category: False
     requires:
       - R/4.3.3
-      - gdal/3.6.2
-      - geos/3.11.1
+      - gdal/3.6.2/gcc.11.2.0
+      - geos/3.11.1/gcc.11.2.0
     provides:
       - R_4.3.3-terra
   R_4.3.3-raster:
     category: False
     requires:
       - R/4.3.3
-      - proj/9.1.1
-      - gdal/3.6.2
-      - geos/3.11.1
+      - proj/9.1.1/gcc.11.2.0
+      - gdal/3.6.2/gcc.11.2.0
+      - geos/3.11.1/gcc.11.2.0
     provides:
       - R_4.3.3-raster
   R_4.3.3-leaflet:
@@ -15925,12 +15697,12 @@ R4-admix:
       - R/4.3.3
     provides:
       - R_4.3.3-reticulate
-  R_4.3.3-leiden:
+  R_4.3.3-leidenbase:
     category: False
     requires:
       - R/4.3.3
     provides:
-      - R_4.3.3-leiden
+      - R_4.3.3-leidenbase
   R_4.3.3-patchwork:
     category: False
     requires:
@@ -16003,6 +15775,12 @@ R4-admix:
       - R/4.3.3
     provides:
       - R_4.3.3-spatstat_data
+  R_4.3.3-spatstat_univar:
+    category: False
+    requires:
+      - R/4.3.3
+    provides:
+      - R_4.3.3-spatstat_univar
   R_4.3.3-deldir:
     category: False
     requires:
@@ -16236,7 +16014,7 @@ R4-admix:
     category: False
     requires:
       - R/4.3.3
-      - gdal/3.6.2
+      - gdal/3.6.2/gcc.11.2.0
       - udunits/2.2.28/gcc.11.2.0
     provides:
       - R_4.3.3-sf
@@ -18116,17 +17894,17 @@ R4-admix:
     category: False
     requires:
       - R/4.4.2
-      - gdal/3.6.2
-      - geos/3.11.1
+      - gdal/3.6.2/gcc.11.2.0
+      - geos/3.11.1/gcc.11.2.0
     provides:
       - R_4.4.2-terra
   R_4.4.2-raster:
     category: False
     requires:
       - R/4.4.2
-      - proj/9.1.1
-      - gdal/3.6.2
-      - geos/3.11.1
+      - proj/9.1.1/gcc.11.2.0
+      - gdal/3.6.2/gcc.11.2.0
+      - geos/3.11.1/gcc.11.2.0
     provides:
       - R_4.4.2-raster
   R_4.4.2-leaflet:
@@ -18537,12 +18315,12 @@ R4-admix:
       - R/4.4.2
     provides:
       - R_4.4.2-reticulate
-  R_4.4.2-leiden:
+  R_4.4.2-leidenbase:
     category: False
     requires:
       - R/4.4.2
     provides:
-      - R_4.4.2-leiden
+      - R_4.4.2-leidenbase
   R_4.4.2-patchwork:
     category: False
     requires:
@@ -18860,7 +18638,7 @@ R4-admix:
     category: False
     requires:
       - R/4.4.2
-      - gdal/3.6.2
+      - gdal/3.6.2/gcc.11.2.0
       - udunits/2.2.28/gcc.11.2.0
     provides:
       - R_4.4.2-sf
@@ -18995,21 +18773,6 @@ biotools-admix:
       - java/1.8.0
     provides:
       - picard-tools/1.87
-  salmon_1.2.1:
-    category: False
-    requires:
-      - cmake/3.20.5
-      - gcc/8.4.0
-      - boost/1.66.0/gcc.8.4.0
-    provides:
-      - salmon_1.2.1
-  salmon_1.2.1-module:
-    category: BIOTOOLS
-    requires:
-      - gcc/8.4.0
-      - boost/1.66.0/gcc.8.4.0
-    provides:
-      - salmon/1.2.1
   python_3.8.0-PyVCF:
     category: False
     requires:
@@ -19047,6 +18810,18 @@ biotools-admix:
       - gcc/8.4.0
     provides:
       - star/2.7.3a
+  vcftools_0.1.16:
+    category: False
+    requires:
+      - gcc/8.4.0
+    provides:
+      - vcftools_0.1.16
+  vcftools_0.1.16-module:
+    category: BIOTOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - vcftools/0.1.16
   repeatmasker_4.1.0:
     category: False
     requires:
@@ -19067,18 +18842,6 @@ biotools-admix:
       - hmmer/3.3
     provides:
       - repeatmasker/4.1.0
-  vcftools_0.1.16:
-    category: False
-    requires:
-      - gcc/8.4.0
-    provides:
-      - vcftools_0.1.16
-  vcftools_0.1.16-module:
-    category: BIOTOOLS
-    requires:
-      - gcc/8.4.0
-    provides:
-      - vcftools/0.1.16
   fastqc_0.11.9:
     category: False
     requires:
@@ -19156,7 +18919,7 @@ biotools-admix:
   freebayes_1.3.2:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
     provides:
       - freebayes_1.3.2
@@ -19169,7 +18932,7 @@ biotools-admix:
   kallisto_0.46.2:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
       - hdf5/1.10.5/gcc.8.4.0
     provides:
@@ -19184,7 +18947,7 @@ biotools-admix:
   bustools_0.40.0:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
     provides:
       - bustools_0.40.0
@@ -19335,22 +19098,6 @@ biotools-admix:
       - perl/5.30.0
     provides:
       - perl_5.30.0-Text-Soundex
-  bcftools_1.10.2:
-    category: False
-    requires:
-      - gcc/8.4.0
-      - htslib/1.10.2
-      - gsl/2.6/gcc.8.4.0
-    provides:
-      - bcftools_1.10.2
-  bcftools_1.10.2-module:
-    category: BIOTOOLS
-    requires:
-      - gcc/8.4.0
-      - htslib/1.10.2
-      - gsl/2.6/gcc.8.4.0
-    provides:
-      - bcftools/1.10.2
   ncbi-ngs_2.10.2:
     category: False
     requires:
@@ -19469,7 +19216,8 @@ biotools-admix:
       - gcc/11.2.0
       - boost/1.78.0/gcc.11.2.0
     provides:
-      - salmon_1.8.0
+      - libtbb.so.12()(64bit)
+      - libtbbbind_2_0.so.3()(64bit)
   salmon_1.8.0-module:
     category: BIOTOOLS
     requires:
@@ -19625,21 +19373,6 @@ biotools-admix:
     requires:
     provides:
       - edirect/2022
-  ncbi-blast_2.13.0:
-    category: False
-    requires:
-      - python/3.10.2
-      - boost/1.78.0/gcc.11.2.0
-    provides:
-      - ncbi-blast_2.13.0
-  ncbi-blast_2.13.0-module:
-    category: BIOTOOLS
-    requires:
-      - python/3.10.2
-      - boost/1.78.0/gcc.11.2.0
-      - edirect/2022
-    provides:
-      - ncbi-blast/2.13.0
   SPAdes_3.15.4:
     category: False
     requires:
@@ -19806,6 +19539,21 @@ biotools-admix:
       - java/17
     provides:
       - pilon/1.24
+  ncbi-blast_2.13.0:
+    category: False
+    requires:
+      - python/3.10.2
+      - boost/1.78.0/gcc.11.2.0
+    provides:
+      - ncbi-blast_2.13.0
+  ncbi-blast_2.13.0-module:
+    category: BIOTOOLS
+    requires:
+      - python/3.10.2
+      - boost/1.78.0/gcc.11.2.0
+      - edirect/2022
+    provides:
+      - ncbi-blast/2.13.0
   bwa_0.7.17:
     category: False
     requires:
@@ -19948,6 +19696,16 @@ biotools-admix:
       - gcc/11.2.0
     provides:
       - htslib/1.21
+  dorado_0.9.1:
+    category: False
+    requires:
+    provides:
+      - dorado_0.9.1
+  dorado_0.9.1-module:
+    category: BIOTOOLS
+    requires:
+    provides:
+      - dorado/0.9.1
 genomics-admix:
   bismark_0.22.3:
     category: False
@@ -20057,7 +19815,7 @@ genomics-admix:
   megahit_1.2.9:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
     provides:
       - megahit_1.2.9
@@ -20086,7 +19844,7 @@ genomics-admix:
       - gcc/8.4.0
       - python/3.8.0
       - gsl/2.6/gcc.8.4.0
-      - cmake/3.20.5
+      - cmake/3.30.2
     provides:
       - rMATS_4.1.1
   rMATS_4.1.1-module:
@@ -20130,6 +19888,7 @@ genomics-admix:
   mafft_7.471:
     category: False
     requires:
+      - go/1.22.3
       - gcc/8.4.0
     provides:
       - mafft_7.471
@@ -20267,7 +20026,7 @@ genomics-admix:
   diamond_2.0.4:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
     provides:
       - diamond_2.0.4
@@ -20341,21 +20100,21 @@ conda-admix:
     provides:
       - mamba/24.3.0
 chemistry-admix:
-  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243:
+  gromacs_2020.4_gcc_8.4.0_cuda_11.7.1:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
-      - cuda/10.1.243
+      - cuda/11.7.1
     provides:
-      - gromacs_2020.4_gcc_8.4.0_cuda_10.1.243
-  gromacs_2020.4_gcc_8.4.0_cuda_10.1.243-module:
+      - gromacs_2020.4_gcc_8.4.0_cuda_11.7.1
+  gromacs_2020.4_gcc_8.4.0_cuda_11.7.1-module:
     category: CHEMISTRY
     requires:
       - gcc/8.4.0
-      - cuda/10.1.243
+      - cuda/11.7.1
     provides:
-      - gromacs/2020.4/gcc.8.4.0-cuda.10.1.243
+      - gromacs/2020.4/gcc.8.4.0-cuda.11.7.1
   namd_2.14b2_gcc_8.4.0:
     category: False
     requires:
@@ -20372,24 +20131,24 @@ chemistry-admix:
       - mkl/2019.5.281
     provides:
       - namd/2.14b2/gcc.8.4.0
-  namd_2.14b2_gcc_8.4.0_cuda_10.1.243:
+  namd_2.14b2_gcc_8.4.0_cuda_11.7.1:
     category: False
     requires:
       - gcc/8.4.0
       - charm/6.10.1/gcc.8.4.0
       - mkl/2019.5.281
-      - cuda/10.1.243
+      - cuda/11.7.1
     provides:
-      - namd_2.14b2_gcc_8.4.0_cuda_10.1.243
-  namd_2.14b2_gcc_8.4.0_cuda_10.1.243-module:
+      - namd_2.14b2_gcc_8.4.0_cuda_11.7.1
+  namd_2.14b2_gcc_8.4.0_cuda_11.7.1-module:
     category: CHEMISTRY
     requires:
       - gcc/8.4.0
       - charm/6.10.1/gcc.8.4.0
       - mkl/2019.5.281
-      - cuda/10.1.243
+      - cuda/11.7.1
     provides:
-      - namd/2.14b2/gcc.8.4.0-cuda.10.1.243
+      - namd/2.14b2/gcc.8.4.0-cuda.11.7.1
   namd_2.14b2_gcc_8.4.0_openmpi_4.0.3:
     category: False
     requires:
@@ -20411,19 +20170,20 @@ chemistry-admix:
   lammps_3Mar2020_gcc_8.4.0:
     category: False
     requires:
-      - ffmpeg/4.1.3
+      - ffmpeg/6.1
       - hdf5/1.10.5/gcc.8.4.0
       - gsl/2.6/gcc.8.4.0
       - openmpi/4.0.3/gcc.8.4.0
       - fftw/3.3.8/gcc.8.4.0
       - netcdf-c/4.7.0/gcc.8.4.0
       - cmake/3.20.5
+      - doxygen/1.9.5
     provides:
       - lammps_3Mar2020_gcc_8.4.0
   lammps_3Mar2020_gcc_8.4.0-module:
     category: CHEMISTRY
     requires:
-      - ffmpeg/4.1.3
+      - ffmpeg/6.1
       - hdf5/1.10.5/gcc.8.4.0
       - gsl/2.6/gcc.8.4.0
       - openmpi/4.0.3/gcc.8.4.0
@@ -20434,22 +20194,25 @@ chemistry-admix:
   charm_6.10.1_gcc_8.4.0:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
+      - python/3.8.0
     provides:
       - charm_6.10.1_gcc_8.4.0
   charm_6.10.1_gcc_8.4.0-module:
     category: TOOLS
     requires:
       - gcc/8.4.0
+      - python/3.8.0
     provides:
       - charm/6.10.1/gcc.8.4.0
   charm_6.10.1_gcc_8.4.0_openmpi_4.0.3:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
       - openmpi/4.0.3/gcc.8.4.0
+      - python/3.8.0
     provides:
       - charm_6.10.1_gcc_8.4.0_openmpi_4.0.3
   charm_6.10.1_gcc_8.4.0_openmpi_4.0.3-module:
@@ -20457,12 +20220,26 @@ chemistry-admix:
     requires:
       - gcc/8.4.0
       - openmpi/4.0.3/gcc.8.4.0
+      - python/3.8.0
     provides:
       - charm/6.10.1/gcc.8.4.0-openmpi.4.0.3
+  doxygen_1.9.5_gcc_8.4.0:
+    category: False
+    requires:
+      - cmake/3.30.2
+      - gcc/8.4.0
+    provides:
+      - doxygen_1.9.5_gcc_8.4.0
+  doxygen_1.9.5_gcc_8.4.0-module:
+    category: TOOLS
+    requires:
+      - gcc/8.4.0
+    provides:
+      - doxygen/1.9.5/gcc.8.4.0
   gromacs_2021.2_gcc_8.4.0:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
     provides:
       - gromacs_2021.2_gcc_8.4.0
@@ -20472,25 +20249,25 @@ chemistry-admix:
       - gcc/8.4.0
     provides:
       - gromacs/2021.2/gcc.8.4.0
-  gromacs_2021.2_gcc_8.4.0_cuda_10.1.243:
+  gromacs_2021.2_gcc_8.4.0_cuda_11.7.1:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
-      - cuda/10.1.243
+      - cuda/11.7.1
     provides:
-      - gromacs_2021.2_gcc_8.4.0_cuda_10.1.243
-  gromacs_2021.2_gcc_8.4.0_cuda_10.1.243-module:
+      - gromacs_2021.2_gcc_8.4.0_cuda_11.7.1
+  gromacs_2021.2_gcc_8.4.0_cuda_11.7.1-module:
     category: CHEMISTRY
     requires:
       - gcc/8.4.0
-      - cuda/10.1.243
+      - cuda/11.7.1
     provides:
-      - gromacs/2021.2/gcc.8.4.0-cuda.10.1.243
+      - gromacs/2021.2/gcc.8.4.0-cuda.11.7.1
   gromacs_2021.2_gcc_8.4.0_openmpi_4.0.3:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
       - openmpi/4.0.3/gcc.8.4.0
     provides:
@@ -20502,23 +20279,23 @@ chemistry-admix:
       - openmpi/4.0.3/gcc.8.4.0
     provides:
       - gromacs/2021.2/gcc.8.4.0-openmpi.4.0.3
-  gromacs_2021.2_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3:
+  gromacs_2021.2_gcc_8.4.0_cuda_11.7.1_openmpi_4.0.3:
     category: False
     requires:
-      - cmake/3.20.5
+      - cmake/3.30.2
       - gcc/8.4.0
-      - cuda/10.1.243
+      - cuda/11.7.1
       - openmpi/4.0.3/gcc.8.4.0
     provides:
-      - gromacs_2021.2_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3
-  gromacs_2021.2_gcc_8.4.0_cuda_10.1.243_openmpi_4.0.3-module:
+      - gromacs_2021.2_gcc_8.4.0_cuda_11.7.1_openmpi_4.0.3
+  gromacs_2021.2_gcc_8.4.0_cuda_11.7.1_openmpi_4.0.3-module:
     category: CHEMISTRY
     requires:
       - gcc/8.4.0
-      - cuda/10.1.243
+      - cuda/11.7.1
       - openmpi/4.0.3/gcc.8.4.0
     provides:
-      - gromacs/2021.2/gcc.8.4.0-cuda.10.1.243.openmpi.4.0.3
+      - gromacs/2021.2/gcc.8.4.0-cuda.11.7.1.openmpi.4.0.3
   gromacs_2022.1_gcc_8.4.0:
     category: False
     requires:
@@ -20581,6 +20358,82 @@ chemistry-admix:
       - openmpi/4.1.2/gcc.8.4.0
     provides:
       - gromacs/2022.1/gcc.8.4.0-cuda.11.7.1.openmpi.4.1.2
+  amber_21.12_gcc_11.2.0:
+    category: False
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+      - mkl/2019.5.281
+      - cmake/3.30.2
+    provides:
+      - perl(atom_matching)
+      - perl(AtomWithType)
+      - perl(check_input)
+      - perl(common_prepare_MD)
+      - perl(Descriptive)
+      - perl(Distributions)
+      - perl(ForkManager)
+      - perl(global)
+      - perl(LIEW)
+      - perl(Normality)
+      - perl(prepare_params)
+      - perl(prepare_top_crd_MD)
+      - perl(ReadBackwards)
+      - perl(read_data)
+      - perl(RMSD_Kabsch)
+      - perl(separate_structures)
+      - perl(setup_MD)
+      - perl(setup_PB_GB)
+      - perl(setup_TI_MD)
+      - perl(Smoother)
+      - perl(TIW)
+      - perl(WAMM)
+  amber_21.12_gcc_11.2.0-module:
+    category: CHEMISTRY
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+      - mkl/2019.5.281
+    provides:
+      - amber/21.12/gcc.11.2.0
+  lammps_29Sep2021_gcc_11.2.0:
+    category: False
+    requires:
+      - ffmpeg/6.1
+      - hdf5/1.13.1/gcc.11.2.0
+      - gsl/2.7.1/gcc.11.2.0
+      - openmpi/4.1.2/gcc.11.2.0
+      - fftw/3.3.10/gcc.11.2.0
+      - netcdf-c/4.8.1/gcc.11.2.0
+      - cmake/3.20.5
+    provides:
+      - lammps_29Sep2021_gcc_11.2.0
+  lammps_29Sep2021_gcc_11.2.0-module:
+    category: CHEMISTRY
+    requires:
+      - ffmpeg/6.1
+      - hdf5/1.13.1/gcc.11.2.0
+      - gsl/2.7.1/gcc.11.2.0
+      - openmpi/4.1.2/gcc.11.2.0
+      - fftw/3.3.10/gcc.11.2.0
+      - netcdf-c/4.8.1/gcc.11.2.0
+    provides:
+      - lammps/29Sep2021/gcc.11.2.0
+  charm_7.0.0_gcc_11.2.0:
+    category: False
+    requires:
+      - cmake/3.30.2
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+      - charm_7.0.0_gcc_11.2.0
+  charm_7.0.0_gcc_11.2.0-module:
+    category: TOOLS
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+    provides:
+      - charm/7.0.0/gcc.11.2.0
   gromacs_2024.2_gcc_11.2.0:
     category: False
     requires:
@@ -20641,80 +20494,6 @@ chemistry-admix:
       - openmpi/5.0.1/gcc.11.2.0
     provides:
       - gromacs/2024.2/gcc.11.2.0-cuda.11.7.1.openmpi.5.0.1
-  amber_21.12_gcc_11.2.0:
-    category: False
-    requires:
-      - gcc/11.2.0
-      - python/3.10.2
-      - mkl/2019.5.281
-      - cmake/3.30.2
-    provides:
-      - perl(atom_matching)
-      - perl(AtomWithType)
-      - perl(check_input)
-      - perl(common_prepare_MD)
-      - perl(Descriptive)
-      - perl(Distributions)
-      - perl(ForkManager)
-      - perl(global)
-      - perl(LIEW)
-      - perl(Normality)
-      - perl(prepare_params)
-      - perl(prepare_top_crd_MD)
-      - perl(ReadBackwards)
-      - perl(read_data)
-      - perl(RMSD_Kabsch)
-      - perl(separate_structures)
-      - perl(setup_MD)
-      - perl(setup_PB_GB)
-      - perl(setup_TI_MD)
-      - perl(Smoother)
-      - perl(TIW)
-      - perl(WAMM)
-  amber_21.12_gcc_11.2.0-module:
-    category: CHEMISTRY
-    requires:
-      - gcc/11.2.0
-      - python/3.10.2
-      - mkl/2019.5.281
-    provides:
-      - amber/21.12/gcc.11.2.0
-  lammps_29Sep2021_gcc_11.2.0:
-    category: False
-    requires:
-      - ffmpeg/4.1.3
-      - hdf5/1.13.1/gcc.11.2.0
-      - gsl/2.7.1/gcc.11.2.0
-      - openmpi/4.1.2/gcc.11.2.0
-      - fftw/3.3.10/gcc.11.2.0
-      - netcdf-c/4.8.1/gcc.11.2.0
-      - cmake/3.20.5
-    provides:
-      - lammps_29Sep2021_gcc_11.2.0
-  lammps_29Sep2021_gcc_11.2.0-module:
-    category: CHEMISTRY
-    requires:
-      - ffmpeg/4.1.3
-      - hdf5/1.13.1/gcc.11.2.0
-      - gsl/2.7.1/gcc.11.2.0
-      - openmpi/4.1.2/gcc.11.2.0
-      - fftw/3.3.10/gcc.11.2.0
-      - netcdf-c/4.8.1/gcc.11.2.0
-    provides:
-      - lammps/29Sep2021/gcc.11.2.0
-  charm_7.0.0_gcc_11.2.0:
-    category: False
-    requires:
-      - cmake/3.30.2
-      - gcc/11.2.0
-    provides:
-      - charm_7.0.0_gcc_11.2.0
-  charm_7.0.0_gcc_11.2.0-module:
-    category: TOOLS
-    requires:
-      - gcc/11.2.0
-    provides:
-      - charm/7.0.0/gcc.11.2.0
   amber_24_gcc_11.2.0:
     category: False
     requires:
@@ -20800,12 +20579,14 @@ chemistry-admix:
     requires:
       - cmake/3.30.2
       - gcc/11.2.0
+      - python/3.10.2
     provides:
       - charm_6.10.1_gcc_11.2.0
   charm_6.10.1_gcc_11.2.0-module:
     category: TOOLS
     requires:
       - gcc/11.2.0
+      - python/3.10.2
     provides:
       - charm/6.10.1/gcc.11.2.0
   charm_6.10.1_gcc_11.2.0_openmpi_5.0.1:
@@ -20814,6 +20595,7 @@ chemistry-admix:
       - cmake/3.30.2
       - gcc/11.2.0
       - openmpi/5.0.1/gcc.11.2.0
+      - python/3.10.2
     provides:
       - charm_6.10.1_gcc_11.2.0_openmpi_5.0.1
   charm_6.10.1_gcc_11.2.0_openmpi_5.0.1-module:
@@ -20821,6 +20603,7 @@ chemistry-admix:
     requires:
       - gcc/11.2.0
       - openmpi/5.0.1/gcc.11.2.0
+      - python/3.10.2
     provides:
       - charm/6.10.1/gcc.11.2.0-openmpi.5.0.1
 julia-admix:
@@ -20855,6 +20638,37 @@ julia-admix:
     provides:
       - julia/1.9.3
 pytorch-admix:
+  pytorch_1.11.0_python3.10.2_cuda_11.7.1:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.10.2
+      - mkl/2024.0.1
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+      - cuda/11.7.1
+      - cmake/3.30.2
+    provides:
+      - pytorch_1.11.0_python3.10.2_cuda_11.7.1
+  pytorch_1.11.0_python3.10.2_cuda_11.7.1-module:
+    category: AI-LEARNING
+    requires:
+      - gcc/8.4.0
+      - python/3.10.2
+      - mkl/2024.0.1
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+      - cuda/11.7.1
+    provides:
+      - pytorch-cuda/1.11.0
+  pytorch_1.11.0_python3.10.2_cuda_11.7.1_vision:
+    category: False
+    requires:
+      - cmake/3.30.2
+      - cuda/11.7.1
+      - pytorch/1.11.0
+    provides:
+      - pytorch_1.11.0_python3.10.2_cuda_11.7.1_vision
   pytorch_1.11.0_python3.10.2_vision:
     category: False
     requires:
@@ -20869,43 +20683,12 @@ pytorch-admix:
       - gcc/8.4.0
     provides:
       - pytorch_1.11.0_python3.10.2_pillow-simd
-  pytorch_1.11.0_python3.10.2_cuda_11.7.1:
-    category: False
-    requires:
-      - gcc/8.4.0
-      - python/3.10.2
-      - mkl/2019.5.281
-      - ffmpeg/4.1.3
-      - fftw/3.3.8/gcc.8.4.0
-      - cuda/11.7.1
-      - cmake/3.30.2
-    provides:
-      - pytorch_1.11.0_python3.10.2_cuda_11.7.1
-  pytorch_1.11.0_python3.10.2_cuda_11.7.1-module:
-    category: AI-LEARNING
-    requires:
-      - gcc/8.4.0
-      - python/3.10.2
-      - mkl/2019.5.281
-      - ffmpeg/4.1.3
-      - fftw/3.3.8/gcc.8.4.0
-      - cuda/11.7.1
-    provides:
-      - pytorch-cuda/1.11.0
-  pytorch_1.11.0_python3.10.2_cuda_11.7.1_vision:
-    category: False
-    requires:
-      - cmake/3.30.2
-      - cuda/11.7.1
-      - pytorch/1.11.0
-    provides:
-      - pytorch_1.11.0_python3.10.2_cuda_11.7.1_vision
   pytorch_1.11.0_python3.10.2:
     category: False
     requires:
       - gcc/8.4.0
       - python/3.10.2
-      - mkl/2019.5.281
+      - mkl/2024.0.1
       - ffmpeg/4.1.3
       - fftw/3.3.8/gcc.8.4.0
       - cmake/3.30.2
@@ -20916,11 +20699,42 @@ pytorch-admix:
     requires:
       - gcc/8.4.0
       - python/3.10.2
-      - mkl/2019.5.281
+      - mkl/2024.0.1
       - ffmpeg/4.1.3
       - fftw/3.3.8/gcc.8.4.0
     provides:
       - pytorch/1.11.0
+  pytorch_2.0.1_python3.10.2_cuda_11.7.1:
+    category: False
+    requires:
+      - gcc/8.4.0
+      - python/3.10.2
+      - mkl/2024.0.1
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+      - cuda/11.7.1
+      - cmake/3.30.2
+    provides:
+      - pytorch_2.0.1_python3.10.2_cuda_11.7.1
+  pytorch_2.0.1_python3.10.2_cuda_11.7.1-module:
+    category: AI-LEARNING
+    requires:
+      - gcc/8.4.0
+      - python/3.10.2
+      - mkl/2024.0.1
+      - ffmpeg/4.1.3
+      - fftw/3.3.8/gcc.8.4.0
+      - cuda/11.7.1
+    provides:
+      - pytorch-cuda/2.0.1
+  pytorch_2.0.1_python3.10.2_cuda_11.7.1_vision:
+    category: False
+    requires:
+      - cmake/3.30.2
+      - cuda/11.7.1
+      - pytorch/2.0.1
+    provides:
+      - pytorch_2.0.1_python3.10.2_cuda_11.7.1_vision
   pytorch_2.0.1_python3.10.2_vision:
     category: False
     requires:
@@ -20935,43 +20749,12 @@ pytorch-admix:
       - gcc/8.4.0
     provides:
       - pytorch_2.0.1_python3.10.2_pillow-simd
-  pytorch_2.0.1_python3.10.2_cuda_11.7.1:
-    category: False
-    requires:
-      - gcc/8.4.0
-      - python/3.10.2
-      - mkl/2019.5.281
-      - ffmpeg/4.1.3
-      - fftw/3.3.8/gcc.8.4.0
-      - cuda/11.7.1
-      - cmake/3.30.2
-    provides:
-      - pytorch_2.0.1_python3.10.2_cuda_11.7.1
-  pytorch_2.0.1_python3.10.2_cuda_11.7.1-module:
-    category: AI-LEARNING
-    requires:
-      - gcc/8.4.0
-      - python/3.10.2
-      - mkl/2019.5.281
-      - ffmpeg/4.1.3
-      - fftw/3.3.8/gcc.8.4.0
-      - cuda/11.7.1
-    provides:
-      - pytorch-cuda/2.0.1
-  pytorch_2.0.1_python3.10.2_cuda_11.7.1_vision:
-    category: False
-    requires:
-      - cmake/3.30.2
-      - cuda/11.7.1
-      - pytorch/2.0.1
-    provides:
-      - pytorch_2.0.1_python3.10.2_cuda_11.7.1_vision
   pytorch_2.0.1_python3.10.2:
     category: False
     requires:
       - gcc/8.4.0
       - python/3.10.2
-      - mkl/2019.5.281
+      - mkl/2024.0.1
       - ffmpeg/4.1.3
       - fftw/3.3.8/gcc.8.4.0
       - cmake/3.30.2
@@ -20982,7 +20765,7 @@ pytorch-admix:
     requires:
       - gcc/8.4.0
       - python/3.10.2
-      - mkl/2019.5.281
+      - mkl/2024.0.1
       - ffmpeg/4.1.3
       - fftw/3.3.8/gcc.8.4.0
     provides:
@@ -20993,7 +20776,7 @@ pytorch-admix:
       - gcc/11.2.0
       - python/3.10.2
       - mkl/2024.0.1
-      - ffmpeg/4.1.3
+      - ffmpeg/6.1
       - fftw/3.3.10/gcc.11.2.0
       - cuda/12.2.0
     provides:
@@ -21004,7 +20787,7 @@ pytorch-admix:
       - gcc/11.2.0
       - python/3.10.2
       - mkl/2024.0.1
-      - ffmpeg/4.1.3
+      - ffmpeg/6.1
       - fftw/3.3.10/gcc.11.2.0
       - cuda/12.2.0
     provides:
@@ -21015,7 +20798,7 @@ pytorch-admix:
       - gcc/11.2.0
       - python/3.10.2
       - mkl/2024.0.1
-      - ffmpeg/4.1.3
+      - ffmpeg/6.1
       - fftw/3.3.10/gcc.11.2.0
       - cmake/3.30.2
     provides:
@@ -21026,7 +20809,7 @@ pytorch-admix:
       - gcc/11.2.0
       - python/3.10.2
       - mkl/2024.0.1
-      - ffmpeg/4.1.3
+      - ffmpeg/6.1
       - fftw/3.3.10/gcc.11.2.0
     provides:
       - pytorch/2.3.0
@@ -21152,14 +20935,14 @@ imaging-admix:
   ants_2.3.5:
     category: False
     requires:
-      - cmake/3.20.5
-      - gcc/system
+      - cmake/3.30.2
+      - gcc/8.4.0
     provides:
       - ants_2.3.5
   ants_2.3.5-module:
     category: IMAGING
     requires:
-      - gcc/system
+      - gcc/8.4.0
     provides:
       - ants/2.3.5
 nfsapps-admix:
@@ -21206,14 +20989,14 @@ nfsapps-admix:
   fsl_6.0.4-module:
     category: IMAGING
     requires:
-      - OpenBLAS/0.3.6
+      - OpenBLAS/0.3.26
     provides:
       - fsl/6.0.4
   vasp_5.4.4-module:
     category: ENGINEERING
     requires:
       - openmpi/4.0.3/gcc.6.5.0
-      - fftw/3.3.8/gcc.system
+      - fftw/3.3.8/gcc.8.4.0
     provides:
       - vasp/5.4.4
   gaussian_16-module:
@@ -21240,7 +21023,7 @@ nfsapps-admix:
     category: ENGINEERING
     requires:
       - openmpi/4.0.3/gcc.6.5.0
-      - fftw/3.3.8/gcc.system
+      - fftw/3.3.8/gcc.8.4.0
     provides:
       - vasp/6.1.2
   stata_17-module:
@@ -21331,15 +21114,15 @@ protected-admix:
   rosetta_3.13:
     category: False
     requires:
-      - gcc/system
-      - hdf5/1.13.1/gcc.system
+      - gcc/8.4.0
+      - hdf5/1.13.1/gcc.8.4.0
     provides:
       - rosetta_3.13
   rosetta_3.13-module:
     category: BIOTOOLS
     requires:
-      - gcc/system
-      - hdf5/1.13.1/gcc.system
+      - gcc/8.4.0
+      - hdf5/1.13.1/gcc.8.4.0
     provides:
       - rosetta/3.13
   qe_7.1_gcc_11.2.0:
@@ -21378,4 +21161,4 @@ protected-admix:
       - cudasdk/22.9
     provides:
       - qe/7.1/intel.2022.2-cudasdk.22.9.openmpi.4.1.2
-created: 2025-01-21
+created: 2025-05-13
