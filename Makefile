@@ -1,6 +1,6 @@
 ## This Makefile is a high-level builder of all Admixes
 REPOROOT = git@github.com:RCIC-UCI-Public
-CRSPDIR = /mnt/crsp/RPMS/RPMS.EL8.10
+CRSPDIR = /mnt/crsp/RPMS.EL9.5-beta
 ANSIBLEDIR = playbooks
 
 ## Admixes are listed in buildorder.  Lines starting with # are ignored
