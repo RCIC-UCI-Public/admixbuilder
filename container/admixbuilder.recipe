@@ -48,12 +48,13 @@ From: rockylinux:9
       fi
       # Some useful tools
       echo "install sshfs,losf,pstree"
-      dnf -y --enable-repo=epel fuse-sshfs psmisc lsof
+      dnf -y --enablerepo=epel install fuse-sshfs psmisc lsof
 
       # "de facto" standard paths for admixbuilding
       mkdir -p /export/repositories 
       mkdir -p /data/opt/apps
 
+      dnf -y update --exclude=filesystem
       dnf -y clean all
       /bin/rm -rf /var/cache/dnf/*
 
