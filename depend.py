@@ -261,6 +261,7 @@ class Content:
         self.depgraph = "dot-byadmix"
         self.catgraph = "dot-bycategory"
         self.ordergraph = "dot-buildorder"
+        self.startadmix = "yaml2rpm"
 
         self.parseArg()
 
@@ -336,11 +337,15 @@ class Content:
                             reqsByAdmix.extend([providerAdmix])
                     except:
                         pass
-            ## remove self-dependency
             edges = list(filter(lambda x: x != node.name, reqsByAdmix))
+            ## add first admix to every other admix as a dependency
+            if node.name != self.startadmix:
+                edges.insert(0, self.startadmix)
+            ## remove self-dependency
             for edge in edges:
                 edgeNode = list(filter(lambda x: x.name == edge, self.nodes))[0]
                 node.addEdge(edgeNode)
+
 
     def showDepGraph(self):
         lines = self.nodes[0].printDotHeader()
@@ -352,8 +357,81 @@ class Content:
         f.writelines(lines)
         f.close()
 
+    def createDepGraphLevels(self):
+        levels = {}     # admix build order
+        edges = {}      # admix and its dependent admixes
+        for node in self.nodes:
+            nname = node.mangleName()
+            levels[nname] = 0
+            edges[nname] = []
+
+        depNames = []   # admixes that are dependencies for others
+        for node in self.nodes:
+            nname = node.mangleName()
+            listEdges = []
+            for e in node.edges:
+                ename = e.mangleName()
+                listEdges.append(ename)
+            depNames += listEdges # add to dependent names
+            edges[nname] = sorted(list(set(listEdges))) # rm duplicates and sort
+
+        depNames = sorted(list(set(depNames))) # rm duplicates
+        edges_sorted = {k: v for k, v in sorted(edges.items(), key=lambda x: len(x[1]) )} # sort by length of edges
+
+        import copy
+        data = copy.deepcopy(edges)
+        topoOrder = self.makeTopoSort(data)
+
+        # assign building order levels
+        for k in topoOrder:
+            v = edges_sorted[k]
+            if len(v) == 0: continue
+            if len(v) == 1:
+                if k in depNames:
+                    levels[k] += 1  # for admixes that are prereqs for others
+                else:
+                    levels[k] += len(self.nodes) # for admixes that that dont provide for others
+            else:
+                nums = []
+                for item in v:
+                    nums.append(levels[item])
+                levels[k] = max(nums) + 1
+
+        order = {}
+        for k,v in levels.items():
+            if v in order.keys():
+                order[v].append(k)
+            else:
+                order[v] = [k]
+
+        return (edges_sorted, order)
+
+    def makeTopoSort(self, data):
+        ''' Implementation of Kahn's algorithm'''
+        S = []  # nodes with no incoming edge
+        L = []  # topologically sorted order
+        for k,v in data.items():
+            if len(v) == 0:
+                S.append(k)
+
+        while len(S) > 0:
+            n = S.pop(0)
+            L.append(n)
+            del data[n]
+            for k,v in data.items():
+                if n in v:
+                    data[k].remove(n) # remove from dependencies
+                if len(data[k]) == 0:
+                    if k not in S:
+                        S.append(k)
+
+        if len(data) > 0: #if graph has edges then
+            print ("ERROR in toposort ") # error, graph has at least one cycle. should not get here
+        return L
+
     def buildOrderGraph(self):
         # create build order graph
+
         txt = "digraph G {\n"
         txt += '  size = "11,17";\n'
         txt += '  ranksep = "2";\n'
@@ -363,32 +441,42 @@ class Content:
         txt += '  fontname="Times-Roman-Bold";\n'
         txt += '  fontsize=24;\n'
         txt += '  label="Admix build order\n\n";\n'
-
-        # static content. just slightly different then without ranking
-        # this gives a better visibility
         txt += "{ node [shape=plaintext, color=blue fontsize=24];\n"
-        txt += "  1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9  [style=invis]; };\n"
-        txt += "{rank = same; 1; yaml2rpm;};\n"
-        txt += "{rank = same; 2; gcc_admix; buildtools_admix};\n"
-        txt += "{rank = same; 3; systools_admix; foundation_admix; };\n"
-        txt += "{rank = same; 4; buildlibs_admix; mathlibs_admix} ;\n"
-        txt += "{rank = same; 5; R4_admix;rust_admix simulations_admix; fileformats_admix; };\n"
-        txt += "{rank = same; 6; python_admix;cuda_admix; perl_admix, nfsapps_admix};\n"
-        txt += "{rank = same; 7; imaging_admix;  tensorflow_admix; biotools_admix;chemistry_admix;pytorch_admix};\n"
-        txt += "{rank = same; 8; genomics_admix};\n"
-        txt += "{rank = same; 9; conda_admix; bioconda_admix; julia_admix};\n"
 
-        for admix in self.nodes:
-            txt += "\n## %s\n" % admix.name
-            txt += '%s [shape=plaintext, %s\n' % (admix.mangleName(),admix.labelheader)
-            txt += '%s%s]' % (admix.namepattern % (admix.colorLabelBG,admix.name), admix.labeltrailer)
+        # use edges and ranking found via toposort 
+        edges_sorted, order = self.createDepGraphLevels()
+        order_sorted = {k: v for k, v in sorted(order.items(), key=lambda x: x[0])}
 
-            edgenames = map(lambda x: x.mangleName(), admix.edges)
-            for edge in edgenames:
-                txt += "\n%s -> %s;" % (admix.mangleName(), edge)
+        # add levels indexing line
+        rankmap = {}
+        rankindex = 1
+        for k in order_sorted.keys():
+            rankmap[k] = rankindex
+            rankindex += 1
+        for rank,index in rankmap.items():
+            if index < len(rankmap):
+               txt += " %d ->" % index
+            else:
+               txt += " %d [style=invis]; };\n" % index
+
+        # add admixes ranking   
+        for k,v in order_sorted.items():
+            names = ""
+            for n in v:
+                names += n + ";"
+            txt += "{rank = same; %d; %s };\n" % (rankmap[k],names)
+
+        # add admixes adges
+        first = self.nodes[0]
+        for admixname, admixedges in edges_sorted.items():
+            restorename = admixname.replace("_","-")
+            txt += "\n## %s\n" % restorename
+            txt += '%s [shape=plaintext, %s\n' % (admixname,first.labelheader)
+            txt += '%s%s]' % (first.namepattern % (first.colorLabelBG, restorename), first.labeltrailer)
+            for edge in admixedges:
+                txt += "\n%s -> %s;" % (admixname,edge)
             txt += "\n"
-
-        txt += admix.printDotTrailer()
+        txt += first.printDotTrailer()
 
         f = open(self.ordergraph, "w")
         f.writelines(txt)
