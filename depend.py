@@ -440,7 +440,7 @@ class Content:
         txt += '  fontcolor=dodgerblue4;\n'
         txt += '  fontname="Times-Roman-Bold";\n'
         txt += '  fontsize=24;\n'
-        txt += '  label="Admix build order\n\n";\n'
+        txt += '  label="Admix build order";\n'
         txt += "{ node [shape=plaintext, color=blue fontsize=24];\n"
 
         # use edges and ranking found via toposort 
