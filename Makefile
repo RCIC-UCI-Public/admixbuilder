@@ -44,10 +44,9 @@ ansible: $(ANSIBLEDIR) force
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am ansible > $(ANSIBLEDIR)/$$am.yml; done 
 
 $(ANSIBLEDIR):
-	mkdir $@
+	- mkdir $@
 
 buildall buildall-parallel:
-	- /bin/rm buildall.log
 	( for admix in $(BUILDORDER); do                     \
 	     echo "$$admix build start at `date`" >> $(PWD)/buildall.log; \
 	     if [ ! -d $(ADMIXROOT)/$$admix ]; then make clone ADMIXES=$$admix; fi; \

@@ -1,0 +1,3 @@
+make ADMIXES=genomics-admix buildall-parallel
+make ADMIXES=systools-admix buildall-parallel
+make ADMIXES=julia-admix buildall-parallel

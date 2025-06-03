@@ -1,0 +1,4 @@
+make ADMIXES=gcc-admix buildall-parallel
+make ADMIXES=buildtools-admix buildall-parallel
+make ADMIXES=cuda-admix buildall-parallel
+make ADMIXES=perl-admix buildall-parallel

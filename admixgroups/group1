@@ -1,0 +1,5 @@
+make ADMIXES=foundation-admix buildall-parallel
+make ADMIXES=mathlibs-admix buildall-parallel
+make ADMIXES=buildlibs-admix buildall-parallel
+make ADMIXES=bioconda-admix buildall-parallel
+make ADMIXES=conda-admix buildall-parallel

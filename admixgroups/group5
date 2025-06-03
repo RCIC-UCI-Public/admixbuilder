@@ -1,0 +1,4 @@
+make ADMIXES=imaging-admix buildall-parallel
+make ADMIXES=biotools-admix buildall-parallel
+make ADMIXES=chemistry-admix buildall-parallel
+make ADMIXES=tensorflow-admix buildall-parallel
