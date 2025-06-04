@@ -272,7 +272,7 @@ class Content:
 
         if self.args[0] in ["-h","--h","help","-help","--help"]:
             helpStr = "Usage: %s [inFile]\n" % self.prog
-            helpStr += "      If inpile is not provideed a default is depinfo.yaml\n"
+            helpStr += "      If infile is not provided a default is depinfo.yaml\n"
             print (helpStr)
             sys.exit(0)
 
