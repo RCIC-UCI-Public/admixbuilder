@@ -47,7 +47,7 @@ $(ANSIBLEDIR):
 	- mkdir $@
 
 buildall buildall-parallel:
-	( for admix in $(BUILDORDER); do                     \
+	( for admix in $(ADMIXES); do                     \
 	     echo "$$admix build start at `date`" >> $(PWD)/buildall.log; \
 	     if [ ! -d $(ADMIXROOT)/$$admix ]; then make clone ADMIXES=$$admix; fi; \
 	     cd $(ADMIXROOT)/$$admix;                        \
