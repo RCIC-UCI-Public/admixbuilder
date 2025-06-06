@@ -128,42 +128,43 @@ class App:
         import numpy as np
         data = self.minutes
 
+        # for long running builds
         data1 = [x for x in data if x > 1]
-        data2 = [x for x in data if x <= 1]
         bins1 = int(max(data1)/10)
-        bins2 = 20
+        counts1, bins1 = np.histogram(data1, bins=int(max(data1)/10))
+        cumulative_counts1 = np.cumsum(counts1)
 
-        fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(10, 5))
+        # for short running builds
+        data2 = [x for x in data if x <= 1]
+        bins2 = 20
+        counts2, bins2 = np.histogram(data2, bins=20)
+        cumulative_counts2 = np.cumsum(counts2)
 
         # Plot histograms
-        axes[0].hist(data1, bins=bins1, color='darkviolet', edgecolor='black')
+        fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(10, 5))
+
+        axes[0].hist(data1, bins=bins1, color='darkviolet', edgecolor='black') 
+        axes[0].plot(bins1[:-1], cumulative_counts1, color='red', linestyle='-', marker='o') # Cumulative line
+
         axes[0].set_title('Histogram of build times > 1min')
         axes[0].set_xlabel('Build time values (min)')
-        axes[0].set_ylabel('Frequency')
+        axes[0].set_ylabel('Count / Cumulative count')
+        axes[0].legend(['Cumulative', 'Histogram'])
+        axes[0].grid(True)
 
         axes[1].hist(data2, bins=bins2, color='deepskyblue', edgecolor='black')
+        axes[1].plot(bins2[:-1], cumulative_counts2, color='red', linestyle='-', marker='o') # Cumulative line
         axes[1].set_title('Histogram of build times <= 1min')
-        axes[1].set_xlabel('Build time values (min)')
-        axes[1].set_ylabel('Frequency')
+        axes[1].set_xlabel('Build time values (sec)')
+        axes[1].set_ylabel('Count / Cumulative Count')
+        axes[1].set_xticklabels(['0','12', '24', '36', '48', '60'])
+        axes[1].legend(['Cumulative', 'Histogram'])
+        axes[1].grid(True)
 
         plt.tight_layout() # adjust layout
         plt.savefig("%s.png" % self.fig) # save the plot
         plt.close(1)
  
-
-        # single plot is not good  as there is a lot skewing for small packages 
-        # Sample data
-        #dataN = [x for x in data if x > 1]
-        #bins = int(max(dataN)/10)
-
-        # Plot histogram
-        #plt.hist(dataN, bins=bins, color='darkviolet', edgecolor='black')
-        #plt.title('Histogram of packages build times')
-        #plt.xlabel('Build time values')
-        #plt.ylabel('Frequency')
-        #plt.savefig("%s.png" % self.fig)
-        #plt.close(1)
-       
     def run(self):
         self.readInput()
         self.parseLines()
