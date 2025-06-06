@@ -1,3 +1,5 @@
 make ADMIXES=nfsapps-admix buildall-parallel
 make ADMIXES=protected-admix buildall-parallel
 make ADMIXES=python-admix buildall-parallel
+make ADMIXES=systools-admix buildall-parallel
+
