@@ -26,7 +26,7 @@ depinfo.yaml:
 	echo "created: $$(date +%F)" >> $@
 
 dot: depinfo.yaml
-	./depend.py 
+	./makeDotfiles
 
 dotpdf:
 	( for df in $(DOTFILES); do					\
