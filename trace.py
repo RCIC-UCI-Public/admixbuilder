@@ -129,7 +129,7 @@ class Content:
 
         args = parser.parse_args()
         if not os.path.isfile(args.infile):
-            sys.stderr.write("Input yaml file %s does not exist\n" % args.yamlfile)
+            sys.stderr.write("Input yaml file %s does not exist\n" % args.infile)
             sys.exit(-1)
 
         self.infile = args.infile
