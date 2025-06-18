@@ -6,6 +6,9 @@ import subprocess
 import ruamel.yaml
 from datetime import date
 from collections import OrderedDict
+import argparse
+import os
+import copy
 
 class Category(object):
     def __init__(self,name,created):
@@ -117,6 +120,31 @@ class Category(object):
         txt += "\n"
         return txt
 
+class Level(object):
+    def __init__(self, order, deps, time):
+        self.order = order
+        self.admixlist = deps
+        self.time = time
+
+    def addtoLevel (self, name, time):
+        self.admixlist.append(name)
+        if time > self.time:
+            self.time = time
+    def printLevel(self):
+        print ("on %f level " % self.order, self.admixlist, "time = %d" % self.time)
+
+    def getLevelSize(self):
+        return len(self.admixlist)
+
+    def getLevelTime(self):
+        return self.time
+
+    def getLevelOrder(self):
+        return self.order
+
+    def getLevelList(self):
+        return self.admixlist
+
 class Admix(object):
     def __init__(self,name,info,created):
         self.name = name
@@ -141,6 +169,10 @@ class Admix(object):
 
     def processInfo(self,info):
         for key, value in info.items():
+            if key == "system":
+                # add requires from the packages.yaml 'system' definitions
+                self.requires += value
+                continue
             self.packages.append(key)
             provides = value['provides']  # is a list with a single item
             requires = value['requires']  # is a list with 0 or more items
@@ -150,7 +182,7 @@ class Admix(object):
                 self.provides += provides
             if requires:
                 self.requires += requires
-            if category: 
+            if category:
                 if category in self.provides_category.keys():
                     # dont add if already present
                     if provides[0] not in self.provides_category[category]:
@@ -158,7 +190,7 @@ class Admix(object):
                 else:
                     self.provides_category[category] = provides
 
-                if requires: 
+                if requires:
                     if category in self.requires_category.keys():
                         self.requires_category[category] += requires
                     else:
@@ -207,7 +239,7 @@ class Admix(object):
         return txt
 
     def staticFormat(self):
-        # this is a result of palying with dot figure and aligning admixes
+        # this is a result of playing with dot figure and aligning admixes
         # so that they produce fewer adges and less white space.
         # create an invisible top-bottom ancoring nodes for fixing
         # admixes position at specific rank
@@ -266,19 +298,40 @@ class Content:
         self.parseArg()
 
     def parseArg(self):
-        if not self.args:
-            self.infile = "depinfo.yaml"
+        self.timesFile = None
+
+        description = "Create dot files for building dot graph.\n"
+        helptimes = "file with admix name and their build time (in mintes), one per line.\n"
+        helpinfile = "yaml file with dependencies info, depinfo.yaml.\n"
+
+        parser = argparse.ArgumentParser(description=description, formatter_class=argparse.RawTextHelpFormatter)
+        # optional  argument
+        parser.add_argument("-t", "--times", dest="times", default=self.timesFile, help=helptimes)
+        # required positional argument
+        parser.add_argument("infile",  action="store", help=helpinfile)
+
+        args = parser.parse_args()
+        if not os.path.isfile(args.infile):
+            sys.stderr.write("Input file %s does not exist\n" % args.infile)
+            sys.exit(-1)
+        if args.times and not os.path.isfile(args.times):
+            sys.stderr.write("Input file %s does not exist\n" % args.times)
+            sys.exit(-1)
+
+        self.timesFile = args.times
+        self.infile = args.infile
+        return
+
+    def readTimes(self):
+        self.times = {}
+        if not self.timesFile:
             return
-
-        if self.args[0] in ["-h","--h","help","-help","--help"]:
-            helpStr = "Usage: %s [inFile]\n" % self.prog
-            helpStr += "      Create dot files for building dot graphs.\n"
-            helpStr += "      If infile is not provided a default is depinfo.yaml\n"
-            print (helpStr)
-            sys.exit(0)
-
-        if len(self.args) == 1:
-            self.infile = self.args[0]
+        f = open(self.timesFile)
+        for line in f.readlines():
+            admixname, mins = line.split()
+            admixname = admixname.replace("-","_")
+            self.times[admixname] = int(mins)
+        f.close()
         return
 
     def readYaml(self):
@@ -321,14 +374,14 @@ class Content:
            if p is not None:
                providers.extend([(mod, name) for mod in p])
 
-        # Create a dictionary the maps provides to admix names.
+        # Create a dictionary that maps provides to admix names.
         self.provlist = { x[0]:x[1] for x in providers }
 
     def connectDepGraph(self):
         for node in self.nodes:
             reqs = node.getRequires()
-            ## this converts the requires (a module name ) to the admix name that provides the module.
-            ## don't fail if there is no admix the provides the module (might be system provided)
+            # this converts the requires (a module name ) to the admix name that provides the module.
+            # don't fail if there is no admix the provides the module (might be system provided)
             reqsByAdmix = []
             if reqs is not None:
                 for r in reqs:
@@ -339,10 +392,10 @@ class Content:
                     except:
                         pass
             edges = list(filter(lambda x: x != node.name, reqsByAdmix))
-            ## add first admix to every other admix as a dependency
+            # add first admix to every other admix as a dependency
             if node.name != self.startadmix:
                 edges.insert(0, self.startadmix)
-            ## remove self-dependency
+            # remove self-dependency
             for edge in edges:
                 edgeNode = list(filter(lambda x: x.name == edge, self.nodes))[0]
                 node.addEdge(edgeNode)
@@ -358,15 +411,14 @@ class Content:
         f.writelines(lines)
         f.close()
 
-    def createDepGraphLevels(self):
-        levels = {}     # admix build order
+    def getDepGraphLevels(self):
         edges = {}      # admix and its dependent admixes
         for node in self.nodes:
             nname = node.mangleName()
-            levels[nname] = 0
             edges[nname] = []
 
-        depNames = []   # admixes that are dependencies for others
+        # admixes that are dependencies for others
+        depNames = []
         for node in self.nodes:
             nname = node.mangleName()
             listEdges = []
@@ -375,28 +427,46 @@ class Content:
                 listEdges.append(ename)
             depNames += listEdges # add to dependent names
             edges[nname] = sorted(list(set(listEdges))) # rm duplicates and sort
+        self.admixDependentNames = sorted(list(set(depNames))) # rm duplicates
 
-        depNames = sorted(list(set(depNames))) # rm duplicates
-        edges_sorted = {k: v for k, v in sorted(edges.items(), key=lambda x: len(x[1]) )} # sort by length of edges
+        # add all prereqs (edges of edges)
+        temp = {}
+        for k, v in edges.items():
+            add = []
+            for i in v:
+                add += edges[i]
+            add = sorted(list(set(add+v)))
+            temp[k] = add
 
-        import copy
-        data = copy.deepcopy(edges)
-        topoOrder = self.makeTopoSort(data)
+        # admix and its dependency admixes
+        self.edges_sorted = {k: v for k, v in sorted(edges.items(), key=lambda x: len(x[1]) )} # sort by length of edges
+
+        # topological order of building admixes (not uniq)
+        topoOrder = self.makeTopoSort(copy.deepcopy(self.edges_sorted))
+
+        # assign biud levels based on topoorder
+        self.createDepGraphLevels(topoOrder )
+
+    def createDepGraphLevels(self, topoOrder ):
+        # initialize admix build order
+        levels = {}
+        for l in self.edges_sorted.keys():
+            levels[l] = 0
 
         # assign building order levels
         for k in topoOrder:
-            v = edges_sorted[k]
-            if len(v) == 0: continue
-            if len(v) == 1:
-                if k in depNames:
-                    levels[k] += 1  # for admixes that are prereqs for others
-                else:
-                    levels[k] += len(self.nodes) # for admixes that that dont provide for others
+            v = self.edges_sorted[k]
+            if len(v) == 0:
+                continue
             else:
                 nums = []
                 for item in v:
                     nums.append(levels[item])
                 levels[k] = max(nums) + 1
+
+        if not self.times:
+            for k in topoOrder:
+                self.times[k] = 0
 
         order = {}
         for k,v in levels.items():
@@ -404,12 +474,108 @@ class Content:
                 order[v].append(k)
             else:
                 order[v] = [k]
+        order_sorted = {k: v for k, v in sorted(order.items(), key=lambda x: x[0])}
+        # keep levels for admixes that are dependencies for others.
+        # separate leaf admixes (noone depends on them) and  long building admixes (> 50% longerst time)
+        leaf, longbuild = self.baseLevels(order_sorted)
+        # add long building admixes to a separate level where possible
+        self.addLongBuildLevels(longbuild)
+        # add leaf admixes to later levels whee possible
+        self.addLeafLevels(leaf)
 
-        return (edges_sorted, order)
+        # updated  build order
+        self.buildorder = {}
+        index = 0
+        for i in sorted(self.topo.keys()):
+            self.buildorder[index] = self.topo[i].getLevelList()
+            index +=1
+        return
+
+    def baseLevels(self, order_sorted):
+        # admixes that are not dependencies for others
+        self.admixLeafNames = sorted(list(set(self.edges_sorted.keys())-set(self.admixDependentNames)))
+
+        # build levels and theri admixes
+        self.topo = {}
+        longestTime = max(self.times.values())
+        move = []
+        longbuild = []
+        levelTime = {}
+        for order, admixlist in order_sorted.items():
+            buildtime = 0
+            keep = []
+            for a in admixlist:
+                # separate admixes that have time build over 50% of the longest time
+                try:
+                    if self.times[a]/longestTime > 0.5:
+                        longbuild.append((order,a))
+                        continue
+                except:
+                    pass # division by 0 when no times were available and are aasigned 0 as a default
+                if a in self.admixLeafNames:
+                    move.append((order,a))
+                else:
+                    keep.append(a)
+                    buildtime = max(buildtime, self.times[a])
+            levelTime[order] = buildtime
+            self.topo[order] = Level(order, keep, buildtime)
+
+        return (move, longbuild)
+
+    def addLongBuildLevels(self, data):
+        # data is a list of (order, admixname) tuples
+        ans = []
+        for i in data:
+            name1 = i[1]
+            for j in data:
+                name2 = j[1]
+                if name1 in self.edges_sorted[name2]:
+                    ans2 =False
+                    break
+                else:
+                    ans2 = True
+            ans.append(ans2)
+
+        splitLevel = None
+        while len(ans) > 0:
+            a = ans.pop(0)
+            b = data.pop(0)
+            order = b[0]
+            name = b[1]
+            if a:
+                if splitLevel:
+                    self.topo[splitLevel].addtoLevel(name, self.times[name])
+                else:
+                    # make a number between two levels, uniq
+                    splitLevel = order + 0.5
+                    self.topo[splitLevel] = Level(splitLevel, [name], self.times[name])
+            else:
+                self.topo[order].addtoLevel(name, self.times[name])
+        return
+
+    def addLeafLevels(self, data):
+        while len(data) > 0:
+            adm = data.pop(0)
+            order = adm[0]
+            name = adm[1]
+            time = self.times[name]
+            assigned = False
+            # try to assign to a new level while minimizing  level build time and
+            # limiting the number of admixes on any level
+            for i in self.topo.values():
+                if i.getLevelOrder() < order:  # skip earlier levels, admix depends on them
+                    continue
+                if time < i.getLevelTime() and i.getLevelSize() < 4: # for parallelism 5
+                    self.topo[i.getLevelOrder()].addtoLevel(name, time)
+                    assigned = True
+                    break
+            # did not reassign level, add back to the original level
+            if not assigned:
+                self.topo[order].addtoLevel(name, time)
 
     def makeTopoSort(self, data):
         ''' Implementation of Kahn's algorithm'''
-        S = []  # nodes with no incoming edge
+        S = []  # nodes with no outcoming edge
         L = []  # topologically sorted order
         for k,v in data.items():
             if len(v) == 0:
@@ -426,8 +592,10 @@ class Content:
                     if k not in S:
                         S.append(k)
 
-        if len(data) > 0: #if graph has edges then
-            print ("ERROR in toposort ") # error, graph has at least one cycle. should not get here
+        # when there are edges, graph has at least one cycle. should not get here, error
+        if len(data) > 0:
+            print ("ERROR in toposort, Graph has at least one cycle ")
+            sys.exit()
         return L
 
     def buildOrderGraph(self):
@@ -444,14 +612,13 @@ class Content:
         txt += '  label="Admix build order";\n'
         txt += "{ node [shape=plaintext, color=blue fontsize=24];\n"
 
-        # use edges and ranking found via toposort 
-        edges_sorted, order = self.createDepGraphLevels()
-        order_sorted = {k: v for k, v in sorted(order.items(), key=lambda x: x[0])}
+        # use edges and ranking found via toposort
+        self.getDepGraphLevels()
 
         # add levels indexing line
         rankmap = {}
         rankindex = 1
-        for k in order_sorted.keys():
+        for k in self.buildorder.keys():
             rankmap[k] = rankindex
             rankindex += 1
         for rank,index in rankmap.items():
@@ -460,8 +627,8 @@ class Content:
             else:
                txt += " %d [style=invis]; };\n" % index
 
-        # add admixes ranking   
-        for k,v in order_sorted.items():
+        # add admixes ranking
+        for k,v in self.buildorder.items():
             names = ""
             for n in v:
                 names += n + ";"
@@ -469,7 +636,7 @@ class Content:
 
         # add admixes adges
         first = self.nodes[0]
-        for admixname, admixedges in edges_sorted.items():
+        for admixname, admixedges in self.edges_sorted.items():
             restorename = admixname.replace("_","-")
             txt += "\n## %s\n" % restorename
             txt += '%s [shape=plaintext, %s\n' % (admixname,first.labelheader)
@@ -543,12 +710,23 @@ class Content:
         if self.categories:
             self.showCategoryGraph()
 
+    def printBuildGroups(self):
+        line = "make ADMIXES=%s buildall-parallel"
+        for i,j in self.buildorder.items():
+            if i == 0: continue
+            print ("GROUP %d" % (i-1))
+            for admixname in j:
+                restorename = admixname.replace("_","-")
+                print (line % restorename)
+
     def run(self):
+        self.readTimes()
         self.readYaml()
         self.processYamlInfo()
         self.buildDepGraph()
         self.buildOrderGraph()
         self.buildCategoryGraph()
+        self.printBuildGroups()
 
 #####################################################
 if __name__ == "__main__":
