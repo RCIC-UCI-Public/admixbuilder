@@ -51,9 +51,10 @@ class App:
 
     def parseArg(self):
         # process command line arguments 
-        description = "Parse log files info to get packages build time (in minutes).\n"
-        description += "Use results to make histogram plots, save as %s.png" % self.fig
-        helpinfile = "file name to parse.\n"
+        description = "Parse log files info (extracted from build logs) to get packages build time (in minutes).\n"
+        description += "Input file contains lines with 'Building' and 'Completed' lines for each package.\n"
+        description += "Use results to make histogram plots, save plots as %s.png" % self.fig
+        helpinfile = "input file.\n"
         parser = argparse.ArgumentParser(description=description, formatter_class=argparse.RawTextHelpFormatter)
         # required positional argument
         parser.add_argument("infile",  action="store", help=helpinfile)
