@@ -53,6 +53,8 @@ class Admix(object):
         allpkgs = content.keys()
         self.mapname = {}
         for key, value in content.items():
+            if key == "system":
+                continue     # skip entries for "system:"
             self.packages[key] = Package(key, value, allpkgs)
             pkgprovides = self.packages[key].getPkgProvides()
 
