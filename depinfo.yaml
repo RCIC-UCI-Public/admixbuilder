@@ -31,6 +31,8 @@ yaml2rpm:
     requires:
     provides:
       - rcic-dev-repo
+  system:
+    - platform-python-devel
 buildtools-admix:
   go_1.17.7:
     admix: buildtools-admix
@@ -9016,7 +9018,7 @@ R4-admix:
     requires:
       - OpenBLAS/0.3.6
       - java/11
-      - gcc/11.2.0
+      - gcc/8.4.0
     provides:
       - R_4.0.4
   R_4.0.4-module:
@@ -9027,7 +9029,7 @@ R4-admix:
     requires:
       - OpenBLAS/0.3.6
       - java/11
-      - gcc/11.2.0
+      - gcc/8.4.0
     provides:
       - R/4.0.4
   rstudio_1.4.1106:
@@ -10259,7 +10261,7 @@ R4-admix:
     category: False
     requires:
       - R/4.0.4
-      - hdf5/1.14.1/gcc.11.2.0
+      - hdf5/1.14.1/gcc.8.4.0
     provides:
       - R_4.0.4-hdf5r
   R_4.0.4-memoise:
@@ -12609,8 +12611,8 @@ R4-admix:
     category: False
     requires:
       - R/4.0.4
-      - gdal/3.1.0/gcc.11.2.0
-      - geos/3.8.1/gcc.11.2.0
+      - gdal/3.1.0/gcc.8.4.0
+      - geos/3.8.1/gcc.8.4.0
     provides:
       - R_4.0.4-terra
   R_4.0.4-wk:
@@ -12638,7 +12640,7 @@ R4-admix:
     category: False
     requires:
       - R/4.0.4
-      - udunits/2.2.28/gcc.11.2.0
+      - udunits/2.2.28/gcc.8.4.0
     provides:
       - R_4.0.4-units
   R_4.0.4-sf:
@@ -12648,8 +12650,8 @@ R4-admix:
     category: False
     requires:
       - R/4.0.4
-      - gdal/3.1.0/gcc.11.2.0
-      - udunits/2.2.28/gcc.11.2.0
+      - gdal/3.1.0/gcc.8.4.0
+      - udunits/2.2.28/gcc.8.4.0
     provides:
       - R_4.0.4-sf
   R_4.1.2:
@@ -31584,4 +31586,4 @@ protected-admix:
       - hdf5/1.13.1/cudasdk.22.9
     provides:
       - vasp/6.3.2/cudasdk.22.9
-created: 2025-06-16
+created: 2025-06-18
