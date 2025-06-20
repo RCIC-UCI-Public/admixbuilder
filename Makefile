@@ -43,6 +43,11 @@ dotpng:
 ansible: $(ANSIBLEDIR) force
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am ansible > $(ANSIBLEDIR)/$$am.yml; done 
 
+swtable:
+	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am/yamlspecs module-table > $(ADMIXROOT)/$$am/yamlspecs/table; done
+	echo "Module (name/version),Category,Software Description" > sw.csv
+	cat $(ADMIXROOT)/*/yamlspecs/table | grep -v None | grep -v asciidoctor | grep -v pytorch-cuda | sort >> sw.csv
+
 $(ANSIBLEDIR):
 	- mkdir $@
 
