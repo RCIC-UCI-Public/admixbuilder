@@ -120,6 +120,10 @@ class App:
                 self.minutes.append(minutes)
             #print (k, v.getMinutes())
 
+        if len(self.minutes) < 1:
+            print ("Not enough data in the input file '%s'."  % self.infile)
+            sys.exit(1)
+
     def plotTimeHist(self):
         import matplotlib.pyplot as plt
         import matplotlib.ticker as ticker
