@@ -40,6 +40,11 @@ dotpng:
         )
 
 
+histogram:
+	for i in `ls *admix.log`; do cat $i | grep -e "===== Completed" -e "==== Building"  | grep -v echo  ; done > allpkgs
+	./plotHist allpkgs
+
+
 ansible: $(ANSIBLEDIR) force
 	for am in $(ADMIXES); do echo $$am; make -s -C $(ADMIXROOT)/$$am ansible > $(ANSIBLEDIR)/$$am.yml; done 
 
