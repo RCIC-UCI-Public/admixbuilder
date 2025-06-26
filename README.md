@@ -32,8 +32,37 @@ the previous contents:
 
 ## dependency graphs
 
-Need ``dot`` command provided by
+Need ``dot`` command provided by graphviz RPM.
 
 ```bash
 yum install graphviz
 ```
+
+## Makefile targets
+
+A list of targets that are used for making graphs, info files
+for the ansible repo and for the website.
+
+depinfo.yaml:
+  In each <admix>/yamlspecs/ scan packages yaml files and
+  create packages dependency info **depinfo.yaml** file.
+
+dot: depinfo.yaml
+   Using  obtained dependency info create dependency dot files for  making graphs.
+
+dotpdf:
+   From raw dot file create PDF format.
+
+dotpng:
+   From raw dot file create PNG format .
+
+histogram:
+  Uses admix build log files and extracts lines for begining and end of each package build
+  into a file. Use ``plotHist`` on the file to create a **histogram.png** of build times.
+
+ansible:
+  For each admix  create a yaml file to add to the ansible repo  in applications role.
+
+swtable:
+  For each admix create information about packages and collate all into **sw.csv** file.
+  The file is used for the website (loaded as a table)
