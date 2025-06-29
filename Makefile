@@ -40,7 +40,7 @@ dotpng:
         )
 
 histogram:
-	for i in `ls *admix.log`; do cat $i | grep -e "===== Completed" -e "==== Building"  | grep -v echo  ; done > allpkgs
+	for i in `ls *admix.log`; do cat $$i | grep -e "===== Completed" -e "==== Building"  | grep -v echo  ; done > allpkgs
 	./plotHist allpkgs
 
 ansible: $(ANSIBLEDIR) force
