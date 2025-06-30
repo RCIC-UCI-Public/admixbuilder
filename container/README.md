@@ -155,7 +155,7 @@ If you see errors right away similar to the following:
 Cancel the build, add ssh key for the github host, and restart superbuild anew:
 
    ```bash
-     ssh-keyscan 140.82.116.4 >> ~/.ssh/known_hosts
+     ssh-keyscan github.com >> ~/.ssh/known_hosts
      nohup ./superbuild.sh &> out-superbuild &
    ```
 
