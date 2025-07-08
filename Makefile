@@ -51,6 +51,9 @@ swtable:
 	echo "Module (name/version),Category,Software Description" > sw.csv
 	cat $(ADMIXROOT)/*/yamlspecs/table | grep -v None | grep -v asciidoctor | grep -v pytorch-cuda | sort >> sw.csv
 
+time: buildall.log
+	./getTimes buildall.log
+
 $(ANSIBLEDIR):
 	- mkdir $@
 
