@@ -8,6 +8,13 @@ import argparse
 from datetime import datetime
 from dateutil.parser import parse
 from collections import OrderedDict
+try:
+    import matplotlib.pyplot as plt
+    import matplotlib.ticker as ticker
+    import numpy as np
+except:
+    print ("Please load python module")
+    sys.exit(0)
 
 class Package(object):
     def __init__(self, line):
@@ -125,10 +132,6 @@ class App:
             sys.exit(1)
 
     def plotTimeHist(self):
-        import matplotlib.pyplot as plt
-        import matplotlib.ticker as ticker
-        import numpy as np
-
         # 2 side by side plots
         fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(10, 5))
         # plots parameters
