@@ -1008,6 +1008,7 @@ systools-admix:
     - lvm2
     - readline-devel
     - pam-devel
+    - bindfs
   perl-Crypt-Rijndael:
     admix: systools-admix
     set: versions
@@ -10261,7 +10262,7 @@ R4-admix:
     category: False
     requires:
       - R/4.0.4
-      - hdf5/1.14.1/gcc.8.4.0
+      - hdf5/1.10.5/gcc.8.4.0
     provides:
       - R_4.0.4-hdf5r
   R_4.0.4-memoise:
@@ -12640,7 +12641,7 @@ R4-admix:
     category: False
     requires:
       - R/4.0.4
-      - udunits/2.2.28/gcc.8.4.0
+      - udunits/2.2.26/gcc.8.4.0
     provides:
       - R_4.0.4-units
   R_4.0.4-sf:
@@ -12651,7 +12652,7 @@ R4-admix:
     requires:
       - R/4.0.4
       - gdal/3.1.0/gcc.8.4.0
-      - udunits/2.2.28/gcc.8.4.0
+      - udunits/2.2.26/gcc.8.4.0
     provides:
       - R_4.0.4-sf
   R_4.1.2:
@@ -31586,4 +31587,4 @@ protected-admix:
       - hdf5/1.13.1/cudasdk.22.9
     provides:
       - vasp/6.3.2/cudasdk.22.9
-created: 2025-06-18
+created: 2025-07-08
