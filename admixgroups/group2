@@ -1,3 +1,4 @@
 make ADMIXES=simulations-admix buildall-parallel
 make ADMIXES=fileformats-admix buildall-parallel
-make ADMIXES=rust-admix buildall-parallel
+make ADMIXES=julia-admix buildall-parallel
+make ADMIXES=foundation-admix buildall-parallel

@@ -1,2 +1,1 @@
 make ADMIXES=genomics-admix buildall-parallel
-make ADMIXES=julia-admix buildall-parallel
