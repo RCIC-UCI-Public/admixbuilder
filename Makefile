@@ -54,6 +54,12 @@ swtable:
 time: buildall.log
 	./getTimes buildall.log
 
+admixdb:
+	for am in $(ADMIXES); do make -s -C $(ADMIXROOT)/$$am admixdb | tee $(ADMIXROOT)/$$am/.rpms.$$am; done
+
+check:
+	for am in $(ADMIXES); do  echo $$am; ./checkRpms $$am; done
+
 $(ANSIBLEDIR):
 	- mkdir $@
 
