@@ -40,6 +40,11 @@ class App:
         self.strEnd = "end at"
         self.admixes = {}       # key is a uniq string identifier, value is a Package object
 
+        # set build name and approximate time for the first admix built outside of the superbuild
+        # approximate time is sufficient here
+        self.firstbuild = "yaml2rpm"
+        self.firstbuildTime = 3
+
         self.parseArg()
 
     def parseArg(self):
@@ -103,6 +108,9 @@ class App:
             self.processTimes(i, 1)
 
         self.minutes = []
+
+        # print time for yaml2rpm
+        print("%-18s  %s " % (self.firstbuild, self.firstbuildTime))
         for k,v in self.admixes.items():
             v.findMinutes()
             v.printAdmix()
