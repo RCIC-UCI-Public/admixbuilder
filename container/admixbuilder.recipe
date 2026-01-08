@@ -54,11 +54,15 @@ From: rockylinux:9
       mkdir -p /export/repositories 
       mkdir -p /data/opt/apps
 
+      # /var/lock needs to exist
+      if [ ! -d /var/run/lock ]; then mkdir -p /var/run/lock; fi
+
       dnf -y update --exclude=filesystem
       dnf -y clean all
       /bin/rm -rf /var/cache/dnf/*
 
 
 %files
-      admixprompt.sh /etc/profile.d/admixprompt.sh
+     admixprompt.sh /.singularity.d/env/99-zzadmixprompt.sh
+ 
 
