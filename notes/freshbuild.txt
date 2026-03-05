@@ -1,0 +1,87 @@
+Re-building admixes from a fresh checkout
+
+0. Optional - update Rocky RPMs for rebuild. These are held outside of the container, using the similar logic/mechanism
+   for how OS updates are mirrored on HPC3
+   AS ROOT, on builder-l16 (not in a container)
+   cd /disks/nvme3
+   rclone --config=rclone.conf -v --progress --transfers=16 --checkers=16 --filter-from filter copy rocky-pub: mirror
+
+
+1. Reset the specific container's overlay ZFS file system with 'zfs rollback'
+   example for Phil's 9.7 build: sudo zfs rollback nvme6/builders/ppapadop/basebuild-9.7@yaml2rpm-5-March-2026
+   (takes 10-15 seconds if previous build wrote significant data)
+
+2. Starting the container with appropriate overlay and fuse device mapping.  Use an alias for simplification
+   alias startcontainer='sudo singularity exec --bind=/opt/data/opt:/data/opt:ro,/dev/fuse:/dev/fuse --containall --overlay ${MYOVERLAY} ${BASECONTAINER} /bin/bash -il'
+   
+   Example variables set prior to executing the alias:
+
+   BASECONTAINER=/opt/singularity/containers/admixbuilder-9.7.sif
+   MYOVERLAY=/disks/nvme6/builders/ppapadop/basebuild-9.7
+   startcontainer
+
+2a.  If RPMS have been updated in Step 0, the basecontainer itself should also be updated and then re-snapshotted
+      In the container: 
+
+      yum clean all
+      yum -y update
+      exit
+
+      On Builder-l16
+      sudo zfs snapshot nvme6/builders/ppapadop/basebuild-9.7@yaml2rpm-5-March-2026
+
+3.  Every time you restart the container, you need to re-animate ssh-agent. A script in the overlay file system is good for this
+    for Phil:
+    cd /export/repositories
+    . getset.sh
+
+4.  In general, you want to pull updates in /export/repositories/admixbuilder
+    cd /export/repositories/admixbuilder
+    git pull
+
+    (document the rare condition when yaml2rpm itself needs to be updated)
+    cd /export/repositories/yaml2rpm
+    git pull
+    cd yamlspecs
+    make
+    cd ..
+    make createlocalrepo
+    yum -c yum.conf update
+    (exit the container, and resnapshot)
+    -- End Rare Condition
+
+5. Most of the admixes are not cloned at this stage -- can clone all now. Or simply allow Superbuild to do it.
+   cloning now:
+      cd /export/repositories/admixbuilder
+      make clone
+
+6. Superbuild
+      cd /export/repositories/admixbuilder
+       ./superbuild.sh &> superbuild.out &
+
+    This builds admixes in phases
+    Each phase can build a number of admixes in parallel.
+    The first phase builds: buildtools, cuda, gcc, perl
+    Each admix has its stdout/stderr placed in a file <admix-name>.log in the admixbuilder directory. These can be tailed realtime
+    guage progress
+
+
+7.  Special handling for protected admix
+    You can do the following right after you start superbuild because it will take awhile before it will build the protected-admix.
+    cd /export/repositories/admixbuilder
+    make ADMIXES=protected-admix clone
+    cd /export/repositories/protected-admix
+    mkdir sources
+    cd sources
+    sftp <ucinetid>@access.crsp.uci.edu:/mmfs1/crsp/lab/rcic-admin/share/Software-Downloads/protected-admix
+    get -p *gz
+
+
+
+    
+
+   
+
+
+
+      
