@@ -60,15 +60,20 @@ class App:
         # all found processes
         for line in lines: 
             rpmsize,rpmname = line.split()
-            self.rpmsbuilt[rpmname] = int(rpmsize)
+            self.rpmsbuilt[rpmname] = rpmsize
 
 
     def checkRpms(self):
         for key, value in self.rpmsdb.items():
             if key not in self.rpmsbuilt:
                 print(f"RPM '{key}' was not built.")
-            elif self.rpmsbuilt[key] < int(float(value)*0.98):
-                print(f"Size for RPM '{key}' differs: rpmdb has {value}, built RPM has {self.rpmsbuilt[key]}.")
+            else:
+                # check if newly built RPM size is within 2% of what is recorded in .rpm.*
+                valnew = int(self.rpmsbuilt[key])                 # convert from string
+                value = int(value)                                # convert from string
+                result = (value - valnew)/min(value,valnew) * 100 # use smaller number as a base for stricter check
+                if abs(result) > 2:                               # use 2% as a cutoff 
+                    print(f"{result:6.2f}% difference for RPM '{key}': rpmdb has {value}, built RPM  has {valnew}.")
 
         for key in self.rpmsbuilt.keys():
             if key not in self.rpmsdb:
