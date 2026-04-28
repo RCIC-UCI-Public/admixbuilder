@@ -4,3 +4,8 @@ RELEASE=$(grep ^VERSION_ID= /etc/os-release | cut -d= -f2 | tr -d '"')
 
 export PS1="[(Builder $RELEASE)\\u@\\h \\W]\\$ "
 
+# Make sure a user is set
+if [ "x$USER" == "x" ]; then
+    export USER=root
+fi
+

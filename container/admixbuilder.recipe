@@ -1,6 +1,9 @@
 Bootstrap: docker
+# Uncommment the version you want to build
 #From: rockylinux:8 
 From: rockylinux:9
+#From: rockylinux/rockylinux:10
+
 %runscript
       exec /bin/bash -l "$@"
 %environment
@@ -12,25 +15,31 @@ From: rockylinux:9
       dnf -y install git make rocky-release
       dnf -y --allowerasing install coreutils
       dnf -y install yum-utils
+      # Common across Rocky 8/9/10
+      echo "Installing EPEL repo RPMS, disabled"
+      dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${MAJOR}.noarch.rpm
+      dnf config-manager --set-disabled epel
+
       if [ "$MAJOR" == "8" ]; then
           dnf -y module install python36
-          echo "Installing EPEL repo RPMS, disabled"
-          dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-          dnf config-manager --set-disabled epel
       fi 
       if [ "$MAJOR" == "9" ]; then
           dnf -y install python createrepo_c python3-setuptools 
-          echo "Installing EPEL repo RPMS, disabled"
-          dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-          dnf config-manager --set-disabled epel
           dnf config-manager --set-disabled epel-cisco-openh264
+      fi 
+      if [ "$MAJOR" == "10" ]; then
+          dnf -y install python createrepo_c python3-setuptools 
       fi 
       dnf -y install sudo
       dnf -y install vim vim-enhanced
       dnf -y groupinstall "Development Tools"
       dnf -y groupinstall "Legacy UNIX Compatibility"
       dnf -y install glib2-devel libseccomp-devel libX11-devel
-      dnf -y install ncurses-devel ncurses-devel.i686 glibc-devel.i686 
+      if [ "$MAJOR" == "8" || "$MAJOR" == "9" ]; then
+          dnf -y install ncurses-devel ncurses-devel.i686 glibc-devel.i686 
+      else
+          dnf -y install ncurses-devel 
+      fi
       dnf -y install environment-modules
 
       # Get yumdownloader
@@ -42,7 +51,7 @@ From: rockylinux:9
            yum-config-manager --enable powertools
       fi
       # enable the crb repo
-      if [ "$MAJOR" == "9" ]; then
+      if [ "$MAJOR" == "9" ] || [ "$MAJOR" == "10" ]; then
          echo "Enabling powertools crb repo"
          yum-config-manager --enable crb
       fi

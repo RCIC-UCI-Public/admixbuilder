@@ -9,14 +9,14 @@ On the physical host
 
 2. Build the baseline singularity container. This only needs to be done once for each release
    ```bash
-   export RELEASE=9.5 
-   singularity build --fakeroot admixbuilder-${RELEASE}.sif admixbuilder.recipe  
+   export RELEASE=9.7 
+   sudo singularity build admixbuilder-${RELEASE}.sif admixbuilder.recipe  
    ```
 3. (Optional) install base containter image a common area so that only one copy is required. On builder-l16, this is located
    in ``/opt/singularity/containers`` and is the environment variable CONTAINERS:
 
    ```bash
-   install -m 664 --group builders admixbuilder-${RELEASE}.sif ${CONTAINERS}
+   sudo install -m 664 --group builders admixbuilder-${RELEASE}.sif ${CONTAINERS}
    ``` 
 
 Using a container
@@ -31,7 +31,9 @@ There are two methods of achieving this:
 
   1. `sudo singularity shell ...`
    
-     Really, the only supported method for building using yaml2rpm is to use a subdirectory structure and `sudo`.
+     In reality, **this is the only supported method for building using yaml2rpm**.  A subdirectory subdirectory structure and `sudo`.
+
+
   2. `singularity shell --fakeroot`
 
       To use option 2, only a single image (e.g. via `dd`) is supported, and that still has other issues for mappings.
