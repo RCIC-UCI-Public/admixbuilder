@@ -1,8 +1,8 @@
 Bootstrap: docker
 # Uncommment the version you want to build
 #From: rockylinux:8 
-From: rockylinux:9
-#From: rockylinux/rockylinux:10
+#From: rockylinux:9
+From: rockylinux/rockylinux:10
 
 %runscript
       exec /bin/bash -l "$@"
@@ -35,7 +35,7 @@ From: rockylinux:9
       dnf -y groupinstall "Development Tools"
       dnf -y groupinstall "Legacy UNIX Compatibility"
       dnf -y install glib2-devel libseccomp-devel libX11-devel
-      if [ "$MAJOR" == "8" || "$MAJOR" == "9" ]; then
+      if [ "$MAJOR" == "8" ]  || [ "$MAJOR" == "9" ]; then
           dnf -y install ncurses-devel ncurses-devel.i686 glibc-devel.i686 
       else
           dnf -y install ncurses-devel 
