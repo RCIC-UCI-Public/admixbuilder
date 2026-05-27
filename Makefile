@@ -6,6 +6,9 @@ ANSIBLEDIR = playbooks
 ## Admixes are listed in buildorder.  Lines starting with # are ignored
 BUILDORDER = $(shell cat buildorder | grep -v '^\#')
 
+## Get OS release. Also used in checkRpms
+OSVERSION = $(shell cat /etc/redhat-release | awk '{print $$4}')
+
 ADMIXROOT = ..
 ifeq ($(origin ADMIXES), undefined)
 ADMIXES=$(BUILDORDER)
@@ -55,7 +58,7 @@ time: buildall.log
 	./getTimes buildall.log
 
 admixdb:
-	for am in $(ADMIXES); do make -s -C $(ADMIXROOT)/$$am admixdb | tee $(ADMIXROOT)/$$am/.rpms.$$am; done
+	for am in $(ADMIXES); do make -s -C $(ADMIXROOT)/$$am admixdb | tee $(ADMIXROOT)/$$am/.rpms.$$am.$(OSVERSION); done
 
 check:
 	for am in $(ADMIXES); do  echo $$am; ./checkRpms $$am; done

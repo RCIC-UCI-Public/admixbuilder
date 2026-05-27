@@ -4,6 +4,7 @@ import sys
 import os
 import argparse
 import subprocess
+import re
 
 class App:
     def __init__(self, args=None):
@@ -11,6 +12,23 @@ class App:
         self.rpmsdb = {}     # registered in rpmsdb file
         self.rpmsbuilt = {}  # built by admix
         self.parseArg()
+
+    def findOsVersion(self):
+        # find the current OS. Also used in Makefile.
+        relFile = "/etc/redhat-release"
+        try:
+            with open(relFile, 'r') as f:
+                content = f.read().strip()
+                # Matches the first sequence of numbers optionally separated by a dot (e.g., 9.7 or 10)
+                match = re.search(r'\d+(?:\.\d+)?', content)
+                if match:
+                    self.os_version = match.group()
+                else:
+                    print(f"Could not find a version number in {relFile} file.")
+                    sys.exit(-1)
+        except FileNotFoundError:
+            print(f"Error: {relFile} file does not exist.")
+            sys.exit(-1)
 
     def parseArg(self):
         # process command line arguments 
@@ -22,8 +40,11 @@ class App:
         parser.add_argument("admixname",  action="store", help=helpadmix)
         args = parser.parse_args()
 
+        # find what is the current OS
+        self.findOsVersion()
+
         self.name = args.admixname
-        self.infile = "/export/repositories/%s/.rpms.%s" % (self.name, self.name)
+        self.infile = "/export/repositories/%s/.rpms.%s.%s" % (self.name, self.name, self.os_version)
         self.rpmdir = "/export/repositories/%s/RPMS/*" % (self.name)
         return
 
