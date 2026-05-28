@@ -24,14 +24,15 @@ From: rockylinux/rockylinux:10
           dnf -y module install python36
       fi 
       if [ "$MAJOR" == "9" ]; then
-          dnf -y install python createrepo_c python3-setuptools 
+          dnf -y install python createrepo_c python3-setuptools rpcbind
           dnf config-manager --set-disabled epel-cisco-openh264
       fi 
       if [ "$MAJOR" == "10" ]; then
-          dnf -y install python createrepo_c python3-setuptools 
+          dnf -y install python createrepo_c python3-setuptools rpcbind
       fi 
       dnf -y install sudo
       dnf -y install vim vim-enhanced
+      dnf -y install wget
       dnf -y groupinstall "Development Tools"
       dnf -y groupinstall "Legacy UNIX Compatibility"
       dnf -y install glib2-devel libseccomp-devel libX11-devel
