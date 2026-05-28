@@ -1,0 +1,68 @@
+This file catalogs the changes in software versions, removals, and fundamental changes encountered during
+port to Rocky 10 
+
+buildtools-admix:
+   removed:
+       inteltbb version: "20190605"  #binary distribution incompatible with Rocky 10
+       java 1.8.0                    #old
+ 
+   Fundamental Changes:
+       java 11  - no longer in OS distribution. Build a local version with help of precompiled java for bootstrap
+       java 17  - no longer in OS distribution. Build a local version with help of precompiled java for bootstrap
+
+   Software affected by removals includes, at a minimum:
+      inteltbb removal:
+           bismark_0.22.3-module
+           bismark_0.23.1-module   
+           bowtie2_2.4.1 
+           bowtie2_2.4.1-module 
+           kneaddata_0.10.0-module 
+           loompy_3.0.6-module 
+           velocyto_0.17.17-module
+
+      java 1.8.0 removal:
+           bbmap_38.87-module
+           fastqc_0.11.9-module
+           hdf5_1.10.5_gcc_8.4.0-module
+           hdf5_1.10.5_gcc_8.4.0_openmpi_4.0.3-module
+           hdf5_1.10.5_gcc_system-module
+           hdf5_1.13.1_gcc_8.4.0-module
+           hdf5_1.13.1_gcc_system-module
+           hdf5_1.13.1_gcc_system_openmpi_4.1.1-module
+           kallisto_0.46.2-module
+           kneaddata_0.10.0-module
+           lammps_3Mar2020_gcc_8.4.0-module
+           ncbi-ngs_2.10.2-module
+           ncbi-vdb_2.10.2-module
+           ncl_6.6.2-module
+           netcdf-c_4.7.0_gcc_8.4.0-module
+           netcdf-fortran_4.5.2_gcc_8.4.0
+           picard-tools_1.87-module
+           rosetta_3.13-module
+           trimgalore_0.6.6-module
+           trimgalore_0.6.7-module
+           trimmomatic_0.39-module
+
+foundation-admix:
+
+    Specific versions per OS release:
+      scons: 4.8.1  :  previous version "compiled" by had warnings of fully deprecated interfaces
+       swig: 4.4.1  : 10 only has pcre2, previous version only supports pcre. First pcre2-compatible version is 4.1.0. 
+
+
+mathlibs-admix:
+    
+   removed:
+        mkl 2019.5.281 # Binary RPMS too old for PGP signatures to verify on 10
+
+   Software affected by removals includes, at a minimum:
+        amber_21.12_gcc_11.2.0-module
+        amber_24_gcc_11.2.0-module
+        amber_24_gcc_11.2.0_cuda_11.7.1_openmpi_5.0.1-module 
+        namd_2.14b2_gcc_8.4.0
+        namd_2.14b2_gcc_8.4.0-module
+        namd_2.14b2_gcc_8.4.0_cuda_11.7.1
+        namd_2.14b2_gcc_8.4.0_cuda_11.7.1-module
+        namd_2.14b2_gcc_8.4.0_openmpi_4.0.3
+        namd_2.14b2_gcc_8.4.0_openmpi_4.0.3-module
+        plink_2.00a2.3-module
