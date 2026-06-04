@@ -269,12 +269,14 @@ class Admix(object):
 
         reqlist='<TR><TD bgcolor="%s"><font color="%s">requires:</font>\n  <BR/>' % (self.colorRequiresBG,self.colorSpecs)
         if self.requires is not None:
-           reqlist="%s%s" % (reqlist, "\n  <BR/>".join(self.requires))
+           filtered_requires = [item for item in self.requires if "/" in item]
+           reqlist="%s%s" % (reqlist, "\n  <BR/>".join(filtered_requires))
         reqlist = reqlist + "\n</TD></TR>\n"
 
         provlist='<TR><TD bgcolor="%s"><font color="%s">provides:</font>\n  <BR/>' % (self.colorProvidesBG,self.colorSpecs)
         if self.provides is not None:
-           provlist="%s%s" % (provlist, "\n  <BR/>".join(self.provides))
+           filtered_provides = [item for item in self.provides if "/" in item]
+           provlist="%s%s" % (provlist, "\n  <BR/>".join(filtered_provides))
         provlist = provlist + "\n</TD></TR>\n"
 
         txt += '%s%s%s%s]' % (self.namepattern % (self.colorLabelBG,self.name), reqlist, provlist,self.labeltrailer)
