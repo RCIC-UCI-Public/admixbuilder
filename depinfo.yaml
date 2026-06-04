@@ -23,14 +23,6 @@ yaml2rpm:
     requires:
     provides:
       - rcic-module-path
-  rcic-dev-repo:
-    admix: yaml2rpm
-    set: base
-    version: 0.9
-    category: False
-    requires:
-    provides:
-      - rcic-dev-repo
   system:
     - platform-python-devel
 buildtools-admix:
@@ -140,14 +132,6 @@ buildtools-admix:
     requires:
     provides:
       - singularity/3.7.2
-  bindfs:
-    admix: buildtools-admix
-    set: versions
-    version: 1.17.7
-    category: False
-    requires:
-    provides:
-      - bindfs
   tk_8.6.9:
     admix: buildtools-admix
     set: versions
@@ -181,6 +165,14 @@ buildtools-admix:
     requires:
     provides:
       - tcl/8.6.9
+  bindfs:
+    admix: buildtools-admix
+    set: versions
+    version: 1.17.7
+    category: False
+    requires:
+    provides:
+      - bindfs
   java17-module:
     admix: buildtools-admix
     set: centos8
@@ -304,6 +296,14 @@ buildtools-admix:
     requires:
     provides:
       - cudasdk/22.9
+  rclone:
+    admix: buildtools-admix
+    set: 2023
+    version: 1.70.3
+    category: False
+    requires:
+    provides:
+      - rclone
   go_1.20.4:
     admix: buildtools-admix
     set: 2023
@@ -400,6 +400,23 @@ buildtools-admix:
     requires:
     provides:
       - go/1.22.3
+  apptainer_1.4.5:
+    admix: buildtools-admix
+    set: 2025
+    version: 1.4.5
+    category: False
+    requires:
+      - go/1.25.5
+    provides:
+      - apptainer_1.4.5
+  apptainer_1.4.5-module:
+    admix: buildtools-admix
+    set: 2025
+    version: 1.4.5
+    category: TOOLS
+    requires:
+    provides:
+      - apptainer/1.4.5
   intel_2025.1.0-module:
     admix: buildtools-admix
     set: 2025
@@ -416,6 +433,38 @@ buildtools-admix:
     requires:
     provides:
       - intel-tbb/2022.1
+  go_1.25.5:
+    admix: buildtools-admix
+    set: 2025
+    version: 1.25.5
+    category: False
+    requires:
+    provides:
+      - go_1.25.5
+  go_1.25.5-module:
+    admix: buildtools-admix
+    set: 2025
+    version: 1.25.5
+    category: LANGUAGES
+    requires:
+    provides:
+      - go/1.25.5
+  cmake_4.2.3:
+    admix: buildtools-admix
+    set: 2026
+    version: 4.2.3
+    category: False
+    requires:
+    provides:
+      - cmake_4.2.3
+  cmake_4.2.3-module:
+    admix: buildtools-admix
+    set: 2026
+    version: 4.2.3
+    category: TOOLS
+    requires:
+    provides:
+      - cmake/4.2.3
 gcc-admix:
   system:
     - glibc-devel.i686
@@ -657,6 +706,84 @@ gcc-admix:
       - gcc/11.2.0
     provides:
       - gcc_11.2.0-mpfr
+  gcc_15.2.0-gmp:
+    admix: gcc-admix
+    set: gcc15
+    version: 6.3.0
+    category: False
+    requires:
+      - gcc/15.2.0
+    provides:
+      - gcc_15.2.0-gmp
+  gcc_15.2.0-libiconv:
+    admix: gcc-admix
+    set: gcc15
+    version: 1.18
+    category: False
+    requires:
+      - gcc/15.2.0
+    provides:
+      - gcc_15.2.0-libiconv
+  gcc_15.2.0-mpc:
+    admix: gcc-admix
+    set: gcc15
+    version: 1.3.1
+    category: False
+    requires:
+      - gcc/15.2.0
+    provides:
+      - gcc_15.2.0-mpc
+  gcc_15.2.0-annobin:
+    admix: gcc-admix
+    set: gcc15
+    version: 12.98
+    category: False
+    requires:
+      - gcc/15.2.0
+    provides:
+      - gcc_15.2.0-annobin
+  gcc_15.2.0-binutils-bootstrap:
+    admix: gcc-admix
+    set: gcc15
+    version: 2.45
+    category: False
+    requires:
+    provides:
+      - GCC_15.2.0-BINUTILS
+  gcc_15.2.0:
+    admix: gcc-admix
+    set: gcc15
+    version: 15.2.0
+    category: False
+    requires:
+    provides:
+      - gcc_15.2.0
+  gcc_15.2.0-module:
+    admix: gcc-admix
+    set: gcc15
+    version: 15.2.0
+    category: COMPILERS
+    requires:
+    provides:
+      - gcc/15.2.0
+  gcc_15.2.0-binutils:
+    admix: gcc-admix
+    set: gcc15
+    version: 2.45
+    category: False
+    requires:
+      - gcc/15.2.0
+    provides:
+      - GCC_15.2.0-BINUTILS
+  gcc_15.2.0-mpfr:
+    admix: gcc-admix
+    set: gcc15
+    version: 4.2.2
+    category: False
+    requires:
+      - gcc/15.2.0
+    provides:
+      - gcc_15.2.0-mpfr
 foundation-admix:
   system:
     - gcc
@@ -670,6 +797,7 @@ foundation-admix:
     - openssl-devel
     - libssh-devel
     - libcurl-devel
+    - gettext
   pigz_2.6:
     admix: foundation-admix
     set: 2024
@@ -686,38 +814,6 @@ foundation-admix:
     requires:
     provides:
       - pigz/2.6
-  scons_4.2.0:
-    admix: foundation-admix
-    set: 2024
-    version: 4.2.0
-    category: False
-    requires:
-    provides:
-      - scons_4.2.0
-  scons_4.2.0-module:
-    admix: foundation-admix
-    set: 2024
-    version: 4.2.0
-    category: TOOLS
-    requires:
-    provides:
-      - scons/4.2.0
-  swig_4.0.2:
-    admix: foundation-admix
-    set: 2024
-    version: 4.0.2
-    category: False
-    requires:
-    provides:
-      - swig_4.0.2
-  swig_4.0.2-module:
-    admix: foundation-admix
-    set: 2024
-    version: 4.0.2
-    category: TOOLS
-    requires:
-    provides:
-      - swig/4.0.2
   git-lfs_3.5.1:
     admix: foundation-admix
     set: 2024
@@ -752,6 +848,38 @@ foundation-admix:
       - git-lfs/3.5.1
     provides:
       - foundation/v8
+  swig_4.0.2:
+    admix: foundation-admix
+    set: 2024
+    version: 4.0.2
+    category: False
+    requires:
+    provides:
+      - swig_4.0.2
+  swig_4.0.2-module:
+    admix: foundation-admix
+    set: 2024
+    version: 4.0.2
+    category: TOOLS
+    requires:
+    provides:
+      - swig/4.0.2
+  scons_4.2.0:
+    admix: foundation-admix
+    set: 2024
+    version: 4.2.0
+    category: False
+    requires:
+    provides:
+      - scons_4.2.0
+  scons_4.2.0-module:
+    admix: foundation-admix
+    set: 2024
+    version: 4.2.0
+    category: TOOLS
+    requires:
+    provides:
+      - scons/4.2.0
   git_2.45.1:
     admix: foundation-admix
     set: 2024
@@ -979,6 +1107,83 @@ mathlibs-admix:
     requires:
     provides:
       - mkl/2024.0.1
+  mkl_2025.1.0-module:
+    admix: mathlibs-admix
+    set: 2025
+    version: 2025.1.0
+    category: LIBRARIES
+    requires:
+    provides:
+      - mkl/2025.1.0
+  OpenBLAS_0.3.31:
+    admix: mathlibs-admix
+    set: 2026
+    version: 0.3.31
+    category: False
+    requires:
+    provides:
+      - OpenBLAS_0.3.31
+  OpenBLAS_0.3.31-module:
+    admix: mathlibs-admix
+    set: 2026
+    version: 0.3.31
+    category: LIBRARIES
+    requires:
+    provides:
+      - OpenBLAS/0.3.31
+  glpk_5.0_gcc_15.2.0:
+    admix: mathlibs-admix
+    set: 2026
+    version: 5.0
+    category: False
+    requires:
+      - gcc/15.2.0
+    provides:
+      - glpk_5.0_gcc_15.2.0
+  glpk_5.0_gcc_15.2.0-module:
+    admix: mathlibs-admix
+    set: 2026
+    version: 5.0
+    category: GENOMICS
+    requires:
+      - gcc/15.2.0
+    provides:
+      - glpk/5.0/gcc.15.2.0
+  gsl_2.8_gcc_15.2.0:
+    admix: mathlibs-admix
+    set: 2026
+    version: 2.8
+    category: False
+    requires:
+      - gcc/15.2.0
+    provides:
+      - gsl_2.8_gcc_15.2.0
+  gsl_2.8_gcc_15.2.0-module:
+    admix: mathlibs-admix
+    set: 2026
+    version: 2.8
+    category: LIBRARIES
+    requires:
+      - gcc/15.2.0
+    provides:
+      - gsl/2.8/gcc.15.2.0
+  eigen_5.0.1:
+    admix: mathlibs-admix
+    set: 2026
+    version: 5.0.1
+    category: False
+    requires:
+      - cmake/3.30.2
+    provides:
+      - eigen_5.0.1
+  eigen_5.0.1-module:
+    admix: mathlibs-admix
+    set: 2026
+    version: 5.0.1
+    category: LIBRARIES
+    requires:
+    provides:
+      - eigen/5.0.1
 systools-admix:
   system:
     - perl-JSON
@@ -1249,14 +1454,6 @@ systools-admix:
     requires:
     provides:
       - genders
-  rclone:
-    admix: systools-admix
-    set: 2023
-    version: 1.69.0
-    category: False
-    requires:
-    provides:
-      - rclone
   awscli_2.11.21:
     admix: systools-admix
     set: 2023
@@ -1273,6 +1470,46 @@ systools-admix:
     requires:
     provides:
       - awscli/2.11.21
+  python3-charset_normalizer:
+    admix: systools-admix
+    set: 2025
+    version: 3.4.4
+    category: False
+    requires:
+    provides:
+      - python3-charset_normalizer
+  python3-certifi:
+    admix: systools-admix
+    set: 2025
+    version: 2025.10.5
+    category: False
+    requires:
+    provides:
+      - python3-certifi
+  python3-requests:
+    admix: systools-admix
+    set: 2025
+    version: 2.32.5
+    category: False
+    requires:
+    provides:
+      - python3-requests
+  python3-hvac:
+    admix: systools-admix
+    set: 2025
+    version: 2.3.0
+    category: False
+    requires:
+    provides:
+      - python3-hvac
+  python3-ansible_modules_hashivault:
+    admix: systools-admix
+    set: 2025
+    version: 5.4.0
+    category: False
+    requires:
+    provides:
+      - python3-ansible_modules_hashivault
 cuda-admix:
   system:
     - libaio-devel
@@ -1459,14 +1696,99 @@ cuda-admix:
     requires:
     provides:
       - cudnn-download_8.9.6.50
-  cuda-driver_12.2.0:
+  cuda-driver_13.0.1:
     admix: cuda-admix
-    set: driver
-    version: 12.2.0
+    set: 130
+    version: 13.0.1
     category: False
     requires:
     provides:
-      - cuda-driver_12.2.0
+      - cuda-driver_13.0.1
+  gdrcopy_2.5.1:
+    admix: cuda-admix
+    set: 130
+    version: 2.5.1
+    category: False
+    requires:
+      - cuda/13.0.1
+    provides:
+      - gdrcopy_2.5.1
+  gdrcopy_2.5.1-module:
+    admix: cuda-admix
+    set: 130
+    version: 2.5.1
+    category: LIBRARIES
+    requires:
+    provides:
+      - gdrcopy/2.5.1
+  ffmpeg_8.0.1:
+    admix: cuda-admix
+    set: 130
+    version: 8.0.1
+    category: False
+    requires:
+      - cmake/4.2.3
+      - gcc/15.2.0
+      - cuda/13.0.1
+      - ffnvcodec/13.0.19.0
+    provides:
+      - ffmpeg_8.0.1
+  ffmpeg_8.0.1-module:
+    admix: cuda-admix
+    set: 130
+    version: 8.0.1
+    category: LIBRARIES
+    requires:
+    provides:
+      - ffmpeg/8.0.1
+  cuda-toolkit_13.0.1:
+    admix: cuda-admix
+    set: 130
+    version: 13.0.1
+    category: False
+    requires:
+    provides:
+      - cuda-toolkit_13.0.1
+  cuda_13.0.1-module:
+    admix: cuda-admix
+    set: 130
+    version: 13.0.1
+    category: TOOLS
+    requires:
+    provides:
+      - cuda/13.0.1
+  cuda-toolkit-static-libs_13.0.1:
+    admix: cuda-admix
+    set: 130
+    version: 13.0.1
+    category: False
+    requires:
+    provides:
+      - cuda-toolkit-static-libs_13.0.1
+  cuda-toolkit-nsight_13.0.1:
+    admix: cuda-admix
+    set: 130
+    version: 13.0.1
+    category: False
+    requires:
+    provides:
+      - cuda-toolkit-nsight_13.0.1
+  ffnvcodec_13.0.19.0:
+    admix: cuda-admix
+    set: 130
+    version: 13.0.19.0
+    category: False
+    requires:
+    provides:
+      - ffnvcodec_13.0.19.0
+  ffnvcodec_13.0.19.0-module:
+    admix: cuda-admix
+    set: 130
+    version: 13.0.19.0
+    category: LIBRARIES
+    requires:
+    provides:
+      - ffnvcodec/13.0.19.0
 buildlibs-admix:
   ucx_1.12.0:
     admix: buildlibs-admix
@@ -2119,7 +2441,7 @@ buildlibs-admix:
     requires:
       - cmake/3.30.2
       - ninja/1.10.2
-      - gcc/11.2.0
+      - gcc/system
     provides:
       - llvm_18.1.4
   llvm_18.1.4-module:
@@ -2128,9 +2450,216 @@ buildlibs-admix:
     version: 18.1.4
     category: COMPILERS
     requires:
-      - gcc/11.2.0
+      - gcc/system
     provides:
       - llvm/18.1.4
+  boost_1.90.0_gcc_15.2.0:
+    admix: buildlibs-admix
+    set: 2026
+    version: 1.90.0
+    category: False
+    requires:
+      - openmpi/5.0.9/gcc.15.2.0
+    provides:
+      - boost_1.90.0_gcc_15.2.0
+  boost_1.90.0_gcc_15.2.0-module:
+    admix: buildlibs-admix
+    set: 2026
+    version: 1.90.0
+    category: TOOLS
+    requires:
+      - openmpi/5.0.9/gcc.15.2.0
+    provides:
+      - boost/1.90.0/gcc.15.2.0
+  clang_20.1.8:
+    admix: buildlibs-admix
+    set: 2026
+    version: 20.1.8
+    category: False
+    requires:
+      - cmake/3.30.2
+      - ninja/1.10.2
+      - llvm/20.1.8
+    provides:
+      - clang_20.1.8
+  clang_20.1.8-module:
+    admix: buildlibs-admix
+    set: 2026
+    version: 20.1.8
+    category: COMPILERS
+    requires:
+      - llvm/20.1.8
+    provides:
+      - clang/20.1.8
+  geos_3.14.1_gcc_15.2.0:
+    admix: buildlibs-admix
+    set: 2026
+    version: 3.14.1
+    category: False
+    requires:
+      - gcc/15.2.0
+      - cmake/3.30.2
+    provides:
+      - geos_3.14.1_gcc_15.2.0
+  geos_3.14.1_gcc_15.2.0-module:
+    admix: buildlibs-admix
+    set: 2026
+    version: 3.14.1
+    category: TOOLS
+    requires:
+      - gcc/15.2.0
+    provides:
+      - geos/3.14.1/gcc.15.2.0
+  fftw_3.3.10_gcc_15.2.0:
+    admix: buildlibs-admix
+    set: 2026
+    version: 3.3.10
+    category: False
+    requires:
+      - gcc/15.2.0
+    provides:
+      - fftw_3.3.10_gcc_15.2.0
+  fftw_3.3.10_gcc_15.2.0-module:
+    admix: buildlibs-admix
+    set: 2026
+    version: 3.3.10
+    category: TOOLS
+    requires:
+      - gcc/15.2.0
+    provides:
+      - fftw/3.3.10/gcc.15.2.0
+  fftw_3.3.10_gcc_15.2.0_openmpi_5.0.9:
+    admix: buildlibs-admix
+    set: 2026
+    version: 3.3.10
+    category: False
+    requires:
+      - openmpi/5.0.9/gcc.15.2.0
+    provides:
+      - fftw_3.3.10_gcc_15.2.0_openmpi_5.0.9
+  fftw_3.3.10_gcc_15.2.0_openmpi_5.0.9-module:
+    admix: buildlibs-admix
+    set: 2026
+    version: 3.3.10
+    category: TOOLS
+    requires:
+      - openmpi/5.0.9/gcc.15.2.0
+    provides:
+      - fftw/3.3.10/gcc.15.2.0-openmpi.5.0.9
+  libgit2_1.8.5:
+    admix: buildlibs-admix
+    set: 2026
+    version: 1.8.5
+    category: False
+    requires:
+      - cmake/3.30.2
+      - gcc/15.2.0
+    provides:
+      - libgit2_1.8.5
+  libgit2_1.8.5-module:
+    admix: buildlibs-admix
+    set: 2026
+    version: 1.8.5
+    category: TOOLS
+    requires:
+    provides:
+      - libgit2/1.8.5
+  ucx_1.20.0:
+    admix: buildlibs-admix
+    set: 2026
+    version: 1.20.0
+    category: False
+    requires:
+    provides:
+      - ucx_1.20.0
+  ucx_1.20.0-module:
+    admix: buildlibs-admix
+    set: 2026
+    version: 1.20.0
+    category: LIBRARIES
+    requires:
+    provides:
+      - ucx/1.20.0/gcc.system
+  ucx_1.20.0_cuda_13.0.1:
+    admix: buildlibs-admix
+    set: 2026
+    version: 1.20.0
+    category: False
+    requires:
+      - gdrcopy/2.5.1
+      - cuda/13.0.1
+    provides:
+      - ucx_1.20.0_cuda_13.0.1
+  ucx_1.20.0_cuda_13.0.1-module:
+    admix: buildlibs-admix
+    set: 2026
+    version: 1.20.0
+    category: LIBRARIES
+    requires:
+    provides:
+      - ucx/1.20.0/cuda.13.0.1
+  openmpi_5.0.9_gcc_15.2.0:
+    admix: buildlibs-admix
+    set: 2026
+    version: 5.0.9
+    category: False
+    requires:
+      - gcc/15.2.0
+      - singularity/3.7.2
+      - ucx/1.20.0/gcc.system
+    provides:
+      - openmpi_5.0.9_gcc_15.2.0
+  openmpi_5.0.9_gcc_15.2.0-module:
+    admix: buildlibs-admix
+    set: 2026
+    version: 5.0.9
+    category: COMPILERS
+    requires:
+      - gcc/15.2.0
+    provides:
+      - openmpi/5.0.9/gcc.15.2.0
+  openmpi_5.0.9_gcc_15.2.0_cuda_13.0.1:
+    admix: buildlibs-admix
+    set: 2026
+    version: 5.0.9
+    category: False
+    requires:
+      - gcc/15.2.0
+      - cuda/13.0.1
+      - singularity/3.7.2
+      - ucx/1.20.0/cuda.13.0.1
+    provides:
+      - openmpi_5.0.9_gcc_15.2.0_cuda_13.0.1
+  openmpi_5.0.9_gcc_15.2.0_cuda_13.0.1-module:
+    admix: buildlibs-admix
+    set: 2026
+    version: 5.0.9
+    category: COMPILERS
+    requires:
+      - gcc/15.2.0
+      - cuda/13.0.1
+    provides:
+      - openmpi/5.0.9/gcc.15.2.0-cuda.13.0.1
+  llvm_20.1.8:
+    admix: buildlibs-admix
+    set: 2026
+    version: 20.1.8
+    category: False
+    requires:
+      - cmake/3.30.2
+      - ninja/1.10.2
+      - gcc/system
+    provides:
+      - llvm_20.1.8
+  llvm_20.1.8-module:
+    admix: buildlibs-admix
+    set: 2026
+    version: 20.1.8
+    category: COMPILERS
+    requires:
+      - gcc/system
+    provides:
+      - llvm/20.1.8
 fileformats-admix:
   system:
     - gcc-gfortran
@@ -2595,6 +3124,116 @@ fileformats-admix:
       - openmpi/5.0.1/gcc.11.2.0
     provides:
       - hdf5/1.14.1/gcc.11.2.0-openmpi.5.0.1
+  hdf5_2.0.0_gcc_15.2.0:
+    admix: fileformats-admix
+    set: 2026
+    version: 2.0.0
+    category: False
+    requires:
+      - cmake/3.30.2
+      - java/17
+      - gcc/15.2.0
+    provides:
+      - hdf5_2.0.0_gcc_15.2.0
+  hdf5_2.0.0_gcc_15.2.0-module:
+    admix: fileformats-admix
+    set: 2026
+    version: 2.0.0
+    category: TOOLS
+    requires:
+      - java/17
+      - gcc/15.2.0
+    provides:
+      - hdf5/2.0.0/gcc.15.2.0
+  hdf5_2.0.0_gcc_15.2.0_openmpi_5.0.9:
+    admix: fileformats-admix
+    set: 2026
+    version: 2.0.0
+    category: False
+    requires:
+      - cmake/3.30.2
+      - java/17
+      - openmpi/5.0.9/gcc.15.2.0
+    provides:
+      - hdf5_2.0.0_gcc_15.2.0_openmpi_5.0.9
+  hdf5_2.0.0_gcc_15.2.0_openmpi_5.0.9-module:
+    admix: fileformats-admix
+    set: 2026
+    version: 2.0.0
+    category: TOOLS
+    requires:
+      - java/17
+      - openmpi/5.0.9/gcc.15.2.0
+    provides:
+      - hdf5/2.0.0/gcc.15.2.0-openmpi.5.0.9
+  netcdf-c_4.10.0_gcc_15.2.0:
+    admix: fileformats-admix
+    set: 2026
+    version: 4.10.0
+    category: False
+    requires:
+      - hdf5/2.0.0/gcc.15.2.0
+      - gcc/15.2.0
+    provides:
+      - netcdf-c_4.10.0_gcc_15.2.0
+  netcdf-c_4.10.0_gcc_15.2.0-module:
+    admix: fileformats-admix
+    set: 2026
+    version: 4.10.0
+    category: TOOLS
+    requires:
+      - hdf5/2.0.0/gcc.15.2.0
+      - gcc/15.2.0
+    provides:
+      - netcdf-c/4.10.0/gcc.15.2.0
+  netcdf-fortran_4.6.2_gcc_15.2.0:
+    admix: fileformats-admix
+    set: 2026
+    version: 4.6.2
+    category: False
+    requires:
+      - netcdf-c/4.10.0/gcc.15.2.0
+    provides:
+      - netcdf-fortran_4.6.2_gcc_15.2.0
+  udunits_2.2.28_gcc_15.2.0:
+    admix: fileformats-admix
+    set: 2026
+    version: 2.2.28
+    category: False
+    requires:
+      - gcc/15.2.0
+    provides:
+      - udunits_2.2.28_gcc_15.2.0
+  udunits_2.2.28_gcc_15.2.0-module:
+    admix: fileformats-admix
+    set: 2026
+    version: 2.2.28
+    category: TOOLS
+    requires:
+      - gcc/15.2.0
+    provides:
+      - udunits/2.2.28/gcc.15.2.0
+  hdf5_2.0.0_gcc_system:
+    admix: fileformats-admix
+    set: 2026-gccsys
+    version: 2.0.0
+    category: False
+    requires:
+      - cmake/3.30.2
+      - java/17
+      - gcc/system
+    provides:
+      - hdf5_2.0.0_gcc_system
+  hdf5_2.0.0_gcc_system-module:
+    admix: fileformats-admix
+    set: 2026-gccsys
+    version: 2.0.0
+    category: TOOLS
+    requires:
+      - java/17
+      - gcc/system
+    provides:
+      - hdf5/2.0.0/gcc.system
 python-admix:
   system:
     - atlas-devel
@@ -2619,15 +3258,6 @@ python-admix:
     - libtiff-devel
     - lcms2-devel
     - libwebp-devel
-  python_2.7.17-virtualenv:
-    admix: python-admix
-    set: 217
-    version: 20.0.10
-    category: False
-    requires:
-      - python/2.7.17
-    provides:
-      - python_2.7.17-virtualenv
   python_2.7.17-pyyaml:
     admix: python-admix
     set: 217
@@ -3787,7 +4417,7 @@ python-admix:
   python_3.10.2-typing_extensions:
     admix: python-admix
     set: 310
-    version: 4.1.1
+    version: 4.3.0
     category: False
     requires:
       - python/3.10.2
@@ -4348,6 +4978,15 @@ python-admix:
       - python/3.10.2
     provides:
       - python_3.10.2-optree
+  python_3.10.2-markupsafe:
+    admix: python-admix
+    set: 310
+    version: 2.1.5
+    category: False
+    requires:
+      - python/3.10.2
+    provides:
+      - python_3.10.2-markupsafe
   python_3.10.2-jinja2:
     admix: python-admix
     set: 310
@@ -4654,6 +5293,1020 @@ python-admix:
       - python/3.10.2
     provides:
       - python_3.10.2-filelock
+  python_3.14.3-platformdirs:
+    admix: python-admix
+    set: 314
+    version: 4.5.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-platformdirs
+  python_3.14.3-distlib:
+    admix: python-admix
+    set: 314
+    version: 0.4.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-distlib
+  python_3.14.3-virtualenv:
+    admix: python-admix
+    set: 314
+    version: 20.36.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-virtualenv
+  python_3.14.3-pyyaml:
+    admix: python-admix
+    set: 314
+    version: 6.0.3
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pyyaml
+  python_3.14.3-sqlalchemy:
+    admix: python-admix
+    set: 314
+    version: 2.0.46
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-sqlalchemy
+  python_3.14.3-pytz:
+    admix: python-admix
+    set: 314
+    version: 2025.2
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pytz
+  python_3.14.3-graphviz:
+    admix: python-admix
+    set: 314
+    version: 0.21
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-graphviz
+  python_3.14.3-future:
+    admix: python-admix
+    set: 314
+    version: 1.0.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-future
+  python_3.14.3-pycparser:
+    admix: python-admix
+    set: 314
+    version: 3.00
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pycparser
+  python_3.14.3-cffi:
+    admix: python-admix
+    set: 314
+    version: 2.0.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-cffi
+  python_3.14.3-urllib3:
+    admix: python-admix
+    set: 314
+    version: 2.6.3
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-urllib3
+  python_3.14.3-chardet:
+    admix: python-admix
+    set: 314
+    version: 5.2.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-chardet
+  python_3.14.3-certifi:
+    admix: python-admix
+    set: 314
+    version: 2026.1.4
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-certifi
+  python_3.14.3-idna:
+    admix: python-admix
+    set: 314
+    version: 3.11
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-idna
+  python_3.14.3-requests:
+    admix: python-admix
+    set: 314
+    version: 2.32.5
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-requests
+  python_3.14.3-tqdm:
+    admix: python-admix
+    set: 314
+    version: 4.67.2
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-tqdm
+  python_3.14.3-ruamel.yaml.clib:
+    admix: python-admix
+    set: 314
+    version: 0.2.15
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-ruamel.yaml.clib
+  python_3.14.3-ruamel.yaml:
+    admix: python-admix
+    set: 314
+    version: 0.19.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-ruamel.yaml
+  python_3.14.3-pandas:
+    admix: python-admix
+    set: 314
+    version: 3.0.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pandas
+  python_3.14.3-threadpoolctl:
+    admix: python-admix
+    set: 314
+    version: 3.6.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-threadpoolctl
+  python_3.14.3-scikit-learn:
+    admix: python-admix
+    set: 314
+    version: 1.8.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-scikit-learn
+  python_3.14.3-mypy_extensions:
+    admix: python-admix
+    set: 314
+    version: 1.1.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-mypy_extensions
+  python_3.14.3-typing_extensions:
+    admix: python-admix
+    set: 314
+    version: 4.15.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-typing_extensions
+  python_3.14.3-mypy:
+    admix: python-admix
+    set: 314
+    version: 1.19.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-mypy
+  python_3.14.3-cycler:
+    admix: python-admix
+    set: 314
+    version: 0.12.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-cycler
+  python_3.14.3-kiwisolver:
+    admix: python-admix
+    set: 314
+    version: 1.4.9
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-kiwisolver
+  python_3.14.3-pillow:
+    admix: python-admix
+    set: 314
+    version: 12.1.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pillow
+  python_3.14.3-fonttools:
+    admix: python-admix
+    set: 314
+    version: 4.61.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-fonttools
+  python_3.14.3-contourpy:
+    admix: python-admix
+    set: 314
+    version: 1.3.3
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-contourpy
+  python_3.14.3-matplotlib:
+    admix: python-admix
+    set: 314
+    version: 3.10.8
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-matplotlib
+  python_3.14.3-msgpack:
+    admix: python-admix
+    set: 314
+    version: 1.1.2
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-msgpack
+  python_3.14.3-biopython:
+    admix: python-admix
+    set: 314
+    version: 1.86
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-biopython
+  python_3.14.3-decorator:
+    admix: python-admix
+    set: 314
+    version: 5.2.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-decorator
+  python_3.14.3-networkx:
+    admix: python-admix
+    set: 314
+    version: 3.6.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-networkx
+  python_3.14.3-dill:
+    admix: python-admix
+    set: 314
+    version: 0.4.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-dill
+  python_3.14.3-pox:
+    admix: python-admix
+    set: 314
+    version: 0.3.7
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pox
+  python_3.14.3-multiprocess:
+    admix: python-admix
+    set: 314
+    version: 0.70.19
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-multiprocess
+  python_3.14.3-psutil:
+    admix: python-admix
+    set: 314
+    version: 7.2.2
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-psutil
+  python_3.14.3-mako:
+    admix: python-admix
+    set: 314
+    version: 1.3.10
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-mako
+  python_3.14.3-traitlets:
+    admix: python-admix
+    set: 314
+    version: 5.14.3
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-traitlets
+  python_3.14.3-pygments:
+    admix: python-admix
+    set: 314
+    version: 2.19.2
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pygments
+  python_3.14.3-ptyprocess:
+    admix: python-admix
+    set: 314
+    version: 0.7.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-ptyprocess
+  python_3.14.3-pexpect:
+    admix: python-admix
+    set: 314
+    version: 4.9.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pexpect
+  python_3.14.3-wcwidth:
+    admix: python-admix
+    set: 314
+    version: 0.6.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-wcwidth
+  python_3.14.3-prompt_toolkit:
+    admix: python-admix
+    set: 314
+    version: 3.0.52
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-prompt_toolkit
+  python_3.14.3-asttokens:
+    admix: python-admix
+    set: 314
+    version: 3.0.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-asttokens
+  python_3.14.3-executing:
+    admix: python-admix
+    set: 314
+    version: 2.2.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-executing
+  python_3.14.3-pure_eval:
+    admix: python-admix
+    set: 314
+    version: 0.2.3
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pure_eval
+  python_3.14.3-stack_data:
+    admix: python-admix
+    set: 314
+    version: 0.6.3
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-stack_data
+  python_3.14.3-ipython-pygments-lexers:
+    admix: python-admix
+    set: 314
+    version: 1.1.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-ipython-pygments-lexers
+  python_3.14.3-parso:
+    admix: python-admix
+    set: 314
+    version: 0.8.6
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-parso
+  python_3.14.3-jedi:
+    admix: python-admix
+    set: 314
+    version: 0.19.2
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-jedi
+  python_3.14.3-matplotlib-inline:
+    admix: python-admix
+    set: 314
+    version: 0.2.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-matplotlib-inline
+  python_3.14.3-ipython:
+    admix: python-admix
+    set: 314
+    version: 9.10.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-ipython
+  python_3.14.3-line_profiler:
+    admix: python-admix
+    set: 314
+    version: 5.0.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-line_profiler
+  python_3.14.3-memory_profiler:
+    admix: python-admix
+    set: 314
+    version: 0.61.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-memory_profiler
+  python_3.14.3-h5py:
+    admix: python-admix
+    set: 314
+    version: 3.15.1
+    category: False
+    requires:
+      - hdf5/2.0.0/gcc.system
+      - python/3.14.3
+    provides:
+      - python_3.14.3-h5py
+  python_3.14.3-attrs:
+    admix: python-admix
+    set: 314
+    version: 25.4.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-attrs
+  python_3.14.3-iniconfig:
+    admix: python-admix
+    set: 314
+    version: 2.3.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-iniconfig
+  python_3.14.3-pytest:
+    admix: python-admix
+    set: 314
+    version: 9.0.2
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pytest
+  python_3.14.3-pluggy:
+    admix: python-admix
+    set: 314
+    version: 1.6.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pluggy
+  python_3.14.3-sortedcontainers:
+    admix: python-admix
+    set: 314
+    version: 2.4.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-sortedcontainers
+  python_3.14.3-hypothesis:
+    admix: python-admix
+    set: 314
+    version: 6.151.6
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-hypothesis
+  python_3.14.3-flit:
+    admix: python-admix
+    set: 314
+    version: 3.12.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-flit
+  python_3.14.3-flit_core:
+    admix: python-admix
+    set: 314
+    version: 3.12.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-flit_core
+  python_3.14.3-docutils:
+    admix: python-admix
+    set: 314
+    version: 0.22.4
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-docutils
+  python_3.14.3-click:
+    admix: python-admix
+    set: 314
+    version: 8.3.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-click
+  python_3.14.3-numpy-groupies:
+    admix: python-admix
+    set: 314
+    version: 0.11.3
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-numpy-groupies
+  python_3.14.3-llvmlite:
+    admix: python-admix
+    set: 314
+    version: 0.46.0
+    category: False
+    requires:
+      - llvm/20.1.8
+      - gcc/system
+      - python/3.14.3
+    provides:
+      - python_3.14.3-llvmlite
+  python_3.14.3-numba:
+    admix: python-admix
+    set: 314
+    version: 0.63.1
+    category: False
+    requires:
+      - gcc/system
+      - python/3.14.3
+      - intel-tbb/2022.1
+    provides:
+      - python_3.14.3-numba
+  python_3.14.3-sympy:
+    admix: python-admix
+    set: 314
+    version: 1.14.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-sympy
+  python_3.14.3-mpmath:
+    admix: python-admix
+    set: 314
+    version: 1.3.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-mpmath
+  python_3.14.3-gpustat:
+    admix: python-admix
+    set: 314
+    version: 1.1.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-gpustat
+  python_3.14.3-blessed:
+    admix: python-admix
+    set: 314
+    version: 1.30
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-blessed
+  python_3.14.3-nvidia-ml-py:
+    admix: python-admix
+    set: 314
+    version: 13.590.48
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-nvidia-ml-py
+  python_3.14.3-pycuda:
+    admix: python-admix
+    set: 314
+    version: 2026.1
+    category: False
+    requires:
+      - python/3.14.3
+      - cuda/13.0.1
+    provides:
+      - python_3.14.3-pycuda
+  python_3.14.3-colorama:
+    admix: python-admix
+    set: 314
+    version: 0.4.6
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-colorama
+  python_3.14.3-pretty_errors:
+    admix: python-admix
+    set: 314
+    version: 1.2.25
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pretty_errors
+  python_3.14.3-rich:
+    admix: python-admix
+    set: 314
+    version: 14.3.2
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-rich
+  python_3.14.3-optree:
+    admix: python-admix
+    set: 314
+    version: 0.18.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-optree
+  python_3.14.3-markupsafe:
+    admix: python-admix
+    set: 314
+    version: 3.0.3
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-markupsafe
+  python_3.14.3-jinja2:
+    admix: python-admix
+    set: 314
+    version: 3.1.6
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-jinja2
+  python_3.14.3-fsspec:
+    admix: python-admix
+    set: 314
+    version: 2026.2.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-fsspec
+  python_3.14.3-lark:
+    admix: python-admix
+    set: 314
+    version: 1.3.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-lark
+  python_3.14.3-jmespath:
+    admix: python-admix
+    set: 314
+    version: 1.1.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-jmespath
+  python_3.14.3-botocore:
+    admix: python-admix
+    set: 314
+    version: 1.42.49
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-botocore
+  python_3.14.3-s3transfer:
+    admix: python-admix
+    set: 314
+    version: 0.16.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-s3transfer
+  python_3.14.3-boto3:
+    admix: python-admix
+    set: 314
+    version: 1.42.49
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-boto3
+  python_3.14.3:
+    admix: python-admix
+    set: 314
+    version: 3.14.3
+    category: False
+    requires:
+    provides:
+      - python_3.14.3
+  python_3.14.3-module:
+    admix: python-admix
+    set: 314
+    version: 3.14.3
+    category: LANGUAGES
+    requires:
+    provides:
+      - python/3.14.3
+  python_3.14.3-pip:
+    admix: python-admix
+    set: 314
+    version: 26.0.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pip
+  python_3.14.3-packaging:
+    admix: python-admix
+    set: 314
+    version: 26.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-packaging
+  python_3.14.3-setuptools:
+    admix: python-admix
+    set: 314
+    version: 80.10.2
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-setuptools
+  python_3.14.3-setuptools_scm:
+    admix: python-admix
+    set: 314
+    version: 9.2.2
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-setuptools_scm
+  python_3.14.3-tomli:
+    admix: python-admix
+    set: 314
+    version: 2.4.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-tomli
+  python_3.14.3-cython:
+    admix: python-admix
+    set: 314
+    version: 3.2.4
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-cython
+  python_3.14.3-numpy:
+    admix: python-admix
+    set: 314
+    version: 2.3.5
+    category: False
+    requires:
+      - python/3.14.3
+      - OpenBLAS/0.3.31
+    provides:
+      - python_3.14.3-numpy
+  python_3.14.3-pybind11:
+    admix: python-admix
+    set: 314
+    version: 3.0.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pybind11
+  python_3.14.3-ply:
+    admix: python-admix
+    set: 314
+    version: 3.11
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-ply
+  python_3.14.3-gast:
+    admix: python-admix
+    set: 314
+    version: 0.6.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-gast
+  python_3.14.3-beniget:
+    admix: python-admix
+    set: 314
+    version: 0.4.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-beniget
+  python_3.14.3-pythran:
+    admix: python-admix
+    set: 314
+    version: 0.18.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pythran
+  python_3.14.3-scipy:
+    admix: python-admix
+    set: 314
+    version: 1.17.0
+    category: False
+    requires:
+      - python/3.14.3
+      - OpenBLAS/0.3.31
+    provides:
+      - python_3.14.3-scipy
+  python_3.14.3-joblib:
+    admix: python-admix
+    set: 314
+    version: 1.5.3
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-joblib
+  python_3.14.3-distro:
+    admix: python-admix
+    set: 314
+    version: 1.9.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-distro
+  python_3.14.3-scikit-build:
+    admix: python-admix
+    set: 314
+    version: 0.18.1
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-scikit-build
+  python_3.14.3-pyparsing:
+    admix: python-admix
+    set: 314
+    version: 3.3.2
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pyparsing
+  python_3.14.3-wheel:
+    admix: python-admix
+    set: 314
+    version: 0.46.3
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-wheel
+  python_3.14.3-six:
+    admix: python-admix
+    set: 314
+    version: 1.17.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-six
+  python_3.14.3-pkgconfig:
+    admix: python-admix
+    set: 314
+    version: 1.5.5
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-pkgconfig
+  python_3.14.3-dateutil:
+    admix: python-admix
+    set: 314
+    version: 2.9.0
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-dateutil
+  python_3.14.3-filelock:
+    admix: python-admix
+    set: 314
+    version: 3.20.3
+    category: False
+    requires:
+      - python/3.14.3
+    provides:
+      - python_3.14.3-filelock
 simulations-admix:
   system:
     - flex
@@ -4878,6 +6531,69 @@ simulations-admix:
       - geos/3.11.1/gcc.11.2.0
     provides:
       - gdal/3.6.2/gcc.11.2.0
+  sqlite3_3.51.0_gcc_15.2.0:
+    admix: simulations-admix
+    set: 2026
+    version: 3.51.0
+    category: False
+    requires:
+      - gcc/15.2.0
+    provides:
+      - sqlite3_3.51.0_gcc_15.2.0
+  sqlite3_3.51.0_gcc_15.2.0-module:
+    admix: simulations-admix
+    set: 2026
+    version: 3.51.0
+    category: LIBRARIES
+    requires:
+      - gcc/15.2.0
+    provides:
+      - sqlite3/3.51.0/gcc.15.2.0
+  proj_9.7.1_gcc_15.2.0:
+    admix: simulations-admix
+    set: 2026
+    version: 9.7.1
+    category: False
+    requires:
+      - gcc/15.2.0
+      - sqlite3/3.51.0/gcc.15.2.0
+      - cmake/3.30.2
+    provides:
+      - proj_9.7.1_gcc_15.2.0
+  proj_9.7.1_gcc_15.2.0-module:
+    admix: simulations-admix
+    set: 2026
+    version: 9.7.1
+    category: LIBRARIES
+    requires:
+      - gcc/15.2.0
+      - sqlite3/3.51.0/gcc.15.2.0
+    provides:
+      - proj/9.7.1/gcc.15.2.0
+  gdal_3.12.1_gcc_15.2.0:
+    admix: simulations-admix
+    set: 2026
+    version: 3.12.1
+    category: False
+    requires:
+      - gcc/15.2.0
+      - proj/9.7.1/gcc.15.2.0
+      - sqlite3/3.51.0/gcc.15.2.0
+      - geos/3.14.1/gcc.15.2.0
+    provides:
+      - gdal_3.12.1_gcc_15.2.0
+  gdal_3.12.1_gcc_15.2.0-module:
+    admix: simulations-admix
+    set: 2026
+    version: 3.12.1
+    category: LIBRARIES
+    requires:
+      - gcc/15.2.0
+      - proj/9.7.1/gcc.15.2.0
+      - sqlite3/3.51.0/gcc.15.2.0
+      - geos/3.14.1/gcc.15.2.0
+    provides:
+      - gdal/3.12.1/gcc.15.2.0
 bioconda-admix:
   system:
     - libXScrnSaver
@@ -4945,6 +6661,30 @@ bioconda-admix:
     requires:
     provides:
       - qiime2/2024.10
+  miniconda3_25.11.1:
+    admix: bioconda-admix
+    set: 2025
+    version: 25.11.1
+    category: False
+    requires:
+    provides:
+      - miniconda3_25.11.1
+  miniconda3_25.11.1-module:
+    admix: bioconda-admix
+    set: 2025
+    version: 25.11.1
+    category: LANGUAGES
+    requires:
+    provides:
+      - miniconda3/25.11.1
+  qiime2_2025.10-module:
+    admix: bioconda-admix
+    set: 2025
+    version: 2025.10
+    category: BIOTOOLS
+    requires:
+    provides:
+      - qiime2/2025.10
 perl-admix:
   system:
     - gdbm-devel
@@ -5833,6 +7573,15 @@ perl-admix:
       - perl/5.30.0
     provides:
       - perl_5.30.0-Clone
+  perl_5.30.0-DBI:
+    admix: perl-admix
+    set: 530-meta
+    version: 1.643
+    category: False
+    requires:
+      - perl/5.30.0
+    provides:
+      - perl_5.30.0-DBI
   perl_5.30.0-baseline-metacpan:
     admix: perl-admix
     set: 530-meta
@@ -7624,6 +9373,15 @@ perl-admix:
       - perl/5.34.1
     provides:
       - perl_5.34.1-Clone
+  perl_5.34.1-DBI:
+    admix: perl-admix
+    set: 534-meta
+    version: 1.643
+    category: False
+    requires:
+      - perl/5.34.1
+    provides:
+      - perl_5.34.1-DBI
   perl_5.34.1-baseline-metacpan:
     admix: perl-admix
     set: 534-meta
@@ -28104,6 +29862,4000 @@ R4-admix:
       - R/4.4.2
     provides:
       - R_4.4.2-seurat-data
+  R_4.5.2:
+    admix: R4-admix
+    set: 452
+    version: 4.5.2
+    category: False
+    requires:
+      - OpenBLAS/0.3.31
+      - java/17
+      - gcc/15.2.0
+    provides:
+      - R_4.5.2
+  R_4.5.2-module:
+    admix: R4-admix
+    set: 452
+    version: 4.5.2
+    category: LANGUAGES
+    requires:
+      - OpenBLAS/0.3.31
+      - java/17
+      - gcc/15.2.0
+    provides:
+      - R/4.5.2
+  R_4.5.2-GenomeInfoDbData:
+    admix: R4-admix
+    set: 452
+    version: 1.2.15
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-GenomeInfoDbData
+  rstudio_2026.01.0.392:
+    admix: R4-admix
+    set: 452
+    version: 2026.01.0.392
+    category: False
+    requires:
+    provides:
+      - rstudio_2026.01.0.392
+  rstudio_2026.01.0.392-module:
+    admix: R4-admix
+    set: 452
+    version: 2026.01.0.392
+    category: LANGUAGES
+    requires:
+    provides:
+      - rstudio/2026.01.0.392
+  abseil-cpp_20250814.0_gcc_15.2.0:
+    admix: R4-admix
+    set: 452
+    version: 20250814.0
+    category: False
+    requires:
+      - cmake/3.30.2
+      - gcc/15.2.0
+    provides:
+      - abseil-cpp_20250814.0_gcc_15.2.0
+  abseil-cpp_20250814.0_gcc_15.2.0-module:
+    admix: R4-admix
+    set: 452
+    version: 20250814.0
+    category: TOOLS
+    requires:
+      - gcc/15.2.0
+    provides:
+      - abseil-cpp/20250814.0/gcc.15.2.0
+  R_4.5.2-BayesCombo:
+    admix: R4-admix
+    set: 452
+    version: 1.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-BayesCombo
+  R_4.5.2-cli:
+    admix: R4-admix
+    set: 452
+    version: 3.6.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-cli
+  R_4.5.2-magrittr:
+    admix: R4-admix
+    set: 452
+    version: 2.0.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-magrittr
+  R_4.5.2-Rcpp:
+    admix: R4-admix
+    set: 452
+    version: 1.1.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Rcpp
+  R_4.5.2-rlang:
+    admix: R4-admix
+    set: 452
+    version: 1.1.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rlang
+  R_4.5.2-glue:
+    admix: R4-admix
+    set: 452
+    version: 1.8.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-glue
+  R_4.5.2-lifecycle:
+    admix: R4-admix
+    set: 452
+    version: 1.0.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-lifecycle
+  R_4.5.2-stringi:
+    admix: R4-admix
+    set: 452
+    version: 1.8.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-stringi
+  R_4.5.2-vctrs:
+    admix: R4-admix
+    set: 452
+    version: 0.7.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-vctrs
+  R_4.5.2-stringr:
+    admix: R4-admix
+    set: 452
+    version: 1.6.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-stringr
+  R_4.5.2-coda:
+    admix: R4-admix
+    set: 452
+    version: 0.19.4.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-coda
+  R_4.5.2-pbapply:
+    admix: R4-admix
+    set: 452
+    version: 1.7.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-pbapply
+  R_4.5.2-mvtnorm:
+    admix: R4-admix
+    set: 452
+    version: 1.3.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-mvtnorm
+  R_4.5.2-MatrixModels:
+    admix: R4-admix
+    set: 452
+    version: 0.5.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-MatrixModels
+  R_4.5.2-elliptic:
+    admix: R4-admix
+    set: 452
+    version: 1.5.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-elliptic
+  R_4.5.2-contfrac:
+    admix: R4-admix
+    set: 452
+    version: 1.1.12
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-contfrac
+  R_4.5.2-deSolve:
+    admix: R4-admix
+    set: 452
+    version: 1.40
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-deSolve
+  R_4.5.2-hypergeo:
+    admix: R4-admix
+    set: 452
+    version: 1.2.14
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-hypergeo
+  R_4.5.2-RcppEigen:
+    admix: R4-admix
+    set: 452
+    version: 0.3.4.0.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RcppEigen
+  R_4.5.2-BayesFactor:
+    admix: R4-admix
+    set: 452
+    version: 0.9.12.4.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-BayesFactor
+  R_4.5.2-generics:
+    admix: R4-admix
+    set: 452
+    version: 0.1.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-generics
+  R_4.5.2-BiocGenerics:
+    admix: R4-admix
+    set: 452
+    version: 0.56.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-BiocGenerics
+  R_4.5.2-BiocManager:
+    admix: R4-admix
+    set: 452
+    version: 1.30.27
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-BiocManager
+  R_4.5.2-digest:
+    admix: R4-admix
+    set: 452
+    version: 0.6.39
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-digest
+  R_4.5.2-utf8:
+    admix: R4-admix
+    set: 452
+    version: 1.2.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-utf8
+  R_4.5.2-pillar:
+    admix: R4-admix
+    set: 452
+    version: 1.11.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-pillar
+  R_4.5.2-R6:
+    admix: R4-admix
+    set: 452
+    version: 2.6.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-R6
+  R_4.5.2-pkgconfig:
+    admix: R4-admix
+    set: 452
+    version: 2.0.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-pkgconfig
+  R_4.5.2-tibble:
+    admix: R4-admix
+    set: 452
+    version: 3.3.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-tibble
+  R_4.5.2-withr:
+    admix: R4-admix
+    set: 452
+    version: 3.0.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-withr
+  R_4.5.2-tidyselect:
+    admix: R4-admix
+    set: 452
+    version: 1.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-tidyselect
+  R_4.5.2-dplyr:
+    admix: R4-admix
+    set: 452
+    version: 1.1.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-dplyr
+  R_4.5.2-gtable:
+    admix: R4-admix
+    set: 452
+    version: 0.3.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-gtable
+  R_4.5.2-labeling:
+    admix: R4-admix
+    set: 452
+    version: 0.4.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-labeling
+  R_4.5.2-viridisLite:
+    admix: R4-admix
+    set: 452
+    version: 0.4.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-viridisLite
+  R_4.5.2-farver:
+    admix: R4-admix
+    set: 452
+    version: 2.1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-farver
+  R_4.5.2-RColorBrewer:
+    admix: R4-admix
+    set: 452
+    version: 1.1.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RColorBrewer
+  R_4.5.2-scales:
+    admix: R4-admix
+    set: 452
+    version: 1.4.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-scales
+  R_4.5.2-cpp11:
+    admix: R4-admix
+    set: 452
+    version: 0.5.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-cpp11
+  R_4.5.2-isoband:
+    admix: R4-admix
+    set: 452
+    version: 0.3.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-isoband
+  R_4.5.2-S7:
+    admix: R4-admix
+    set: 452
+    version: 0.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-S7
+  R_4.5.2-ggplot2:
+    admix: R4-admix
+    set: 452
+    version: 4.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ggplot2
+  R_4.5.2-gridExtra:
+    admix: R4-admix
+    set: 452
+    version: 2.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-gridExtra
+  R_4.5.2-plyr:
+    admix: R4-admix
+    set: 452
+    version: 1.8.9
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-plyr
+  R_4.5.2-reshape2:
+    admix: R4-admix
+    set: 452
+    version: 1.4.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-reshape2
+  R_4.5.2-RcppParallel:
+    admix: R4-admix
+    set: 452
+    version: 5.1.11.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RcppParallel
+  R_4.5.2-StanHeaders:
+    admix: R4-admix
+    set: 452
+    version: 2.32.10
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-StanHeaders
+  R_4.5.2-matrixStats:
+    admix: R4-admix
+    set: 452
+    version: 1.5.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-matrixStats
+  R_4.5.2-abind:
+    admix: R4-admix
+    set: 452
+    version: 1.4.8
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-abind
+  R_4.5.2-backports:
+    admix: R4-admix
+    set: 452
+    version: 1.5.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-backports
+  R_4.5.2-checkmate:
+    admix: R4-admix
+    set: 452
+    version: 2.3.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-checkmate
+  R_4.5.2-tensorA:
+    admix: R4-admix
+    set: 452
+    version: 0.36.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-tensorA
+  R_4.5.2-numDeriv:
+    admix: R4-admix
+    set: 452
+    version: 2016.8.1.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-numDeriv
+  R_4.5.2-distributional:
+    admix: R4-admix
+    set: 452
+    version: 0.6.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-distributional
+  R_4.5.2-posterior:
+    admix: R4-admix
+    set: 452
+    version: 1.6.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-posterior
+  R_4.5.2-loo:
+    admix: R4-admix
+    set: 452
+    version: 2.9.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-loo
+  R_4.5.2-inline:
+    admix: R4-admix
+    set: 452
+    version: 0.3.21
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-inline
+  R_4.5.2-desc:
+    admix: R4-admix
+    set: 452
+    version: 1.4.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-desc
+  R_4.5.2-ps:
+    admix: R4-admix
+    set: 452
+    version: 1.9.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ps
+  R_4.5.2-processx:
+    admix: R4-admix
+    set: 452
+    version: 3.8.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-processx
+  R_4.5.2-callr:
+    admix: R4-admix
+    set: 452
+    version: 3.7.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-callr
+  R_4.5.2-pkgbuild:
+    admix: R4-admix
+    set: 452
+    version: 1.4.8
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-pkgbuild
+  R_4.5.2-QuickJSR:
+    admix: R4-admix
+    set: 452
+    version: 1.9.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-QuickJSR
+  R_4.5.2-BH:
+    admix: R4-admix
+    set: 452
+    version: 1.90.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-BH
+  R_4.5.2-rstan:
+    admix: R4-admix
+    set: 452
+    version: 2.32.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rstan
+  R_4.5.2-purrr:
+    admix: R4-admix
+    set: 452
+    version: 1.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-purrr
+  R_4.5.2-tidyr:
+    admix: R4-admix
+    set: 452
+    version: 1.3.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-tidyr
+  R_4.5.2-rstantools:
+    admix: R4-admix
+    set: 452
+    version: 2.6.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rstantools
+  R_4.5.2-ggridges:
+    admix: R4-admix
+    set: 452
+    version: 0.5.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ggridges
+  R_4.5.2-bayesplot:
+    admix: R4-admix
+    set: 452
+    version: 1.15.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-bayesplot
+  R_4.5.2-Brobdingnag:
+    admix: R4-admix
+    set: 452
+    version: 1.2.9
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Brobdingnag
+  R_4.5.2-bridgesampling:
+    admix: R4-admix
+    set: 452
+    version: 1.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-bridgesampling
+  R_4.5.2-globals:
+    admix: R4-admix
+    set: 452
+    version: 0.18.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-globals
+  R_4.5.2-listenv:
+    admix: R4-admix
+    set: 452
+    version: 0.10.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-listenv
+  R_4.5.2-parallelly:
+    admix: R4-admix
+    set: 452
+    version: 1.46.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-parallelly
+  R_4.5.2-future:
+    admix: R4-admix
+    set: 452
+    version: 1.69.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-future
+  R_4.5.2-future_apply:
+    admix: R4-admix
+    set: 452
+    version: 1.20.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-future_apply
+  R_4.5.2-nleqslv:
+    admix: R4-admix
+    set: 452
+    version: 3.3.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-nleqslv
+  R_4.5.2-brms:
+    admix: R4-admix
+    set: 452
+    version: 2.23.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-brms
+  R_4.5.2-zoo:
+    admix: R4-admix
+    set: 452
+    version: 1.8.15
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-zoo
+  R_4.5.2-xts:
+    admix: R4-admix
+    set: 452
+    version: 0.14.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-xts
+  R_4.5.2-jsonlite:
+    admix: R4-admix
+    set: 452
+    version: 2.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-jsonlite
+  R_4.5.2-curl:
+    admix: R4-admix
+    set: 452
+    version: 7.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-curl
+  R_4.5.2-TTR:
+    admix: R4-admix
+    set: 452
+    version: 0.24.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-TTR
+  R_4.5.2-quantmod:
+    admix: R4-admix
+    set: 452
+    version: 0.4.28
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-quantmod
+  R_4.5.2-broom:
+    admix: R4-admix
+    set: 452
+    version: 1.0.12
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-broom
+  R_4.5.2-cowplot:
+    admix: R4-admix
+    set: 452
+    version: 1.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-cowplot
+  R_4.5.2-Deriv:
+    admix: R4-admix
+    set: 452
+    version: 4.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Deriv
+  R_4.5.2-colorspace:
+    admix: R4-admix
+    set: 452
+    version: 2.1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-colorspace
+  R_4.5.2-fracdiff:
+    admix: R4-admix
+    set: 452
+    version: 1.5.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-fracdiff
+  R_4.5.2-lmtest:
+    admix: R4-admix
+    set: 452
+    version: 0.9.40
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-lmtest
+  R_4.5.2-timeDate:
+    admix: R4-admix
+    set: 452
+    version: 4052.112
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-timeDate
+  R_4.5.2-quadprog:
+    admix: R4-admix
+    set: 452
+    version: 1.5.8
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-quadprog
+  R_4.5.2-tseries:
+    admix: R4-admix
+    set: 452
+    version: 0.10.59
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-tseries
+  R_4.5.2-urca:
+    admix: R4-admix
+    set: 452
+    version: 1.3.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-urca
+  R_4.5.2-RcppArmadillo:
+    admix: R4-admix
+    set: 452
+    version: 15.2.3.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RcppArmadillo
+  R_4.5.2-forecast:
+    admix: R4-admix
+    set: 452
+    version: 9.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-forecast
+  R_4.5.2-modelr:
+    admix: R4-admix
+    set: 452
+    version: 0.1.11
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-modelr
+  R_4.5.2-microbenchmark:
+    admix: R4-admix
+    set: 452
+    version: 1.5.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-microbenchmark
+  R_4.5.2-doBy:
+    admix: R4-admix
+    set: 452
+    version: 4.7.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-doBy
+  R_4.5.2-minqa:
+    admix: R4-admix
+    set: 452
+    version: 1.2.8
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-minqa
+  R_4.5.2-nloptr:
+    admix: R4-admix
+    set: 452
+    version: 2.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-nloptr
+  R_4.5.2-rbibutils:
+    admix: R4-admix
+    set: 452
+    version: 2.4.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rbibutils
+  R_4.5.2-Rdpack:
+    admix: R4-admix
+    set: 452
+    version: 2.6.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Rdpack
+  R_4.5.2-reformulas:
+    admix: R4-admix
+    set: 452
+    version: 0.4.3.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-reformulas
+  R_4.5.2-lme4:
+    admix: R4-admix
+    set: 452
+    version: 1.1.38
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-lme4
+  R_4.5.2-carData:
+    admix: R4-admix
+    set: 452
+    version: 3.0.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-carData
+  R_4.5.2-Formula:
+    admix: R4-admix
+    set: 452
+    version: 1.2.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Formula
+  R_4.5.2-pbkrtest:
+    admix: R4-admix
+    set: 452
+    version: 0.5.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-pbkrtest
+  R_4.5.2-SparseM:
+    admix: R4-admix
+    set: 452
+    version: 1.84.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-SparseM
+  R_4.5.2-quantreg:
+    admix: R4-admix
+    set: 452
+    version: 6.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-quantreg
+  R_4.5.2-car:
+    admix: R4-admix
+    set: 452
+    version: 3.1.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-car
+  R_4.5.2-shape:
+    admix: R4-admix
+    set: 452
+    version: 1.4.6.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-shape
+  R_4.5.2-diagram:
+    admix: R4-admix
+    set: 452
+    version: 1.6.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-diagram
+  R_4.5.2-timechange:
+    admix: R4-admix
+    set: 452
+    version: 0.3.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-timechange
+  R_4.5.2-lubridate:
+    admix: R4-admix
+    set: 452
+    version: 1.9.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-lubridate
+  R_4.5.2-proxy:
+    admix: R4-admix
+    set: 452
+    version: 0.4.29
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-proxy
+  R_4.5.2-e1071:
+    admix: R4-admix
+    set: 452
+    version: 1.7.17
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-e1071
+  R_4.5.2-iterators:
+    admix: R4-admix
+    set: 452
+    version: 1.0.14
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-iterators
+  R_4.5.2-foreach:
+    admix: R4-admix
+    set: 452
+    version: 1.5.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-foreach
+  R_4.5.2-data_table:
+    admix: R4-admix
+    set: 452
+    version: 1.18.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-data_table
+  R_4.5.2-ModelMetrics:
+    admix: R4-admix
+    set: 452
+    version: 1.2.2.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ModelMetrics
+  R_4.5.2-pROC:
+    admix: R4-admix
+    set: 452
+    version: 1.19.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-pROC
+  R_4.5.2-tzdb:
+    admix: R4-admix
+    set: 452
+    version: 0.5.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-tzdb
+  R_4.5.2-clock:
+    admix: R4-admix
+    set: 452
+    version: 0.7.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-clock
+  R_4.5.2-gower:
+    admix: R4-admix
+    set: 452
+    version: 1.0.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-gower
+  R_4.5.2-sparsevctrs:
+    admix: R4-admix
+    set: 452
+    version: 0.3.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-sparsevctrs
+  R_4.5.2-hardhat:
+    admix: R4-admix
+    set: 452
+    version: 1.4.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-hardhat
+  R_4.5.2-progressr:
+    admix: R4-admix
+    set: 452
+    version: 0.18.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-progressr
+  R_4.5.2-SQUAREM:
+    admix: R4-admix
+    set: 452
+    version: 2021.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-SQUAREM
+  R_4.5.2-lava:
+    admix: R4-admix
+    set: 452
+    version: 1.8.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-lava
+  R_4.5.2-prodlim:
+    admix: R4-admix
+    set: 452
+    version: 2025.04.28
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-prodlim
+  R_4.5.2-ipred:
+    admix: R4-admix
+    set: 452
+    version: 0.9.15
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ipred
+  R_4.5.2-recipes:
+    admix: R4-admix
+    set: 452
+    version: 1.3.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-recipes
+  R_4.5.2-caret:
+    admix: R4-admix
+    set: 452
+    version: 7.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-caret
+  R_4.5.2-S4Vectors:
+    admix: R4-admix
+    set: 452
+    version: 0.48.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-S4Vectors
+  R_4.5.2-IRanges:
+    admix: R4-admix
+    set: 452
+    version: 2.44.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-IRanges
+  R_4.5.2-Seqinfo:
+    admix: R4-admix
+    set: 452
+    version: 1.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Seqinfo
+  R_4.5.2-GenomicRanges:
+    admix: R4-admix
+    set: 452
+    version: 1.62.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-GenomicRanges
+  R_4.5.2-Biobase:
+    admix: R4-admix
+    set: 452
+    version: 2.70.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Biobase
+  R_4.5.2-MatrixGenerics:
+    admix: R4-admix
+    set: 452
+    version: 1.22.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-MatrixGenerics
+  R_4.5.2-S4Arrays:
+    admix: R4-admix
+    set: 452
+    version: 1.10.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-S4Arrays
+  R_4.5.2-XVector:
+    admix: R4-admix
+    set: 452
+    version: 0.50.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-XVector
+  R_4.5.2-SparseArray:
+    admix: R4-admix
+    set: 452
+    version: 1.10.8
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-SparseArray
+  R_4.5.2-DelayedArray:
+    admix: R4-admix
+    set: 452
+    version: 0.36.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-DelayedArray
+  R_4.5.2-SummarizedExperiment:
+    admix: R4-admix
+    set: 452
+    version: 1.40.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-SummarizedExperiment
+  R_4.5.2-formatR:
+    admix: R4-admix
+    set: 452
+    version: 1.14
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-formatR
+  R_4.5.2-lambda_r:
+    admix: R4-admix
+    set: 452
+    version: 1.2.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-lambda_r
+  R_4.5.2-futile_options:
+    admix: R4-admix
+    set: 452
+    version: 1.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-futile_options
+  R_4.5.2-futile_logger:
+    admix: R4-admix
+    set: 452
+    version: 1.4.9
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-futile_logger
+  R_4.5.2-snow:
+    admix: R4-admix
+    set: 452
+    version: 0.4.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-snow
+  R_4.5.2-BiocParallel:
+    admix: R4-admix
+    set: 452
+    version: 1.44.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-BiocParallel
+  R_4.5.2-locfit:
+    admix: R4-admix
+    set: 452
+    version: 1.5.9.12
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-locfit
+  R_4.5.2-DESeq2:
+    admix: R4-admix
+    set: 452
+    version: 1.50.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-DESeq2
+  R_4.5.2-mime:
+    admix: R4-admix
+    set: 452
+    version: 0.13
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-mime
+  R_4.5.2-DBI:
+    admix: R4-admix
+    set: 452
+    version: 1.2.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-DBI
+  R_4.5.2-bit:
+    admix: R4-admix
+    set: 452
+    version: 4.6.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-bit
+  R_4.5.2-bit64:
+    admix: R4-admix
+    set: 452
+    version: 4.6.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-bit64
+  R_4.5.2-blob:
+    admix: R4-admix
+    set: 452
+    version: 1.3.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-blob
+  R_4.5.2-fastmap:
+    admix: R4-admix
+    set: 452
+    version: 1.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-fastmap
+  R_4.5.2-cachem:
+    admix: R4-admix
+    set: 452
+    version: 1.1.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-cachem
+  R_4.5.2-memoise:
+    admix: R4-admix
+    set: 452
+    version: 2.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-memoise
+  R_4.5.2-plogr:
+    admix: R4-admix
+    set: 452
+    version: 0.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-plogr
+  R_4.5.2-RSQLite:
+    admix: R4-admix
+    set: 452
+    version: 2.4.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RSQLite
+  R_4.5.2-XML:
+    admix: R4-admix
+    set: 452
+    version: 3.99.0.20
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-XML
+  R_4.5.2-xtable:
+    admix: R4-admix
+    set: 452
+    version: 1.8.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-xtable
+  R_4.5.2-crayon:
+    admix: R4-admix
+    set: 452
+    version: 1.5.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-crayon
+  R_4.5.2-Biostrings:
+    admix: R4-admix
+    set: 452
+    version: 2.78.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Biostrings
+  R_4.5.2-sys:
+    admix: R4-admix
+    set: 452
+    version: 3.4.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-sys
+  R_4.5.2-askpass:
+    admix: R4-admix
+    set: 452
+    version: 1.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-askpass
+  R_4.5.2-openssl:
+    admix: R4-admix
+    set: 452
+    version: 2.3.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-openssl
+  R_4.5.2-httr:
+    admix: R4-admix
+    set: 452
+    version: 1.4.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-httr
+  R_4.5.2-png:
+    admix: R4-admix
+    set: 452
+    version: 0.1.8
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-png
+  R_4.5.2-KEGGREST:
+    admix: R4-admix
+    set: 452
+    version: 1.50.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-KEGGREST
+  R_4.5.2-AnnotationDbi:
+    admix: R4-admix
+    set: 452
+    version: 1.72.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-AnnotationDbi
+  R_4.5.2-rappdirs:
+    admix: R4-admix
+    set: 452
+    version: 0.3.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rappdirs
+  R_4.5.2-httr2:
+    admix: R4-admix
+    set: 452
+    version: 1.2.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-httr2
+  R_4.5.2-dbplyr:
+    admix: R4-admix
+    set: 452
+    version: 2.5.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-dbplyr
+  R_4.5.2-filelock:
+    admix: R4-admix
+    set: 452
+    version: 1.0.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-filelock
+  R_4.5.2-BiocFileCache:
+    admix: R4-admix
+    set: 452
+    version: 3.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-BiocFileCache
+  R_4.5.2-hms:
+    admix: R4-admix
+    set: 452
+    version: 1.1.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-hms
+  R_4.5.2-prettyunits:
+    admix: R4-admix
+    set: 452
+    version: 1.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-prettyunits
+  R_4.5.2-progress:
+    admix: R4-admix
+    set: 452
+    version: 1.2.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-progress
+  R_4.5.2-xml2:
+    admix: R4-admix
+    set: 452
+    version: 1.5.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-xml2
+  R_4.5.2-biomaRt:
+    admix: R4-admix
+    set: 452
+    version: 2.66.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-biomaRt
+  R_4.5.2-hwriter:
+    admix: R4-admix
+    set: 452
+    version: 1.3.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-hwriter
+  R_4.5.2-bitops:
+    admix: R4-admix
+    set: 452
+    version: 1.0.9
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-bitops
+  R_4.5.2-Rhtslib:
+    admix: R4-admix
+    set: 452
+    version: 3.6.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Rhtslib
+  R_4.5.2-Rsamtools:
+    admix: R4-admix
+    set: 452
+    version: 2.26.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Rsamtools
+  R_4.5.2-statmod:
+    admix: R4-admix
+    set: 452
+    version: 1.5.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-statmod
+  R_4.5.2-annotate:
+    admix: R4-admix
+    set: 452
+    version: 1.88.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-annotate
+  R_4.5.2-geneplotter:
+    admix: R4-admix
+    set: 452
+    version: 1.88.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-geneplotter
+  R_4.5.2-genefilter:
+    admix: R4-admix
+    set: 452
+    version: 1.92.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-genefilter
+  R_4.5.2-DEXSeq:
+    admix: R4-admix
+    set: 452
+    version: 1.56.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-DEXSeq
+  R_4.5.2-fansi:
+    admix: R4-admix
+    set: 452
+    version: 1.0.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-fansi
+  R_4.5.2-yaml:
+    admix: R4-admix
+    set: 452
+    version: 2.3.12
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-yaml
+  R_4.5.2-evaluate:
+    admix: R4-admix
+    set: 452
+    version: 1.0.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-evaluate
+  R_4.5.2-xfun:
+    admix: R4-admix
+    set: 452
+    version: 0.56
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-xfun
+  R_4.5.2-highr:
+    admix: R4-admix
+    set: 452
+    version: 0.11
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-highr
+  R_4.5.2-knitr:
+    admix: R4-admix
+    set: 452
+    version: 1.51
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-knitr
+  R_4.5.2-fs:
+    admix: R4-admix
+    set: 452
+    version: 1.6.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-fs
+  R_4.5.2-base64enc:
+    admix: R4-admix
+    set: 452
+    version: 0.1.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-base64enc
+  R_4.5.2-htmltools:
+    admix: R4-admix
+    set: 452
+    version: 0.5.9
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-htmltools
+  R_4.5.2-jquerylib:
+    admix: R4-admix
+    set: 452
+    version: 0.1.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-jquerylib
+  R_4.5.2-sass:
+    admix: R4-admix
+    set: 452
+    version: 0.4.10
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-sass
+  R_4.5.2-bslib:
+    admix: R4-admix
+    set: 452
+    version: 0.10.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-bslib
+  R_4.5.2-fontawesome:
+    admix: R4-admix
+    set: 452
+    version: 0.5.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-fontawesome
+  R_4.5.2-tinytex:
+    admix: R4-admix
+    set: 452
+    version: 0.58
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-tinytex
+  R_4.5.2-rmarkdown:
+    admix: R4-admix
+    set: 452
+    version: 2.30
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rmarkdown
+  R_4.5.2-htmlwidgets:
+    admix: R4-admix
+    set: 452
+    version: 1.6.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-htmlwidgets
+  R_4.5.2-rstudioapi:
+    admix: R4-admix
+    set: 452
+    version: 0.18.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rstudioapi
+  R_4.5.2-commonmark:
+    admix: R4-admix
+    set: 452
+    version: 2.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-commonmark
+  R_4.5.2-later:
+    admix: R4-admix
+    set: 452
+    version: 1.4.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-later
+  R_4.5.2-otel:
+    admix: R4-admix
+    set: 452
+    version: 0.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-otel
+  R_4.5.2-promises:
+    admix: R4-admix
+    set: 452
+    version: 1.5.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-promises
+  R_4.5.2-httpuv:
+    admix: R4-admix
+    set: 452
+    version: 1.6.16
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-httpuv
+  R_4.5.2-sourcetools:
+    admix: R4-admix
+    set: 452
+    version: 0.1.7.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-sourcetools
+  R_4.5.2-shiny:
+    admix: R4-admix
+    set: 452
+    version: 1.12.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-shiny
+  R_4.5.2-whisker:
+    admix: R4-admix
+    set: 452
+    version: 0.4.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-whisker
+  R_4.5.2-rprojroot:
+    admix: R4-admix
+    set: 452
+    version: 2.1.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rprojroot
+  R_4.5.2-clipr:
+    admix: R4-admix
+    set: 452
+    version: 0.8.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-clipr
+  R_4.5.2-credentials:
+    admix: R4-admix
+    set: 452
+    version: 2.0.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-credentials
+  R_4.5.2-zip:
+    admix: R4-admix
+    set: 452
+    version: 2.3.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-zip
+  R_4.5.2-gert:
+    admix: R4-admix
+    set: 452
+    version: 2.3.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-gert
+  R_4.5.2-gitcreds:
+    admix: R4-admix
+    set: 452
+    version: 0.1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-gitcreds
+  R_4.5.2-ini:
+    admix: R4-admix
+    set: 452
+    version: 0.3.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ini
+  R_4.5.2-gh:
+    admix: R4-admix
+    set: 452
+    version: 1.5.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-gh
+  R_4.5.2-usethis:
+    admix: R4-admix
+    set: 452
+    version: 3.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-usethis
+  R_4.5.2-ellipsis:
+    admix: R4-admix
+    set: 452
+    version: 0.3.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ellipsis
+  R_4.5.2-miniUI:
+    admix: R4-admix
+    set: 452
+    version: 0.1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-miniUI
+  R_4.5.2-brio:
+    admix: R4-admix
+    set: 452
+    version: 1.1.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-brio
+  R_4.5.2-downlit:
+    admix: R4-admix
+    set: 452
+    version: 0.4.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-downlit
+  R_4.5.2-systemfonts:
+    admix: R4-admix
+    set: 452
+    version: 1.3.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-systemfonts
+  R_4.5.2-textshaping:
+    admix: R4-admix
+    set: 452
+    version: 1.0.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-textshaping
+  R_4.5.2-ragg:
+    admix: R4-admix
+    set: 452
+    version: 1.5.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ragg
+  R_4.5.2-pkgdown:
+    admix: R4-admix
+    set: 452
+    version: 2.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-pkgdown
+  R_4.5.2-pkgload:
+    admix: R4-admix
+    set: 452
+    version: 1.4.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-pkgload
+  R_4.5.2-profvis:
+    admix: R4-admix
+    set: 452
+    version: 0.4.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-profvis
+  R_4.5.2-sessioninfo:
+    admix: R4-admix
+    set: 452
+    version: 1.2.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-sessioninfo
+  R_4.5.2-xopen:
+    admix: R4-admix
+    set: 452
+    version: 1.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-xopen
+  R_4.5.2-rcmdcheck:
+    admix: R4-admix
+    set: 452
+    version: 1.4.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rcmdcheck
+  R_4.5.2-remotes:
+    admix: R4-admix
+    set: 452
+    version: 2.5.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-remotes
+  R_4.5.2-brew:
+    admix: R4-admix
+    set: 452
+    version: 1.0.10
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-brew
+  R_4.5.2-roxygen2:
+    admix: R4-admix
+    set: 452
+    version: 7.3.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-roxygen2
+  R_4.5.2-rversions:
+    admix: R4-admix
+    set: 452
+    version: 3.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rversions
+  R_4.5.2-praise:
+    admix: R4-admix
+    set: 452
+    version: 1.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-praise
+  R_4.5.2-diffobj:
+    admix: R4-admix
+    set: 452
+    version: 0.3.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-diffobj
+  R_4.5.2-waldo:
+    admix: R4-admix
+    set: 452
+    version: 0.6.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-waldo
+  R_4.5.2-testthat:
+    admix: R4-admix
+    set: 452
+    version: 3.3.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-testthat
+  R_4.5.2-urlchecker:
+    admix: R4-admix
+    set: 452
+    version: 1.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-urlchecker
+  R_4.5.2-devtools:
+    admix: R4-admix
+    set: 452
+    version: 2.4.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-devtools
+  R_4.5.2-dichromat:
+    admix: R4-admix
+    set: 452
+    version: 2.0.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-dichromat
+  R_4.5.2-dotCall64:
+    admix: R4-admix
+    set: 452
+    version: 1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-dotCall64
+  R_4.5.2-lazyeval:
+    admix: R4-admix
+    set: 452
+    version: 0.2.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-lazyeval
+  R_4.5.2-crosstalk:
+    admix: R4-admix
+    set: 452
+    version: 1.2.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-crosstalk
+  R_4.5.2-DT:
+    admix: R4-admix
+    set: 452
+    version: 0.34.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-DT
+  R_4.5.2-dygraphs:
+    admix: R4-admix
+    set: 452
+    version: 1.1.1.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-dygraphs
+  R_4.5.2-limma:
+    admix: R4-admix
+    set: 452
+    version: 3.66.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-limma
+  R_4.5.2-edgeR:
+    admix: R4-admix
+    set: 452
+    version: 4.8.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-edgeR
+  R_4.5.2-maps:
+    admix: R4-admix
+    set: 452
+    version: 3.4.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-maps
+  R_4.5.2-spam:
+    admix: R4-admix
+    set: 452
+    version: 2.11.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-spam
+  R_4.5.2-fields:
+    admix: R4-admix
+    set: 452
+    version: 17.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-fields
+  R_4.5.2-gam:
+    admix: R4-admix
+    set: 452
+    version: 1.22.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-gam
+  R_4.5.2-gapminder:
+    admix: R4-admix
+    set: 452
+    version: 1.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-gapminder
+  R_4.5.2-sp:
+    admix: R4-admix
+    set: 452
+    version: 2.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-sp
+  R_4.5.2-geosphere:
+    admix: R4-admix
+    set: 452
+    version: 1.5.20
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-geosphere
+  R_4.5.2-getopt:
+    admix: R4-admix
+    set: 452
+    version: 1.20.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-getopt
+  R_4.5.2-jpeg:
+    admix: R4-admix
+    set: 452
+    version: 0.1.11
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-jpeg
+  R_4.5.2-ggmap:
+    admix: R4-admix
+    set: 452
+    version: 4.0.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ggmap
+  R_4.5.2-ggrepel:
+    admix: R4-admix
+    set: 452
+    version: 0.9.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ggrepel
+  R_4.5.2-ggsci:
+    admix: R4-admix
+    set: 452
+    version: 4.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ggsci
+  R_4.5.2-ggsignif:
+    admix: R4-admix
+    set: 452
+    version: 0.6.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ggsignif
+  R_4.5.2-polynom:
+    admix: R4-admix
+    set: 452
+    version: 1.4.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-polynom
+  R_4.5.2-corrplot:
+    admix: R4-admix
+    set: 452
+    version: 0.95
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-corrplot
+  R_4.5.2-rstatix:
+    admix: R4-admix
+    set: 452
+    version: 0.7.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rstatix
+  R_4.5.2-ggpubr:
+    admix: R4-admix
+    set: 452
+    version: 0.6.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ggpubr
+  R_4.5.2-assertthat:
+    admix: R4-admix
+    set: 452
+    version: 0.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-assertthat
+  R_4.5.2-ggvis:
+    admix: R4-admix
+    set: 452
+    version: 0.4.9
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ggvis
+  R_4.5.2-git2r:
+    admix: R4-admix
+    set: 452
+    version: 0.36.2
+    category: False
+    requires:
+      - R/4.5.2
+      - libgit2/1.8.5
+    provides:
+      - R_4.5.2-git2r
+  R_4.5.2-glmnet:
+    admix: R4-admix
+    set: 452
+    version: 4.1.10
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-glmnet
+  R_4.5.2-googleVis:
+    admix: R4-admix
+    set: 452
+    version: 0.7.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-googleVis
+  R_4.5.2-gtools:
+    admix: R4-admix
+    set: 452
+    version: 3.9.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-gtools
+  R_4.5.2-caTools:
+    admix: R4-admix
+    set: 452
+    version: 1.18.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-caTools
+  R_4.5.2-gplots:
+    admix: R4-admix
+    set: 452
+    version: 3.3.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-gplots
+  R_4.5.2-forcats:
+    admix: R4-admix
+    set: 452
+    version: 1.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-forcats
+  R_4.5.2-vroom:
+    admix: R4-admix
+    set: 452
+    version: 1.7.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-vroom
+  R_4.5.2-readr:
+    admix: R4-admix
+    set: 452
+    version: 2.1.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-readr
+  R_4.5.2-haven:
+    admix: R4-admix
+    set: 452
+    version: 2.5.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-haven
+  R_4.5.2-hdf5r:
+    admix: R4-admix
+    set: 452
+    version: 1.3.12
+    category: False
+    requires:
+      - R/4.5.2
+      - hdf5/2.0.0/gcc.15.2.0
+    provides:
+      - R_4.5.2-hdf5r
+  R_4.5.2-htmlTable:
+    admix: R4-admix
+    set: 452
+    version: 2.4.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-htmlTable
+  R_4.5.2-Hmisc:
+    admix: R4-admix
+    set: 452
+    version: 5.2.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Hmisc
+  R_4.5.2-igraph:
+    admix: R4-admix
+    set: 452
+    version: 2.2.1
+    category: False
+    requires:
+      - R/4.5.2
+      - glpk/5.0/gcc.15.2.0
+    provides:
+      - R_4.5.2-igraph
+  R_4.5.2-repr:
+    admix: R4-admix
+    set: 452
+    version: 1.1.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-repr
+  R_4.5.2-IRdisplay:
+    admix: R4-admix
+    set: 452
+    version: 1.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-IRdisplay
+  R_4.5.2-pbdZMQ:
+    admix: R4-admix
+    set: 452
+    version: 0.3.14
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-pbdZMQ
+  R_4.5.2-uuid:
+    admix: R4-admix
+    set: 452
+    version: 1.2.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-uuid
+  R_4.5.2-IRkernel:
+    admix: R4-admix
+    set: 452
+    version: 1.3.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-IRkernel
+  R_4.5.2-svglite:
+    admix: R4-admix
+    set: 452
+    version: 2.2.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-svglite
+  R_4.5.2-kableExtra:
+    admix: R4-admix
+    set: 452
+    version: 1.4.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-kableExtra
+  R_4.5.2-Lahman:
+    admix: R4-admix
+    set: 452
+    version: 13.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Lahman
+  R_4.5.2-mnormt:
+    admix: R4-admix
+    set: 452
+    version: 2.1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-mnormt
+  R_4.5.2-pbivnorm:
+    admix: R4-admix
+    set: 452
+    version: 0.6.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-pbivnorm
+  R_4.5.2-lavaan:
+    admix: R4-admix
+    set: 452
+    version: 0.6.21
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-lavaan
+  R_4.5.2-classInt:
+    admix: R4-admix
+    set: 452
+    version: 0.4.11
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-classInt
+  R_4.5.2-wk:
+    admix: R4-admix
+    set: 452
+    version: 0.9.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-wk
+  R_4.5.2-s2:
+    admix: R4-admix
+    set: 452
+    version: 1.1.9
+    category: False
+    requires:
+      - R/4.5.2
+      - abseil-cpp/20250814.0/gcc.15.2.0
+    provides:
+      - R_4.5.2-s2
+  R_4.5.2-units:
+    admix: R4-admix
+    set: 452
+    version: 1.0.0
+    category: False
+    requires:
+      - R/4.5.2
+      - udunits/2.2.28/gcc.15.2.0
+    provides:
+      - R_4.5.2-units
+  R_4.5.2-sf:
+    admix: R4-admix
+    set: 452
+    version: 1.0.24
+    category: False
+    requires:
+      - R/4.5.2
+      - gdal/3.12.1/gcc.15.2.0
+      - udunits/2.2.28/gcc.15.2.0
+    provides:
+      - R_4.5.2-sf
+  R_4.5.2-leaflet_providers:
+    admix: R4-admix
+    set: 452
+    version: 2.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-leaflet_providers
+  R_4.5.2-terra:
+    admix: R4-admix
+    set: 452
+    version: 1.8.93
+    category: False
+    requires:
+      - R/4.5.2
+      - gdal/3.12.1/gcc.15.2.0
+      - geos/3.14.1/gcc.15.2.0
+    provides:
+      - R_4.5.2-terra
+  R_4.5.2-raster:
+    admix: R4-admix
+    set: 452
+    version: 3.6.32
+    category: False
+    requires:
+      - R/4.5.2
+      - proj/9.7.1/gcc.15.2.0
+      - gdal/3.12.1/gcc.15.2.0
+      - geos/3.14.1/gcc.15.2.0
+    provides:
+      - R_4.5.2-raster
+  R_4.5.2-leaflet:
+    admix: R4-admix
+    set: 452
+    version: 2.2.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-leaflet
+  R_4.5.2-sandwich:
+    admix: R4-admix
+    set: 452
+    version: 3.1.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-sandwich
+  R_4.5.2-lfe:
+    admix: R4-admix
+    set: 452
+    version: 3.1.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-lfe
+  R_4.5.2-expm:
+    admix: R4-admix
+    set: 452
+    version: 1.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-expm
+  R_4.5.2-msm:
+    admix: R4-admix
+    set: 452
+    version: 1.8.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-msm
+  R_4.5.2-admisc:
+    admix: R4-admix
+    set: 452
+    version: 0.39
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-admisc
+  R_4.5.2-polycor:
+    admix: R4-admix
+    set: 452
+    version: 0.8.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-polycor
+  R_4.5.2-ltm:
+    admix: R4-admix
+    set: 452
+    version: 1.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ltm
+  R_4.5.2-mapproj:
+    admix: R4-admix
+    set: 452
+    version: 1.2.12
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-mapproj
+  R_4.5.2-mcmc:
+    admix: R4-admix
+    set: 452
+    version: 0.9.8
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-mcmc
+  R_4.5.2-MCMCpack:
+    admix: R4-admix
+    set: 452
+    version: 1.7.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-MCMCpack
+  R_4.5.2-miniCRAN:
+    admix: R4-admix
+    set: 452
+    version: 0.3.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-miniCRAN
+  R_4.5.2-ellipse:
+    admix: R4-admix
+    set: 452
+    version: 0.5.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ellipse
+  R_4.5.2-estimability:
+    admix: R4-admix
+    set: 452
+    version: 1.5.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-estimability
+  R_4.5.2-emmeans:
+    admix: R4-admix
+    set: 452
+    version: 2.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-emmeans
+  R_4.5.2-flashClust:
+    admix: R4-admix
+    set: 452
+    version: 1.01.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-flashClust
+  R_4.5.2-leaps:
+    admix: R4-admix
+    set: 452
+    version: 3.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-leaps
+  R_4.5.2-multcompView:
+    admix: R4-admix
+    set: 452
+    version: 0.1.10
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-multcompView
+  R_4.5.2-scatterplot3d:
+    admix: R4-admix
+    set: 452
+    version: 0.3.44
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-scatterplot3d
+  R_4.5.2-FactoMineR:
+    admix: R4-admix
+    set: 452
+    version: 2.13
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-FactoMineR
+  R_4.5.2-pan:
+    admix: R4-admix
+    set: 452
+    version: 1.9
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-pan
+  R_4.5.2-ucminf:
+    admix: R4-admix
+    set: 452
+    version: 1.2.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ucminf
+  R_4.5.2-ordinal:
+    admix: R4-admix
+    set: 452
+    version: 2025.12.29
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ordinal
+  R_4.5.2-jomo:
+    admix: R4-admix
+    set: 452
+    version: 2.7.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-jomo
+  R_4.5.2-mitml:
+    admix: R4-admix
+    set: 452
+    version: 0.4.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-mitml
+  R_4.5.2-mice:
+    admix: R4-admix
+    set: 452
+    version: 3.19.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-mice
+  R_4.5.2-doParallel:
+    admix: R4-admix
+    set: 452
+    version: 1.0.17
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-doParallel
+  R_4.5.2-missMDA:
+    admix: R4-admix
+    set: 452
+    version: 1.20
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-missMDA
+  R_4.5.2-TH_data:
+    admix: R4-admix
+    set: 452
+    version: 1.1.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-TH_data
+  R_4.5.2-multcomp:
+    admix: R4-admix
+    set: 452
+    version: 1.4.29
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-multcomp
+  R_4.5.2-munsell:
+    admix: R4-admix
+    set: 452
+    version: 0.5.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-munsell
+  R_4.5.2-data_tree:
+    admix: R4-admix
+    set: 452
+    version: 1.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-data_tree
+  R_4.5.2-networkD3:
+    admix: R4-admix
+    set: 452
+    version: 0.4.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-networkD3
+  R_4.5.2-nycflights13:
+    admix: R4-admix
+    set: 452
+    version: 1.0.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-nycflights13
+  R_4.5.2-odbc:
+    admix: R4-admix
+    set: 452
+    version: 1.6.4.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-odbc
+  R_4.5.2-optparse:
+    admix: R4-admix
+    set: 452
+    version: 1.7.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-optparse
+  R_4.5.2-bdsmatrix:
+    admix: R4-admix
+    set: 452
+    version: 1.3.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-bdsmatrix
+  R_4.5.2-collapse:
+    admix: R4-admix
+    set: 452
+    version: 2.1.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-collapse
+  R_4.5.2-miscTools:
+    admix: R4-admix
+    set: 452
+    version: 0.6.30
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-miscTools
+  R_4.5.2-maxLik:
+    admix: R4-admix
+    set: 452
+    version: 1.5.2.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-maxLik
+  R_4.5.2-plm:
+    admix: R4-admix
+    set: 452
+    version: 2.6.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-plm
+  R_4.5.2-proto:
+    admix: R4-admix
+    set: 452
+    version: 1.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-proto
+  R_4.5.2-GPArotation:
+    admix: R4-admix
+    set: 452
+    version: 2025.3.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-GPArotation
+  R_4.5.2-psych:
+    admix: R4-admix
+    set: 452
+    version: 2.5.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-psych
+  R_4.5.2-R_methodsS3:
+    admix: R4-admix
+    set: 452
+    version: 1.8.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-R_methodsS3
+  R_4.5.2-R_oo:
+    admix: R4-admix
+    set: 452
+    version: 1.27.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-R_oo
+  R_4.5.2-R_utils:
+    admix: R4-admix
+    set: 452
+    version: 2.13.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-R_utils
+  R_4.5.2-R_cache:
+    admix: R4-admix
+    set: 452
+    version: 0.17.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-R_cache
+  R_4.5.2-styler:
+    admix: R4-admix
+    set: 452
+    version: 1.11.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-styler
+  R_4.5.2-labelled:
+    admix: R4-admix
+    set: 452
+    version: 2.16.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-labelled
+  R_4.5.2-questionr:
+    admix: R4-admix
+    set: 452
+    version: 0.8.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-questionr
+  R_4.5.2-randomForest:
+    admix: R4-admix
+    set: 452
+    version: 4.7.1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-randomForest
+  R_4.5.2-RcppGSL:
+    admix: R4-admix
+    set: 452
+    version: 0.3.13
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RcppGSL
+  R_4.5.2-rgl:
+    admix: R4-admix
+    set: 452
+    version: 1.3.31
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rgl
+  R_4.5.2-RMySQL:
+    admix: R4-admix
+    set: 452
+    version: 0.11.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RMySQL
+  R_4.5.2-RPostgreSQL:
+    admix: R4-admix
+    set: 452
+    version: 0.7.8
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RPostgreSQL
+  R_4.5.2-SeuratObject:
+    admix: R4-admix
+    set: 452
+    version: 5.3.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-SeuratObject
+  R_4.5.2-fastDummies:
+    admix: R4-admix
+    set: 452
+    version: 1.7.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-fastDummies
+  R_4.5.2-fitdistrplus:
+    admix: R4-admix
+    set: 452
+    version: 1.2.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-fitdistrplus
+  R_4.5.2-ica:
+    admix: R4-admix
+    set: 452
+    version: 1.0.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ica
+  R_4.5.2-irlba:
+    admix: R4-admix
+    set: 452
+    version: 2.3.5.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-irlba
+  R_4.5.2-patchwork:
+    admix: R4-admix
+    set: 452
+    version: 1.3.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-patchwork
+  R_4.5.2-plotly:
+    admix: R4-admix
+    set: 452
+    version: 4.12.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-plotly
+  R_4.5.2-RANN:
+    admix: R4-admix
+    set: 452
+    version: 2.6.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RANN
+  R_4.5.2-RcppAnnoy:
+    admix: R4-admix
+    set: 452
+    version: 0.0.23
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RcppAnnoy
+  R_4.5.2-RcppHNSW:
+    admix: R4-admix
+    set: 452
+    version: 0.6.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RcppHNSW
+  R_4.5.2-RcppTOML:
+    admix: R4-admix
+    set: 452
+    version: 0.2.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RcppTOML
+  R_4.5.2-here:
+    admix: R4-admix
+    set: 452
+    version: 1.0.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-here
+  R_4.5.2-reticulate:
+    admix: R4-admix
+    set: 452
+    version: 1.44.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-reticulate
+  R_4.5.2-ROCR:
+    admix: R4-admix
+    set: 452
+    version: 1.0.12
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ROCR
+  R_4.5.2-RSpectra:
+    admix: R4-admix
+    set: 452
+    version: 0.16.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RSpectra
+  R_4.5.2-Rtsne:
+    admix: R4-admix
+    set: 452
+    version: 0.17
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Rtsne
+  R_4.5.2-scattermore:
+    admix: R4-admix
+    set: 452
+    version: 1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-scattermore
+  R_4.5.2-sctransform:
+    admix: R4-admix
+    set: 452
+    version: 0.4.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-sctransform
+  R_4.5.2-spatstat_utils:
+    admix: R4-admix
+    set: 452
+    version: 3.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-spatstat_utils
+  R_4.5.2-spatstat_data:
+    admix: R4-admix
+    set: 452
+    version: 3.1.9
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-spatstat_data
+  R_4.5.2-spatstat_univar:
+    admix: R4-admix
+    set: 452
+    version: 3.1.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-spatstat_univar
+  R_4.5.2-deldir:
+    admix: R4-admix
+    set: 452
+    version: 2.0.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-deldir
+  R_4.5.2-polyclip:
+    admix: R4-admix
+    set: 452
+    version: 1.10.7
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-polyclip
+  R_4.5.2-spatstat_geom:
+    admix: R4-admix
+    set: 452
+    version: 3.7.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-spatstat_geom
+  R_4.5.2-spatstat_random:
+    admix: R4-admix
+    set: 452
+    version: 3.4.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-spatstat_random
+  R_4.5.2-tensor:
+    admix: R4-admix
+    set: 452
+    version: 1.5.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-tensor
+  R_4.5.2-spatstat_sparse:
+    admix: R4-admix
+    set: 452
+    version: 3.1.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-spatstat_sparse
+  R_4.5.2-goftest:
+    admix: R4-admix
+    set: 452
+    version: 1.2.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-goftest
+  R_4.5.2-spatstat_explore:
+    admix: R4-admix
+    set: 452
+    version: 3.7.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-spatstat_explore
+  R_4.5.2-RcppProgress:
+    admix: R4-admix
+    set: 452
+    version: 0.4.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-RcppProgress
+  R_4.5.2-FNN:
+    admix: R4-admix
+    set: 452
+    version: 1.1.4.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-FNN
+  R_4.5.2-sitmo:
+    admix: R4-admix
+    set: 452
+    version: 2.0.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-sitmo
+  R_4.5.2-dqrng:
+    admix: R4-admix
+    set: 452
+    version: 0.4.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-dqrng
+  R_4.5.2-uwot:
+    admix: R4-admix
+    set: 452
+    version: 0.2.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-uwot
+  R_4.5.2-Seurat:
+    admix: R4-admix
+    set: 452
+    version: 5.4.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-Seurat
+  R_4.5.2-sm:
+    admix: R4-admix
+    set: 452
+    version: 2.2.6.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-sm
+  R_4.5.2-stargazer:
+    admix: R4-admix
+    set: 452
+    version: 5.2.3
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-stargazer
+  R_4.5.2-threejs:
+    admix: R4-admix
+    set: 452
+    version: 0.3.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-threejs
+  R_4.5.2-conflicted:
+    admix: R4-admix
+    set: 452
+    version: 1.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-conflicted
+  R_4.5.2-dtplyr:
+    admix: R4-admix
+    set: 452
+    version: 1.3.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-dtplyr
+  R_4.5.2-gargle:
+    admix: R4-admix
+    set: 452
+    version: 1.6.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-gargle
+  R_4.5.2-googledrive:
+    admix: R4-admix
+    set: 452
+    version: 2.1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-googledrive
+  R_4.5.2-rematch:
+    admix: R4-admix
+    set: 452
+    version: 2.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rematch
+  R_4.5.2-cellranger:
+    admix: R4-admix
+    set: 452
+    version: 1.1.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-cellranger
+  R_4.5.2-ids:
+    admix: R4-admix
+    set: 452
+    version: 1.0.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-ids
+  R_4.5.2-rematch2:
+    admix: R4-admix
+    set: 452
+    version: 2.1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rematch2
+  R_4.5.2-googlesheets4:
+    admix: R4-admix
+    set: 452
+    version: 1.1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-googlesheets4
+  R_4.5.2-readxl:
+    admix: R4-admix
+    set: 452
+    version: 1.4.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-readxl
+  R_4.5.2-reprex:
+    admix: R4-admix
+    set: 452
+    version: 2.1.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-reprex
+  R_4.5.2-selectr:
+    admix: R4-admix
+    set: 452
+    version: 0.5.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-selectr
+  R_4.5.2-rvest:
+    admix: R4-admix
+    set: 452
+    version: 1.0.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rvest
+  R_4.5.2-tidyverse:
+    admix: R4-admix
+    set: 452
+    version: 2.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-tidyverse
+  R_4.5.2-vcd:
+    admix: R4-admix
+    set: 452
+    version: 1.4.13
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-vcd
+  R_4.5.2-rJava:
+    admix: R4-admix
+    set: 452
+    version: 1.0.14
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-rJava
+  R_4.5.2-XLConnect:
+    admix: R4-admix
+    set: 452
+    version: 1.2.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-XLConnect
+  R_4.5.2-xlsxjars:
+    admix: R4-admix
+    set: 452
+    version: 0.9.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-xlsxjars
+  R_4.5.2-xlsx:
+    admix: R4-admix
+    set: 452
+    version: 0.6.5
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-xlsx
+  R_4.5.2-sn:
+    admix: R4-admix
+    set: 452
+    version: 2.1.2
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-sn
+  R_4.5.2-TFisher:
+    admix: R4-admix
+    set: 452
+    version: 0.2.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-TFisher
+  R_4.5.2-plotrix:
+    admix: R4-admix
+    set: 452
+    version: 3.8.13
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-plotrix
+  R_4.5.2-multtest:
+    admix: R4-admix
+    set: 452
+    version: 2.66.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-multtest
+  R_4.5.2-mutoss:
+    admix: R4-admix
+    set: 452
+    version: 0.1.14
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-mutoss
+  R_4.5.2-mathjaxr:
+    admix: R4-admix
+    set: 452
+    version: 2.0.0
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-mathjaxr
+  R_4.5.2-DEoptimR:
+    admix: R4-admix
+    set: 452
+    version: 1.1.4
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-DEoptimR
+  R_4.5.2-robustbase:
+    admix: R4-admix
+    set: 452
+    version: 0.99.6
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-robustbase
+  R_4.5.2-qqconf:
+    admix: R4-admix
+    set: 452
+    version: 1.3.2
+    category: False
+    requires:
+      - R/4.5.2
+      - fftw/3.3.10/gcc.15.2.0
+    provides:
+      - R_4.5.2-qqconf
+  R_4.5.2-metap:
+    admix: R4-admix
+    set: 452
+    version: 1.13
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-metap
+  R_4.5.2-seurat-data:
+    admix: R4-admix
+    set: 452
+    version: 0.2.1
+    category: False
+    requires:
+      - R/4.5.2
+    provides:
+      - R_4.5.2-seurat-data
 biotools-admix:
   system:
     - autoconf
@@ -29569,6 +35321,24 @@ biotools-admix:
       - java/17
     provides:
       - gatk/4.6.2.0
+  vcftools_0.1.17:
+    admix: biotools-admix
+    set: 2025
+    version: 0.1.17
+    category: False
+    requires:
+      - gcc/11.2.0
+    provides:
+      - vcftools_0.1.17
+  vcftools_0.1.17-module:
+    admix: biotools-admix
+    set: 2025
+    version: 0.1.17
+    category: BIOTOOLS
+    requires:
+      - gcc/11.2.0
+    provides:
+      - vcftools/0.1.17
 genomics-admix:
   system:
     - zlib-devel
@@ -30068,6 +35838,31 @@ genomics-admix:
       - java/1.8.0
     provides:
       - trimmomatic/0.39
+  rMATS_4.3.0:
+    admix: genomics-admix
+    set: 2025
+    version: 4.3.0
+    category: False
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+      - gsl/2.7.1/gcc.11.2.0
+      - cmake/3.30.2
+    provides:
+      - rMATS_4.3.0
+  rMATS_4.3.0-module:
+    admix: genomics-admix
+    set: 2025
+    version: 4.3.0
+    category: GENOMICS
+    requires:
+      - gcc/11.2.0
+      - python/3.10.2
+      - gsl/2.7.1/gcc.11.2.0
+      - star/2.7.3a
+      - samtools/1.10
+    provides:
+      - rMATS/4.3.0
 conda-admix:
   anaconda_2020.07:
     admix: conda-admix
@@ -30151,6 +35946,38 @@ conda-admix:
     requires:
     provides:
       - mamba/24.3.0
+  anaconda_2025.12:
+    admix: conda-admix
+    set: 2026
+    version: 2025.12
+    category: False
+    requires:
+    provides:
+      - anaconda_2025.12
+  anaconda_2025.12-module:
+    admix: conda-admix
+    set: 2026
+    version: 2025.12
+    category: LANGUAGES
+    requires:
+    provides:
+      - anaconda/2025.12
+  mamba_26.1.0:
+    admix: conda-admix
+    set: 2026
+    version: 26.1.0
+    category: False
+    requires:
+    provides:
+      - mamba_26.1.0
+  mamba_26.1.0-module:
+    admix: conda-admix
+    set: 2026
+    version: 26.1.0
+    category: LANGUAGES
+    requires:
+    provides:
+      - mamba/26.1.0
 chemistry-admix:
   system:
     - tcsh
@@ -30727,6 +36554,90 @@ chemistry-admix:
       - openmpi/5.0.1/gcc.11.2.0-cuda.11.7.1
     provides:
       - amber/24/gcc.11.2.0-cuda.11.7.1-openmpi.5.0.1
+  gromacs_2026.0_gcc_11.2.0:
+    admix: chemistry-admix
+    set: 2026
+    version: 2026.0
+    category: False
+    requires:
+      - cmake/3.30.2
+      - gcc/11.2.0
+    provides:
+      - gromacs_2026.0_gcc_11.2.0
+  gromacs_2026.0_gcc_11.2.0-module:
+    admix: chemistry-admix
+    set: 2026
+    version: 2026.0
+    category: CHEMISTRY
+    requires:
+      - gcc/11.2.0
+    provides:
+      - gromacs/2026.0/gcc.11.2.0
+  gromacs_2026.0_gcc_11.2.0_cuda_12.2.0:
+    admix: chemistry-admix
+    set: 2026
+    version: 2026.0
+    category: False
+    requires:
+      - cmake/3.30.2
+      - gcc/11.2.0
+      - cuda/12.2.0
+    provides:
+      - gromacs_2026.0_gcc_11.2.0_cuda_12.2.0
+  gromacs_2026.0_gcc_11.2.0_cuda_12.2.0-module:
+    admix: chemistry-admix
+    set: 2026
+    version: 2026.0
+    category: CHEMISTRY
+    requires:
+      - gcc/11.2.0
+      - cuda/12.2.0
+    provides:
+      - gromacs/2026.0/gcc.11.2.0-cuda.12.2.0
+  gromacs_2026.0_gcc_11.2.0_openmpi_5.0.1:
+    admix: chemistry-admix
+    set: 2026
+    version: 2026.0
+    category: False
+    requires:
+      - cmake/3.30.2
+      - gcc/11.2.0
+      - openmpi/5.0.1/gcc.11.2.0
+    provides:
+      - gromacs_2026.0_gcc_11.2.0_openmpi_5.0.1
+  gromacs_2026.0_gcc_11.2.0_openmpi_5.0.1-module:
+    admix: chemistry-admix
+    set: 2026
+    version: 2026.0
+    category: CHEMISTRY
+    requires:
+      - gcc/11.2.0
+      - openmpi/5.0.1/gcc.11.2.0
+    provides:
+      - gromacs/2026.0/gcc.11.2.0-openmpi.5.0.1
+  gromacs_2026.0_gcc_11.2.0_cuda_12.2.0_openmpi_5.0.1:
+    admix: chemistry-admix
+    set: 2026
+    version: 2026.0
+    category: False
+    requires:
+      - cmake/3.30.2
+      - gcc/11.2.0
+      - cuda/12.2.0
+      - openmpi/5.0.1/gcc.11.2.0
+    provides:
+      - gromacs_2026.0_gcc_11.2.0_cuda_12.2.0_openmpi_5.0.1
+  gromacs_2026.0_gcc_11.2.0_cuda_12.2.0_openmpi_5.0.1-module:
+    admix: chemistry-admix
+    set: 2026
+    version: 2026.0
+    category: CHEMISTRY
+    requires:
+      - gcc/11.2.0
+      - cuda/12.2.0
+      - openmpi/5.0.1/gcc.11.2.0
+    provides:
+      - gromacs/2026.0/gcc.11.2.0-cuda.12.2.0.openmpi.5.0.1
 julia-admix:
   julia_1.6.0:
     admix: julia-admix
@@ -30776,6 +36687,22 @@ julia-admix:
     requires:
     provides:
       - julia/1.9.3
+  julia_1.12.4:
+    admix: julia-admix
+    set: v112
+    version: 1.12.4
+    category: False
+    requires:
+    provides:
+      - julia_1.12.4
+  julia_1.12.4-module:
+    admix: julia-admix
+    set: v112
+    version: 1.12.4
+    category: LANGUAGES
+    requires:
+    provides:
+      - julia/1.12.4
 pytorch-admix:
   pytorch_1.11.0_python3.10.2_cuda_11.7.1:
     admix: pytorch-admix
@@ -31422,6 +37349,55 @@ nfsapps-admix:
     requires:
     provides:
       - cellranger-atac/2.1.0
+  MATLAB_R2024b-module:
+    admix: nfsapps-admix
+    set: 2024
+    version: R2024b
+    category: LANGUAGES
+    requires:
+    provides:
+      - MATLAB/R2024b
+  MATLAB_R2025b-module:
+    admix: nfsapps-admix
+    set: 2025
+    version: R2025b
+    category: LANGUAGES
+    requires:
+    provides:
+      - MATLAB/R2025b
+  freesurfer_8.1.0-module:
+    admix: nfsapps-admix
+    set: 2025
+    version: 8.1.0
+    category: IMAGING
+    requires:
+    provides:
+      - freesurfer/8.1.0
+  gurobi_12.0.3-module:
+    admix: nfsapps-admix
+    set: 2025
+    version: 12.0.3
+    category: TOOLS
+    requires:
+    provides:
+      - gurobi/12.0.3
+  fluent_2025R2-module:
+    admix: nfsapps-admix
+    set: 2026
+    version: 2025R2
+    category: ENGINEERING
+    requires:
+    provides:
+      - fluent/2025R2
+  fsl_6.0.7.22-module:
+    admix: nfsapps-admix
+    set: 2026
+    version: 6.0.7.22
+    category: IMAGING
+    requires:
+      - OpenBLAS/0.3.26
+    provides:
+      - fsl/6.0.7.22
 protected-admix:
   system:
     - libatomic
@@ -31587,4 +37563,4 @@ protected-admix:
       - hdf5/1.13.1/cudasdk.22.9
     provides:
       - vasp/6.3.2/cudasdk.22.9
-created: 2025-07-08
+created: 2026-06-03
